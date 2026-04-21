@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MarketPage by ZOALUM — Infraestructura Digital de Grado Industrial</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="MarketPage by ZOALUM: Arquitectura web de conversión de alto rendimiento. Infraestructura digital modular, escalable y optimizada para velocidad y resultados." />
+  <meta name="keywords" content="landing page, diseño web profesional, ingeniería web, ZOALUM, MarketPage, infraestructura digital, conversión web, alto rendimiento" />
+  <meta name="author" content="ZOALUM" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="MarketPage by ZOALUM — Infraestructura Digital de Grado Industrial" />
+  <meta property="og:description" content="Páginas diseñadas con Optimización de Flujo de Datos y Estructura Modular Escalable para garantizar velocidad y conversión." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://zoalum.com/og-image.jpg" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet" />
+
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
+
+  <style>
+    :root {
+      --cyan: #00f5ff;
+      --cyan-dim: #00b4c8;
+      --cyan-glow: rgba(0, 245, 255, 0.15);
+      --bg: #050505;
+      --surface: rgba(255,255,255,0.03);
+      --border: rgba(0, 245, 255, 0.18);
+      --text: #e8eaed;
+      --muted: #6b7280;
+      --metal: #a0a9b8;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Rajdhani', sans-serif;
+      overflow-x: hidden;
+      cursor: none;
+    }
+
+    /* Custom cursor */
+    #cursor {
+      position: fixed;
+      width: 10px; height: 10px;
+      background: var(--cyan);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      mix-blend-mode: screen;
+      transform: translate(-50%, -50%);
+      transition: width .2s, height .2s, opacity .2s;
+    }
+    #cursor-ring {
+      position: fixed;
+      width: 36px; height: 36px;
+      border: 1px solid rgba(0,245,255,0.5);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9998;
+      transform: translate(-50%, -50%);
+      transition: all .12s ease-out;
+    }
+
+    /* Noise texture overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1000;
+      opacity: 0.6;
+    }
+
+    /* Grid background */
+    .grid-bg {
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,245,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,245,255,0.025) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Scanline effect */
+    .scanlines {
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent 2px,
+        rgba(0,0,0,0.08) 2px,
+        rgba(0,0,0,0.08) 4px
+      );
+      pointer-events: none;
+      z-index: 999;
+    }
+
+    /* Typography */
+    .font-mono { font-family: 'Share Tech Mono', monospace; }
+    .font-orb { font-family: 'Orbitron', sans-serif; }
+
+    /* Glassmorphism card */
+    .glass-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      position: relative;
+      overflow: hidden;
+    }
+    .glass-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(0,245,255,0.05) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    /* Cyan glow button */
+    .btn-cyber {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      color: var(--bg);
+      background: var(--cyan);
+      border: none;
+      padding: 14px 36px;
+      cursor: none;
+      clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+      transition: box-shadow .3s, transform .2s;
+      position: relative;
+    }
+    .btn-cyber:hover {
+      box-shadow: 0 0 24px var(--cyan), 0 0 60px rgba(0,245,255,0.3);
+      transform: translateY(-2px);
+    }
+
+    .btn-cyber-outline {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      color: var(--cyan);
+      background: transparent;
+      border: 1px solid var(--cyan);
+      padding: 12px 32px;
+      cursor: none;
+      clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+      transition: all .3s;
+    }
+    .btn-cyber-outline:hover {
+      background: var(--cyan-glow);
+      box-shadow: 0 0 20px rgba(0,245,255,0.2);
+    }
+
+    /* Section label */
+    .section-label {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--cyan);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      opacity: 0.8;
+    }
+
+    /* Glitch text */
+    .glitch {
+      position: relative;
+    }
+    .glitch::before,
+    .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      inset: 0;
+      font-family: 'Orbitron', sans-serif;
+    }
+    .glitch::before {
+      color: #ff003c;
+      animation: glitch1 3s infinite;
+      clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+    }
+    .glitch::after {
+      color: var(--cyan);
+      animation: glitch2 3s infinite;
+      clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+    }
+    @keyframes glitch1 {
+      0%,94%,100% { transform: translate(0); }
+      95% { transform: translate(-3px, 1px); }
+      97% { transform: translate(3px, -1px); }
+    }
+    @keyframes glitch2 {
+      0%,94%,100% { transform: translate(0); }
+      95% { transform: translate(3px, -1px); }
+      97% { transform: translate(-3px, 1px); }
+    }
+
+    /* Neon line */
+    .neon-line {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+      box-shadow: 0 0 8px var(--cyan);
+    }
+
+    /* Node card */
+    .node-card {
+      transition: transform .3s, box-shadow .3s;
+      transform-style: preserve-3d;
+    }
+    .node-card:hover {
+      transform: translateY(-6px) rotateX(2deg);
+      box-shadow: 0 20px 40px rgba(0,245,255,0.1), 0 0 0 1px rgba(0,245,255,0.3);
+    }
+
+    /* Counter */
+    .counter-display {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(5rem, 15vw, 10rem);
+      color: transparent;
+      -webkit-text-stroke: 1px var(--cyan);
+      line-height: 1;
+      filter: drop-shadow(0 0 20px rgba(0,245,255,0.4));
+    }
+
+    /* Tag badge */
+    .tag {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      border: 1px solid var(--border);
+      padding: 3px 10px;
+      color: var(--muted);
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 500;
+      background: rgba(5,5,5,0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* Hero section */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Floating orbs */
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+    }
+
+    /* Progress bar scroll */
+    #progress-bar {
+      position: fixed;
+      top: 0; left: 0;
+      height: 2px;
+      background: var(--cyan);
+      box-shadow: 0 0 8px var(--cyan);
+      z-index: 9997;
+      transform-origin: left;
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+      body { cursor: auto; }
+      #cursor, #cursor-ring { display: none; }
+      .glitch::before, .glitch::after { display: none; }
+    }
+
+    /* Invisible initially for GSAP */
+    .reveal { opacity: 0; }
+
+    /* Decorative corner */
+    .corner-tl::before {
+      content: '';
+      position: absolute;
+      top: -1px; left: -1px;
+      width: 16px; height: 16px;
+      border-top: 2px solid var(--cyan);
+      border-left: 2px solid var(--cyan);
+    }
+    .corner-br::after {
+      content: '';
+      position: absolute;
+      bottom: -1px; right: -1px;
+      width: 16px; height: 16px;
+      border-bottom: 2px solid var(--cyan);
+      border-right: 2px solid var(--cyan);
+    }
+
+    /* Spec row */
+    .spec-row {
+      border-bottom: 1px solid rgba(0,245,255,0.08);
+      padding: 14px 0;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .spec-row:last-child { border-bottom: none; }
+  </style>
+</head>
+<body>
+
+<!-- Cursor -->
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<!-- Progress bar -->
+<div id="progress-bar"></div>
+
+<!-- BG Effects -->
+<div class="grid-bg"></div>
+<div class="scanlines"></div>
+
+<!-- Floating orbs -->
+<div class="orb" style="width:500px;height:500px;background:rgba(0,245,255,0.04);top:-100px;right:-150px;"></div>
+<div class="orb" style="width:300px;height:300px;background:rgba(0,180,200,0.05);bottom:20%;left:-100px;"></div>
+
+<!-- ═══════════════ NAVBAR ═══════════════ -->
+<nav>
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div style="width:8px;height:8px;background:var(--cyan);box-shadow:0 0 10px var(--cyan);border-radius:50%;animation:pulse 2s infinite;"></div>
+      <span class="font-orb text-sm tracking-widest text-white">MARKET<span style="color:var(--cyan)">PAGE</span></span>
+      <span class="font-mono text-xs" style="color:var(--muted)">/ ZOALUM</span>
+    </div>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#arquitectura" class="font-mono text-xs tracking-widest" style="color:var(--muted);transition:color .2s;" onmouseover="this.style.color='var(--cyan)'" onmouseout="this.style.color='var(--muted)'">ARQUITECTURA</a>
+      <a href="#nodos" class="font-mono text-xs tracking-widest" style="color:var(--muted);transition:color .2s;" onmouseover="this.style.color='var(--cyan)'" onmouseout="this.style.color='var(--muted)'">NODOS</a>
+      <a href="#proceso" class="font-mono text-xs tracking-widest" style="color:var(--muted);transition:color .2s;" onmouseover="this.style.color='var(--cyan)'" onmouseout="this.style.color='var(--muted)'">PROCESO</a>
+      <a href="#contacto" class="btn-cyber-outline text-xs">INICIAR</a>
+    </div>
+    <!-- Mobile menu icon -->
+    <button id="mob-menu-btn" class="md:hidden flex flex-col gap-1.5 p-2" onclick="toggleMobileMenu()" style="cursor:pointer;background:none;border:none;">
+      <span style="display:block;width:22px;height:1px;background:var(--cyan);"></span>
+      <span style="display:block;width:16px;height:1px;background:var(--cyan);"></span>
+      <span style="display:block;width:22px;height:1px;background:var(--cyan);"></span>
+    </button>
+  </div>
+  <!-- Mobile menu -->
+  <div id="mob-menu" style="display:none;border-top:1px solid var(--border);">
+    <div class="flex flex-col px-6 py-4 gap-4">
+      <a href="#arquitectura" class="font-mono text-xs tracking-widest" style="color:var(--muted);" onclick="toggleMobileMenu()">ARQUITECTURA</a>
+      <a href="#nodos" class="font-mono text-xs tracking-widest" style="color:var(--muted);" onclick="toggleMobileMenu()">NODOS</a>
+      <a href="#proceso" class="font-mono text-xs tracking-widest" style="color:var(--muted);" onclick="toggleMobileMenu()">PROCESO</a>
+      <a href="#contacto" class="font-mono text-xs tracking-widest" style="color:var(--cyan);" onclick="toggleMobileMenu()">INICIAR PROYECTO</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section id="hero" class="px-6">
+  <div class="max-w-7xl mx-auto w-full relative z-10 pt-24 pb-20">
+
+    <!-- Top label -->
+    <div class="reveal flex items-center gap-4 mb-10">
+      <div class="section-label">SISTEMA v2.4.1</div>
+      <div class="neon-line flex-1 max-w-24"></div>
+      <div class="section-label">OPERACIONAL</div>
+    </div>
+
+    <!-- Main heading -->
+    <div class="mb-8">
+      <div class="reveal font-mono text-sm mb-4" style="color:var(--cyan)">// INFRAESTRUCTURA DIGITAL</div>
+      <h1 class="font-orb font-black leading-none mb-2 glitch" data-text="MARKET" style="font-size:clamp(3.5rem,12vw,9rem);color:white;">MARKET</h1>
+      <h1 class="font-orb font-black leading-none glitch" data-text="PAGE" style="font-size:clamp(3.5rem,12vw,9rem);color:var(--cyan);filter:drop-shadow(0 0 30px rgba(0,245,255,0.5));">PAGE</h1>
+      <div class="reveal flex items-center gap-3 mt-4">
+        <div style="width:40px;height:1px;background:var(--metal);"></div>
+        <span class="font-orb text-lg tracking-[0.3em]" style="color:var(--metal);">BY ZOALUM</span>
+      </div>
+    </div>
+
+    <!-- Tagline -->
+    <p class="reveal font-rajdhani text-lg md:text-2xl max-w-2xl leading-relaxed mb-10" style="color:var(--metal);font-weight:300;">
+      Páginas de alto rendimiento construidas sobre <span style="color:var(--cyan)">arquitectura modular</span>, diseñadas para convertir con la precisión de un sistema industrial.
+    </p>
+
+    <!-- CTA row -->
+    <div class="reveal flex flex-wrap items-center gap-4">
+      <a href="#arquitectura" class="btn-cyber">EXPLORAR SISTEMA</a>
+      <a href="#nodos" class="btn-cyber-outline">VER NODOS ACTIVOS</a>
+    </div>
+
+    <!-- Stats strip -->
+    <div class="reveal mt-16 grid grid-cols-3 md:grid-cols-3 gap-px" style="border:1px solid var(--border);max-width:500px;">
+      <div class="glass-card p-5 text-center">
+        <div class="font-orb text-2xl" style="color:var(--cyan)">5</div>
+        <div class="font-mono text-xs mt-1" style="color:var(--muted)">NODOS</div>
+      </div>
+      <div class="glass-card p-5 text-center">
+        <div class="font-orb text-2xl" style="color:var(--cyan)">100%</div>
+        <div class="font-mono text-xs mt-1" style="color:var(--muted)">UPTIME</div>
+      </div>
+      <div class="glass-card p-5 text-center">
+        <div class="font-orb text-2xl" style="color:var(--cyan)">A+</div>
+        <div class="font-mono text-xs mt-1" style="color:var(--muted)">RENDIMIENTO</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2" style="z-index:10;">
+    <div class="font-mono text-xs" style="color:var(--muted);letter-spacing:0.2em;">SCROLL</div>
+    <div style="width:1px;height:40px;background:linear-gradient(to bottom,var(--cyan),transparent);animation:scrollPulse 2s infinite;"></div>
+  </div>
+</section>
+
+<style>
+  @keyframes scrollPulse { 0%,100%{opacity:.3} 50%{opacity:1} }
+  @keyframes pulse { 0%,100%{opacity:.5;transform:scale(1)} 50%{opacity:1;transform:scale(1.3)} }
+</style>
+
+<!-- ═══════════════ ARQUITECTURA ═══════════════ -->
+<section id="arquitectura" class="py-32 px-6 relative z-10">
+  <div class="max-w-7xl mx-auto">
+
+    <!-- Section header -->
+    <div class="reveal mb-20">
+      <div class="section-label mb-4">MÓDULO 01 / FUNDAMENTOS</div>
+      <div class="neon-line mb-8" style="max-width:80px;"></div>
+      <h2 class="font-orb font-bold leading-tight" style="font-size:clamp(2rem,6vw,4rem);color:white;">
+        ARQUITECTURA DE<br/>
+        <span style="color:var(--cyan);">GRADO INDUSTRIAL</span>
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 mb-16">
+
+      <!-- Card 1: Optimización de Flujo de Datos -->
+      <div class="reveal glass-card corner-tl corner-br p-8 node-card" style="position:relative;">
+        <div class="flex items-start gap-4 mb-6">
+          <div style="width:48px;height:48px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="color:var(--cyan)">
+              <path d="M4 6h16M4 12h10M4 18h7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="19" cy="18" r="3" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <div>
+            <div class="section-label mb-1">PROTOCOLO-A</div>
+            <h3 class="font-orb text-lg text-white">OPTIMIZACIÓN DE FLUJO DE DATOS</h3>
+          </div>
+        </div>
+        <p class="text-base leading-relaxed mb-6" style="color:var(--metal);">
+          Cada elemento de una MarketPage es tratado como un nodo dentro de un flujo de datos calculado. El orden de carga, la jerarquía visual y la respuesta del usuario no son casuales: responden a un modelo de priorización que minimiza la fricción y maximiza el tiempo en pantalla activa.
+        </p>
+        <div class="space-y-0">
+          <div class="spec-row">
+            <div style="width:6px;height:6px;background:var(--cyan);border-radius:50%;flex-shrink:0;"></div>
+            <span class="font-mono text-xs" style="color:var(--muted);">Carga crítica por prioridad de viewport</span>
+          </div>
+          <div class="spec-row">
+            <div style="width:6px;height:6px;background:var(--cyan);border-radius:50%;flex-shrink:0;"></div>
+            <span class="font-mono text-xs" style="color:var(--muted);">Jerarquía visual basada en teoría de atención</span>
+          </div>
+          <div class="spec-row">
+            <div style="width:6px;height:6px;background:var(--cyan);border-radius:50%;flex-shrink:0;"></div>
+            <span class="font-mono text-xs" style="color:var(--muted);">Flujos de conversión sin puntos de fuga</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Estructura Modular -->
+      <div class="reveal glass-card corner-tl corner-br p-8 node-card" style="position:relative;">
+        <div class="flex items-start gap-4 mb-6">
+          <div style="width:48px;height:48px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="color:var(--cyan)">
+              <rect x="3" y="3" width="7" height="7" stroke="currentColor" stroke-width="1.5"/>
+              <rect x="14" y="3" width="7" height="7" stroke="currentColor" stroke-width="1.5"/>
+              <rect x="3" y="14" width="7" height="7" stroke="currentColor" stroke-width="1.5"/>
+              <rect x="14" y="14" width="7" height="7" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <div>
+            <div class="section-label mb-1">PROTOCOLO-B</div>
+            <h3 class="font-orb text-lg text-white">ESTRUCTURA MODULAR ESCALABLE</h3>
+          </div>
+        </div>
+        <p class="text-base leading-relaxed mb-6" style="color:var(--metal);">
+          Construimos con bloques funcionales independientes que se interconectan con precisión quirúrgica. Esto garantiza que cada proyecto pueda evolucionar, escalar o pivotarse sin comprometer la integridad de la infraestructura existente.
+        </p>
+        <div class="space-y-0">
+          <div class="spec-row">
+            <div style="width:6px;height:6px;background:var(--cyan);border-radius:50%;flex-shrink:0;"></div>
+            <span class="font-mono text-xs" style="color:var(--muted);">Módulos desacoplados y reutilizables</span>
+          </div>
+          <div class="spec-row">
+            <div style="width:6px;height:6px;background:var(--cyan);border-radius:50%;flex-shrink:0;"></div>
+            <span class="font-mono text-xs" style="color:var(--muted);">Escalabilidad sin refactorización total</span>
+          </div>
+          <div class="spec-row">
+            <div style="width:6px;height:6px;background:var(--cyan);border-radius:50%;flex-shrink:0;"></div>
+            <span class="font-mono text-xs" style="color:var(--muted);">Integración con sistemas externos nativos</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Horizontal feature strip -->
+    <div class="reveal glass-card p-6 md:p-8" style="position:relative;">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 md:divide-x" style="--tw-divide-opacity:0.15;border-color:rgba(0,245,255,0.15);">
+        <div class="text-center md:px-8">
+          <div class="font-orb text-3xl mb-2" style="color:var(--cyan);">&lt;1s</div>
+          <div class="font-mono text-xs" style="color:var(--muted);">TIEMPO DE CARGA</div>
+        </div>
+        <div class="text-center md:px-8" style="border-left:1px solid rgba(0,245,255,0.12);">
+          <div class="font-orb text-3xl mb-2" style="color:var(--cyan);">98+</div>
+          <div class="font-mono text-xs" style="color:var(--muted);">SCORE LIGHTHOUSE</div>
+        </div>
+        <div class="text-center md:px-8" style="border-left:1px solid rgba(0,245,255,0.12);">
+          <div class="font-orb text-3xl mb-2" style="color:var(--cyan);">0px</div>
+          <div class="font-mono text-xs" style="color:var(--muted);">CLS SHIFT</div>
+        </div>
+        <div class="text-center md:px-8" style="border-left:1px solid rgba(0,245,255,0.12);">
+          <div class="font-orb text-3xl mb-2" style="color:var(--cyan);">SSL</div>
+          <div class="font-mono text-xs" style="color:var(--muted);">CIFRADO TOTAL</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ NODOS ACTIVOS ═══════════════ -->
+<section id="nodos" class="py-32 px-6 relative z-10">
+  <div class="max-w-7xl mx-auto">
+
+    <!-- Counter block -->
+    <div class="reveal flex flex-col md:flex-row items-start md:items-end gap-8 mb-20">
+      <div>
+        <div class="counter-display" id="counter">0</div>
+      </div>
+      <div class="pb-4">
+        <div class="section-label mb-3">MÓDULO 02 / PRESENCIA</div>
+        <h2 class="font-orb font-bold" style="font-size:clamp(1.8rem,5vw,3rem);color:white;">
+          NODOS<br/><span style="color:var(--cyan)">ACTIVOS</span>
+        </h2>
+        <p class="mt-3 text-base" style="color:var(--metal);max-width:400px;">Infraestructuras operativas construidas y mantenidas bajo el ecosistema ZOALUM.</p>
+      </div>
+    </div>
+
+    <div class="neon-line mb-16"></div>
+
+    <!-- Projects: Propios -->
+    <div class="mb-12">
+      <div class="flex items-center gap-4 mb-8">
+        <div class="section-label">PROYECTOS PROPIOS</div>
+        <div class="tag">3 INFRAESTRUCTURAS</div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-4">
+
+        <!-- AGNITIO -->
+        <div class="reveal glass-card corner-tl corner-br p-7 node-card" style="position:relative;">
+          <div class="flex items-center justify-between mb-6">
+            <div style="width:10px;height:10px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan);animation:pulse 2s infinite;"></div>
+            <div class="tag">IA / INNOVACIÓN</div>
+          </div>
+          <h3 class="font-orb text-xl font-bold mb-3" style="color:var(--cyan);">AGNITIO</h3>
+          <p class="text-sm leading-relaxed mb-6" style="color:var(--metal);">Hub de Innovación en Inteligencia Artificial. Desarrolla soluciones cognitivas de próxima generación para la automatización de procesos estratégicos.</p>
+          <div class="neon-line mb-4"></div>
+          <div class="flex flex-wrap gap-2">
+            <span class="tag">AI</span>
+            <span class="tag">AUTOMATION</span>
+            <span class="tag">R&D</span>
+          </div>
+        </div>
+
+        <!-- ZOALUM D'VILL -->
+        <div class="reveal glass-card corner-tl corner-br p-7 node-card" style="position:relative;">
+          <div class="flex items-center justify-between mb-6">
+            <div style="width:10px;height:10px;border-radius:50%;background:#d4a853;box-shadow:0 0 12px rgba(212,168,83,0.6);animation:pulse 2s infinite;"></div>
+            <div class="tag">LUXURY</div>
+          </div>
+          <h3 class="font-orb text-xl font-bold mb-3" style="color:#d4a853;">ZOALUM D'VILL</h3>
+          <p class="text-sm leading-relaxed mb-6" style="color:var(--metal);">Joyería de Lujo de alta gama. Diseño exclusivo con identidad de marca arquitectónica, posicionada en el segmento premium del mercado de accesorios.</p>
+          <div style="height:1px;background:linear-gradient(90deg,transparent,#d4a853,transparent);margin-bottom:16px;"></div>
+          <div class="flex flex-wrap gap-2">
+            <span class="tag">LUXURY</span>
+            <span class="tag">ECOMMERCE</span>
+            <span class="tag">BRAND</span>
+          </div>
+        </div>
+
+        <!-- ZOALUM HUB -->
+        <div class="reveal glass-card corner-tl corner-br p-7 node-card" style="position:relative;">
+          <div class="flex items-center justify-between mb-6">
+            <div style="width:10px;height:10px;border-radius:50%;background:#7c3aed;box-shadow:0 0 12px rgba(124,58,237,0.6);animation:pulse 2s infinite;"></div>
+            <div class="tag">ECOSISTEMA</div>
+          </div>
+          <h3 class="font-orb text-xl font-bold mb-3" style="color:#a78bfa;">ZOALUM HUB</h3>
+          <p class="text-sm leading-relaxed mb-6" style="color:var(--metal);">Ecosistema Tecnológico central. Coordina la infraestructura compartida entre todos los proyectos del grupo, centralizando recursos y sinergias operativas.</p>
+          <div style="height:1px;background:linear-gradient(90deg,transparent,#7c3aed,transparent);margin-bottom:16px;"></div>
+          <div class="flex flex-wrap gap-2">
+            <span class="tag">TECH</span>
+            <span class="tag">PLATFORM</span>
+            <span class="tag">OPS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Projects: Externos -->
+    <div>
+      <div class="flex items-center gap-4 mb-8">
+        <div class="section-label">SOLUCIONES EXTERNAS</div>
+        <div class="tag">2 INFRAESTRUCTURAS</div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-4">
+
+        <!-- Inmobiliaria -->
+        <div class="reveal glass-card corner-tl corner-br p-7 node-card" style="position:relative;">
+          <div class="flex items-center justify-between mb-6">
+            <div style="width:10px;height:10px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan);"></div>
+            <div class="tag">CLIENTE EXTERNO</div>
+          </div>
+          <h3 class="font-orb text-xl font-bold mb-3" style="color:white;">INMOBILIARIA DE ALTA GAMA</h3>
+          <p class="text-sm leading-relaxed mb-6" style="color:var(--metal);">Infraestructura digital para propiedades de lujo. MarketPage diseñada para posicionar activos inmobiliarios exclusivos, con recorridos visuales inmersivos y flujos de contacto calificado.</p>
+          <div class="neon-line mb-4"></div>
+          <div class="flex items-center justify-between">
+            <div class="flex gap-2 flex-wrap">
+              <span class="tag">REAL ESTATE</span>
+              <span class="tag">PREMIUM</span>
+            </div>
+            <div style="width:8px;height:8px;background:var(--cyan);border-radius:50%;box-shadow:0 0 8px var(--cyan);"></div>
+          </div>
+        </div>
+
+        <!-- Destilería -->
+        <div class="reveal glass-card corner-tl corner-br p-7 node-card" style="position:relative;">
+          <div class="flex items-center justify-between mb-6">
+            <div style="width:10px;height:10px;border-radius:50%;background:#f97316;box-shadow:0 0 12px rgba(249,115,22,0.5);"></div>
+            <div class="tag">CLIENTE EXTERNO</div>
+          </div>
+          <h3 class="font-orb text-xl font-bold mb-3" style="color:white;">DESTILERÍA INDUSTRIAL</h3>
+          <p class="text-sm leading-relaxed mb-6" style="color:var(--metal);">Presencia digital para destilería de producción industrial. Plataforma construida para comunicar procesos de manufactura con precisión técnica y alcance a mercados especializados B2B.</p>
+          <div style="height:1px;background:linear-gradient(90deg,transparent,#f97316,transparent);margin-bottom:16px;"></div>
+          <div class="flex items-center justify-between">
+            <div class="flex gap-2 flex-wrap">
+              <span class="tag">INDUSTRIAL</span>
+              <span class="tag">B2B</span>
+            </div>
+            <div style="width:8px;height:8px;background:#f97316;border-radius:50%;box-shadow:0 0 8px rgba(249,115,22,0.5);"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ PROCESO ═══════════════ -->
+<section id="proceso" class="py-32 px-6 relative z-10">
+  <div class="max-w-7xl mx-auto">
+
+    <div class="reveal mb-20">
+      <div class="section-label mb-4">MÓDULO 03 / METODOLOGÍA</div>
+      <div class="neon-line mb-8" style="max-width:80px;"></div>
+      <h2 class="font-orb font-bold" style="font-size:clamp(2rem,6vw,4rem);color:white;">
+        PROTOCOLO DE<br/><span style="color:var(--cyan)">EJECUCIÓN</span>
+      </h2>
+    </div>
+
+    <!-- Steps -->
+    <div class="relative">
+      <!-- Vertical line -->
+      <div style="position:absolute;left:23px;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--cyan),transparent);display:none;" class="md:block hidden"></div>
+
+      <div class="space-y-6">
+
+        <div class="reveal flex gap-8 items-start">
+          <div style="width:48px;height:48px;border:1px solid var(--cyan);display:flex;align-items:center;justify-content:center;flex-shrink:0;background:rgba(0,245,255,0.05);position:relative;z-index:1;">
+            <span class="font-orb text-sm" style="color:var(--cyan);">01</span>
+          </div>
+          <div class="glass-card p-6 flex-1">
+            <h3 class="font-orb text-lg mb-2" style="color:white;">DIAGNÓSTICO DE ARQUITECTURA</h3>
+            <p class="text-sm leading-relaxed" style="color:var(--metal);">Análisis del objetivo, público objetivo y contexto competitivo. Definición del modelo de conversión y la arquitectura de información óptima antes de escribir una sola línea de código.</p>
+          </div>
+        </div>
+
+        <div class="reveal flex gap-8 items-start">
+          <div style="width:48px;height:48px;border:1px solid var(--cyan);display:flex;align-items:center;justify-content:center;flex-shrink:0;background:rgba(0,245,255,0.05);position:relative;z-index:1;">
+            <span class="font-orb text-sm" style="color:var(--cyan);">02</span>
+          </div>
+          <div class="glass-card p-6 flex-1">
+            <h3 class="font-orb text-lg mb-2" style="color:white;">DISEÑO DE SISTEMA VISUAL</h3>
+            <p class="text-sm leading-relaxed" style="color:var(--metal);">Construcción del lenguaje visual único: paleta, tipografía, componentes y espaciado calculado. Todo responde a la identidad de marca y al comportamiento esperado del usuario.</p>
+          </div>
+        </div>
+
+        <div class="reveal flex gap-8 items-start">
+          <div style="width:48px;height:48px;border:1px solid var(--cyan);display:flex;align-items:center;justify-content:center;flex-shrink:0;background:rgba(0,245,255,0.05);position:relative;z-index:1;">
+            <span class="font-orb text-sm" style="color:var(--cyan);">03</span>
+          </div>
+          <div class="glass-card p-6 flex-1">
+            <h3 class="font-orb text-lg mb-2" style="color:white;">CONSTRUCCIÓN MODULAR</h3>
+            <p class="text-sm leading-relaxed" style="color:var(--metal);">Desarrollo por bloques funcionales independientes con optimización de rendimiento integrada. Velocidad de carga, accesibilidad y compatibilidad cross-device son requisitos base, no adiciones.</p>
+          </div>
+        </div>
+
+        <div class="reveal flex gap-8 items-start">
+          <div style="width:48px;height:48px;border:1px solid var(--cyan);display:flex;align-items:center;justify-content:center;flex-shrink:0;background:rgba(0,245,255,0.05);position:relative;z-index:1;">
+            <span class="font-orb text-sm" style="color:var(--cyan);">04</span>
+          </div>
+          <div class="glass-card p-6 flex-1">
+            <h3 class="font-orb text-lg mb-2" style="color:white;">DESPLIEGUE Y MONITOREO</h3>
+            <p class="text-sm leading-relaxed" style="color:var(--metal);">Activación en producción con validación de métricas críticas. Entrega de infraestructura operativa lista para escalar, con documentación técnica y soporte post-lanzamiento.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CTA / CONTACTO ═══════════════ -->
+<section id="contacto" class="py-32 px-6 relative z-10">
+  <div class="max-w-4xl mx-auto text-center">
+
+    <div class="reveal mb-6">
+      <div class="section-label mb-4 text-center" style="display:block;">MÓDULO 04 / ACTIVACIÓN</div>
+    </div>
+
+    <h2 class="reveal font-orb font-black mb-6" style="font-size:clamp(2.5rem,8vw,6rem);color:white;line-height:1.05;">
+      CONSTRUYE TU<br/><span style="color:var(--cyan);filter:drop-shadow(0 0 20px rgba(0,245,255,0.4))">INFRAESTRUCTURA</span>
+    </h2>
+
+    <p class="reveal text-lg mb-12 mx-auto" style="color:var(--metal);max-width:500px;line-height:1.8;">
+      Cada día sin una MarketPage de grado industrial es un día cediendo terreno. Iniciemos el protocolo.
+    </p>
+
+    <!-- Contact card -->
+    <div class="reveal glass-card corner-tl corner-br p-8 md:p-12 text-left" style="position:relative;">
+      <div class="grid md:grid-cols-2 gap-10">
+        <div>
+          <div class="section-label mb-4">CANAL DIRECTO</div>
+          <p class="font-orb text-2xl mb-2" style="color:var(--cyan);">ZOALUM</p>
+          <p class="font-mono text-sm mb-6" style="color:var(--muted);">Sistema MarketPage disponible<br/>para proyectos calificados.</p>
+          <div class="space-y-3">
+            <div class="flex items-center gap-3">
+              <div style="width:6px;height:6px;background:var(--cyan);border-radius:50%;"></div>
+              <span class="font-mono text-xs" style="color:var(--muted);">Tiempo de respuesta: &lt;24h</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div style="width:6px;height:6px;background:var(--cyan);border-radius:50%;"></div>
+              <span class="font-mono text-xs" style="color:var(--muted);">Diagnóstico inicial: sin costo</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div style="width:6px;height:6px;background:var(--cyan);border-radius:50%;"></div>
+              <span class="font-mono text-xs" style="color:var(--muted);">Entrega estimada: 7–14 días</span>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col justify-center gap-4">
+          <a href="mailto:hola@zoalum.com" class="btn-cyber text-center block">INICIAR PROTOCOLO</a>
+          <div class="text-center">
+            <span class="font-mono text-xs" style="color:var(--muted);">o escríbenos directamente a</span><br/>
+            <a href="mailto:hola@zoalum.com" class="font-mono text-sm" style="color:var(--cyan);">hola@zoalum.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer class="py-10 px-6 relative z-10" style="border-top:1px solid var(--border);">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+    <div class="flex items-center gap-3">
+      <span class="font-orb text-sm tracking-widest text-white">MARKET<span style="color:var(--cyan)">PAGE</span></span>
+      <span class="font-mono text-xs" style="color:var(--muted)">/ BY ZOALUM</span>
+    </div>
+    <div class="font-mono text-xs text-center" style="color:var(--muted);">
+      © 2025 ZOALUM. INFRAESTRUCTURA DIGITAL DE GRADO INDUSTRIAL.<br class="md:hidden"/>
+      <span class="hidden md:inline"> // </span>TODOS LOS DERECHOS RESERVADOS.
+    </div>
+    <div class="flex items-center gap-2">
+      <div style="width:6px;height:6px;background:var(--cyan);border-radius:50%;box-shadow:0 0 8px var(--cyan);animation:pulse 2s infinite;"></div>
+      <span class="font-mono text-xs" style="color:var(--muted);">SISTEMA OPERACIONAL</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════ GSAP ANIMATIONS ═══════════════ -->
+<script>
+  // Register plugins
+  gsap.registerPlugin(ScrollTrigger, TextPlugin);
+
+  // ── Cursor (desktop only) ──
+  if (window.innerWidth > 768) {
+    const cursor = document.getElementById('cursor');
+    const ring = document.getElementById('cursor-ring');
+    let mx = 0, my = 0, rx = 0, ry = 0;
+
+    document.addEventListener('mousemove', e => {
+      mx = e.clientX; my = e.clientY;
+      gsap.set(cursor, { x: mx, y: my });
+    });
+
+    function animateRing() {
+      rx += (mx - rx) * 0.12;
+      ry += (my - ry) * 0.12;
+      gsap.set(ring, { x: rx, y: ry });
+      requestAnimationFrame(animateRing);
+    }
+    animateRing();
+
+    document.querySelectorAll('a, button, .node-card').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        gsap.to(cursor, { width: 20, height: 20, duration: .2 });
+        gsap.to(ring, { width: 56, height: 56, borderColor: 'rgba(0,245,255,0.8)', duration: .2 });
+      });
+      el.addEventListener('mouseleave', () => {
+        gsap.to(cursor, { width: 10, height: 10, duration: .2 });
+        gsap.to(ring, { width: 36, height: 36, borderColor: 'rgba(0,245,255,0.5)', duration: .2 });
+      });
+    });
+  }
+
+  // ── Scroll progress bar ──
+  gsap.to('#progress-bar', {
+    scaleX: 1,
+    ease: 'none',
+    scrollTrigger: {
+      trigger: 'body',
+      start: 'top top',
+      end: 'bottom bottom',
+      scrub: true
+    }
+  });
+  gsap.set('#progress-bar', { scaleX: 0 });
+
+  // ── Hero animations (entrance) ──
+  const heroTl = gsap.timeline({ delay: 0.3 });
+  heroTl
+    .from('#hero .reveal', {
+      opacity: 0,
+      y: 30,
+      stagger: 0.15,
+      duration: 0.8,
+      ease: 'power3.out'
+    })
+    .from('#hero h1', {
+      opacity: 0,
+      y: 40,
+      stagger: 0.1,
+      duration: 0.7,
+      ease: 'power4.out'
+    }, '-=0.5');
+
+  // ── Scroll reveals ──
+  gsap.utils.toArray('.reveal').forEach(el => {
+    // Skip elements already animated in hero
+    if (el.closest('#hero')) return;
+
+    gsap.fromTo(el,
+      { opacity: 0, y: 40 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.7,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 88%',
+          toggleActions: 'play none none none'
+        }
+      }
+    );
+  });
+
+  // ── Counter animation ──
+  const counterEl = document.getElementById('counter');
+  ScrollTrigger.create({
+    trigger: '#nodos',
+    start: 'top 70%',
+    once: true,
+    onEnter: () => {
+      gsap.to({ val: 0 }, {
+        val: 5,
+        duration: 1.8,
+        ease: 'power2.out',
+        onUpdate: function() {
+          counterEl.textContent = Math.round(this.targets()[0].val);
+        }
+      });
+    }
+  });
+
+  // ── 3D tilt for node-cards (desktop only) ──
+  if (window.innerWidth > 768) {
+    document.querySelectorAll('.node-card').forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        gsap.to(card, {
+          rotateY: x * 10,
+          rotateX: -y * 10,
+          duration: 0.4,
+          ease: 'power2.out',
+          transformPerspective: 800
+        });
+      });
+      card.addEventListener('mouseleave', () => {
+        gsap.to(card, { rotateY: 0, rotateX: 0, duration: 0.5, ease: 'power2.out' });
+      });
+    });
+  }
+
+  // ── Horizontal neon line reveal ──
+  gsap.utils.toArray('.neon-line').forEach(line => {
+    gsap.fromTo(line,
+      { scaleX: 0, transformOrigin: 'left' },
+      {
+        scaleX: 1,
+        duration: 0.8,
+        ease: 'power3.out',
+        scrollTrigger: { trigger: line, start: 'top 90%', toggleActions: 'play none none none' }
+      }
+    );
+  });
+
+  // ── Parallax orbs ──
+  gsap.utils.toArray('.orb').forEach((orb, i) => {
+    gsap.to(orb, {
+      y: i % 2 === 0 ? -60 : 60,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: 'body',
+        start: 'top top',
+        end: 'bottom bottom',
+        scrub: 1.5
+      }
+    });
+  });
+
+  // ── Glitch text on hover ──
+  document.querySelectorAll('.glitch').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      gsap.to(el, {
+        skewX: 3,
+        duration: 0.1,
+        yoyo: true,
+        repeat: 3,
+        ease: 'none',
+        onComplete: () => gsap.set(el, { skewX: 0 })
+      });
+    });
+  });
+
+  // Mobile menu
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mob-menu');
+    menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+  }
+
+  // ── Stats strip stagger ──
+  gsap.from('#hero .glass-card', {
+    opacity: 0,
+    y: 20,
+    stagger: 0.15,
+    duration: 0.6,
+    ease: 'power3.out',
+    delay: 1.2
+  });
+</script>
+
+</body>
+</html>
