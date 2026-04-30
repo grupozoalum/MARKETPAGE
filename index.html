@@ -4,8 +4,8 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
 <meta name="theme-color" content="#050607"/>
-<meta name="description" content="MARKETPAGE por ZOALUM — Infraestructura digital que genera retorno. No pagas por un sitio web. Inviertes en tu canal de ventas más rentable."/>
-<title>MARKETPAGE — Infraestructura de Retorno / ZOALUM V7</title>
+<meta name="description" content="MARKETPAGE por ZOALUM — Tu negocio abierto 24/7. Página web de alto rendimiento + App de gestión ORACLES. $2,000 MXN/mes. Referidos = Descuentos reales."/>
+<title>MARKETPAGE — Tu Negocio Nunca Se Cae / ZOALUM V8</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -13,9 +13,14 @@
 
 <style>
 /* ═══════════════════════════════════════════════════════════
-   ZOALUM MARKETPAGE V7 — REINGENIERÍA COMPLETA
-   Pilar 1: Copy ROI  |  Pilar 2: Portfolio  |  Pilar 3: UX
-   Mobile-first. 375px primary. WCAG AA enforced.
+   ZOALUM MARKETPAGE V8 — REINGENIERÍA ESTRATÉGICA
+   PILARES:
+   1. Copy para No-Ingenieros: Beneficios, no tecnicismos
+   2. Gestión Delegada: Analogía del Local Físico
+   3. Referral Meter: Visual de Progresión de Descuentos
+   4. Precios Claros: Web + App desglosados
+   5. Política de Uso Justo Anti-Abuso
+   Mobile-first. WCAG AA. Cyberpunk Industrial.
 ═══════════════════════════════════════════════════════════ */
 :root{
   --void:   #050607;
@@ -31,8 +36,8 @@
 
   --tx0: #f0f6ff;
   --tx1: #c8d8ec;
-  --tx2: #8aafc8;   /* mejorado para WCAG AA */
-  --tx3: #5a7a96;   /* mejorado para WCAG AA */
+  --tx2: #8aafc8;
+  --tx3: #5a7a96;
 
   --cy:    #00f0ff;
   --cy-d:  rgba(0,240,255,0.06);
@@ -61,12 +66,8 @@
   --tap: 52px;
   --py: 80px;
 }
-@media(min-width:768px){
-  :root{ --gx:32px; --py:110px; }
-}
-@media(min-width:1200px){
-  :root{ --gx:56px; }
-}
+@media(min-width:768px){ :root{ --gx:32px; --py:110px; } }
+@media(min-width:1200px){ :root{ --gx:56px; } }
 
 *,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
 html{
@@ -82,7 +83,6 @@ body{
   font-family:var(--font-mono);
   overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
 }
 
 @media(prefers-reduced-motion:reduce){
@@ -110,30 +110,27 @@ body{
 .pulse.grn::after{ border-color:var(--grn); }
 
 .eyebrow{
-  font-family:var(--font-mono);
-  font-size:10px; letter-spacing:.22em;
+  font-family:var(--font-mono); font-size:10px; letter-spacing:.22em;
   color:var(--tx2); text-transform:uppercase;
   display:flex; align-items:center; gap:10px;
 }
 .eyebrow::before{
   content:''; width:18px; height:1px;
-  background:linear-gradient(90deg,var(--cy),transparent);
-  flex-shrink:0;
+  background:linear-gradient(90deg,var(--cy),transparent); flex-shrink:0;
 }
 
 .section-h{
-  font-family:var(--font-display);
-  font-weight:800;
+  font-family:var(--font-display); font-weight:800;
   font-size:clamp(2rem,7vw,3.5rem);
-  line-height:1; letter-spacing:-.02em;
-  color:var(--tx0);
+  line-height:1; letter-spacing:-.02em; color:var(--tx0);
 }
 .section-h .ac{ color:var(--cy); }
+.section-h .am{ color:var(--am); }
 
 .section-p{
   font-size:14px; line-height:1.9;
   color:var(--tx1); font-weight:400;
-  max-width:540px; margin-top:14px;
+  max-width:560px; margin-top:14px;
 }
 
 /* ══ ANIMATIONS ══ */
@@ -177,24 +174,31 @@ body{
   0%,100%{ opacity:.6; }
   50%{ opacity:1; }
 }
+@keyframes fill-bar{
+  from{ transform:scaleX(0); }
+  to{ transform:scaleX(1); }
+}
+@keyframes pop-in{
+  0%{ opacity:0; transform:scale(0.85) translateY(10px); }
+  100%{ opacity:1; transform:scale(1) translateY(0); }
+}
+@keyframes glow-pulse{
+  0%,100%{ box-shadow:0 0 12px var(--am-s); }
+  50%{ box-shadow:0 0 28px var(--am-s), 0 0 60px rgba(255,184,0,.15); }
+}
 
 /* ══ PROGRESS BAR ══ */
-#prog{
-  position:fixed; top:0; left:0; right:0;
-  height:2px; z-index:9100; pointer-events:none;
-}
+#prog{ position:fixed; top:0; left:0; right:0; height:2px; z-index:9100; pointer-events:none; }
 #prog-fill{
   height:100%;
   background:linear-gradient(90deg,var(--cy),var(--am));
   box-shadow:0 0 10px var(--cy-s);
-  transform-origin:left; transform:scaleX(0);
-  will-change:transform;
+  transform-origin:left; transform:scaleX(0); will-change:transform;
 }
 
 /* ══ GRID BG ══ */
 #grid-bg{
-  position:fixed; inset:0;
-  pointer-events:none; z-index:0;
+  position:fixed; inset:0; pointer-events:none; z-index:0;
   background-image:
     linear-gradient(rgba(0,240,255,.022) 1px,transparent 1px),
     linear-gradient(90deg,rgba(0,240,255,.022) 1px,transparent 1px);
@@ -203,38 +207,18 @@ body{
   animation:grid-pulse 8s ease-in-out infinite;
 }
 
-/* ══ CURSOR MEJORADO — Pilar 3 UX ══
-   CAMBIO ESTRATÉGICO: Cursor removido del body.
-   Se usa un spotlight sutil en lugar de cursor custom complejo.
-   Beneficios:
-   - Sin penalización de accesibilidad (cursor:none bloquea usuarios con discapacidad motriz)
-   - Sin jank de rAF doble en dispositivos <120fps
-   - Mantiene estética "high-tech" con efecto de luz ambiental
-   - El spotlight es CSS-only cuando es posible (mejor FPS)
-*/
+/* ══ SPOTLIGHT ══ */
 #spotlight{
-  display:none;
-  position:fixed; pointer-events:none; z-index:9990;
+  display:none; position:fixed; pointer-events:none; z-index:9990;
   width:420px; height:420px; border-radius:50%;
   transform:translate(-50%,-50%);
   background:radial-gradient(circle,rgba(0,240,255,.035) 0%,transparent 70%);
-  will-change:left,top;
-  transition:opacity .4s ease;
+  will-change:left,top; transition:opacity .4s ease;
 }
+@media(pointer:fine){ #spotlight{ display:block; } }
 @media(pointer:fine){
-  #spotlight{ display:block; }
-}
-
-/* Indicador de hover en elementos interactivos — reemplaza cursor custom */
-@media(pointer:fine){
-  a,button,.db-node,.cap-card,.proto-step,.toggle-sw,.plan-tab{
-    transition:box-shadow .2s ease, border-color .2s ease;
-    outline-offset:3px;
-  }
-  a:focus-visible,button:focus-visible{
-    outline:2px solid var(--cy);
-    outline-offset:3px;
-  }
+  a,button{ transition:box-shadow .2s ease, border-color .2s ease; outline-offset:3px; }
+  a:focus-visible,button:focus-visible{ outline:2px solid var(--cy); outline-offset:3px; }
 }
 
 /* ══ NAV ══ */
@@ -255,14 +239,8 @@ body{
   display:flex; align-items:center; justify-content:space-between;
   height:var(--nav-h);
 }
-.nav-logo{
-  display:flex; align-items:center; gap:10px; text-decoration:none;
-}
-.logo-text{
-  font-family:var(--font-display);
-  font-weight:800; font-size:.92rem;
-  letter-spacing:.14em; color:var(--tx0);
-}
+.nav-logo{ display:flex; align-items:center; gap:10px; text-decoration:none; }
+.logo-text{ font-family:var(--font-display); font-weight:800; font-size:.92rem; letter-spacing:.14em; color:var(--tx0); }
 .logo-text em{ color:var(--cy); font-style:normal; }
 .logo-sep{ width:1px; height:13px; background:var(--ln2); }
 .logo-ver{ font-family:var(--font-mono); font-size:9px; letter-spacing:.18em; color:var(--tx3); }
@@ -271,8 +249,7 @@ body{
 @media(min-width:768px){ .nav-links{ display:flex; } }
 
 .nav-link{
-  font-size:10px; letter-spacing:.2em;
-  color:var(--tx2); text-decoration:none;
+  font-size:10px; letter-spacing:.2em; color:var(--tx2); text-decoration:none;
   min-height:var(--tap); display:inline-flex; align-items:center;
   position:relative; transition:color .2s;
 }
@@ -284,8 +261,7 @@ body{
 .nav-link:hover::after{ width:100%; }
 
 .nav-cta-btn{
-  font-family:var(--font-mono);
-  font-size:10px; letter-spacing:.14em; font-weight:700;
+  font-family:var(--font-mono); font-size:10px; letter-spacing:.14em; font-weight:700;
   color:#000; background:var(--cy); border:none;
   padding:10px 22px; text-decoration:none;
   display:inline-flex; align-items:center; gap:6px;
@@ -319,10 +295,8 @@ body{
 }
 #mob-menu.open{ display:flex; }
 #mob-menu a{
-  font-size:11px; letter-spacing:.2em;
-  color:var(--tx1); text-decoration:none;
-  padding:0 var(--gx);
-  border-bottom:1px solid var(--ln0);
+  font-size:11px; letter-spacing:.2em; color:var(--tx1); text-decoration:none;
+  padding:0 var(--gx); border-bottom:1px solid var(--ln0);
   min-height:56px; display:flex; align-items:center;
   transition:color .15s,background .15s;
 }
@@ -334,35 +308,22 @@ body{
 #float-cta{
   position:fixed;
   bottom:max(20px, calc(var(--sab) + 16px));
-  left:var(--gx); right:var(--gx);
-  z-index:700;
+  left:var(--gx); right:var(--gx); z-index:700;
   opacity:0; transform:translateY(80px);
   transition:opacity .4s ease, transform .4s cubic-bezier(.34,1.56,.64,1);
   pointer-events:none;
 }
-#float-cta.visible{
-  opacity:1; transform:translateY(0);
-  pointer-events:auto;
-}
+#float-cta.visible{ opacity:1; transform:translateY(0); pointer-events:auto; }
 @media(min-width:768px){ #float-cta{ display:none; } }
-
 .float-inner{
-  background:var(--cy);
-  display:flex; align-items:center; justify-content:space-between;
+  background:var(--cy); display:flex; align-items:center; justify-content:space-between;
   padding:0 20px; height:58px;
   clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));
   animation:float-cta 3.5s ease-in-out infinite;
   box-shadow:0 8px 40px rgba(0,240,255,.2);
 }
-.float-inner span{
-  font-family:var(--font-display);
-  font-weight:800; font-size:.9rem;
-  letter-spacing:.08em; color:#000;
-}
-.float-inner i{
-  font-style:normal; font-family:var(--font-mono);
-  font-size:10px; letter-spacing:.1em; color:rgba(0,0,0,.6);
-}
+.float-inner span{ font-family:var(--font-display); font-weight:800; font-size:.9rem; letter-spacing:.08em; color:#000; }
+.float-inner i{ font-style:normal; font-family:var(--font-mono); font-size:10px; letter-spacing:.1em; color:rgba(0,0,0,.6); }
 
 /* ══ HERO ══ */
 #hero{
@@ -372,35 +333,24 @@ body{
   padding:calc(var(--nav-h) + var(--sat) + 32px) var(--gx) calc(80px + var(--sab));
   overflow:hidden;
 }
-
-/* CAMBIO HERO BG TEXT: Se usa overflow:hidden en el padre y se limita el tamaño
-   para evitar texto que sale de pantalla en mobile */
 .hero-bg-text{
   position:absolute; top:0; left:0; right:0; bottom:0;
   display:flex; align-items:center; justify-content:flex-start;
-  padding:0 var(--gx);
-  pointer-events:none; z-index:1; overflow:hidden;
+  padding:0 var(--gx); pointer-events:none; z-index:1; overflow:hidden;
 }
 .hero-bg-text span{
   font-family:var(--font-display); font-weight:800;
-  /* CORRECCIÓN: vw relativo con clamp para no desbordarse */
-  font-size:clamp(5rem, 32vw, 20rem);
-  line-height:.78;
+  font-size:clamp(5rem, 32vw, 20rem); line-height:.78;
   color:transparent;
   -webkit-text-stroke:1px rgba(0,240,255,.04);
   letter-spacing:-.04em; white-space:nowrap; user-select:none;
-  /* CORRECCIÓN: translateX negativo para mantener dentro del viewport */
   transform:translateX(-0.02em);
 }
-
 .hero-scan{
-  position:absolute; top:0; left:0; right:0;
-  height:3px;
+  position:absolute; top:0; left:0; right:0; height:3px;
   background:linear-gradient(90deg,transparent,var(--cy-m),transparent);
-  animation:scan 10s linear infinite;
-  pointer-events:none; z-index:2; opacity:.6;
+  animation:scan 10s linear infinite; pointer-events:none; z-index:2; opacity:.6;
 }
-
 .corner{ position:absolute; width:24px; height:24px; pointer-events:none; z-index:3; }
 .corner-tl{ top:calc(var(--nav-h) + var(--sat) + 20px); left:var(--gx); border-top:1px solid var(--cy-s); border-left:1px solid var(--cy-s); }
 .corner-tr{ top:calc(var(--nav-h) + var(--sat) + 20px); right:var(--gx); border-top:1px solid var(--cy-s); border-right:1px solid var(--cy-s); }
@@ -421,18 +371,25 @@ body{
 }
 .boot-chip.neutral{ border-color:var(--ln1); background:transparent; color:var(--tx2); }
 
-/* HERO TITLE: overflow:hidden en wrapper + word-break para evitar desborde */
+/* HERO: Promesa principal en lenguaje de no-ingeniero */
+.h-promise-tag{
+  display:inline-flex; align-items:center; gap:10px;
+  background:rgba(255,184,0,.06); border:1px solid rgba(255,184,0,.25);
+  padding:10px 18px; margin-bottom:18px;
+  font-size:11px; letter-spacing:.1em; color:var(--am);
+  clip-path:polygon(0 0,calc(100% - 6px) 0,100% 6px,100% 100%,6px 100%,0 calc(100% - 6px));
+  opacity:0; animation:up .6s .1s ease forwards;
+}
+.h-promise-tag strong{ color:var(--tx0); font-size:1rem; font-family:var(--font-display); font-weight:800; }
+
 .h-title{
   font-family:var(--font-display); font-weight:800;
-  /* CORRECCIÓN CRÍTICA: reducimos el clamp superior para mobile */
   font-size:clamp(3.8rem, 19vw, 13rem);
   line-height:.88; letter-spacing:-.035em; color:var(--tx0);
   margin-bottom:8px; word-break:keep-all; overflow-wrap:normal;
   opacity:0; animation:up .85s .18s cubic-bezier(.16,1,.3,1) forwards;
 }
-.h-title-ac{
-  color:var(--cy); display:block; position:relative;
-}
+.h-title-ac{ color:var(--cy); display:block; position:relative; }
 .h-title-ac::after{
   content:''; position:absolute; bottom:-.05em; left:0;
   width:clamp(50px,22%,160px); height:3px;
@@ -441,37 +398,21 @@ body{
   animation:edge-glow 2.4s ease-in-out infinite;
 }
 
-/* ══ NUEVO: ROI TAGLINE HERO ══
-   Pilar 1: Lenguaje de retorno, no de tecnología
-*/
-.h-roi-tag{
-  display:inline-flex; align-items:center; gap:10px;
-  background:rgba(0,240,255,.06); border:1px solid rgba(0,240,255,.2);
-  padding:8px 16px; margin-bottom:16px;
-  font-size:11px; letter-spacing:.12em; color:var(--cy);
-  clip-path:polygon(0 0,calc(100% - 6px) 0,100% 6px,100% 100%,6px 100%,0 calc(100% - 6px));
-}
-.h-roi-tag .roi-num{
-  font-family:var(--font-display); font-weight:800;
-  font-size:1.1rem; color:var(--am);
-}
-
 .h-sub{
-  font-size:13px; line-height:1.85;
-  color:var(--tx1); max-width:480px; margin-bottom:30px;
+  font-size:14px; line-height:1.9; color:var(--tx1); max-width:520px; margin-bottom:22px;
   opacity:0; animation:up .7s .4s ease forwards;
 }
 .h-sub strong{ color:var(--tx0); font-weight:700; }
 
-/* NUEVO: Proposición de valor ROI en hero */
+/* Propuestas de valor en español de negocios */
 .h-value-props{
   display:flex; flex-wrap:wrap; gap:8px; margin-bottom:24px;
   opacity:0; animation:up .65s .48s ease forwards;
 }
 .h-vp{
   font-size:10px; letter-spacing:.1em; color:var(--tx2);
-  padding:6px 12px; border:1px solid var(--ln1);
-  display:flex; align-items:center; gap:7px;
+  padding:7px 14px; border:1px solid var(--ln1);
+  display:flex; align-items:center; gap:8px;
 }
 .h-vp::before{ content:''; width:5px; height:5px; border-radius:50%; background:var(--grn); box-shadow:0 0 6px var(--grn); flex-shrink:0; }
 
@@ -481,15 +422,14 @@ body{
 }
 @media(min-width:420px){ .h-ctas{ flex-direction:row; flex-wrap:wrap; } }
 
-/* MÉTRICAS HERO — Rediseñadas con enfoque ROI */
+/* MÉTRICAS HERO — En lenguaje de negocio */
 .h-metrics{
   display:grid; grid-template-columns:repeat(4,1fr);
-  border:1px solid var(--ln1);
-  background:rgba(8,10,13,.6); backdrop-filter:blur(8px);
+  border:1px solid var(--ln1); background:rgba(8,10,13,.6);
+  backdrop-filter:blur(8px);
   opacity:0; animation:up .65s .7s ease forwards; overflow:hidden;
 }
 @media(max-width:360px){ .h-metrics{ grid-template-columns:repeat(2,1fr); } }
-
 .h-met{
   padding:16px 8px; text-align:center;
   border-right:1px solid var(--ln0); position:relative;
@@ -497,17 +437,12 @@ body{
 .h-met:last-child{ border-right:none; }
 @media(max-width:360px){
   .h-met:nth-child(2){ border-right:none; }
-  .h-met:nth-child(3){ border-top:1px solid var(--ln0); }
-  .h-met:nth-child(4){ border-top:1px solid var(--ln0); border-right:none; }
+  .h-met:nth-child(3),h-met:nth-child(4){ border-top:1px solid var(--ln0); }
 }
-.met-v{
-  font-family:var(--font-display); font-weight:800;
-  font-size:clamp(1.4rem,4.5vw,2.2rem); color:var(--cy); line-height:1;
-}
+.met-v{ font-family:var(--font-display); font-weight:800; font-size:clamp(1.4rem,4.5vw,2.2rem); color:var(--cy); line-height:1; }
 .met-u{ font-size:.65em; color:var(--tx2); }
 .met-l{ font-size:9px; letter-spacing:.1em; color:var(--tx3); margin-top:5px; line-height:1.5; }
-/* ROI label secundario en métricas */
-.met-roi{ font-size:8px; letter-spacing:.08em; color:var(--am); margin-top:3px; }
+.met-b{ font-size:8px; letter-spacing:.06em; color:var(--am); margin-top:3px; line-height:1.4; }
 
 .h-scroll{
   position:absolute; bottom:max(20px,var(--sab));
@@ -521,15 +456,10 @@ body{
 
 /* ══ TICKER ══ */
 #ticker{
-  background:var(--s1);
-  border-top:1px solid var(--ln1); border-bottom:1px solid var(--ln1);
-  overflow:hidden; position:relative; z-index:10;
-  height:42px; display:flex; align-items:center;
+  background:var(--s1); border-top:1px solid var(--ln1); border-bottom:1px solid var(--ln1);
+  overflow:hidden; position:relative; z-index:10; height:42px; display:flex; align-items:center;
 }
-.ticker-track{
-  display:flex; gap:0; white-space:nowrap;
-  animation:marquee 28s linear infinite;
-}
+.ticker-track{ display:flex; gap:0; white-space:nowrap; animation:marquee 32s linear infinite; }
 .ticker-item{
   display:inline-flex; align-items:center; gap:10px;
   padding:0 28px; font-size:9px; letter-spacing:.18em; color:var(--tx3);
@@ -537,12 +467,13 @@ body{
 }
 .ticker-item .dot{ width:4px; height:4px; border-radius:50%; background:var(--cy); flex-shrink:0; }
 .ticker-item .val{ color:var(--cy); font-weight:700; }
+.ticker-item .val.am{ color:var(--am); }
 
 /* ══ SECTION BASE ══ */
 .sec{ position:relative; z-index:10; padding:var(--py) var(--gx); }
 .sec-w{ max-width:1280px; margin:0 auto; }
 
-/* ══ REVEAL — Pilar 3 UX: threshold mejorado ══ */
+/* ══ REVEAL ══ */
 .rev{
   opacity:0; transform:translateY(18px);
   transition:opacity .5s ease, transform .5s cubic-bezier(.22,1,.36,1);
@@ -554,8 +485,7 @@ body{
 .btn{
   display:inline-flex; align-items:center; justify-content:center; gap:10px;
   font-family:var(--font-mono); font-size:11px; letter-spacing:.12em; font-weight:700;
-  min-height:54px; padding:0 28px;
-  border:none; text-decoration:none; cursor:pointer;
+  min-height:54px; padding:0 28px; border:none; text-decoration:none; cursor:pointer;
   position:relative; overflow:hidden;
   -webkit-user-select:none; user-select:none;
   transition:box-shadow .25s, transform .15s;
@@ -577,350 +507,370 @@ body{
 .btn-am{ background:var(--am); color:#000; font-weight:700; }
 @media(pointer:fine){ .btn-am:hover{ box-shadow:0 0 44px var(--am-s); transform:translateY(-2px); } }
 
-/* ══ NUEVA SECCIÓN: ROI PROOF STRIP ══
-   Pilar 1: Entre hero y arquitectura — ancla mental de retorno
-*/
-#roi-strip{ background:var(--s2); border-top:1px solid var(--ln1); border-bottom:1px solid var(--ln1); padding:0 var(--gx); position:relative; z-index:10; }
-.roi-strip-inner{
+/* ══ PAIN STRIP — Sección de dolor en lenguaje de negocio ══ */
+#pain-strip{ background:var(--s2); border-top:1px solid var(--ln1); border-bottom:1px solid var(--ln1); padding:0 var(--gx); position:relative; z-index:10; }
+.pain-strip-inner{
   max-width:1280px; margin:0 auto;
-  display:grid; grid-template-columns:repeat(3,1fr);
-  gap:0; min-height:100px;
+  display:grid; grid-template-columns:repeat(3,1fr); gap:0; min-height:100px;
 }
-@media(max-width:599px){ .roi-strip-inner{ grid-template-columns:1fr; min-height:auto; } }
-.roi-strip-item{
+@media(max-width:599px){ .pain-strip-inner{ grid-template-columns:1fr; min-height:auto; } }
+.pain-item{
   display:flex; align-items:center; gap:14px;
-  padding:20px 18px; border-right:1px solid var(--ln0);
-  position:relative; overflow:hidden;
+  padding:22px 20px; border-right:1px solid var(--ln0); position:relative; overflow:hidden;
 }
-.roi-strip-item:last-child{ border-right:none; }
+.pain-item:last-child{ border-right:none; }
 @media(max-width:599px){
-  .roi-strip-item{ border-right:none; border-bottom:1px solid var(--ln0); }
-  .roi-strip-item:last-child{ border-bottom:none; }
+  .pain-item{ border-right:none; border-bottom:1px solid var(--ln0); }
+  .pain-item:last-child{ border-bottom:none; }
 }
-.roi-strip-item::before{
+.pain-item::before{
   content:''; position:absolute; top:0; left:0; right:0; height:1px;
-  background:linear-gradient(90deg,var(--cy),transparent); opacity:.3;
+  background:linear-gradient(90deg,var(--am),transparent); opacity:.3;
 }
-.roi-icon{ font-size:1.5rem; flex-shrink:0; }
-.roi-body{}
-.roi-label{ font-size:8px; letter-spacing:.2em; color:var(--tx3); margin-bottom:4px; }
-.roi-headline{ font-family:var(--font-display); font-weight:800; font-size:1.05rem; color:var(--tx0); line-height:1.2; }
-.roi-headline .ac{ color:var(--cy); }
-.roi-headline .am{ color:var(--am); }
+.pain-icon{ font-size:1.5rem; flex-shrink:0; }
+.pain-body{}
+.pain-label{ font-size:8px; letter-spacing:.2em; color:var(--tx3); margin-bottom:4px; }
+.pain-headline{ font-family:var(--font-display); font-weight:800; font-size:1rem; color:var(--tx0); line-height:1.2; }
+.pain-headline .ac{ color:var(--cy); }
+.pain-headline .am{ color:var(--am); }
+.pain-headline .red{ color:var(--red); }
 
-/* ══ TOGGLE COMPARE ══ */
-#compare{ background:var(--s1); }
+/* ══ ANALOGÍA DEL LOCAL FÍSICO — Gestión Delegada ══ */
+#delegated{ background:var(--s1); }
 
-.toggle-rig{
-  display:flex; align-items:center; gap:16px;
-  margin:32px 0 24px; flex-wrap:wrap;
+.local-analogy{
+  display:grid; gap:2px; margin-top:48px;
 }
-.toggle-label{
-  font-size:10px; letter-spacing:.18em; transition:color .3s,opacity .3s;
-}
-.toggle-label.bad{ color:var(--red); }
-.toggle-label.good{ color:var(--cy); }
-.toggle-label.dim{ opacity:.3; }
+@media(min-width:768px){ .local-analogy{ grid-template-columns:1fr 1fr; } }
 
-.toggle-sw{
-  position:relative; width:82px; height:38px;
-  cursor:pointer; flex-shrink:0; outline:none;
+.local-col{
+  padding:28px 24px; border:1px solid var(--ln1);
 }
-.toggle-sw:focus-visible .t-track{ outline:2px solid var(--cy); outline-offset:3px; }
-.t-track{
-  position:absolute; inset:0;
-  background:rgba(255,45,85,.1); border:1px solid rgba(255,45,85,.3);
-  transition:background .28s,border-color .28s;
-}
-.toggle-sw.on .t-track{ background:var(--cy-d); border-color:var(--cy-s); }
-.t-handle{
-  position:absolute; top:4px; left:4px;
-  width:30px; height:28px; background:var(--red);
-  box-shadow:0 0 14px rgba(255,45,85,.5);
-  transition:transform .22s cubic-bezier(.4,0,.2,1),background .22s,box-shadow .22s;
-  display:flex; align-items:center; justify-content:center;
-}
-.t-handle::before{
-  content:''; width:2px; height:11px;
-  background:rgba(255,255,255,.3); position:absolute; left:9px;
-  box-shadow:4px 0 0 rgba(255,255,255,.3);
-}
-.toggle-sw.on .t-handle{
-  transform:translateX(44px); background:var(--cy); box-shadow:0 0 18px var(--cy-s);
-}
-.t-lbl{
-  position:absolute; right:6px; top:50%;
-  transform:translateY(-50%);
-  font-size:8px; letter-spacing:.1em; color:rgba(255,255,255,.5); transition:opacity .2s;
-}
-.toggle-sw.on .t-lbl{ opacity:0; }
+.local-col.bad{ background:rgba(255,45,85,.03); border-color:rgba(255,45,85,.12); }
+.local-col.good{ background:var(--cy-d); border-color:rgba(0,240,255,.14); }
 
-.cmp-zone{ position:relative; overflow:hidden; }
-.cmp-grid{ display:flex; flex-direction:column; gap:2px; }
-@media(min-width:768px){ .cmp-grid{ flex-direction:row; } }
-.cmp-col{ display:flex; flex-direction:column; gap:2px; flex:1; }
-@media(max-width:767px){
-  .cmp-col{ display:none; }
-  .cmp-zone.mode-bad .cmp-col.bad{ display:flex; }
-  .cmp-zone.mode-good .cmp-col.good{ display:flex; }
+.local-col-head{
+  display:flex; align-items:center; gap:12px;
+  margin-bottom:20px; padding-bottom:16px;
+  border-bottom:1px solid var(--ln0);
 }
-.cmp-head{
-  display:flex; align-items:center; gap:10px;
-  padding:12px 18px; font-size:9px; letter-spacing:.18em;
-  min-height:var(--tap); border:1px solid transparent;
-}
-.cmp-head.bad{ background:rgba(255,45,85,.05); border-color:rgba(255,45,85,.14); color:var(--red); }
-.cmp-head.good{ background:var(--cy-d); border-color:rgba(0,240,255,.16); color:var(--cy); }
-.cmp-row{
-  padding:14px 18px; font-size:14px; line-height:1.6; font-weight:400;
-  border:1px solid transparent;
-}
-.cmp-row.bad{
-  background:rgba(255,45,85,.025); border-color:rgba(255,45,85,.05);
-  color:var(--tx2); text-decoration:line-through;
-  text-decoration-color:rgba(255,45,85,.3);
-}
-.cmp-row.good{
-  background:rgba(0,240,255,.015); border-color:rgba(0,240,255,.06);
-  color:var(--tx1); position:relative; padding-left:30px;
-}
-.cmp-row.good::before{ content:'▸'; position:absolute; left:14px; color:var(--cy); font-size:.7em; }
+.local-col-icon{ font-size:1.6rem; }
+.local-col-title{ font-family:var(--font-display); font-weight:800; font-size:.95rem; letter-spacing:.04em; }
+.local-col-title.red{ color:var(--red); }
+.local-col-title.cy{ color:var(--cy); }
+.local-col-subtitle{ font-size:10px; letter-spacing:.1em; color:var(--tx3); margin-top:3px; }
 
-/* ══ CAP CARDS ══ */
-.cap-grid{
-  display:grid; grid-template-columns:1fr 1fr; gap:2px; margin-top:48px;
+.local-items{ display:flex; flex-direction:column; gap:12px; }
+.local-item{
+  display:flex; align-items:flex-start; gap:12px;
+  padding:12px 14px;
 }
-@media(max-width:360px){ .cap-grid{ grid-template-columns:1fr; } }
-@media(min-width:900px){ .cap-grid{ grid-template-columns:repeat(4,1fr); } }
+.local-item.bad{ background:rgba(255,45,85,.03); border:1px solid rgba(255,45,85,.07); }
+.local-item.good{ background:rgba(0,240,255,.03); border:1px solid rgba(0,240,255,.07); }
+.local-item-icon{ font-size:1rem; flex-shrink:0; margin-top:1px; }
+.local-item-text{}
+.local-item-title{ font-size:12px; color:var(--tx0); font-weight:700; margin-bottom:3px; }
+.local-item.bad .local-item-title{ color:var(--red); }
+.local-item.good .local-item-title{ color:var(--cy); }
+.local-item-desc{ font-size:11px; color:var(--tx2); line-height:1.6; }
 
-.cap-card{
-  background:var(--s2); border:1px solid var(--ln1);
-  padding:22px 16px; position:relative; overflow:hidden;
-  transition:border-color .3s,background .3s;
-}
-.cap-card::before{
-  content:''; position:absolute; top:0; left:0; right:0; height:1px;
-  background:linear-gradient(90deg,transparent,var(--cy),transparent);
-  opacity:0; transition:opacity .5s;
-}
-.cap-card.in-view::before{ opacity:1; animation:edge-glow 2.8s ease-in-out infinite; }
-.cap-card.agnitio-card::before{
-  background:linear-gradient(90deg,transparent,var(--am),transparent);
-}
-@media(pointer:fine){ .cap-card:hover{ border-color:rgba(0,240,255,.2); background:var(--s3); } }
-.cap-card.agnitio-card:hover{ border-color:rgba(255,184,0,.2)!important; }
-
-.cap-nid{ font-size:9px; letter-spacing:.2em; color:var(--tx3); margin-bottom:8px; }
-.cap-name{ font-family:var(--font-display); font-weight:700; font-size:.92rem; letter-spacing:.04em; color:var(--cy); margin-bottom:10px; }
-.cap-name.am{ color:var(--am); }
-.cap-desc{ font-size:13px; color:var(--tx1); line-height:1.7; margin-bottom:18px; }
-/* ROI sub-desc en capacidades */
-.cap-roi{ font-size:11px; color:var(--am); letter-spacing:.06em; margin-bottom:12px; border-left:2px solid rgba(255,184,0,.3); padding-left:8px; }
-.cap-bar{ height:1px; background:var(--ln1); position:relative; margin-top:auto; }
-.cap-bar-fill{
-  position:absolute; top:0; left:0; height:100%;
-  background:var(--cy); box-shadow:0 0 8px var(--cy-s);
-  transform:scaleX(0); transform-origin:left;
-  transition:transform 1.4s cubic-bezier(.22,1,.36,1);
-}
-.cap-bar-fill.am{ background:var(--am); box-shadow:0 0 8px var(--am-s); }
-.cap-score{ position:absolute; right:0; top:-22px; font-size:9px; color:var(--cy); letter-spacing:.1em; }
-.cap-score.am{ color:var(--am); }
-
-/* AGNITIO badge */
-.agnitio-badge{
-  display:inline-flex; align-items:center; gap:6px;
-  border:1px solid rgba(255,184,0,.24); background:rgba(255,184,0,.05);
-  padding:4px 10px; font-size:8px; letter-spacing:.14em; color:var(--am);
-  margin-bottom:10px;
-}
-
-/* ══ NUEVA SECCIÓN: LABORATORIOS R&D ══
-   Pilar 2: Proyectos propios como validación tecnológica
-*/
-.lab-banner{
+/* Banner "Tú vendes, nosotros arreglamos" */
+.tuvende-banner{
   display:flex; align-items:flex-start; gap:16px;
-  padding:20px; background:rgba(255,184,0,.04);
-  border:1px solid rgba(255,184,0,.18); margin-bottom:24px;
+  padding:24px; background:rgba(0,240,255,.03);
+  border:1px solid rgba(0,240,255,.16); position:relative; overflow:hidden;
+  margin-top:2px;
 }
-.lab-banner-icon{ font-size:1.4rem; flex-shrink:0; margin-top:2px; }
-.lab-banner-text{}
-.lab-banner-title{ font-family:var(--font-display); font-weight:800; font-size:.95rem; color:var(--am); margin-bottom:6px; letter-spacing:.04em; }
-.lab-banner-desc{ font-size:12px; color:var(--tx2); line-height:1.7; }
-
-/* ══ NODES DASHBOARD ══ */
-#dashboard{ background:var(--void); }
-
-.db-mobile{ display:block; }
-@media(min-width:900px){ .db-mobile{ display:none; } }
-
-.db-progress{ display:flex; gap:3px; margin:28px 0 0; height:2px; }
-.db-seg{
-  flex:1; cursor:pointer;
-  padding:12px 0; margin:-12px 0; box-sizing:content-box;
-  position:relative;
-}
-.db-seg::after{
-  content:''; position:absolute; bottom:12px; left:0; right:0;
-  height:2px; background:var(--ln1); transition:background .25s,box-shadow .25s;
-}
-.db-seg.active::after{ background:var(--cy); box-shadow:0 0 8px var(--cy-s); }
-.db-seg.ext.active::after{ background:var(--am); box-shadow:0 0 8px rgba(255,184,0,.5); }
-.db-seg.lab.active::after{ background:var(--grn); box-shadow:0 0 8px rgba(0,255,122,.5); }
-
-.db-reel-wrap{
-  margin-top:16px; overflow-x:scroll; overflow-y:hidden;
-  scroll-snap-type:x mandatory; scroll-behavior:smooth;
-  -webkit-overflow-scrolling:touch; scrollbar-width:none;
-}
-.db-reel-wrap::-webkit-scrollbar{ display:none; }
-.db-reel{ display:flex; width:100%; }
-.db-slide{ flex:0 0 100%; scroll-snap-align:start; scroll-snap-stop:always; }
-
-.db-card{
-  background:var(--s1); border:1px solid var(--ln1);
-  padding:24px 18px; position:relative; overflow:hidden;
-  min-height:380px; display:flex; flex-direction:column;
-}
-.db-card::before{
+.tuvende-banner::before{
   content:''; position:absolute; top:0; left:0; right:0; height:1px;
-}
-.db-card.own::before{
   background:linear-gradient(90deg,transparent,var(--cy),transparent);
-  box-shadow:0 0 20px var(--cy-s); animation:edge-glow 2.6s ease-in-out infinite;
+  animation:edge-glow 3s ease-in-out infinite;
 }
-.db-card.ext::before{
-  background:linear-gradient(90deg,transparent,var(--am),transparent);
-  box-shadow:0 0 20px rgba(255,184,0,.35); animation:edge-glow 3s ease-in-out infinite;
+.tuvende-icon{ font-size:2rem; flex-shrink:0; }
+.tuvende-body{}
+.tuvende-title{ font-family:var(--font-display); font-weight:800; font-size:1.1rem; color:var(--cy); margin-bottom:8px; letter-spacing:.04em; }
+.tuvende-desc{ font-size:13px; color:var(--tx1); line-height:1.75; }
+.tuvende-desc strong{ color:var(--tx0); }
+
+/* ══ CASOS DE ÉXITO ══ */
+#casos{ background:var(--void); }
+
+.casos-grid{
+  display:grid; gap:2px; margin-top:48px;
 }
-.db-card.lab::before{
+@media(min-width:768px){ .casos-grid{ grid-template-columns:1fr 1fr; } }
+
+.caso-card{
+  background:var(--s1); border:1px solid var(--ln1);
+  padding:28px 24px; position:relative; overflow:hidden;
+}
+.caso-card::before{
+  content:''; position:absolute; top:0; left:0; right:0; height:2px;
   background:linear-gradient(90deg,transparent,var(--grn),transparent);
-  box-shadow:0 0 20px rgba(0,255,122,.25); animation:edge-glow 3.5s ease-in-out infinite;
+  animation:edge-glow 2.8s ease-in-out infinite;
 }
-.db-card::after{
-  content:''; position:absolute; bottom:0; right:0;
-  width:0; height:0; border-style:solid;
-  border-width:0 0 22px 22px;
-  border-color:transparent transparent var(--void) transparent;
-}
-
-/* Etiquetas de tipo en nodo */
-.node-type-badge{
-  display:inline-flex; align-items:center; gap:6px;
-  padding:4px 10px; font-size:8px; letter-spacing:.14em;
-  border:1px solid; margin-bottom:12px;
-}
-.node-type-badge.lab{
-  border-color:rgba(0,255,122,.22); background:rgba(0,255,122,.05); color:var(--grn);
-}
-.node-type-badge.client-win{
-  border-color:rgba(255,184,0,.22); background:rgba(255,184,0,.05); color:var(--am);
-}
-
-/* ROI card en nodos cliente */
-.node-roi-card{
-  background:rgba(255,184,0,.04); border:1px solid rgba(255,184,0,.14);
-  padding:12px 14px; margin-top:12px;
-}
-.node-roi-card-label{ font-size:8px; letter-spacing:.18em; color:var(--tx3); margin-bottom:6px; }
-.node-roi-card-value{ font-family:var(--font-display); font-weight:800; font-size:.95rem; color:var(--am); }
-.node-roi-card-desc{ font-size:11px; color:var(--tx2); margin-top:4px; line-height:1.5; }
-
-.validated-badge{
+.caso-badge{
   display:inline-flex; align-items:center; gap:6px;
   border:1px solid rgba(0,255,122,.22); background:rgba(0,255,122,.05);
   padding:4px 10px; font-size:8px; letter-spacing:.14em; color:var(--grn);
-  margin-top:8px;
+  margin-bottom:14px;
+}
+.caso-industry{ font-size:8px; letter-spacing:.18em; color:var(--tx3); margin-bottom:6px; }
+.caso-name{ font-family:var(--font-display); font-weight:800; font-size:1.2rem; color:var(--tx0); margin-bottom:10px; }
+.caso-desc{ font-size:13px; color:var(--tx1); line-height:1.75; margin-bottom:18px; border-left:2px solid var(--ln2); padding-left:14px; }
+.caso-resultado{
+  background:rgba(0,255,122,.05); border:1px solid rgba(0,255,122,.14);
+  padding:14px 16px;
+}
+.caso-resultado-label{ font-size:8px; letter-spacing:.18em; color:var(--tx3); margin-bottom:6px; }
+.caso-resultado-value{ font-family:var(--font-display); font-weight:800; font-size:1.2rem; color:var(--grn); margin-bottom:4px; }
+.caso-resultado-desc{ font-size:11px; color:var(--tx2); line-height:1.5; }
+
+/* ══ SECCIÓN ORACLES APP ══ */
+#oracles{ background:var(--s1); }
+
+.oracles-layout{
+  display:grid; gap:48px; margin-top:48px;
+}
+@media(min-width:900px){ .oracles-layout{ grid-template-columns:1fr 1fr; align-items:center; } }
+
+.oracles-features{ display:flex; flex-direction:column; gap:2px; }
+.oracles-feature{
+  display:flex; align-items:flex-start; gap:14px;
+  padding:18px 16px; border:1px solid var(--ln1); background:var(--s2);
+  position:relative; overflow:hidden; transition:border-color .2s,background .2s;
+}
+@media(pointer:fine){ .oracles-feature:hover{ border-color:rgba(255,184,0,.22); background:var(--s3); } }
+.oracles-feature::before{
+  content:''; position:absolute; left:0; top:0; bottom:0; width:2px; background:var(--am);
+  opacity:0; transition:opacity .2s;
+}
+@media(pointer:fine){ .oracles-feature:hover::before{ opacity:1; } }
+.of-icon{ font-size:1.3rem; flex-shrink:0; margin-top:2px; }
+.of-body{}
+.of-title{ font-size:13px; color:var(--tx0); font-weight:700; margin-bottom:4px; }
+.of-desc{ font-size:12px; color:var(--tx2); line-height:1.65; }
+.of-win{ font-size:10px; color:var(--am); margin-top:6px; letter-spacing:.06em; }
+
+.oracles-mockup{
+  background:var(--s2); border:1px solid var(--ln1);
+  position:relative; overflow:hidden; min-height:340px;
+  display:flex; flex-direction:column;
+}
+.mockup-hdr{
+  display:flex; align-items:center; gap:7px; padding:0 16px;
+  border-bottom:1px solid var(--ln0); background:var(--s3); min-height:42px;
+}
+.mdot{ width:8px; height:8px; border-radius:50%; }
+.mdot-r{ background:#ff5f57; } .mdot-y{ background:#febc2e; } .mdot-g{ background:#28c840; }
+.mockup-title{ font-size:9px; letter-spacing:.14em; color:var(--tx3); margin-left:6px; }
+.mockup-body{ padding:18px; flex:1; display:flex; flex-direction:column; gap:10px; }
+
+.mock-stat-row{ display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+.mock-stat{
+  background:var(--s3); border:1px solid var(--ln0);
+  padding:12px 10px; text-align:center;
+}
+.mock-stat-val{ font-family:var(--font-display); font-weight:800; font-size:1.2rem; color:var(--am); }
+.mock-stat-lbl{ font-size:8px; letter-spacing:.1em; color:var(--tx3); margin-top:3px; }
+
+.mock-inv-row{ background:var(--s3); border:1px solid var(--ln0); padding:10px 12px; }
+.mock-inv-head{ font-size:8px; letter-spacing:.18em; color:var(--tx3); margin-bottom:8px; }
+.mock-item{ display:flex; align-items:center; justify-content:space-between; padding:5px 0; border-bottom:1px solid var(--ln0); }
+.mock-item:last-child{ border-bottom:none; }
+.mock-item-name{ font-size:11px; color:var(--tx1); }
+.mock-item-stock{ font-size:10px; color:var(--am); font-weight:700; }
+.mock-item-alert{ font-size:8px; letter-spacing:.1em; }
+.mock-item-alert.ok{ color:var(--grn); }
+.mock-item-alert.low{ color:var(--red); }
+
+.mock-alert{
+  display:flex; align-items:center; gap:10px;
+  background:rgba(0,255,122,.05); border:1px solid rgba(0,255,122,.18);
+  padding:10px 12px;
+}
+.mock-alert-dot{ width:6px; height:6px; border-radius:50%; background:var(--grn); box-shadow:0 0 6px var(--grn); flex-shrink:0; animation:blink 1.8s ease-in-out infinite; }
+.mock-alert-txt{ font-size:10px; color:var(--grn); letter-spacing:.06em; }
+
+/* ══ REFERRAL METER — Componente Visual Central ══ */
+#referral{ background:var(--void); }
+
+.referral-intro{
+  display:grid; gap:32px; margin-top:48px;
+}
+@media(min-width:900px){ .referral-intro{ grid-template-columns:1fr 1fr; align-items:start; } }
+
+/* PRECIOS DESGLOSADOS */
+.price-breakdown{
+  background:var(--s1); border:1px solid var(--ln2);
+  position:relative; overflow:hidden;
+}
+.price-breakdown::before{
+  content:''; position:absolute; top:0; left:0; right:0; height:1px;
+  background:linear-gradient(90deg,transparent,var(--cy),var(--am),transparent);
+  animation:edge-glow 3s ease-in-out infinite;
+}
+.pb-header{
+  padding:16px 22px; border-bottom:1px solid var(--ln1);
+  background:var(--s2);
+}
+.pb-header-title{ font-size:9px; letter-spacing:.22em; color:var(--tx3); margin-bottom:4px; }
+.pb-header-total{
+  font-family:var(--font-display); font-weight:800;
+  font-size:clamp(2.2rem,8vw,3.5rem);
+  color:var(--tx0); line-height:1; letter-spacing:-.02em;
+}
+.pb-header-total span{ font-size:.35em; color:var(--tx3); font-weight:400; }
+.pb-header-cycle{ font-size:10px; letter-spacing:.14em; color:var(--am); margin-top:6px; }
+
+.pb-items{ padding:0; }
+.pb-item{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:18px 22px; border-bottom:1px solid var(--ln0);
+  position:relative;
+}
+.pb-item:last-child{ border-bottom:none; }
+.pb-item-left{}
+.pb-item-badge{
+  display:inline-flex; align-items:center; gap:6px;
+  font-size:8px; letter-spacing:.16em; padding:3px 10px;
+  border:1px solid; margin-bottom:6px;
+}
+.pb-item-badge.web{ border-color:rgba(0,240,255,.22); color:var(--cy); background:var(--cy-d); }
+.pb-item-badge.app{ border-color:rgba(255,184,0,.22); color:var(--am); background:var(--am-d); }
+.pb-item-name{ font-family:var(--font-display); font-weight:700; font-size:.9rem; color:var(--tx0); margin-bottom:3px; }
+.pb-item-desc{ font-size:11px; color:var(--tx3); }
+.pb-item-price{ text-align:right; flex-shrink:0; margin-left:16px; }
+.pb-item-val{
+  font-family:var(--font-display); font-weight:800;
+  font-size:1.4rem; letter-spacing:-.02em; line-height:1;
+}
+.pb-item-val.cy{ color:var(--cy); }
+.pb-item-val.am{ color:var(--am); }
+.pb-item-cur{ font-size:9px; letter-spacing:.14em; color:var(--tx3); }
+
+/* REFERRAL METER — El corazón de la sección */
+.referral-meter{
+  background:var(--s1); border:1px solid var(--ln1);
+  position:relative; overflow:hidden;
+}
+.rm-header{
+  padding:16px 22px; border-bottom:1px solid var(--ln1);
+  background:var(--s2); display:flex; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; gap:8px;
+}
+.rm-title{ font-family:var(--font-display); font-weight:800; font-size:.95rem; color:var(--am); letter-spacing:.04em; }
+.rm-subtitle{ font-size:9px; letter-spacing:.16em; color:var(--tx3); margin-top:2px; }
+.rm-badge{
+  display:inline-flex; align-items:center; gap:6px;
+  border:1px solid rgba(255,184,0,.22); background:rgba(255,184,0,.06);
+  padding:5px 12px; font-size:8px; letter-spacing:.14em; color:var(--am);
 }
 
-.db-desktop{ display:none; }
-@media(min-width:900px){
-  .db-desktop{
-    display:grid; grid-template-columns:260px 1fr;
-    gap:2px; margin-top:52px; min-height:540px;
-  }
-}
-.db-sidebar{ background:var(--s1); border:1px solid var(--ln1); display:flex; flex-direction:column; }
-.db-sbh{
-  padding:12px 18px; border-bottom:1px solid var(--ln0);
-  font-size:9px; letter-spacing:.2em; color:var(--tx3);
-  min-height:var(--tap); display:flex; align-items:center;
-}
-.db-node{
-  padding:14px 18px; border-bottom:1px solid var(--ln0);
-  cursor:pointer; position:relative; transition:background .15s; min-height:var(--tap);
-}
-.db-node:last-child{ border-bottom:none; }
-@media(pointer:fine){ .db-node:hover{ background:var(--s2); } }
-.db-node.active{ background:var(--s2); }
-.db-node.active::before{
-  content:''; position:absolute; left:0; top:0; bottom:0; width:2px;
-}
-.db-node.own.active::before{ background:var(--cy); box-shadow:0 0 8px var(--cy-s); }
-.db-node.ext.active::before{ background:var(--am); box-shadow:0 0 8px rgba(255,184,0,.4); }
-.db-node.lab.active::before{ background:var(--grn); box-shadow:0 0 8px rgba(0,255,122,.3); }
-.db-nt{ display:flex; align-items:center; justify-content:space-between; margin-bottom:4px; }
-.db-nn{ font-family:var(--font-display); font-weight:700; font-size:.85rem; letter-spacing:.05em; color:var(--tx1); }
-.db-node.active .db-nn{ color:var(--tx0); }
-.db-ntag{ font-size:9px; letter-spacing:.1em; border:1px solid var(--ln1); color:var(--tx3); padding:2px 7px; }
-.db-node.own.active .db-ntag{ border-color:rgba(0,240,255,.22); color:var(--cy); }
-.db-node.ext.active .db-ntag{ border-color:rgba(255,184,0,.22); color:var(--am); }
-.db-node.lab.active .db-ntag{ border-color:rgba(0,255,122,.22); color:var(--grn); }
-.db-ntype{ font-size:9px; letter-spacing:.1em; color:var(--tx3); margin-bottom:6px; }
-.db-ind{ display:flex; align-items:center; gap:6px; }
-.db-ilbl{ font-size:9px; letter-spacing:.1em; }
-.db-ilbl.own{ color:rgba(0,240,255,.45); }
-.db-ilbl.ext{ color:rgba(255,184,0,.45); }
-.db-ilbl.lab{ color:rgba(0,255,122,.45); }
+/* Niveles del Referral Meter */
+.rm-levels{ padding:22px; display:flex; flex-direction:column; gap:12px; }
 
-.db-main{ background:var(--s1); border:1px solid var(--ln1); display:flex; flex-direction:column; }
-.db-topbar{
-  padding:0 22px; border-bottom:1px solid var(--ln0);
-  display:flex; align-items:center; justify-content:space-between; min-height:var(--tap);
+.rm-level{
+  position:relative; border:1px solid var(--ln1);
+  background:var(--s2); overflow:hidden;
+  transition:border-color .3s, background .3s;
 }
-.db-bc{ font-size:9px; letter-spacing:.12em; color:var(--tx3); display:flex; align-items:center; gap:6px; }
-.bc-cur{ color:var(--tx1); }
-.db-ctrls{ display:flex; gap:4px; }
-.db-ctrl{
-  font-size:9px; letter-spacing:.1em; padding:0 12px;
-  border:1px solid var(--ln1); background:transparent;
-  color:var(--tx3); cursor:pointer; min-height:36px;
-  display:flex; align-items:center; transition:all .18s;
-}
-@media(pointer:fine){ .db-ctrl:hover{ border-color:var(--cy-s); color:var(--cy); } }
-#db-panel{ padding:24px; flex:1; display:flex; flex-direction:column; gap:18px; }
+.rm-level.active{ border-color:rgba(255,184,0,.4); background:var(--s3); animation:glow-pulse 3s ease-in-out infinite; }
+.rm-level.achieved{ border-color:rgba(0,255,122,.3); background:rgba(0,255,122,.03); }
 
-.db-head-row{ display:flex; align-items:flex-start; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom:16px; }
-.db-pname{ font-family:var(--font-display); font-weight:800; font-size:clamp(1.5rem,6vw,2rem); letter-spacing:.03em; margin-bottom:4px; }
-.db-pname.own{ background:linear-gradient(90deg,var(--tx0),var(--cy)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
-.db-pname.ext{ background:linear-gradient(90deg,var(--tx0),var(--am)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
-.db-pname.lab{ background:linear-gradient(90deg,var(--tx0),var(--grn)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
-.db-pcat{ font-size:9px; letter-spacing:.15em; color:var(--tx2); }
-.db-badge{
-  display:inline-flex; align-items:center; gap:7px;
-  padding:6px 14px; font-size:9px; letter-spacing:.12em;
-  flex-shrink:0; min-height:34px; border:1px solid transparent;
+/* Barra de progreso interna */
+.rm-progress-bar{
+  position:absolute; top:0; left:0; bottom:0;
+  width:var(--progress, 0%);
+  background:linear-gradient(90deg,rgba(255,184,0,.08),rgba(255,184,0,.03));
+  pointer-events:none;
 }
-.db-badge.own{ border-color:rgba(0,240,255,.2); background:var(--cy-d); color:var(--cy); }
-.db-badge.ext{ border-color:rgba(255,184,0,.2); background:var(--am-d); color:var(--am); }
-.db-badge.lab{ border-color:rgba(0,255,122,.2); background:var(--grn-d); color:var(--grn); }
-.db-badge.validated{ border-color:rgba(0,255,122,.22); background:rgba(0,255,122,.05); color:var(--grn); }
-.db-desc{ font-size:14px; color:var(--tx1); line-height:1.8; border-left:2px solid var(--ln2); padding-left:16px; margin-bottom:18px; }
-.db-tags{ display:flex; flex-wrap:wrap; gap:5px; margin-bottom:18px; }
-.db-tag{ font-size:9px; letter-spacing:.1em; padding:5px 10px; border:1px solid var(--ln1); color:var(--tx3); min-height:28px; display:flex; align-items:center; }
-.db-tag.p.own{ border-color:rgba(0,240,255,.22); color:var(--cy); background:var(--cy-d); }
-.db-tag.p.ext{ border-color:rgba(255,184,0,.22); color:var(--am); background:var(--am-d); }
-.db-tag.p.lab{ border-color:rgba(0,255,122,.22); color:var(--grn); background:var(--grn-d); }
-.db-metrics{ display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
-.db-mc{ background:var(--s2); border:1px solid var(--ln1); padding:14px 12px; }
-.db-ml{ font-size:9px; letter-spacing:.1em; color:var(--tx3); margin-bottom:6px; }
-.db-mv{ font-family:var(--font-display); font-weight:700; font-size:1.15rem; letter-spacing:.03em; }
-.db-mv.own{ color:var(--cy); }
-.db-mv.ext{ color:var(--am); }
-.db-mv.grn{ color:var(--grn); }
-.db-mv.lab{ color:var(--grn); }
+.rm-level.achieved .rm-progress-bar{
+  background:linear-gradient(90deg,rgba(0,255,122,.08),rgba(0,255,122,.02));
+  width:100%;
+}
 
-/* ══ PROTOCOLO — Reescrito en ROI ══ */
+.rm-level-inner{
+  position:relative; z-index:1;
+  display:flex; align-items:center; gap:0; flex-wrap:wrap;
+}
+@media(max-width:480px){ .rm-level-inner{ flex-direction:column; } }
+
+.rm-count{
+  display:flex; align-items:center; justify-content:center;
+  width:70px; min-height:80px; flex-shrink:0;
+  border-right:1px solid var(--ln0); flex-direction:column; gap:4px;
+}
+@media(max-width:480px){ .rm-count{ width:100%; border-right:none; border-bottom:1px solid var(--ln0); min-height:50px; flex-direction:row; gap:10px; padding:12px; } }
+
+.rm-count-num{
+  font-family:var(--font-display); font-weight:800;
+  font-size:1.8rem; line-height:1;
+}
+.rm-count-lbl{ font-size:8px; letter-spacing:.12em; color:var(--tx3); }
+.rm-level .rm-count-num{ color:var(--tx3); }
+.rm-level.active .rm-count-num{ color:var(--am); }
+.rm-level.achieved .rm-count-num{ color:var(--grn); }
+
+.rm-body{ flex:1; padding:14px 16px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+
+.rm-body-left{}
+.rm-ref-title{ font-size:10px; letter-spacing:.1em; color:var(--tx3); margin-bottom:4px; }
+.rm-discount{ font-family:var(--font-display); font-weight:800; font-size:1.1rem; letter-spacing:.03em; }
+.rm-level .rm-discount{ color:var(--tx2); }
+.rm-level.active .rm-discount{ color:var(--am); }
+.rm-level.achieved .rm-discount{ color:var(--grn); }
+.rm-desc{ font-size:11px; color:var(--tx3); line-height:1.5; margin-top:4px; }
+.rm-level.active .rm-desc, .rm-level.achieved .rm-desc{ color:var(--tx2); }
+
+.rm-badge-right{
+  display:inline-flex; align-items:center; gap:6px;
+  padding:6px 12px; font-size:9px; letter-spacing:.1em;
+  border:1px solid; flex-shrink:0;
+}
+.rm-level .rm-badge-right{ border-color:var(--ln1); color:var(--tx3); }
+.rm-level.active .rm-badge-right{ border-color:rgba(255,184,0,.3); color:var(--am); background:rgba(255,184,0,.05); }
+.rm-level.achieved .rm-badge-right{ border-color:rgba(0,255,122,.3); color:var(--grn); background:rgba(0,255,122,.05); }
+
+/* Nivel JACKPOT — Web Gratis */
+.rm-level.jackpot{
+  border-color:rgba(0,255,122,.3) !important;
+}
+.rm-level.jackpot .rm-count-num{ color:var(--grn); }
+.rm-level.jackpot .rm-discount{ color:var(--grn); font-size:1.4rem; }
+.rm-level.jackpot .rm-badge-right{
+  border-color:rgba(0,255,122,.4); color:#000;
+  background:var(--grn); font-weight:700;
+  animation:glow-pulse 2s ease-in-out infinite;
+}
+.rm-level.jackpot.active{
+  border-color:var(--grn) !important;
+  animation:none;
+}
+.jackpot-crown{ font-size:1.2rem; margin-right:4px; }
+
+/* Crédito acumulado para 4+ referidos */
+.rm-bonus{
+  margin:0 22px 22px;
+  padding:14px 16px; border:1px solid rgba(0,240,255,.14);
+  background:var(--cy-d); display:flex; align-items:flex-start; gap:12px;
+}
+.rm-bonus-icon{ font-size:1.1rem; flex-shrink:0; }
+.rm-bonus-txt{}
+.rm-bonus-title{ font-size:11px; color:var(--cy); font-weight:700; margin-bottom:4px; letter-spacing:.06em; }
+.rm-bonus-desc{ font-size:10px; color:var(--tx2); line-height:1.6; }
+
+/* Restricción / Fair Use Preview */
+.rm-fairuse{
+  margin:0 22px 22px;
+  padding:12px 14px; border:1px solid rgba(255,45,85,.14);
+  background:rgba(255,45,85,.03); display:flex; align-items:flex-start; gap:10px;
+}
+.rm-fairuse-icon{ font-size:.95rem; flex-shrink:0; margin-top:1px; }
+.rm-fairuse-txt{ font-size:10px; color:var(--tx3); line-height:1.65; }
+.rm-fairuse-txt strong{ color:var(--tx2); }
+
+/* ══ PROTOCOLO ══ */
 #proto{ background:var(--s1); }
 
 .proto-layout{
@@ -938,9 +888,9 @@ body{
 @media(pointer:fine){ .proto-step:hover{ border-color:var(--ln2); } }
 .ps-num{ flex-shrink:0; font-size:9px; letter-spacing:.15em; color:var(--tx3); padding-top:3px; width:24px; }
 .ps-body{ flex:1; }
-.ps-title{ font-family:var(--font-display); font-weight:700; font-size:clamp(1.05rem,3.5vw,1.25rem); letter-spacing:.04em; color:var(--tx0); margin-bottom:6px; transition:color .2s; }
+.ps-title{ font-family:var(--font-display); font-weight:700; font-size:clamp(1.05rem,3.5vw,1.2rem); letter-spacing:.04em; color:var(--tx0); margin-bottom:6px; transition:color .2s; }
 @media(pointer:fine){ .proto-step:hover .ps-title{ color:var(--cy); } }
-.ps-roi{ font-size:10px; letter-spacing:.1em; color:var(--am); margin-bottom:8px; }
+.ps-win{ font-size:10px; letter-spacing:.08em; color:var(--am); margin-bottom:8px; }
 .ps-desc{ font-size:13px; color:var(--tx1); line-height:1.8; }
 .ps-icon{ flex-shrink:0; width:38px; height:38px; border:1px solid var(--ln1); display:flex; align-items:center; justify-content:center; transition:border-color .2s; }
 @media(pointer:fine){ .proto-step:hover .ps-icon{ border-color:var(--cy-s); } }
@@ -957,7 +907,7 @@ body{
 .tdot{ width:9px; height:9px; border-radius:50%; }
 .tdot-r{ background:#ff5f57; } .tdot-y{ background:#febc2e; } .tdot-g{ background:#28c840; }
 .term-title{ font-size:9px; letter-spacing:.14em; color:var(--tx3); margin-left:4px; }
-.term-body{ padding:18px 16px; line-height:2.1; font-size:12px; overflow-x:auto; -webkit-overflow-scrolling:touch; min-height:300px; }
+.term-body{ padding:18px 16px; line-height:2.1; font-size:12px; overflow-x:auto; min-height:320px; }
 .t-d{ color:var(--tx3); }
 .t-a{ color:var(--cy); }
 .t-am{ color:var(--am); }
@@ -966,185 +916,53 @@ body{
 .t-r{ color:var(--red); }
 .t-cur{ display:inline-block; width:6px; height:1em; background:var(--cy); vertical-align:text-bottom; animation:blink-cur .9s step-end infinite; }
 
-/* ══ OWNERSHIP / NO LOCK-IN BANNER — Pilar 1 ══ */
-.ownership-strip{
-  display:flex; align-items:flex-start; gap:16px;
-  padding:22px; background:rgba(0,240,255,.03);
-  border:1px solid rgba(0,240,255,.16);
-  position:relative; overflow:hidden;
-  margin-top:48px;
+/* ══ POLÍTICA DE USO JUSTO ══ */
+#fair-use{ background:var(--s2); border-top:1px solid var(--ln1); border-bottom:1px solid var(--ln1); }
+
+.fair-use-grid{
+  display:grid; gap:2px; margin-top:32px;
 }
-.ownership-strip::before{
+@media(min-width:768px){ .fair-use-grid{ grid-template-columns:repeat(3,1fr); } }
+
+.fu-card{
+  background:var(--s1); border:1px solid var(--ln1);
+  padding:20px 18px; position:relative; overflow:hidden;
+}
+.fu-card::before{
   content:''; position:absolute; top:0; left:0; right:0; height:1px;
-  background:linear-gradient(90deg,transparent,var(--cy),transparent);
-  animation:edge-glow 3s ease-in-out infinite;
+  background:linear-gradient(90deg,transparent,var(--tx3),transparent); opacity:.4;
 }
-.ownership-icon{ font-size:1.6rem; flex-shrink:0; }
-.ownership-body{}
-.ownership-title{ font-family:var(--font-display); font-weight:800; font-size:1rem; color:var(--cy); margin-bottom:8px; letter-spacing:.04em; }
-.ownership-desc{ font-size:13px; color:var(--tx1); line-height:1.75; }
-.ownership-desc strong{ color:var(--tx0); }
+.fu-icon{ font-size:1.3rem; margin-bottom:10px; }
+.fu-title{ font-family:var(--font-display); font-weight:700; font-size:.85rem; color:var(--tx1); margin-bottom:8px; letter-spacing:.04em; }
+.fu-desc{ font-size:12px; color:var(--tx3); line-height:1.7; }
+.fu-rule{ font-size:11px; color:var(--am); margin-top:8px; letter-spacing:.06em; }
 
-/* ══ OFERTA / PRECIO ══ */
-#oferta{ background:var(--void); }
-
-.plan-tabs{
-  display:flex; gap:2px; margin:40px 0 0; flex-wrap:wrap;
-}
-.plan-tab{
-  flex:1; min-width:140px;
-  display:flex; align-items:center; justify-content:center; gap:8px;
-  padding:14px 16px; border:1px solid var(--ln1); background:var(--s2);
-  cursor:pointer; transition:all .2s; min-height:var(--tap);
-  font-family:var(--font-mono); font-size:10px; letter-spacing:.14em; color:var(--tx2);
-  position:relative;
-}
-.plan-tab:first-child{ clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,0 100%); }
-.plan-tab:last-child{ clip-path:polygon(0 0,100% 0,100% 100%,8px 100%,0 calc(100% - 8px)); }
-.plan-tab.active.pago{
-  background:var(--cy-d); border-color:var(--cy-s); color:var(--cy);
-}
-.plan-tab.active.saas{
-  background:var(--am-d); border-color:var(--am-s); color:var(--am);
-}
-.plan-tab-rec{
-  position:absolute; top:-11px; left:50%; transform:translateX(-50%);
-  font-size:8px; letter-spacing:.12em; padding:3px 10px;
-  background:var(--am); color:#000; font-weight:700; white-space:nowrap;
-}
-
-.oferta-wrap{
-  border:1px solid var(--ln2); position:relative; overflow:hidden; margin-top:2px;
-}
-.oferta-wrap::before{
-  content:''; position:absolute; top:0; left:0; right:0; height:1px;
-  box-shadow:0 0 30px var(--cy-s); animation:edge-glow 3s ease-in-out infinite;
-}
-.oferta-wrap.pago-active::before{
-  background:linear-gradient(90deg,transparent,var(--cy),var(--am),transparent);
-}
-.oferta-wrap.saas-active::before{
-  background:linear-gradient(90deg,transparent,var(--am),var(--grn),transparent);
-  box-shadow:0 0 30px var(--am-s);
-}
-
-.oferta-top{
-  display:flex; align-items:center; justify-content:space-between;
-  padding:16px 22px; border-bottom:1px solid var(--ln1); background:var(--s1);
-  flex-wrap:wrap; gap:10px;
-}
-.oferta-top-lbl{ font-size:9px; letter-spacing:.22em; color:var(--tx3); }
-.oferta-badge{
+.fu-header-badge{
   display:inline-flex; align-items:center; gap:8px;
-  border:1px solid rgba(0,255,122,.2); background:rgba(0,255,122,.04);
-  padding:6px 14px; font-size:9px; letter-spacing:.14em; color:var(--grn);
+  border:1px solid rgba(255,45,85,.22); background:rgba(255,45,85,.04);
+  padding:6px 14px; font-size:9px; letter-spacing:.16em; color:var(--red);
+  margin-bottom:16px;
 }
 
-.oferta-body{
-  display:grid; gap:2px;
-}
-@media(min-width:768px){ .oferta-body{ grid-template-columns:1fr 1fr; } }
-
-.oferta-left{ padding:28px 22px; background:var(--s1); }
-.oferta-right{ padding:28px 22px; background:var(--s2); }
-
-.price-display{ display:flex; flex-direction:column; gap:4px; margin-bottom:24px; }
-.price-from{ font-size:9px; letter-spacing:.2em; color:var(--tx3); }
-.price-val{
-  font-family:var(--font-display); font-weight:800;
-  font-size:clamp(2.8rem,10vw,4.5rem);
-  line-height:.9; color:var(--cy); letter-spacing:-.03em;
-}
-.price-val.am{ color:var(--am); }
-.price-note{ font-size:11px; color:var(--tx2); margin-top:4px; }
-.price-cycle{ font-size:10px; letter-spacing:.14em; color:var(--am); margin-top:6px; }
-
-.plan-panel{ display:none; }
-.plan-panel.active{ display:block; }
-
-.pkg-list{ display:flex; flex-direction:column; gap:10px; margin-bottom:28px; }
-.pkg-item{
-  display:flex; align-items:flex-start; gap:12px;
-  padding:14px 16px; background:var(--s2); border:1px solid var(--ln1);
-}
-.pkg-check{ color:var(--cy); flex-shrink:0; font-size:.75em; margin-top:2px; }
-.pkg-check.am{ color:var(--am); }
-.pkg-text{ flex:1; }
-.pkg-name{ font-size:13px; color:var(--tx0); font-weight:700; line-height:1.3; margin-bottom:2px; }
-.pkg-desc{ font-size:11px; color:var(--tx2); line-height:1.5; }
-
-.delivery-strip{
-  display:flex; align-items:center; gap:12px;
-  padding:14px 16px; border:1px solid rgba(255,184,0,.2);
-  background:rgba(255,184,0,.04);
-}
-.delivery-icon{ font-size:1.1rem; flex-shrink:0; }
-.delivery-txt{ font-size:11px; color:var(--am); letter-spacing:.08em; }
-.delivery-txt strong{ display:block; font-size:13px; color:var(--am); font-weight:700; }
-
-.saas-highlight{
-  display:flex; align-items:center; gap:10px;
-  padding:14px 16px; border:1px solid var(--cy-s);
-  background:var(--cy-d); margin-bottom:10px;
-}
-.saas-highlight-txt{ font-size:11px; color:var(--cy); letter-spacing:.06em; line-height:1.5; }
-.saas-highlight-txt strong{ display:block; font-size:13px; font-weight:700; }
-
-.proof-items{ display:flex; flex-direction:column; gap:16px; margin-bottom:24px; }
-.proof-item{
-  padding:16px; background:var(--s3); border:1px solid var(--ln1);
-  position:relative; overflow:hidden;
-}
-.proof-item::before{
-  content:''; position:absolute; left:0; top:0; bottom:0; width:2px; background:var(--cy);
-}
-.proof-item.ext-validated::before{ background:var(--grn); }
-/* NUEVO: ROI highlight en testimonios */
-.proof-roi{
-  display:inline-block; font-family:var(--font-display); font-weight:800;
-  font-size:.9rem; color:var(--am); margin-bottom:8px; letter-spacing:.03em;
-}
-.proof-quote{ font-size:12px; color:var(--tx1); line-height:1.75; margin-bottom:8px; font-style:italic; }
-.proof-author{ font-size:9px; letter-spacing:.14em; color:var(--tx3); }
-.proof-author strong{ color:var(--cy); }
-.proof-meta{
-  display:flex; align-items:center; gap:6px; margin-top:6px;
-}
-.proof-meta-badge{
-  font-size:8px; letter-spacing:.1em; padding:2px 8px;
-  border:1px solid rgba(0,255,122,.2); color:var(--grn);
-}
-
-.guarantee{
-  display:flex; align-items:center; gap:10px;
-  padding:14px 16px; border:1px solid var(--ln1); background:var(--s1);
-}
-.guarantee-icon{ font-size:1.2rem; flex-shrink:0; }
-.guarantee-txt{ font-size:11px; color:var(--tx2); line-height:1.5; }
-.guarantee-txt strong{ display:block; font-size:12px; color:var(--tx0); margin-bottom:2px; }
-
-/* ══ CTA SECTION ══ */
+/* ══ CTA FINAL ══ */
 #cta-s{
   background:var(--void); padding:var(--py) var(--gx);
   position:relative; overflow:hidden;
 }
 .cta-orb{
-  position:absolute; border-radius:50%;
-  filter:blur(130px); pointer-events:none;
-  background:rgba(0,240,255,.05);
-  width:600px; height:600px;
+  position:absolute; border-radius:50%; filter:blur(130px); pointer-events:none;
+  background:rgba(0,240,255,.05); width:600px; height:600px;
   top:50%; left:50%; transform:translate(-50%,-50%); z-index:0;
 }
 .cta-w{ max-width:900px; margin:0 auto; text-align:center; position:relative; z-index:2; }
 .cta-lbl{ font-size:9px; letter-spacing:.26em; color:var(--tx3); display:block; margin-bottom:16px; }
 .cta-h{
   font-family:var(--font-display); font-weight:800;
-  /* CORRECCIÓN: reducido para evitar desborde en pantallas pequeñas */
-  font-size:clamp(2.4rem,9vw,6.5rem);
+  font-size:clamp(2.4rem,9vw,6rem);
   line-height:.88; color:var(--tx0); margin-bottom:18px;
 }
 .cta-h span{ color:var(--cy); }
-.cta-p{ font-size:13px; color:var(--tx1); line-height:1.85; max-width:420px; margin:0 auto 40px; }
+.cta-p{ font-size:14px; color:var(--tx1); line-height:1.85; max-width:440px; margin:0 auto 40px; }
 
 .cta-card{
   background:var(--s1); border:1px solid var(--ln2);
@@ -1161,8 +979,8 @@ body{
 .cta-lft-lbl{ font-size:9px; letter-spacing:.22em; color:var(--tx3); margin-bottom:10px; }
 .cta-brand{ font-family:var(--font-display); font-weight:800; font-size:1.5rem; color:var(--cy); letter-spacing:.07em; margin-bottom:16px; }
 .cta-feats{ display:flex; flex-direction:column; gap:9px; margin-bottom:20px; }
-.cta-feat{ display:flex; align-items:center; gap:10px; font-size:12px; letter-spacing:.06em; color:var(--tx1); min-height:30px; }
-.cta-feat::before{ content:'▸'; color:var(--cy); flex-shrink:0; }
+.cta-feat{ display:flex; align-items:flex-start; gap:10px; font-size:12px; letter-spacing:.04em; color:var(--tx1); }
+.cta-feat::before{ content:'▸'; color:var(--cy); flex-shrink:0; margin-top:1px; }
 .cta-email{ font-size:12px; letter-spacing:.1em; color:var(--cy); text-decoration:none; border-bottom:1px solid rgba(0,240,255,.22); padding-bottom:3px; transition:border-color .2s; display:inline-block; }
 .cta-email:hover{ border-color:var(--cy); }
 .cta-rht{ display:flex; flex-direction:column; gap:10px; margin-top:28px; }
@@ -1188,11 +1006,11 @@ footer{
 <div id="prog"><div id="prog-fill"></div></div>
 <div id="grid-bg" aria-hidden="true"></div>
 
-<!-- FLOATING CTA MOBILE -->
-<a href="mailto:hola@zoalum.com" id="float-cta" aria-label="Solicitar diagnóstico gratuito">
+<!-- FLOAT CTA MOBILE -->
+<a href="mailto:hola@zoalum.com" id="float-cta" aria-label="Comenzar hoy">
   <div class="float-inner">
-    <span>DIAGNÓSTICO &nbsp;→</span>
-    <i>SIN COSTO · HOY</i>
+    <span>COMENZAR &nbsp;→</span>
+    <i>$2,000/MES · SIN CONTRATO</i>
   </div>
 </a>
 
@@ -1203,31 +1021,32 @@ footer{
       <div class="pulse" aria-hidden="true"></div>
       <span class="logo-text">MARKET<em>PAGE</em></span>
       <div class="logo-sep" aria-hidden="true"></div>
-      <span class="logo-ver">ZOALUM / V7</span>
+      <span class="logo-ver">ZOALUM / V8</span>
     </a>
     <nav class="nav-links" aria-label="Secciones">
-      <a href="#compare" class="nav-link">VENTAJA</a>
-      <a href="#dashboard" class="nav-link">PORTAFOLIO</a>
-      <a href="#proto" class="nav-link">PROCESO</a>
-      <a href="#oferta" class="nav-link">INVERSIÓN</a>
-      <a href="mailto:hola@zoalum.com" class="nav-cta-btn">DIAGNÓSTICO GRATIS →</a>
+      <a href="#delegated" class="nav-link">GESTIÓN</a>
+      <a href="#oracles" class="nav-link">APP ORACLES</a>
+      <a href="#referral" class="nav-link">PRECIOS</a>
+      <a href="#casos" class="nav-link">CASOS REALES</a>
+      <a href="mailto:hola@zoalum.com" class="nav-cta-btn">EMPEZAR HOY →</a>
     </nav>
     <button id="mob-btn" onclick="mobToggle()" aria-label="Abrir menú" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
   <div id="mob-menu" role="navigation" aria-label="Menú móvil">
-    <a href="#compare" onclick="closeMenu()">VENTAJA COMPETITIVA</a>
-    <a href="#dashboard" onclick="closeMenu()">PORTAFOLIO</a>
-    <a href="#proto" onclick="closeMenu()">PROCESO</a>
-    <a href="#oferta" onclick="closeMenu()">MODELOS DE INVERSIÓN</a>
-    <a href="mailto:hola@zoalum.com" onclick="closeMenu()" class="mob-cta-link">DIAGNÓSTICO GRATIS</a>
+    <a href="#delegated" onclick="closeMenu()">GESTIÓN DELEGADA</a>
+    <a href="#oracles" onclick="closeMenu()">APP ORACLES</a>
+    <a href="#referral" onclick="closeMenu()">PRECIOS Y REFERIDOS</a>
+    <a href="#casos" onclick="closeMenu()">CASOS REALES</a>
+    <a href="#fair-use" onclick="closeMenu()">POLÍTICA DE USO JUSTO</a>
+    <a href="mailto:hola@zoalum.com" onclick="closeMenu()" class="mob-cta-link">EMPEZAR HOY</a>
   </div>
 </nav>
 
-<!-- ═══════════════════════════════════════
-     HERO — PILAR 1: ROI COPY REWRITE
-════════════════════════════════════════ -->
+<!-- ══════════════════════════════════════
+     HERO — Lenguaje de no-ingeniero
+══════════════════════════════════════ -->
 <section id="hero" aria-label="Propuesta de valor">
   <div class="hero-bg-text" aria-hidden="true"><span>MP</span></div>
   <div class="hero-scan" aria-hidden="true"></div>
@@ -1237,20 +1056,18 @@ footer{
   <div class="corner corner-br" aria-hidden="true"></div>
 
   <div class="h-inner">
-    <div class="boot-row" role="status" aria-live="polite">
+    <div class="boot-row" role="status">
       <div class="boot-chip">
         <div class="pulse" style="width:5px;height:5px" aria-hidden="true"></div>
-        SISTEMA ACTIVO — V7.0
+        SISTEMA ACTIVO — V8.0
       </div>
       <div class="boot-chip neutral" id="hero-time" aria-label="Hora actual">--:--:--</div>
     </div>
 
-    <!-- ROI TAGLINE: Anclaje mental antes del título -->
-    <div class="h-roi-tag" style="opacity:0;animation:up .6s .1s ease forwards">
+    <!-- Promesa en lenguaje de dueño de negocio -->
+    <div class="h-promise-tag">
       <div class="pulse am" style="width:5px;height:5px" aria-hidden="true"></div>
-      Tu canal digital actual te cuesta
-      <span class="roi-num">$$$</span>
-      en clientes perdidos cada mes
+      Tu negocio en internet, <strong>sin que tengas que aprender nada técnico</strong>
     </div>
 
     <h1 class="h-title">
@@ -1258,45 +1075,43 @@ footer{
       <span class="h-title-ac">PAGE</span>
     </h1>
 
-    <!-- COPY REWRITE: De tecnología a dinero -->
     <p class="h-sub">
-      No compramos tecnología. <strong>Compramos retorno.</strong> Un nodo MarketPage es tu vendedor más disciplinado — trabaja 24/7, no falla en latencia, no cede clientes a la competencia y <strong>el código siempre es tuyo.</strong>
+      Tu página web abre <strong>antes de que el cliente parpadee.</strong> Tu inventario se controla desde el celular. Y si algo falla a las 3am — nosotros lo arreglamos. <strong>Tú solo vendes.</strong>
     </p>
 
-    <!-- PROPOSICIÓN DE VALOR: en lenguaje de negocio -->
     <div class="h-value-props">
-      <div class="h-vp">Clientes cualificados 24/7</div>
-      <div class="h-vp">Sin vendor lock-in · Código tuyo</div>
-      <div class="h-vp">ROI medible desde el día 30</div>
-      <div class="h-vp">IA AGNITIO disponible</div>
+      <div class="h-vp">Tu página nunca se cae</div>
+      <div class="h-vp">App de inventario incluida</div>
+      <div class="h-vp">Sin contratos largos</div>
+      <div class="h-vp">3 referidos = web gratis</div>
     </div>
 
     <div class="h-ctas">
-      <a href="mailto:hola@zoalum.com" class="btn btn-p">DIAGNÓSTICO GRATIS &nbsp;→</a>
-      <a href="#compare" class="btn btn-g">VER CASOS DE ÉXITO</a>
+      <a href="mailto:hola@zoalum.com" class="btn btn-p">EMPEZAR HOY &nbsp;→</a>
+      <a href="#referral" class="btn btn-g">VER PRECIOS →</a>
     </div>
 
-    <!-- MÉTRICAS: Conectadas a ROI, no solo a tech -->
+    <!-- MÉTRICAS EN LENGUAJE DE NEGOCIO -->
     <div class="h-metrics" role="list">
       <div class="h-met" role="listitem">
-        <div class="met-v">98<span class="met-u">+</span></div>
-        <div class="met-l">VELOCIDAD<br/>LIGHTHOUSE</div>
-        <div class="met-roi">0 clientes perdidos por carga lenta</div>
+        <div class="met-v">0</div>
+        <div class="met-l">CAÍDAS<br/>AL MES</div>
+        <div class="met-b">Sin clientes perdidos por fallas técnicas</div>
       </div>
       <div class="h-met" role="listitem">
-        <div class="met-v">&lt;0.8<span class="met-u">s</span></div>
-        <div class="met-l">TIEMPO DE<br/>PRIMERA CARGA</div>
-        <div class="met-roi">-53% rebote vs competencia</div>
+        <div class="met-v">24<span class="met-u">h</span></div>
+        <div class="met-l">RESPUESTA<br/>MÁXIMA</div>
+        <div class="met-b">Si algo falla, lo arreglamos ese día</div>
       </div>
       <div class="h-met" role="listitem">
         <div class="met-v">7<span class="met-u">d</span></div>
-        <div class="met-l">DESPLIEGUE<br/>MÍNIMO</div>
-        <div class="met-roi">Canal activo en una semana</div>
+        <div class="met-l">TU NEGOCIO<br/>EN LÍNEA</div>
+        <div class="met-b">Activo en una semana, no en meses</div>
       </div>
       <div class="h-met" role="listitem">
-        <div class="met-v">0</div>
-        <div class="met-l">DEUDA<br/>TÉCNICA</div>
-        <div class="met-roi">Sin sorpresas ni costos ocultos</div>
+        <div class="met-v"><span class="met-u">$</span>0</div>
+        <div class="met-l">COSTOS<br/>OCULTOS</div>
+        <div class="met-b">El precio que acuerdes es el que pagas</div>
       </div>
     </div>
   </div>
@@ -1312,217 +1127,501 @@ footer{
   <div class="ticker-track" id="ticker-track"></div>
 </div>
 
-<!-- ═══════════════════════════════════════
-     ROI PROOF STRIP — NUEVA SECCIÓN
-     Pilar 1: Ancla de retorno antes de arquitectura
-════════════════════════════════════════ -->
-<section id="roi-strip" aria-label="Impacto en tu negocio">
-  <div class="roi-strip-inner">
-    <div class="roi-strip-item rev">
-      <div class="roi-icon" aria-hidden="true">📈</div>
-      <div class="roi-body">
-        <div class="roi-label">IMPACTO REAL EN CLIENTES</div>
-        <div class="roi-headline">+40% en contactos<br/><span class="ac">cualificados</span> · Raylon</div>
+<!-- ══════════════════════════════════════
+     PAIN STRIP — Problemas reales de dueños de negocio
+══════════════════════════════════════ -->
+<section id="pain-strip" aria-label="Problemas que resolvemos">
+  <div class="pain-strip-inner">
+    <div class="pain-item rev">
+      <div class="pain-icon" aria-hidden="true">😤</div>
+      <div class="pain-body">
+        <div class="pain-label">EL PROBLEMA QUE CONOCES</div>
+        <div class="pain-headline">Tu página carga lento<br/><span class="red">y el cliente se va</span></div>
       </div>
     </div>
-    <div class="roi-strip-item rev" style="transition-delay:.08s">
-      <div class="roi-icon" aria-hidden="true">🌎</div>
-      <div class="roi-body">
-        <div class="roi-label">EXPANSIÓN DE MERCADO</div>
-        <div class="roi-headline">Exportación activada<br/><span class="am">Obsidian Gold</span></div>
+    <div class="pain-item rev" style="transition-delay:.08s">
+      <div class="pain-icon" aria-hidden="true">📦</div>
+      <div class="pain-body">
+        <div class="pain-label">EL CAOS DEL INVENTARIO</div>
+        <div class="pain-headline">Vendes algo que<br/><span class="am">ya no tienes en stock</span></div>
       </div>
     </div>
-    <div class="roi-strip-item rev" style="transition-delay:.16s">
-      <div class="roi-icon" aria-hidden="true">🔐</div>
-      <div class="roi-body">
-        <div class="roi-label">PROTECCIÓN DE INVERSIÓN</div>
-        <div class="roi-headline">Código 100% tuyo<br/><span class="ac">Cero lock-in</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════
-     ARQUITECTURA — PILAR 1: ROI FRAMING
-════════════════════════════════════════ -->
-<section class="sec" id="compare" style="background:var(--s1)">
-  <div class="sec-w">
-    <div class="eyebrow rev">MÓDULO 01 — VENTAJA COMPETITIVA</div>
-    <div style="height:16px"></div>
-    <h2 class="section-h rev">TU COMPETENCIA YA<br/><span class="ac">te está ganando en velocidad</span></h2>
-    <p class="section-p rev">Cada 100ms de latencia adicional representa una pérdida de 1% en conversión. Un nodo MarketPage elimina esa fuga de ingresos con arquitectura de grado industrial — no con un tema de WordPress.</p>
-
-    <div class="toggle-rig rev">
-      <span class="toggle-label bad" id="lbl-bad">✗ GASTO — Te cuesta clientes</span>
-      <div class="toggle-sw" id="cmp-toggle" role="switch" aria-checked="false" tabindex="0" aria-label="Cambiar modo comparativa">
-        <div class="t-track"></div>
-        <div class="t-handle"></div>
-        <span class="t-lbl">OFF</span>
-      </div>
-      <span class="toggle-label good dim" id="lbl-good">✓ INVERSIÓN — Genera retorno</span>
-    </div>
-
-    <div class="cmp-zone mode-bad rev" id="cmp-zone">
-      <div class="cmp-grid">
-        <div class="cmp-col bad">
-          <div class="cmp-head bad"><span style="color:var(--red)">■</span> PLANTILLA GENÉRICA — TE CUESTA DINERO</div>
-          <div class="cmp-row bad">Lento: el 53% de usuarios abandona si tarda más de 3s</div>
-          <div class="cmp-row bad">Código ajeno: pagas renta digital sin acumular activo</div>
-          <div class="cmp-row bad">Sin modelo de conversión: visitas que no generan ventas</div>
-          <div class="cmp-row bad">SEO genérico: invisible para tus clientes ideales</div>
-          <div class="cmp-row bad">Mobile degradado: pierdes el 65% de tu tráfico potencial</div>
-          <div class="cmp-row bad">Refactoring total en 18 meses: costo oculto garantizado</div>
-          <div class="cmp-row bad">Vendor lock-in: si cambias proveedor, empiezas de cero</div>
-        </div>
-        <div class="cmp-col good">
-          <div class="cmp-head good"><span style="color:var(--cy)">■</span> NODO MARKETPAGE — GENERA RETORNO</div>
-          <div class="cmp-row good">FCP &lt;0.8s: cero visitantes perdidos por velocidad</div>
-          <div class="cmp-row good">El código es tuyo: cada peso invertido genera un activo digital</div>
-          <div class="cmp-row good">Arquitectura de conversión guiada por datos reales de comportamiento</div>
-          <div class="cmp-row good">SEO estructural nativo: posicionamiento desde el primer día</div>
-          <div class="cmp-row good">Mobile-First real: captura el 100% del tráfico de tu audiencia</div>
-          <div class="cmp-row good">Módulos independientes: escala sin refactoring ni costos sorpresa</div>
-          <div class="cmp-row good">Sin lock-in: si el día de mañana decides cambiarte, te llevas todo</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- OWNERSHIP STRIP — PILAR 1 diferencial clave -->
-    <div class="ownership-strip rev">
-      <div class="ownership-icon" aria-hidden="true">🔐</div>
-      <div class="ownership-body">
-        <div class="ownership-title">TU CÓDIGO. TU ACTIVO. TU DECISIÓN.</div>
-        <div class="ownership-desc">
-          A diferencia de Wix, Shopify o cualquier SaaS genérico, <strong>el código fuente de tu nodo MarketPage es 100% tuyo desde el primer despliegue.</strong> No hay lock-in de plataforma. No dependes de que nadie suba precios. Si mañana decides cambiarte de proveedor, te llevas todo. Eso es lo que significa construir un activo digital, no rentar uno.
-        </div>
-      </div>
-    </div>
-
-    <!-- Capacidades — con ROI labels -->
-    <div style="margin-top:56px">
-      <div class="eyebrow rev">QUÉ OBTIENE TU NEGOCIO</div>
-      <div style="height:16px"></div>
-      <div class="cap-grid">
-        <div class="cap-card rev">
-          <div class="cap-nid">RESULTADO_01</div>
-          <div class="cap-name">CERO CLIENTES PERDIDOS POR LENTITUD</div>
-          <div class="cap-desc">Lighthouse 98+. Core Web Vitals en verde. Cada visitante que llega, permanece. Tu competencia pierde el 53% del tráfico en la carga.</div>
-          <div class="cap-roi">→ Impacto directo en tasa de contacto</div>
-          <div class="cap-bar"><div class="cap-bar-fill" data-w="0.98"></div><div class="cap-score">98/100</div></div>
-        </div>
-        <div class="cap-card rev" style="transition-delay:.06s">
-          <div class="cap-nid">RESULTADO_02</div>
-          <div class="cap-name">VISIBILIDAD QUE GENERA VENTAS</div>
-          <div class="cap-desc">SEO estructural nativo con Schema markup. Tu negocio aparece ante clientes que ya están buscando lo que vendes — no pagas para ser encontrado.</div>
-          <div class="cap-roi">→ Tráfico orgánico calificado sin inversión en ads</div>
-          <div class="cap-bar"><div class="cap-bar-fill" data-w="0.93"></div><div class="cap-score">93/100</div></div>
-        </div>
-        <div class="cap-card rev" style="transition-delay:.12s">
-          <div class="cap-nid">RESULTADO_03</div>
-          <div class="cap-name">ACTIVO QUE ESCALA CONTIGO</div>
-          <div class="cap-desc">Arquitectura modular: agrega funciones a tu negocio sin romper lo que ya funciona. Sin refactoring total. Sin costos sorpresa cada 18 meses.</div>
-          <div class="cap-roi">→ Protección del capital invertido a largo plazo</div>
-          <div class="cap-bar"><div class="cap-bar-fill" data-w="1.0"></div><div class="cap-score">100/100</div></div>
-        </div>
-        <div class="cap-card rev agnitio-card" style="transition-delay:.18s">
-          <div class="cap-nid">DIFERENCIAL_04 — OPT.</div>
-          <div class="agnitio-badge">
-            <div class="pulse am" style="width:4px;height:4px" aria-hidden="true"></div>
-            MOTOR AGNITIO IA — ZOALUM R&D
-          </div>
-          <div class="cap-name am">INTELIGENCIA QUE OPTIMIZA TU CONVERSIÓN</div>
-          <div class="cap-desc">Integración con AGNITIO — el motor de IA propio de ZOALUM — para análisis de comportamiento de usuarios, segmentación predictiva y optimización continua de tu embudo de ventas.</div>
-          <div class="cap-roi">→ Tu nodo aprende y mejora su conversión automáticamente</div>
-          <div class="cap-bar"><div class="cap-bar-fill am" data-w="0.88"></div><div class="cap-score am">ADD-ON DISPONIBLE</div></div>
-        </div>
+    <div class="pain-item rev" style="transition-delay:.16s">
+      <div class="pain-icon" aria-hidden="true">🔧</div>
+      <div class="pain-body">
+        <div class="pain-label">EL SOPORTE QUE NUNCA LLEGA</div>
+        <div class="pain-headline">Algo falla y nadie<br/><span class="ac">responde el teléfono</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════
-     NODOS ACTIVOS — PILAR 2: PORTFOLIO REFACTORING
-     Estructura: Casos de éxito PRIMERO, R&D Labs SEGUNDO
-════════════════════════════════════════ -->
-<section class="sec" id="dashboard">
+<!-- ══════════════════════════════════════
+     GESTIÓN DELEGADA — Analogía del Local Físico
+══════════════════════════════════════ -->
+<section class="sec" id="delegated">
   <div class="sec-w">
-    <div class="eyebrow rev">MÓDULO 02 — RESULTADOS VALIDADOS EN PRODUCCIÓN</div>
+    <div class="eyebrow rev">MÓDULO 01 — GESTIÓN DELEGADA</div>
     <div style="height:16px"></div>
-    <h2 class="section-h rev">CLIENTES QUE <span class="ac">ESCALAN</span></h2>
+    <h2 class="section-h rev">RENTA LA MAQUINARIA.<br/><span class="ac">TÚ TE DEDICAS A VENDER.</span></h2>
     <p class="section-p rev">
-      Dos clientes activos que generan retorno con infraestructura MarketPage — y tres laboratorios propios donde probamos la tecnología antes de ponérsela a cualquier cliente.
+      Imagina que rentas un local en el mejor centro comercial de la ciudad. El dueño del edificio se encarga de la luz, el mantenimiento, la seguridad y el aire acondicionado. Tú solo pones tus productos y atiendes a tus clientes. Eso es exactamente lo que hacemos contigo.
     </p>
 
-    <!-- Lab banner — explica la lógica R&D -->
-    <div class="lab-banner rev" style="transition-delay:.1s">
-      <div class="lab-banner-icon" aria-hidden="true">🧪</div>
-      <div class="lab-banner-text">
-        <div class="lab-banner-title">¿POR QUÉ TENEMOS PROYECTOS PROPIOS?</div>
-        <div class="lab-banner-desc">
-          GRUPO ZOALUM, AGNITIO y D'VILL no son proyectos secundarios. Son nuestros <strong style="color:var(--tx0)">laboratorios de R&D en producción real</strong>: donde probamos, rompemos y perfeccionamos cada técnica antes de ofrecérsela a nuestros clientes. Si funcionó en nuestros propios negocios bajo presión real, funciona en el tuyo.
+    <div class="local-analogy rev" style="transition-delay:.1s">
+      <!-- COL: Sin MARKETPAGE -->
+      <div class="local-col bad">
+        <div class="local-col-head">
+          <div class="local-col-icon">🏚️</div>
+          <div>
+            <div class="local-col-title red">SIN MARKETPAGE</div>
+            <div class="local-col-subtitle">Como rentar una bodega sin servicios</div>
+          </div>
+        </div>
+        <div class="local-items">
+          <div class="local-item bad">
+            <div class="local-item-icon">❌</div>
+            <div class="local-item-text">
+              <div class="local-item-title">Tú contratas y pagas el hosting</div>
+              <div class="local-item-desc">Como si tuvieras que pagar la luz del local por separado cada mes — y lidiar con el proveedor cuando falla.</div>
+            </div>
+          </div>
+          <div class="local-item bad">
+            <div class="local-item-icon">❌</div>
+            <div class="local-item-text">
+              <div class="local-item-title">Tú llamas al técnico cuando algo falla</div>
+              <div class="local-item-desc">Como si cada vez que se rompe una tubería, tuvieras que buscar y pagar un plomero de emergencia.</div>
+            </div>
+          </div>
+          <div class="local-item bad">
+            <div class="local-item-icon">❌</div>
+            <div class="local-item-text">
+              <div class="local-item-title">Tu inventario en libretas o Excel</div>
+              <div class="local-item-desc">Vendes algo que ya no tienes, o no sabes qué pedir. Errores que cuestan clientes y dinero real.</div>
+            </div>
+          </div>
+          <div class="local-item bad">
+            <div class="local-item-icon">❌</div>
+            <div class="local-item-text">
+              <div class="local-item-title">Nadie disponible a las 11pm</div>
+              <div class="local-item-desc">Cuando algo se cae un viernes por la noche, pierdes ventas del fin de semana completo.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- COL: Con MARKETPAGE -->
+      <div class="local-col good">
+        <div class="local-col-head">
+          <div class="local-col-icon">🏢</div>
+          <div>
+            <div class="local-col-title cy">CON MARKETPAGE</div>
+            <div class="local-col-subtitle">Como rentar en el mejor centro comercial</div>
+          </div>
+        </div>
+        <div class="local-items">
+          <div class="local-item good">
+            <div class="local-item-icon">✅</div>
+            <div class="local-item-text">
+              <div class="local-item-title">Nosotros nos encargamos del hosting</div>
+              <div class="local-item-desc">Servidores, velocidad, seguridad. Tú no hablas con ningún proveedor técnico — eso es nuestro problema.</div>
+            </div>
+          </div>
+          <div class="local-item good">
+            <div class="local-item-icon">✅</div>
+            <div class="local-item-text">
+              <div class="local-item-title">Si algo falla, lo arreglamos nosotros</div>
+              <div class="local-item-desc">Como el dueño del edificio que manda al plomero sin cobrarte extra. Tu renta incluye la tranquilidad.</div>
+            </div>
+          </div>
+          <div class="local-item good">
+            <div class="local-item-icon">✅</div>
+            <div class="local-item-text">
+              <div class="local-item-title">App ORACLES para tu inventario</div>
+              <div class="local-item-desc">Desde tu celular: qué tienes, qué se está agotando, qué vender más. En tiempo real, sin hojas de Excel.</div>
+            </div>
+          </div>
+          <div class="local-item good">
+            <div class="local-item-icon">✅</div>
+            <div class="local-item-text">
+              <div class="local-item-title">Respuesta garantizada en menos de 24h</div>
+              <div class="local-item-desc">Canal directo con el equipo técnico. No un ticket de soporte genérico — una persona real que conoce tu negocio.</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="db-mobile">
-      <div class="db-progress rev" id="db-progress" role="tablist" aria-label="Navegación de nodos"></div>
-      <div class="db-reel-wrap rev" id="db-reel-wrap" style="transition-delay:.08s">
-        <div class="db-reel" id="db-reel"></div>
-      </div>
-    </div>
-
-    <div class="db-desktop">
-      <div class="db-sidebar">
-        <div class="db-sbh">/ ECOSYSTEM.NODES [5]</div>
-        <div id="db-sidebar"></div>
-      </div>
-      <div class="db-main">
-        <div class="db-topbar">
-          <div class="db-bc">
-            <span>ZOALUM</span><span>/</span>
-            <span>PORTAFOLIO</span><span>/</span>
-            <span class="bc-cur" id="db-bc-name">—</span>
-          </div>
-          <div class="db-ctrls">
-            <button class="db-ctrl">EXPORTAR</button>
-            <button class="db-ctrl">INFORME</button>
-          </div>
+    <!-- BANNER TÚ VENDES -->
+    <div class="tuvende-banner rev" style="transition-delay:.2s">
+      <div class="tuvende-icon" aria-hidden="true">🤝</div>
+      <div class="tuvende-body">
+        <div class="tuvende-title">TÚ VENDES. NOSOTROS MANTENEMOS EL MOTOR.</div>
+        <div class="tuvende-desc">
+          La diferencia entre un negocio que crece y uno que pelea con su tecnología es esta: los dueños exitosos no aprenden a ser técnicos — <strong>contratan a alguien en quien confiar.</strong> Nosotros somos ese alguien. Tu marca y tus datos siempre son tuyos. <strong>Lo que rentamos es la maquinaria, no tu negocio.</strong>
         </div>
-        <div id="db-panel"></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════
-     PROTOCOLO — PILAR 1: ROI LANGUAGE
-════════════════════════════════════════ -->
-<section class="sec" id="proto" style="background:var(--s1)">
+<!-- ══════════════════════════════════════
+     APP ORACLES — Gestión de Inventario
+══════════════════════════════════════ -->
+<section class="sec" id="oracles" style="background:var(--s1)">
   <div class="sec-w">
-    <div class="eyebrow rev">MÓDULO 03 — CÓMO PROTEGEMOS TU INVERSIÓN</div>
+    <div class="eyebrow rev">MÓDULO 02 — APP ORACLES</div>
     <div style="height:16px"></div>
-    <h2 class="section-h rev">DE DIAGNÓSTICO <span class="ac">A RETORNO</span></h2>
-    <p class="section-p rev">Cuatro fases. Cada una diseñada para que el dinero que inviertes se convierta en un activo que trabaja 24/7 por tu negocio.</p>
+    <h2 class="section-h rev">TU INVENTARIO,<br/><span class="am">EN TU BOLSILLO</span></h2>
+    <p class="section-p rev">
+      ORACLES es la app de gestión que viene incluida en tu suscripción. Diseñada para dueños de joyerías, mezcalerías y comercios locales — no para contadores ni ingenieros.
+    </p>
+
+    <div class="oracles-layout rev" style="transition-delay:.1s">
+      <div class="oracles-features">
+        <div class="oracles-feature">
+          <div class="of-icon" aria-hidden="true">📱</div>
+          <div class="of-body">
+            <div class="of-title">Controla todo desde el celular</div>
+            <div class="of-desc">Sin computadora, sin cables, sin "esperar a estar en la tienda". Tu inventario viaja contigo.</div>
+            <div class="of-win">→ Toma decisiones aunque estés en casa</div>
+          </div>
+        </div>
+        <div class="oracles-feature">
+          <div class="of-icon" aria-hidden="true">🚨</div>
+          <div class="of-body">
+            <div class="of-title">Alertas antes de que te quedes sin stock</div>
+            <div class="of-desc">La app te avisa cuando un producto está a punto de agotarse — antes de que un cliente lo pida y no lo tengas.</div>
+            <div class="of-win">→ Nunca más "lo tengo que checar y le aviso"</div>
+          </div>
+        </div>
+        <div class="oracles-feature">
+          <div class="of-icon" aria-hidden="true">📊</div>
+          <div class="of-body">
+            <div class="of-title">Qué se vende más y qué no se mueve</div>
+            <div class="of-desc">Números claros de tu negocio. Sin fórmulas de Excel. Sin columnas confusas. Solo lo que necesitas saber.</div>
+            <div class="of-win">→ Compra lo que sí se vende</div>
+          </div>
+        </div>
+        <div class="oracles-feature">
+          <div class="of-icon" aria-hidden="true">🔌</div>
+          <div class="of-body">
+            <div class="of-title">Si dejas de pagar, la app se pausa</div>
+            <div class="of-desc">Tus datos siempre son tuyos. Lo que se pausa es el motor que los sincroniza. Política transparente, sin sorpresas.</div>
+            <div class="of-win">→ Cero letra chica. Todo claro desde el día 1</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MOCKUP DE LA APP -->
+      <div class="oracles-mockup">
+        <div class="mockup-hdr">
+          <div class="mdot mdot-r"></div>
+          <div class="mdot mdot-y"></div>
+          <div class="mdot mdot-g"></div>
+          <span class="mockup-title">ORACLES — GESTIÓN / v2.1.0</span>
+        </div>
+        <div class="mockup-body">
+          <div class="mock-stat-row">
+            <div class="mock-stat">
+              <div class="mock-stat-val">142</div>
+              <div class="mock-stat-lbl">PRODUCTOS</div>
+            </div>
+            <div class="mock-stat">
+              <div class="mock-stat-val" style="color:var(--grn)">$38k</div>
+              <div class="mock-stat-lbl">VALOR STOCK</div>
+            </div>
+            <div class="mock-stat">
+              <div class="mock-stat-val" style="color:var(--red)">3</div>
+              <div class="mock-stat-lbl">ALERTAS</div>
+            </div>
+          </div>
+          <div class="mock-inv-row">
+            <div class="mock-inv-head">/ INVENTARIO — ÚLTIMOS MOVIMIENTOS</div>
+            <div class="mock-item">
+              <span class="mock-item-name">Anillo plata 925 — T.7</span>
+              <span class="mock-item-stock">14 pzas</span>
+              <span class="mock-item-alert ok">OK</span>
+            </div>
+            <div class="mock-item">
+              <span class="mock-item-name">Mezcal artesanal — 750ml</span>
+              <span class="mock-item-stock">6 pzas</span>
+              <span class="mock-item-alert low">BAJO</span>
+            </div>
+            <div class="mock-item">
+              <span class="mock-item-name">Collar obsidiana negra</span>
+              <span class="mock-item-stock">22 pzas</span>
+              <span class="mock-item-alert ok">OK</span>
+            </div>
+            <div class="mock-item">
+              <span class="mock-item-name">Aretes plata — diseño mixteco</span>
+              <span class="mock-item-stock">2 pzas</span>
+              <span class="mock-item-alert low">REPONER</span>
+            </div>
+          </div>
+          <div class="mock-alert">
+            <div class="mock-alert-dot" aria-hidden="true"></div>
+            <span class="mock-alert-txt">✓ Sincronizado con tu página web — stock actualizado en tiempo real</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     CASOS REALES DE ÉXITO
+══════════════════════════════════════ -->
+<section class="sec" id="casos">
+  <div class="sec-w">
+    <div class="eyebrow rev">MÓDULO 03 — NEGOCIOS REALES, RESULTADOS REALES</div>
+    <div style="height:16px"></div>
+    <h2 class="section-h rev">CLIENTES QUE YA<br/><span class="ac">ESTÁN CRECIENDO</span></h2>
+    <p class="section-p rev">No teorías ni promesas. Estos son negocios como el tuyo, en Hidalgo y México, que ya tienen su infraestructura activa.</p>
+
+    <div class="casos-grid">
+      <div class="caso-card rev">
+        <div class="caso-badge">
+          <div class="pulse grn" style="width:4px;height:4px" aria-hidden="true"></div>
+          CLIENTE ACTIVO — CASO VERIFICADO
+        </div>
+        <div class="caso-industry">INMOBILIARIA · BIENES RAÍCES</div>
+        <div class="caso-name">BIENES RAÍCES RAYLON</div>
+        <div class="caso-desc">
+          Inmobiliaria premium en el mercado hidalguense. Antes de MarketPage, perdían prospectos porque su página tardaba más de 4 segundos en cargar en celular. Sus clientes llegaban a ver propiedades en la competencia antes de poder contactarlos.
+        </div>
+        <div class="caso-resultado">
+          <div class="caso-resultado-label">RESULTADO DOCUMENTADO</div>
+          <div class="caso-resultado-value">+40% en contactos calificados</div>
+          <div class="caso-resultado-desc">Desde el primer mes de operación. Más clientes que llegan ya listos para hablar de propiedades, no solo curiosos.</div>
+        </div>
+      </div>
+
+      <div class="caso-card rev" style="transition-delay:.1s">
+        <div class="caso-badge">
+          <div class="pulse grn" style="width:4px;height:4px" aria-hidden="true"></div>
+          CLIENTE ACTIVO — CASO VERIFICADO
+        </div>
+        <div class="caso-industry">BEBIDAS ARTESANALES · MEZCAL PREMIUM</div>
+        <div class="caso-name">OBSIDIAN GOLD</div>
+        <div class="caso-desc">
+          Mezcal artesanal de Hidalgo con calidad de exportación, pero sin la presencia digital para demostrarlo. Distribuidores internacionales dudaban de la marca porque su presencia en internet no comunicaba la calidad real del producto.
+        </div>
+        <div class="caso-resultado">
+          <div class="caso-resultado-label">RESULTADO DOCUMENTADO</div>
+          <div class="caso-resultado-value">Exportación activada</div>
+          <div class="caso-resultado-desc">Acceso a mercados internacionales y distribuidores especializados. De ventas locales a presencia nacional e internacional.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     PRECIOS + REFERRAL METER
+══════════════════════════════════════ -->
+<section class="sec" id="referral" style="background:var(--s1)">
+  <div class="sec-w">
+    <div class="eyebrow rev">MÓDULO 04 — PRECIOS Y PROGRAMA DE REFERIDOS</div>
+    <div style="height:16px"></div>
+    <h2 class="section-h rev">INVIERTE <span class="am">$2,000</span> AL MES.<br/><span class="ac">REGRESA GRATIS CON 3 AMIGOS.</span></h2>
+    <p class="section-p rev">
+      Precio claro, sin sorpresas. Y si recomiendas MarketPage a otros negocios locales, tus referidos se convierten en descuento directo en tu renta mensual.
+    </p>
+
+    <div class="referral-intro">
+
+      <!-- DESGLOSE DE PRECIOS -->
+      <div class="price-breakdown rev">
+        <div class="pb-header">
+          <div class="pb-header-title">TU INVERSIÓN MENSUAL TOTAL</div>
+          <div class="pb-header-total">$2,000 <span>MXN/mes</span></div>
+          <div class="pb-header-cycle">+ IVA · Factura disponible · Sin permanencia mínima</div>
+        </div>
+        <div class="pb-items">
+          <div class="pb-item">
+            <div class="pb-item-left">
+              <div class="pb-item-badge web">
+                <div class="pulse" style="width:4px;height:4px" aria-hidden="true"></div>
+                COMPONENTE 1 — WEB
+              </div>
+              <div class="pb-item-name">Página Web + Mantenimiento</div>
+              <div class="pb-item-desc">Tu negocio en internet. Diseño, velocidad, soporte incluido. Si algo falla, lo arreglamos nosotros.</div>
+            </div>
+            <div class="pb-item-price">
+              <div class="pb-item-val cy">$750</div>
+              <div class="pb-item-cur">MXN/mes</div>
+            </div>
+          </div>
+          <div class="pb-item">
+            <div class="pb-item-left">
+              <div class="pb-item-badge app">
+                <div class="pulse am" style="width:4px;height:4px" aria-hidden="true"></div>
+                COMPONENTE 2 — APP
+              </div>
+              <div class="pb-item-name">Licencia App ORACLES</div>
+              <div class="pb-item-desc">Gestión de inventario desde el celular. Alertas de stock, ventas, reportes. Siempre contigo.</div>
+            </div>
+            <div class="pb-item-price">
+              <div class="pb-item-val am">$1,250</div>
+              <div class="pb-item-cur">MXN/mes</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- REFERRAL METER -->
+      <div class="referral-meter rev" style="transition-delay:.1s">
+        <div class="rm-header">
+          <div>
+            <div class="rm-title">PROGRAMA DE NODOS COMPARTIDOS</div>
+            <div class="rm-subtitle">Recomienda · Ellos pagan · Tú ahorras</div>
+          </div>
+          <div class="rm-badge">
+            <div class="pulse am" style="width:4px;height:4px" aria-hidden="true"></div>
+            REFERIDOS ACTIVOS = DESCUENTO REAL
+          </div>
+        </div>
+
+        <div class="rm-levels" role="list">
+          <!-- Nivel 1 -->
+          <div class="rm-level" role="listitem" aria-label="1 referido: -$250 al mes">
+            <div class="rm-progress-bar" style="--progress:33%"></div>
+            <div class="rm-level-inner">
+              <div class="rm-count">
+                <div class="rm-count-num">1</div>
+                <div class="rm-count-lbl">REFERIDO</div>
+              </div>
+              <div class="rm-body">
+                <div class="rm-body-left">
+                  <div class="rm-ref-title">TU RENTA BAJA A</div>
+                  <div class="rm-discount">$1,750 / mes</div>
+                  <div class="rm-desc">Ahorra $250 al mes. $3,000 al año en tu bolsillo.</div>
+                </div>
+                <div class="rm-badge-right">
+                  -$250 MXN/MES
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Nivel 2 -->
+          <div class="rm-level" role="listitem" aria-label="2 referidos: -$500 al mes">
+            <div class="rm-progress-bar" style="--progress:66%"></div>
+            <div class="rm-level-inner">
+              <div class="rm-count">
+                <div class="rm-count-num">2</div>
+                <div class="rm-count-lbl">REFERIDOS</div>
+              </div>
+              <div class="rm-body">
+                <div class="rm-body-left">
+                  <div class="rm-ref-title">TU RENTA BAJA A</div>
+                  <div class="rm-discount">$1,500 / mes</div>
+                  <div class="rm-desc">Ahorra $500 al mes. $6,000 al año en tu bolsillo.</div>
+                </div>
+                <div class="rm-badge-right">
+                  -$500 MXN/MES
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Nivel 3 — JACKPOT: Web Gratis -->
+          <div class="rm-level jackpot" role="listitem" aria-label="3 referidos: web gratis">
+            <div class="rm-progress-bar" style="width:100%;background:linear-gradient(90deg,rgba(0,255,122,.1),rgba(0,255,122,.04))"></div>
+            <div class="rm-level-inner">
+              <div class="rm-count">
+                <div class="rm-count-num">3</div>
+                <div class="rm-count-lbl">REFERIDOS</div>
+              </div>
+              <div class="rm-body">
+                <div class="rm-body-left">
+                  <div class="rm-ref-title">SOLO PAGAS LA APP</div>
+                  <div class="rm-discount"><span class="jackpot-crown">🏆</span>WEB GRATIS</div>
+                  <div class="rm-desc">Solo pagas $1,250/mes por la App ORACLES. Tu página web, sin costo mensual.</div>
+                </div>
+                <div class="rm-badge-right">
+                  ✓ WEB GRATIS
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Nivel 4+ — Crédito -->
+          <div class="rm-level" role="listitem" aria-label="4 o más referidos: crédito acumulado">
+            <div class="rm-level-inner">
+              <div class="rm-count">
+                <div class="rm-count-num" style="font-size:1.4rem">4+</div>
+                <div class="rm-count-lbl">REFERIDOS</div>
+              </div>
+              <div class="rm-body">
+                <div class="rm-body-left">
+                  <div class="rm-ref-title">CRÉDITO ACUMULADO</div>
+                  <div class="rm-discount">Ahorras en la App</div>
+                  <div class="rm-desc">El descuento excedente se acumula como crédito para reducir el costo de la App ORACLES.</div>
+                </div>
+                <div class="rm-badge-right">
+                  CRÉDITO APP
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rm-bonus">
+          <div class="rm-bonus-icon" aria-hidden="true">💡</div>
+          <div class="rm-bonus-txt">
+            <div class="rm-bonus-title">¿CÓMO FUNCIONA EL CRÉDITO PARA 4+ REFERIDOS?</div>
+            <div class="rm-bonus-desc">Cada referido activo adicional al tercero genera $250 de crédito mensual que se aplica directamente a tu licencia de App ORACLES ($1,250). Con 8 referidos activos, podrías tener el ecosistema completo sin costo mensual.</div>
+          </div>
+        </div>
+
+        <div class="rm-fairuse">
+          <div class="rm-fairuse-icon" aria-hidden="true">⚠️</div>
+          <div class="rm-fairuse-txt">
+            <strong>CONDICIÓN IMPORTANTE:</strong> El descuento solo aplica mientras tu referido esté pagando su contrato activo. Si un referido cancela, el descuento se ajusta al siguiente ciclo de facturación. Ver Política de Uso Justo más abajo.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA DE PRECIO -->
+    <div style="margin-top:32px; display:flex; flex-direction:column; gap:10px; max-width:480px;" class="rev" style="transition-delay:.2s">
+      <a href="mailto:hola@zoalum.com" class="btn btn-p" style="justify-content:center">EMPEZAR HOY — $2,000/MES &nbsp;→</a>
+      <a href="mailto:hola@zoalum.com" class="btn btn-g" style="justify-content:center">HABLAR CON UN ASESOR PRIMERO</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     PROTOCOLO — Proceso de entrega
+══════════════════════════════════════ -->
+<section class="sec" id="proto">
+  <div class="sec-w">
+    <div class="eyebrow rev">MÓDULO 05 — ASÍ ES EL PROCESO</div>
+    <div style="height:16px"></div>
+    <h2 class="section-h rev">DE HOY <span class="ac">A ACTIVO EN 7 DÍAS</span></h2>
+    <p class="section-p rev">Sin reuniones infinitas. Sin hojas de requerimientos que no entiendes. Cuatro pasos simples para tener tu negocio en internet y tu inventario bajo control.</p>
 
     <div class="proto-layout">
       <div class="proto-steps">
         <div class="proto-step rev">
           <div class="ps-num">01</div>
           <div class="ps-body">
-            <div class="ps-title">DIAGNÓSTICO SIN COSTO</div>
-            <div class="ps-roi">→ Sabes exactamente lo que obtienes antes de invertir</div>
-            <div class="ps-desc">Analizamos tu objetivo de negocio, tu audiencia y a tu competencia. Antes de escribir una línea de código, tienes un mapa claro de cómo tu nodo va a generar retorno.</div>
+            <div class="ps-title">NOS CUENTAS DE TU NEGOCIO</div>
+            <div class="ps-win">→ Gratis. Sin compromiso. Tú decides después.</div>
+            <div class="ps-desc">Una llamada o mensaje. Nos dices qué vendes, quiénes son tus clientes y qué necesitas. Nosotros te explicamos en palabras simples qué vamos a hacer y cuánto te va a costar. Sin sorpresas.</div>
           </div>
           <div class="ps-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
           </div>
         </div>
         <div class="proto-step rev" style="transition-delay:.07s">
           <div class="ps-num">02</div>
           <div class="ps-body">
-            <div class="ps-title">IDENTIDAD QUE VENDE</div>
-            <div class="ps-roi">→ Tu marca comunica valor antes de que el cliente lea una palabra</div>
-            <div class="ps-desc">Sistema visual calibrado para generar confianza instantánea: contraste WCAG, jerarquía tipográfica y componentes que guían al visitante hacia la conversión.</div>
+            <div class="ps-title">DISEÑAMOS TU PRESENCIA DIGITAL</div>
+            <div class="ps-win">→ Tu negocio se ve tan profesional como los grandes.</div>
+            <div class="ps-desc">Colores, imágenes, textos, estructura. Todo diseñado para que el cliente que llega a tu página sienta confianza inmediata — y te contacte. Tú apruebas antes de publicar.</div>
           </div>
           <div class="ps-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -1531,23 +1630,23 @@ footer{
         <div class="proto-step rev" style="transition-delay:.14s">
           <div class="ps-num">03</div>
           <div class="ps-body">
-            <div class="ps-title">CONSTRUCCIÓN QUE DURA</div>
-            <div class="ps-roi">→ Sin refactoring en 18 meses. Sin costos ocultos de mantenimiento</div>
-            <div class="ps-desc">Desarrollo modular con latencia optimizada desde la base. Velocidad, accesibilidad y rendimiento cross-device no son extras — son el estándar mínimo de cada nodo que entregamos.</div>
+            <div class="ps-title">TU PÁGINA SALE EN VIVO</div>
+            <div class="ps-win">→ En 7 días hábiles, tu negocio está en internet.</div>
+            <div class="ps-desc">Publicamos, conectamos tu dominio, configuramos que cargue rápido en celular, activamos tu App ORACLES con tu inventario inicial. Tú empiezas a recibir visitas ese mismo día.</div>
           </div>
           <div class="ps-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
           </div>
         </div>
         <div class="proto-step rev" style="transition-delay:.21s">
           <div class="ps-num">04</div>
           <div class="ps-body">
-            <div class="ps-title">ACTIVACIÓN Y CRECIMIENTO</div>
-            <div class="ps-roi">→ Tu canal digital genera desde el día 1, no después de 3 meses</div>
-            <div class="ps-desc">Despliegue en producción con validación completa de Core Web Vitals. En modelo IaaS: tu nodo mejora continuamente con datos reales de tus propios clientes.</div>
+            <div class="ps-title">TÚ VENDES, NOSOTROS MANTENEMOS</div>
+            <div class="ps-win">→ Desde aquí, nosotros nos encargamos de que todo funcione.</div>
+            <div class="ps-desc">Monitoreo continuo, actualizaciones, ajustes cuando tu negocio cambia. Cada mes recibes un reporte simple: cuántas visitas tuvo tu página, quién te contactó y cómo está tu inventario.</div>
           </div>
           <div class="ps-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           </div>
         </div>
       </div>
@@ -1555,11 +1654,13 @@ footer{
       <div class="term-wrap rev" style="transition-delay:.1s">
         <div class="terminal" id="terminal">
           <div class="term-hdr">
-            <div class="tdot tdot-r"></div><div class="tdot tdot-y"></div><div class="tdot tdot-g"></div>
-            <span class="term-title">ZOALUM / ROI-ENGINE v7.0.0 — IAAS MODE</span>
+            <div class="tdot tdot-r"></div>
+            <div class="tdot tdot-y"></div>
+            <div class="tdot tdot-g"></div>
+            <span class="term-title">MARKETPAGE / ACTIVACIÓN — v8.0.0</span>
           </div>
           <div class="term-body" id="term-body">
-            <span class="t-d">// ESPERANDO INICIALIZACIÓN...</span><br/>
+            <span class="t-d">// Esperando activación...</span><br/>
             <span class="t-cur"></span>
           </div>
         </div>
@@ -1568,253 +1669,100 @@ footer{
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════
-     OFERTA — PILAR 1: INVESTMENT FRAMING
-════════════════════════════════════════ -->
-<section class="sec" id="oferta">
+<!-- ══════════════════════════════════════
+     POLÍTICA DE USO JUSTO
+══════════════════════════════════════ -->
+<section class="sec" id="fair-use" style="background:var(--s2);padding-top:var(--py);padding-bottom:var(--py)">
   <div class="sec-w">
-    <div class="eyebrow rev">MÓDULO 04 — MODELOS DE INVERSIÓN</div>
+    <div class="fu-header-badge rev">
+      <span>⚖️</span> POLÍTICA DE USO JUSTO — PROGRAMA DE REFERIDOS
+    </div>
+    <div class="eyebrow rev">MÓDULO 06 — REGLAS CLARAS</div>
     <div style="height:16px"></div>
-    <h2 class="section-h rev">ELIGE TU <span class="ac">MODELO DE RETORNO</span></h2>
-    <p class="section-p rev">Dos formas de adquirir infraestructura que trabaja por tu negocio. Una sola certeza: el código es tuyo desde el primer día, sin importar el modelo que elijas.</p>
+    <h2 class="section-h rev">REFERIDOS REALES.<br/><span class="ac">DESCUENTOS REALES.</span></h2>
+    <p class="section-p rev">
+      El Programa de Nodos Compartidos existe para beneficiar a negocios locales genuinos. Estas reglas protegen a todos los participantes — incluyéndote a ti.
+    </p>
 
-    <div class="plan-tabs rev">
-      <button class="plan-tab pago active" id="tab-pago" onclick="switchPlan('pago')" aria-selected="true">
-        <div class="pulse" style="width:5px;height:5px" aria-hidden="true"></div>
-        ADQUISICIÓN DIRECTA
-      </button>
-      <button class="plan-tab saas" id="tab-saas" onclick="switchPlan('saas')" aria-selected="false" style="position:relative">
-        <div class="plan-tab-rec">RECOMENDADO PARA ESCALAR SIN RIESGO</div>
-        <div class="pulse am" style="width:5px;height:5px" aria-hidden="true"></div>
-        INFRAESTRUCTURA GESTIONADA
-      </button>
-    </div>
+    <div class="fair-use-grid rev" style="transition-delay:.1s">
+      <div class="fu-card">
+        <div class="fu-icon" aria-hidden="true">✅</div>
+        <div class="fu-title">¿QUIÉN CUENTA COMO REFERIDO VÁLIDO?</div>
+        <div class="fu-desc">Un negocio real y verificable — joyería, mezcalería, tienda, consultorio, servicio local — con nombre, dirección y número de contacto comprobables. El referido debe contratar y pagar su primer mes completo para que el descuento se active en tu cuenta.</div>
+        <div class="fu-rule">→ Un referido = un negocio diferente al tuyo</div>
+      </div>
 
-    <!-- PLAN: PAGO ÚNICO -->
-    <div id="panel-pago" class="plan-panel active">
-      <div class="oferta-wrap pago-active rev">
-        <div class="oferta-top">
-          <span class="oferta-top-lbl">NODO MARKETPAGE V7 — TU ACTIVO DIGITAL PERMANENTE</span>
-          <div class="oferta-badge">
-            <div class="pulse grn" style="width:4px;height:4px" aria-hidden="true"></div>
-            SLOTS DISPONIBLES ESTE MES
-          </div>
-        </div>
-        <div class="oferta-body">
-          <div class="oferta-left">
-            <div class="price-display">
-              <span class="price-from">INVERSIÓN DESDE</span>
-              <div class="price-val">$599<span style="font-size:.4em;color:var(--tx2)"> USD</span></div>
-              <span class="price-note">Diagnóstico inicial sin costo · Pagas cuando estés 100% conforme</span>
-            </div>
-            <div class="pkg-list">
-              <div class="pkg-item">
-                <span class="pkg-check">▸</span>
-                <div class="pkg-text">
-                  <div class="pkg-name">NODO COMPLETO — TUYO PARA SIEMPRE</div>
-                  <div class="pkg-desc">Arquitectura modular entregada con código fuente. Mobile-first. Lighthouse 98+. FCP &lt;0.8s.</div>
-                </div>
-              </div>
-              <div class="pkg-item">
-                <span class="pkg-check">▸</span>
-                <div class="pkg-text">
-                  <div class="pkg-name">VISIBILIDAD ORGÁNICA DESDE EL DÍA UNO</div>
-                  <div class="pkg-desc">SEO estructural, Schema markup y metadatos de precisión. Tus clientes te encuentran sin pagar ads.</div>
-                </div>
-              </div>
-              <div class="pkg-item">
-                <span class="pkg-check">▸</span>
-                <div class="pkg-text">
-                  <div class="pkg-name">30 DÍAS DE OPTIMIZACIÓN POR RESULTADOS</div>
-                  <div class="pkg-desc">Ajustes de conversión basados en comportamiento real de tus propios visitantes — no en supuestos.</div>
-                </div>
-              </div>
-              <div class="pkg-item">
-                <span class="pkg-check">▸</span>
-                <div class="pkg-text">
-                  <div class="pkg-name">ANALÍTICA DE CONVERSIÓN CONFIGURADA</div>
-                  <div class="pkg-desc">GA4, Hotjar y pixel de conversión desde el despliegue. Sabes exactamente qué genera ventas.</div>
-                </div>
-              </div>
-            </div>
-            <div class="delivery-strip">
-              <span class="delivery-icon">⚡</span>
-              <div class="delivery-txt">
-                <strong>ACTIVO EN 7–14 DÍAS HÁBILES</strong>
-                Revisiones ilimitadas hasta que el resultado supere tus expectativas
-              </div>
-            </div>
-          </div>
-          <div class="oferta-right">
-            <div class="eyebrow" style="margin-bottom:20px">RETORNO VALIDADO EN CLIENTES REALES</div>
-            <div class="proof-items">
-              <div class="proof-item ext-validated">
-                <div class="proof-roi">+40% contactos cualificados</div>
-                <div class="proof-quote">"La velocidad de carga nos separó de la competencia. Desde el primer mes operando el nodo, nuestra tasa de contacto cualificado creció de forma sostenida."</div>
-                <div class="proof-author"><strong>BIENES RAÍCES RAYLON</strong> — Cliente MarketPage</div>
-                <div class="proof-meta">
-                  <span class="proof-meta-badge">CASO VALIDADO EN PRODUCCIÓN</span>
-                </div>
-              </div>
-              <div class="proof-item ext-validated">
-                <div class="proof-roi">Acceso a mercados de exportación</div>
-                <div class="proof-quote">"La infraestructura digital redefinió nuestra narrativa de marca ante distribuidores internacionales. Alcanzamos mercados que antes eran inalcanzables para nosotros."</div>
-                <div class="proof-author"><strong>OBSIDIAN GOLD</strong> — Cliente MarketPage</div>
-                <div class="proof-meta">
-                  <span class="proof-meta-badge">CASO VALIDADO EN PRODUCCIÓN</span>
-                </div>
-              </div>
-            </div>
-            <div class="guarantee">
-              <span class="guarantee-icon">🔒</span>
-              <div class="guarantee-txt">
-                <strong>GARANTÍA DE ENTREGA</strong>
-                Si no entregamos en el plazo acordado, 20% de descuento automático. Sin condiciones ni letra pequeña.
-              </div>
-            </div>
-            <div style="height:20px"></div>
-            <a href="mailto:hola@zoalum.com" class="btn btn-p" style="width:100%;justify-content:center">
-              SOLICITAR DIAGNÓSTICO SIN COSTO &nbsp;→
-            </a>
-            <div style="height:10px"></div>
-            <a href="mailto:hola@zoalum.com" class="btn btn-g" style="width:100%;justify-content:center">
-              HABLAR CON UN ESPECIALISTA
-            </a>
-          </div>
-        </div>
+      <div class="fu-card">
+        <div class="fu-icon" aria-hidden="true">🚫</div>
+        <div class="fu-title">LO QUE NO ESTÁ PERMITIDO</div>
+        <div class="fu-desc">No se aceptan cuentas duplicadas, negocios ficticios, referidos de familiares directos que no tienen negocio real, ni estructuras de referidos circulares (A refiere a B, B refiere a A para que ambos obtengan descuento sin clientes reales nuevos).</div>
+        <div class="fu-rule">→ Detectamos y cancelamos estos casos automáticamente</div>
+      </div>
+
+      <div class="fu-card">
+        <div class="fu-icon" aria-hidden="true">🔄</div>
+        <div class="fu-title">¿QUÉ PASA SI UN REFERIDO CANCELA?</div>
+        <div class="fu-desc">Si un referido deja de pagar su contrato, el descuento asociado se elimina en el siguiente ciclo de facturación (no de forma retroactiva). Se te notifica por WhatsApp o email con al menos 7 días de anticipación para que puedas planificar.</div>
+        <div class="fu-rule">→ Sin cobros retroactivos. Sin sorpresas.</div>
+      </div>
+
+      <div class="fu-card">
+        <div class="fu-icon" aria-hidden="true">🔍</div>
+        <div class="fu-title">VERIFICACIÓN DE REFERIDOS</div>
+        <div class="fu-desc">Nos reservamos el derecho de verificar la legitimidad de cada referido antes de aplicar el descuento. La verificación toma máximo 5 días hábiles. Si hay dudas, te contactamos directamente — nunca cancelamos sin explicación.</div>
+        <div class="fu-rule">→ Proceso transparente, siempre con comunicación directa</div>
+      </div>
+
+      <div class="fu-card">
+        <div class="fu-icon" aria-hidden="true">📋</div>
+        <div class="fu-title">LÍMITES DEL PROGRAMA</div>
+        <div class="fu-desc">El crédito máximo mensual a través de referidos no puede superar el costo total de tu suscripción ($2,000 MXN). No se realizan pagos en efectivo ni transferencias por referidos — el beneficio es exclusivamente descuento en tu renta mensual.</div>
+        <div class="fu-rule">→ Máximo: tu suscripción completa sin costo</div>
+      </div>
+
+      <div class="fu-card">
+        <div class="fu-icon" aria-hidden="true">🤝</div>
+        <div class="fu-title">EL ESPÍRITU DEL PROGRAMA</div>
+        <div class="fu-desc">Este programa existe para crear una red de negocios locales que se apoyan mutuamente. No es una estructura de MLM. No hay niveles infinitos. Es simplemente: si recomiendas MarketPage a otros negocios reales, tu renta baja. Así de simple.</div>
+        <div class="fu-rule">→ Comunidad de negocios, no esquema de pirámide</div>
       </div>
     </div>
 
-    <!-- PLAN: IAAS / SAAS -->
-    <div id="panel-saas" class="plan-panel">
-      <div class="oferta-wrap saas-active rev">
-        <div class="oferta-top">
-          <span class="oferta-top-lbl">INFRAESTRUCTURA GESTIONADA — TU EQUIPO TÉCNICO EXTERNO</span>
-          <div class="oferta-badge">
-            <div class="pulse am" style="width:4px;height:4px;background:var(--am);box-shadow:0 0 6px var(--am)" aria-hidden="true"></div>
-            MODELO RECOMENDADO
-          </div>
-        </div>
-        <div class="oferta-body">
-          <div class="oferta-left">
-            <div class="price-display">
-              <span class="price-from">INVERSIÓN MENSUAL DESDE</span>
-              <div class="price-val am">$2,000<span style="font-size:.38em;color:var(--tx2)"> MXN</span></div>
-              <span class="price-note">Nodo incluido en el plan · Sin costo de entrada</span>
-              <span class="price-cycle">+ IVA / Facturación mensual · Sin permanencia mínima</span>
-            </div>
-            <div class="saas-highlight">
-              <div class="pulse" style="width:5px;height:5px" aria-hidden="true"></div>
-              <div class="saas-highlight-txt">
-                <strong>TU CANAL SIEMPRE EN SU MEJOR VERSIÓN</strong>
-                Nosotros monitoreamos, optimizamos y evolucionamos tu nodo. Tú te enfocas en cerrar negocios.
-              </div>
-            </div>
-            <div class="pkg-list">
-              <div class="pkg-item">
-                <span class="pkg-check am">▸</span>
-                <div class="pkg-text">
-                  <div class="pkg-name">HOSTING DE ALTO RENDIMIENTO</div>
-                  <div class="pkg-desc">CDN global + SLA 99.9% uptime. Tu canal no descansa, no falla, no pierde clientes.</div>
-                </div>
-              </div>
-              <div class="pkg-item">
-                <span class="pkg-check am">▸</span>
-                <div class="pkg-text">
-                  <div class="pkg-name">VELOCIDAD GESTIONADA PROACTIVAMENTE</div>
-                  <div class="pkg-desc">Monitoreo continuo de Core Web Vitals. Intervenimos antes de que tus clientes perciban degradación.</div>
-                </div>
-              </div>
-              <div class="pkg-item">
-                <span class="pkg-check am">▸</span>
-                <div class="pkg-text">
-                  <div class="pkg-name">SEGURIDAD SIN SORPRESAS</div>
-                  <div class="pkg-desc">SSL, firewall de aplicación web, parches y auditoría mensual. Tu reputación digital protegida.</div>
-                </div>
-              </div>
-              <div class="pkg-item">
-                <span class="pkg-check am">▸</span>
-                <div class="pkg-text">
-                  <div class="pkg-name">TU NODO EVOLUCIONA CONTIGO</div>
-                  <div class="pkg-desc">Nuevas funcionalidades cada trimestre sin costo adicional. Tu activo digital nunca envejece.</div>
-                </div>
-              </div>
-              <div class="pkg-item">
-                <span class="pkg-check am">▸</span>
-                <div class="pkg-text">
-                  <div class="pkg-name">LÍNEA DIRECTA CON INGENIERÍA</div>
-                  <div class="pkg-desc">Canal directo con el equipo técnico. Respuesta &lt;4h. Tus preguntas no esperan un ticket de soporte.</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="oferta-right">
-            <div class="eyebrow" style="margin-bottom:20px">RETORNO VALIDADO EN CLIENTES REALES</div>
-            <div class="proof-items">
-              <div class="proof-item ext-validated">
-                <div class="proof-roi">+40% contactos cualificados</div>
-                <div class="proof-quote">"La velocidad de carga nos separó de la competencia. Desde el primer mes operando el nodo, nuestra tasa de contacto cualificado creció de forma sostenida."</div>
-                <div class="proof-author"><strong>BIENES RAÍCES RAYLON</strong> — Cliente MarketPage</div>
-                <div class="proof-meta">
-                  <span class="proof-meta-badge">CASO VALIDADO EN PRODUCCIÓN</span>
-                </div>
-              </div>
-              <div class="proof-item ext-validated">
-                <div class="proof-roi">Acceso a mercados de exportación</div>
-                <div class="proof-quote">"La infraestructura digital redefinió nuestra narrativa ante distribuidores internacionales."</div>
-                <div class="proof-author"><strong>OBSIDIAN GOLD</strong> — Cliente MarketPage</div>
-                <div class="proof-meta">
-                  <span class="proof-meta-badge">CASO VALIDADO EN PRODUCCIÓN</span>
-                </div>
-              </div>
-            </div>
-            <div class="guarantee">
-              <span class="guarantee-icon">🔐</span>
-              <div class="guarantee-txt">
-                <strong>TU CÓDIGO. SIN PERMANENCIA. SIN LOCK-IN.</strong>
-                Cancela cuando quieras. El código fuente es tuyo y te lo llevas. Así de simple.
-              </div>
-            </div>
-            <div style="height:20px"></div>
-            <a href="mailto:hola@zoalum.com" class="btn btn-am" style="width:100%;justify-content:center">
-              ACTIVAR INFRAESTRUCTURA GESTIONADA &nbsp;→
-            </a>
-            <div style="height:10px"></div>
-            <a href="mailto:hola@zoalum.com" class="btn btn-g" style="width:100%;justify-content:center">
-              COMPARAR MODELOS CON UN ESPECIALISTA
-            </a>
-          </div>
-        </div>
-      </div>
+    <div style="margin-top:28px; padding:18px 22px; background:var(--s1); border:1px solid var(--ln1);" class="rev">
+      <p style="font-size:11px; color:var(--tx3); line-height:1.8;">
+        <strong style="color:var(--tx2);">ZOALUM SE RESERVA EL DERECHO</strong> de modificar los términos de este programa con 30 días de aviso previo a los participantes activos. Las condiciones vigentes en el momento de tu registro se mantienen aplicables hasta el siguiente ciclo de renovación anual. Para preguntas sobre el programa, escribe a <a href="mailto:hola@zoalum.com" style="color:var(--cy);">hola@zoalum.com</a> con el asunto "REFERIDOS".
+      </p>
     </div>
-
   </div>
 </section>
 
-<!-- CTA FINAL -->
+<!-- ══════════════════════════════════════
+     CTA FINAL
+══════════════════════════════════════ -->
 <section id="cta-s">
   <div class="cta-orb" aria-hidden="true"></div>
   <div class="cta-w">
-    <span class="cta-lbl rev">MÓDULO 05 — COMIENZA HOY</span>
-    <h2 class="cta-h rev">CADA DÍA SIN<br/><span>ACTIVO DIGITAL</span><br/>TE CUESTA CLIENTES</h2>
-    <p class="cta-p rev">Tu competencia no espera. El diagnóstico es sin costo y sin compromiso. En 24 horas sabes exactamente qué retorno puede generarte un nodo MarketPage.</p>
+    <span class="cta-lbl rev">MÓDULO 07 — EMPIEZA HOY</span>
+    <h2 class="cta-h rev">CADA DÍA SIN PÁGINA<br/><span>SON CLIENTES</span><br/>QUE NO TE ENCUENTRAN</h2>
+    <p class="cta-p rev">Sin compromiso de permanencia. Sin contratos confusos. Sin tecnicismos. Solo tu negocio en internet, funcionando desde la primera semana.</p>
 
     <div class="cta-card rev">
       <div class="cta-lft">
-        <div class="cta-lft-lbl">CANAL DIRECTO · RESPUESTA EN &lt;24H</div>
+        <div class="cta-lft-lbl">RESPUESTA EN MENOS DE 24 HORAS</div>
         <div class="cta-brand">ZOALUM</div>
         <div class="cta-feats">
-          <div class="cta-feat">Diagnóstico de retorno sin costo</div>
-          <div class="cta-feat">Tu código, tuyo para siempre</div>
-          <div class="cta-feat">Canal activo en 7–14 días hábiles</div>
-          <div class="cta-feat">IA AGNITIO disponible como diferencial</div>
-          <div class="cta-feat">Sin permanencia mínima en modelo IaaS</div>
+          <div class="cta-feat">Tu página activa en 7 días hábiles</div>
+          <div class="cta-feat">App ORACLES incluida desde el día 1</div>
+          <div class="cta-feat">Soporte directo — no un chat de robots</div>
+          <div class="cta-feat">3 referidos y tu web es gratis</div>
+          <div class="cta-feat">Cancela cuando quieras, sin penalización</div>
         </div>
         <a href="mailto:hola@zoalum.com" class="cta-email">hola@zoalum.com</a>
       </div>
       <div class="cta-rht">
-        <a href="mailto:hola@zoalum.com" class="btn btn-p" style="width:100%;justify-content:center">SOLICITAR DIAGNÓSTICO GRATIS &nbsp;→</a>
-        <a href="#compare" class="btn btn-g" style="width:100%;justify-content:center">VER CASOS DE ÉXITO</a>
+        <a href="mailto:hola@zoalum.com" class="btn btn-p" style="width:100%;justify-content:center">EMPEZAR HOY &nbsp;→</a>
+        <a href="mailto:hola@zoalum.com" class="btn btn-am" style="width:100%;justify-content:center">QUIERO SABER MÁS</a>
+        <a href="#referral" class="btn btn-g" style="width:100%;justify-content:center">VER PRECIOS Y REFERIDOS</a>
       </div>
     </div>
   </div>
@@ -1825,12 +1773,12 @@ footer{
   <div class="footer-w">
     <div style="display:flex;align-items:center;gap:10px">
       <div class="pulse" aria-hidden="true"></div>
-      <span class="logo-text" style="font-family:var(--font-display);font-weight:800;font-size:.88rem;letter-spacing:.12em">MARKET<em style="color:var(--cy);font-style:normal">PAGE</em></span>
-      <div class="logo-sep"></div>
-      <span class="logo-ver">ZOALUM / V7 — IAAS</span>
+      <span style="font-family:var(--font-display);font-weight:800;font-size:.88rem;letter-spacing:.12em;color:var(--tx0)">MARKET<em style="color:var(--cy);font-style:normal">PAGE</em></span>
+      <div style="width:1px;height:13px;background:var(--ln2)"></div>
+      <span style="font-family:var(--font-mono);font-size:9px;letter-spacing:.18em;color:var(--tx3)">ZOALUM / V8</span>
     </div>
-    <span class="footer-copy">© 2025 ZOALUM — GRUPO ZOALUM</span>
-    <span class="footer-copy">NODO ACTIVO · CÓDIGO TUYO</span>
+    <span class="footer-copy">© 2025 GRUPO ZOALUM · HIDALGO, MÉXICO</span>
+    <span class="footer-copy">TU NEGOCIO SIEMPRE ACTIVO</span>
   </div>
 </footer>
 
@@ -1838,284 +1786,61 @@ footer{
 (function(){
 'use strict';
 
-/* ══════════════════════════════════════════════
-   NODE DATA — PILAR 2: PORTFOLIO REFACTORING
-   Orden estratégico: CLIENTES PRIMERO, R&D después
-   type: 'ext' = cliente (peso visual mayor)
-         'lab' = laboratorio R&D propio
-         'own' = corporativo / holding
-══════════════════════════════════════════════ */
-var ND={
-  /* ─ CLIENTES EXTERNOS — Primero porque son la prueba social ─ */
-  raylon:{
-    name:'BIENES RAÍCES RAYLON',
-    type:'ext', cat:'CLIENTE · REAL ESTATE PREMIUM',
-    status:'LIVE',validated:true,
-    roiLabel:'RESULTADO DOCUMENTADO',
-    roiValue:'+40% contactos cualificados',
-    roiDesc:'Primer mes de operación del nodo vs. mes anterior',
-    desc:'Infraestructura digital para inmobiliaria de alta gama en el mercado Hidalguense. Arquitectura de conversión específica para captura de prospectos premium con latencia optimizada para móvil — donde sucede el 70% del tráfico inmobiliario.',
-    tags:['REAL ESTATE','PREMIUM','CONVERSIÓN','INMOBILIARIA'],pri:['REAL ESTATE','PREMIUM'],
-    metrics:[{l:'INDUSTRIA',v:'INMUEBLES'},{l:'RESULTADO',v:'+CONVERSIÓN'},{l:'ESTADO',v:'LIVE'}]
-  },
-  obsidian:{
-    name:'OBSIDIAN GOLD',
-    type:'ext', cat:'CLIENTE · MEZCAL ARTESANAL PREMIUM',
-    status:'LIVE',validated:true,
-    roiLabel:'RESULTADO DOCUMENTADO',
-    roiValue:'Exportación a mercados especializados',
-    roiDesc:'De ventas locales a distribución nacional e internacional',
-    desc:'Nodo digital para mezcal premium artesanal de Hidalgo. La arquitectura comunica autenticidad y proceso artesanal con la narrativa visual que los importadores y sommeliers internacionales exigen. El resultado: acceso a mercados que antes requerían intermediarios costosos.',
-    tags:['MEZCAL PREMIUM','ARTESANAL','B2C','EXPORTACIÓN'],pri:['MEZCAL PREMIUM','ARTESANAL'],
-    metrics:[{l:'INDUSTRIA',v:'SPIRITS'},{l:'ALCANCE',v:'NAC + INTL'},{l:'ESTADO',v:'LIVE'}]
-  },
-  /* ─ LABORATORIOS R&D — Proyectos propios como banco de pruebas ─ */
-  agnitio:{
-    name:'AGNITIO IA',
-    type:'lab', cat:'LABORATORIO R&D · MOTOR DE IA ZOALUM',
-    status:'ACTIVO',validated:false,
-    desc:'El motor de Inteligencia Artificial propio de ZOALUM. Desarrollado internamente para análisis cognitivo, visión por computadora y optimización predictiva de conversión. Lo que probamos aquí hoy, lo integramos en los nodos de clientes mañana.',
-    tags:['MOTOR IA','COMPUTER VISION','R&D','ML PROPIO'],pri:['MOTOR IA','COMPUTER VISION'],
-    metrics:[{l:'FUNCIÓN',v:'R&D IA'},{l:'INTEGRACIÓN',v:'OPT. CLIENT'},{l:'ESTADO',v:'ACTIVO'}]
-  },
-  dvill:{
-    name:"ZOALUM D'VILL",
-    type:'lab', cat:'LABORATORIO R&D · JOYERÍA DE LUJO',
-    status:'ACTIVO',validated:false,
-    desc:'Marca de joyería de lujo de ZOALUM. Nuestro laboratorio de experiencia premium: donde probamos arquitecturas visuales de alto ticket, UX de producto exclusivo y estrategias de conversión D2C antes de aplicarlas en clientes del segmento luxury.',
-    tags:['LUXURY','ECOMMERCE','BRAND','LABORATORIO'],pri:['LUXURY','ECOMMERCE'],
-    metrics:[{l:'FUNCIÓN',v:'R&D LUXURY'},{l:'MODELO',v:'D2C'},{l:'ESTADO',v:'ACTIVO'}]
-  },
-  grupo:{
-    name:'GRUPO ZOALUM',
-    type:'own', cat:'HOLDING · MATRIZ CORPORATIVA',
-    status:'ACTIVO',validated:false,
-    desc:'Corporativo matriz que coordina el ecosistema tecnológico, editorial y de innovación de ZOALUM. La identidad institucional de alto valor que respalda cada nodo que desplegamos para clientes.',
-    tags:['CORPORATIVO','BRAND','ECOSISTEMA','HOLDING'],pri:['CORPORATIVO'],
-    metrics:[{l:'NODOS ACTIVOS',v:'5'},{l:'TIPO',v:'B2B + B2C'},{l:'ESTADO',v:'LIVE'}]
-  }
-};
-var KEYS=Object.keys(ND);
-
-function cardInner(k){
-  var d=ND[k];
-  var ac=d.type;
-  var typeClass=ac==='lab'?'lab':ac;
-
-  /* Badge de tipo de nodo */
-  var typeBadge='';
-  if(ac==='ext'&&d.validated){
-    typeBadge='<div class="node-type-badge client-win"><div class="pulse grn" style="width:4px;height:4px" aria-hidden="true"></div>CASO DE ÉXITO — CLIENTE REAL</div>';
-  } else if(ac==='lab'){
-    typeBadge='<div class="node-type-badge lab"><div class="pulse grn" style="width:4px;height:4px" aria-hidden="true"></div>LABORATORIO R&D — TECNOLOGÍA PROBADA INTERNAMENTE</div>';
-  }
-
-  /* ROI card solo para clientes externos */
-  var roiCard='';
-  if(d.roiValue){
-    roiCard='<div class="node-roi-card">'+
-      '<div class="node-roi-card-label">'+d.roiLabel+'</div>'+
-      '<div class="node-roi-card-value">'+d.roiValue+'</div>'+
-      '<div class="node-roi-card-desc">'+d.roiDesc+'</div>'+
-    '</div>';
-  }
-
-  var badgeCls=ac==='lab'?'lab':(d.validated?'validated':ac);
-  var badgeTxt=ac==='lab'?'NODO R&D':(d.validated?'RESULTADO VALIDADO':d.status);
-  var validatedBlock=d.validated?'<div class="validated-badge"><div class="pulse grn" style="width:4px;height:4px" aria-hidden="true"></div>CASO VALIDADO EN PRODUCCIÓN</div>':'';
-
-  return '<div class="db-head-row">'+
-    '<div>'+typeBadge+
-      '<div class="db-pname '+typeClass+'">'+d.name+'</div>'+
-      '<div class="db-pcat">'+d.cat+'</div>'+
-      validatedBlock+
-    '</div>'+
-    '<div class="db-badge '+badgeCls+'">'+
-      '<div class="pulse '+(ac==='lab'?'grn':(d.validated?'grn':(ac==='ext'?'am':'')))+'" style="width:5px;height:5px" aria-hidden="true"></div>'+
-      badgeTxt+
-    '</div>'+
-  '</div>'+
-  '<p class="db-desc">'+d.desc+'</p>'+
-  roiCard+
-  '<div class="db-tags">'+
-    d.tags.map(function(t){var p=d.pri.indexOf(t)>-1;return'<span class="db-tag'+(p?' p '+typeClass:'')+'">'+t+'</span>';}).join('')+
-  '</div>'+
-  '<div class="db-metrics">'+
-    d.metrics.map(function(m,i){
-      var vc=ac==='lab'?'lab':(d.validated&&i<2?'grn':ac);
-      return'<div class="db-mc"><div class="db-ml">'+m.l+'</div><div class="db-mv '+vc+'">'+m.v+'</div></div>';
-    }).join('')+
-  '</div>';
-}
-
-/* ══ TICKER — Enfocado en ROI ══ */
+/* ══ TICKER — Lenguaje de negocio, no de ingeniero ══ */
 var TICKER_ITEMS=[
-  {label:'CLIENTES PERDIDOS POR LENTITUD',val:'0'},
-  {label:'LIGHTHOUSE SCORE',val:'98/100'},
-  {label:'PRIMERA CARGA',val:'< 0.8s'},
-  {label:'TU CÓDIGO',val:'100% TUYO'},
-  {label:'VENDOR LOCK-IN',val:'ELIMINADO'},
-  {label:'DIAGNÓSTICO',val:'SIN COSTO'},
-  {label:'UPTIME SLA',val:'99.9%'},
-  {label:'REBOTE POR LENTITUD',val:'-53%'},
-  {label:'DESPLIEGUE',val:'7–14 DÍAS'},
-  {label:'AGNITIO IA',val:'INTEGRABLE'},
-  {label:'DEUDA TÉCNICA',val:'NULL'},
+  {label:'TU PÁGINA NUNCA SE CAE',val:'GARANTIZADO'},
+  {label:'TIEMPO DE RESPUESTA',val:'< 24 HORAS',am:true},
+  {label:'CAÍDAS AL MES',val:'0'},
+  {label:'INVENTARIO EN TU CELULAR',val:'ORACLES APP',am:true},
+  {label:'CONTRATOS LARGOS',val:'NO EXISTEN'},
+  {label:'COSTOS OCULTOS',val:'$0'},
+  {label:'WEB ACTIVA EN',val:'7 DÍAS',am:true},
+  {label:'3 REFERIDOS Y TU WEB ES',val:'GRATIS'},
+  {label:'CLIENTES PERDIDOS POR FALLAS',val:'ELIMINADOS'},
+  {label:'SOPORTE INCLUIDO',val:'SIN CARGO',am:true},
+  {label:'TU MARCA Y DATOS',val:'SIEMPRE TUYOS'},
 ];
 var track=document.getElementById('ticker-track');
 if(track){
   var html='';
   for(var r=0;r<2;r++){
     TICKER_ITEMS.forEach(function(item){
-      html+='<div class="ticker-item"><span class="dot"></span>'+item.label+'<span class="val">'+item.val+'</span></div>';
+      html+='<div class="ticker-item"><span class="dot"></span>'+item.label+
+        '<span class="val'+(item.am?' am':'')+'">'+item.val+'</span></div>';
     });
   }
   track.innerHTML=html;
 }
 
-/* ══ MOBILE CAROUSEL ══ */
-var reelWrap=document.getElementById('db-reel-wrap');
-var reel=document.getElementById('db-reel');
-var progressBar=document.getElementById('db-progress');
-var segs=[];
-var currentSlide=0;
-
-if(reel){
-  KEYS.forEach(function(k){
-    var d=ND[k];
-    var slide=document.createElement('div'); slide.className='db-slide';
-    var card=document.createElement('div'); card.className='db-card '+d.type;
-    card.innerHTML=cardInner(k);
-    slide.appendChild(card); reel.appendChild(slide);
-  });
-  if(progressBar){
-    KEYS.forEach(function(k,i){
-      var d=ND[k];
-      var seg=document.createElement('div');
-      var segClass='db-seg';
-      if(d.type==='ext') segClass+=' ext';
-      if(d.type==='lab') segClass+=' lab';
-      if(i===0) segClass+=' active';
-      seg.className=segClass;
-      seg.setAttribute('role','tab');
-      seg.setAttribute('aria-label',ND[k].name);
-      seg.setAttribute('aria-selected',i===0?'true':'false');
-      seg.addEventListener('click',function(){reelWrap.scrollTo({left:i*reelWrap.offsetWidth,behavior:'smooth'});});
-      progressBar.appendChild(seg); segs.push(seg);
-    });
-  }
-  var slideEls=reel.querySelectorAll('.db-slide');
-  var slideObs=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting&&e.intersectionRatio>=0.5){
-        var idx=Array.from(slideEls).indexOf(e.target);
-        if(idx!==currentSlide){
-          currentSlide=idx;
-          segs.forEach(function(s,i){
-            s.classList.toggle('active',i===idx);
-            s.setAttribute('aria-selected',i===idx?'true':'false');
-          });
-        }
-      }
-    });
-  },{root:reelWrap,threshold:0.5});
-  slideEls.forEach(function(el){slideObs.observe(el);});
-}
-
-/* ══ DESKTOP DASHBOARD ══ */
-var sidebarEl=document.getElementById('db-sidebar');
-var panelEl=document.getElementById('db-panel');
-var bcNameEl=document.getElementById('db-bc-name');
-
-if(sidebarEl){
-  KEYS.forEach(function(k){
-    var d=ND[k];
-    var node=document.createElement('div');
-    var nodeClass='db-node '+d.type+(k===KEYS[0]?' active':'');
-    node.className=nodeClass;
-    var tagCls=d.validated?'validated':(d.type==='lab'?'lab':'');
-    var tagTxt=d.validated?'CASO VALIDADO':(d.type==='lab'?'LABORATORIO R&D':d.status);
-    node.innerHTML=
-      '<div class="db-nt"><span class="db-nn">'+d.name+'</span><span class="db-ntag '+tagCls+'">'+tagTxt+'</span></div>'+
-      '<div class="db-ntype">'+d.cat+'</div>'+
-      '<div class="db-ind"><div class="pulse '+(d.validated?'grn':(d.type==='lab'?'grn':(d.type==='ext'?'am':'')))+'" style="width:5px;height:5px" aria-hidden="true"></div>'+
-      '<span class="db-ilbl '+d.type+'">'+(d.validated?'CASO DE ÉXITO':(d.type==='lab'?'NODO R&D':(d.type==='own'?'NODO CORPORATIVO':'CLIENTE')))+'</span></div>';
-    node.addEventListener('click',function(){
-      sidebarEl.querySelectorAll('.db-node').forEach(function(n){n.classList.remove('active');});
-      node.classList.add('active');
-      renderPanel(k);
-    });
-    sidebarEl.appendChild(node);
-  });
-  function renderPanel(k){
-    var d=ND[k];
-    if(bcNameEl) bcNameEl.textContent=d.name;
-    panelEl.innerHTML='<div style="padding:24px;flex:1">'+cardInner(k)+'</div>';
-  }
-  renderPanel(KEYS[0]);
-}
-
-/* ══ PLAN SWITCHER ══ */
-window.switchPlan=function(plan){
-  var isPago=plan==='pago';
-  document.getElementById('panel-pago').classList.toggle('active',isPago);
-  document.getElementById('panel-saas').classList.toggle('active',!isPago);
-  document.getElementById('tab-pago').classList.toggle('active',isPago);
-  document.getElementById('tab-saas').classList.toggle('active',!isPago);
-  document.getElementById('tab-pago').setAttribute('aria-selected',String(isPago));
-  document.getElementById('tab-saas').setAttribute('aria-selected',String(!isPago));
-};
-
-/* ══ TOGGLE COMPARE ══ */
-var toggle=document.getElementById('cmp-toggle');
-var zone=document.getElementById('cmp-zone');
-var lblBad=document.getElementById('lbl-bad');
-var lblGood=document.getElementById('lbl-good');
-var isOn=false;
-if(toggle){
-  function setToggle(on){
-    isOn=on;
-    toggle.classList.toggle('on',on);
-    toggle.setAttribute('aria-checked',String(on));
-    lblBad.classList.toggle('dim',on);
-    lblGood.classList.toggle('dim',!on);
-    zone.className='cmp-zone '+(on?'mode-good':'mode-bad');
-  }
-  toggle.addEventListener('click',function(){setToggle(!isOn);});
-  toggle.addEventListener('keydown',function(e){
-    if(e.key===' '||e.key==='Enter'){e.preventDefault();setToggle(!isOn);}
-  });
-  zone.classList.add('mode-bad');
-}
-
-/* ══ TERMINAL — Con lenguaje ROI ══ */
+/* ══ TERMINAL ══ */
 var termBody=document.getElementById('term-body');
 var termFired=false;
 var LINES=[
-  {cls:'d',text:'$ '},{cls:'a',text:'init'},{cls:'w',text:' nodo --modo=iaas --objetivo=retorno'},{br:true},
+  {cls:'d',text:'$ '},{cls:'a',text:'init'},{cls:'w',text:' negocio --modo=gestion-delegada'},{br:true},
   {br:true},
-  {cls:'d',text:'▸ '},{cls:'g',text:'✓ '},{cls:'d',text:'Diagnóstico de negocio completado [2.3s]'},{br:true},
-  {cls:'d',text:'▸ '},{cls:'g',text:'✓ '},{cls:'d',text:'Mapa de conversión generado [1.1s]'},{br:true},
-  {cls:'d',text:'▸ '},{cls:'am',text:'◉ '},{cls:'d',text:'Construcción modular en progreso...'},{br:true},
+  {cls:'d',text:'▸ '},{cls:'g',text:'✓ '},{cls:'d',text:'Análisis de tu negocio completado'},{br:true},
+  {cls:'d',text:'▸ '},{cls:'g',text:'✓ '},{cls:'d',text:'Diseño de página aprobado por cliente'},{br:true},
+  {cls:'d',text:'▸ '},{cls:'am',text:'◉ '},{cls:'d',text:'Publicando en internet...'},{br:true},
   {br:true},
-  {cls:'d',text:'// INDICADORES DE RETORNO'},{br:true},
-  {cls:'d',text:'lighthouse     : '},{cls:'a',text:'98 / 100'},{br:true},
-  {cls:'d',text:'fcp            : '},{cls:'a',text:'0.74s'},{br:true},
-  {cls:'d',text:'rebote_prevenido: '},{cls:'a',text:'-53%'},{br:true},
-  {cls:'d',text:'vendor_lockin  : '},{cls:'g',text:'ELIMINADO'},{br:true},
-  {cls:'d',text:'codigo_es_tuyo : '},{cls:'g',text:'true'},{br:true},
-  {cls:'d',text:'deuda_tecnica  : '},{cls:'g',text:'null'},{br:true},
+  {cls:'d',text:'// REPORTE DE TU NEGOCIO'},{br:true},
+  {cls:'d',text:'pagina_activa     : '},{cls:'g',text:'SÍ'},{br:true},
+  {cls:'d',text:'carga_en_celular  : '},{cls:'g',text:'MENOS DE 1 SEGUNDO'},{br:true},
+  {cls:'d',text:'clientes_perdidos : '},{cls:'g',text:'0'},{br:true},
+  {cls:'d',text:'app_oracles       : '},{cls:'am',text:'ACTIVA — INVENTARIO SINCRONIZADO'},{br:true},
+  {cls:'d',text:'soporte           : '},{cls:'g',text:'INCLUIDO SIN COSTO EXTRA'},{br:true},
+  {cls:'d',text:'costos_ocultos    : '},{cls:'g',text:'NO EXISTEN'},{br:true},
   {br:true},
-  {cls:'d',text:'// MODO IAAS — PROTECCIÓN CONTINUA'},{br:true},
-  {cls:'d',text:'uptime_sla     : '},{cls:'g',text:'99.9%'},{br:true},
-  {cls:'d',text:'monitoreo      : '},{cls:'g',text:'PROACTIVO 24/7'},{br:true},
-  {cls:'d',text:'agnitio_ia     : '},{cls:'am',text:'DISPONIBLE — ADD-ON OPT.'},{br:true},
+  {cls:'d',text:'// PROGRAMA DE REFERIDOS'},{br:true},
+  {cls:'d',text:'referidos_activos : '},{cls:'a',text:'0 / 3 para web gratis'},{br:true},
+  {cls:'d',text:'ahorro_actual     : '},{cls:'a',text:'$0 MXN/mes'},{br:true},
+  {cls:'d',text:'meta_web_gratis   : '},{cls:'am',text:'3 REFERIDOS PAGANDO'},{br:true},
   {br:true},
-  {cls:'d',text:'$ '},{cls:'a',text:'deploy'},{cls:'w',text:' --env=produccion --retorno=activado'},{br:true},
-  {cls:'d',text:'▸ '},{cls:'g',text:'✓ '},{cls:'d',text:'Nodo activo. Tu canal trabaja 24/7.'},{br:true},
+  {cls:'d',text:'$ '},{cls:'a',text:'status'},{cls:'w',text:' --mensaje=final'},{br:true},
+  {cls:'d',text:'▸ '},{cls:'g',text:'✓ '},{cls:'d',text:'Tu negocio está en línea. Tú solo vende.'},{br:true},
   {br:true},
   {cls:'d',text:'$ '},{cursor:true}
 ];
+
 function runTerminal(){
   if(!termBody||termFired) return;
   termFired=true; termBody.innerHTML='';
@@ -2126,7 +1851,7 @@ function runTerminal(){
     if(t.br){ termBody.appendChild(document.createElement('br')); }
     else if(t.cursor){ var c=document.createElement('span'); c.className='t-cur'; termBody.appendChild(c); }
     else{ var s=document.createElement('span'); s.className='t-'+t.cls; s.textContent=t.text; termBody.appendChild(s); }
-    setTimeout(next,28);
+    setTimeout(next,30);
   }
   next();
 }
@@ -2137,6 +1862,29 @@ if(termEl){
   },{threshold:0.3});
   termObs.observe(termEl);
 }
+
+/* ══ REFERRAL METER — Animación de progreso al entrar en viewport ══ */
+(function(){
+  var levels=document.querySelectorAll('.rm-level');
+  if(!levels.length) return;
+  var fired=false;
+  var meterObs=new IntersectionObserver(function(entries){
+    if(entries[0].isIntersecting && !fired){
+      fired=true;
+      /* Animar las barras de progreso */
+      levels.forEach(function(level,i){
+        setTimeout(function(){
+          level.classList.add('active');
+          setTimeout(function(){
+            level.classList.remove('active');
+          }, 600);
+        }, i * 200);
+      });
+    }
+  },{threshold:0.3});
+  var meterEl=document.querySelector('.referral-meter');
+  if(meterEl) meterObs.observe(meterEl);
+})();
 
 /* ══ MOBILE MENU ══ */
 var menuOpen=false;
@@ -2156,19 +1904,12 @@ window.closeMenu=function(){
   b.setAttribute('aria-expanded','false');
 };
 
-/* ══ SPOTLIGHT UX — PILAR 3: Reemplaza cursor custom
-   BENEFICIOS vs cursor:none + JS doble rAF:
-   - Accesibilidad: cursor nativo visible siempre
-   - Performance: un solo rAF en lugar de dos
-   - Sin penalización WCAG 2.5.3 (Target Size)
-   - Efecto "high-tech" mantenido vía ambient glow
-══ */
+/* ══ SPOTLIGHT ══ */
 (function(){
   var spotlight=document.getElementById('spotlight');
   if(!spotlight) return;
   if(!window.matchMedia('(pointer:fine)').matches) return;
-  var mx=0,my=0;
-  var rafPending=false;
+  var mx=0,my=0,rafPending=false;
   document.addEventListener('mousemove',function(e){
     mx=e.clientX; my=e.clientY;
     if(!rafPending){
@@ -2231,32 +1972,13 @@ window.addEventListener('scroll',function(){
   }
 },{passive:true});
 
-/* ══ REVEAL — Pilar 3: threshold optimizado ══ */
+/* ══ REVEAL ══ */
 var revObs=new IntersectionObserver(function(entries){
   entries.forEach(function(e){
     if(e.isIntersecting){e.target.classList.add('in');revObs.unobserve(e.target);}
   });
 },{threshold:0.06,rootMargin:'0px 0px -20px 0px'});
 document.querySelectorAll('.rev').forEach(function(el){revObs.observe(el);});
-
-/* ══ CAPACITY BARS ══ */
-var barsFired=new Set();
-var barObs=new IntersectionObserver(function(entries){
-  entries.forEach(function(e){
-    if(e.isIntersecting&&!barsFired.has(e.target)){
-      var w=parseFloat(e.target.getAttribute('data-w'));
-      e.target.style.transform='scaleX('+w+')';
-      barsFired.add(e.target); barObs.unobserve(e.target);
-    }
-  });
-},{threshold:0.4});
-document.querySelectorAll('.cap-bar-fill').forEach(function(el){barObs.observe(el);});
-
-/* ══ CAP CARD EDGE ══ */
-var cardObs=new IntersectionObserver(function(entries){
-  entries.forEach(function(e){e.target.classList.toggle('in-view',e.isIntersecting);});
-},{threshold:0.2});
-document.querySelectorAll('.cap-card').forEach(function(el){cardObs.observe(el);});
 
 })();
 </script>
