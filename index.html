@@ -3,71 +3,73 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
-<meta name="theme-color" content="#050607"/>
-<meta name="description" content="MARKETPAGE por ZOALUM — Tu negocio abierto 24/7. Página web de alto rendimiento + App de gestión ORACLES. $2,000 MXN/mes. Referidos = Descuentos reales."/>
-<title>MARKETPAGE — Tu Negocio Nunca Se Cae / ZOALUM V8</title>
+<meta name="theme-color" content="#030405"/>
+<meta name="description" content="MARKETPAGE por ZOALUM — Tu negocio abierto 24/7. Página web de alto rendimiento + App de gestión ORACLES. $2,000 MXN/mes."/>
+<title>MARKETPAGE — Tu Negocio Nunca Se Cae / ZOALUM V9</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 
 <style>
-/* ═══════════════════════════════════════════════════════════
-   ZOALUM MARKETPAGE V8 — REINGENIERÍA ESTRATÉGICA
-   PILARES:
-   1. Copy para No-Ingenieros: Beneficios, no tecnicismos
-   2. Gestión Delegada: Analogía del Local Físico
-   3. Referral Meter: Visual de Progresión de Descuentos
-   4. Precios Claros: Web + App desglosados
-   5. Política de Uso Justo Anti-Abuso
-   Mobile-first. WCAG AA. Cyberpunk Industrial.
-═══════════════════════════════════════════════════════════ */
+/* ═══════════════════════════════════════════════
+   MARKETPAGE V9 — ZOALUM
+   Cyberpunk Industrial Premium
+   Fixes: título responsive, diseño élite, 
+   animaciones fluidas, mobile-first total
+═══════════════════════════════════════════════ */
 :root{
-  --void:   #050607;
-  --s1:     #080a0d;
-  --s2:     #0d1017;
-  --s3:     #121720;
-  --s4:     #192030;
+  --void:    #030405;
+  --s1:      #07090c;
+  --s2:      #0b0f14;
+  --s3:      #10161e;
+  --s4:      #161e28;
 
-  --ln0: rgba(255,255,255,0.04);
-  --ln1: rgba(255,255,255,0.09);
-  --ln2: rgba(255,255,255,0.15);
-  --ln3: rgba(255,255,255,0.24);
+  --ln0: rgba(255,255,255,0.03);
+  --ln1: rgba(255,255,255,0.07);
+  --ln2: rgba(255,255,255,0.13);
+  --ln3: rgba(255,255,255,0.22);
 
-  --tx0: #f0f6ff;
-  --tx1: #c8d8ec;
-  --tx2: #8aafc8;
-  --tx3: #5a7a96;
+  --tx0: #eef4ff;
+  --tx1: #bccfe4;
+  --tx2: #7a9ab8;
+  --tx3: #465e75;
 
-  --cy:    #00f0ff;
-  --cy-d:  rgba(0,240,255,0.06);
-  --cy-m:  rgba(0,240,255,0.14);
-  --cy-s:  rgba(0,240,255,0.38);
+  --cy:   #00e5ff;
+  --cy-d: rgba(0,229,255,0.05);
+  --cy-m: rgba(0,229,255,0.12);
+  --cy-s: rgba(0,229,255,0.35);
+  --cy-g: rgba(0,229,255,0.08);
 
-  --am:    #ffb800;
-  --am-d:  rgba(255,184,0,0.06);
-  --am-m:  rgba(255,184,0,0.16);
-  --am-s:  rgba(255,184,0,0.38);
+  --am:   #f5a623;
+  --am-d: rgba(245,166,35,0.05);
+  --am-m: rgba(245,166,35,0.14);
+  --am-s: rgba(245,166,35,0.35);
 
-  --grn:   #00ff7a;
-  --grn-d: rgba(0,255,122,0.06);
-  --red:   #ff2d55;
+  --grn:  #00e676;
+  --grn-d:rgba(0,230,118,0.05);
+  --grn-s:rgba(0,230,118,0.3);
+  --red:  #ff3366;
+  --red-d:rgba(255,51,102,0.05);
 
-  --font-display: 'Syne', sans-serif;
-  --font-mono:    'Space Mono', monospace;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-ui:      'Manrope', sans-serif;
+  --font-mono:    'DM Mono', monospace;
 
   --sat: env(safe-area-inset-top,0px);
   --sab: env(safe-area-inset-bottom,0px);
   --sal: env(safe-area-inset-left,0px);
   --sar: env(safe-area-inset-right,0px);
 
-  --gx: 18px;
-  --nav-h: 58px;
+  --gx: 20px;
+  --nav-h: 62px;
   --tap: 52px;
-  --py: 80px;
+  --py: 90px;
+  --radius: 2px;
 }
-@media(min-width:768px){ :root{ --gx:32px; --py:110px; } }
-@media(min-width:1200px){ :root{ --gx:56px; } }
+@media(min-width:640px){ :root{ --gx:32px; } }
+@media(min-width:1024px){ :root{ --gx:52px; --py:120px; } }
+@media(min-width:1400px){ :root{ --gx:72px; } }
 
 *,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
 html{
@@ -76,26 +78,544 @@ html{
   font-size:16px;
   text-size-adjust:100%;
   -webkit-text-size-adjust:100%;
+  overflow-x:hidden;
 }
 body{
   background:var(--void);
   color:var(--tx0);
-  font-family:var(--font-mono);
+  font-family:var(--font-ui);
   overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
-
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{
     animation-duration:0.01ms!important;
     transition-duration:0.01ms!important;
   }
 }
+img{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
+
+/* ══ KEYFRAMES ══ */
+@keyframes blink{
+  0%,100%{ opacity:.35; transform:scale(1); }
+  50%{ opacity:1; transform:scale(1.5); }
+}
+@keyframes ring{
+  0%{ transform:scale(1); opacity:.5; }
+  100%{ transform:scale(3.5); opacity:0; }
+}
+@keyframes scan{
+  from{ transform:translateY(-100%); }
+  to{ transform:translateY(200vh); }
+}
+@keyframes marquee{
+  from{ transform:translateX(0); }
+  to{ transform:translateX(-50%); }
+}
+@keyframes fadeUp{
+  from{ opacity:0; transform:translateY(30px); }
+  to{ opacity:1; transform:translateY(0); }
+}
+@keyframes fadeIn{
+  from{ opacity:0; }
+  to{ opacity:1; }
+}
+@keyframes glowEdge{
+  0%,100%{ opacity:.2; }
+  50%{ opacity:.85; }
+}
+@keyframes curBlink{
+  0%,100%{ opacity:1; }
+  50%{ opacity:0; }
+}
+@keyframes floatY{
+  0%,100%{ transform:translateY(0); }
+  50%{ transform:translateY(-5px); }
+}
+@keyframes gridPulse{
+  0%,100%{ opacity:.5; }
+  50%{ opacity:1; }
+}
+@keyframes shimmer{
+  0%{ transform:translateX(-100%); }
+  100%{ transform:translateX(100%); }
+}
+@keyframes popIn{
+  0%{ opacity:0; transform:scale(0.9) translateY(8px); }
+  100%{ opacity:1; transform:scale(1) translateY(0); }
+}
+@keyframes borderRun{
+  0%{ background-position: 0% 0%, 100% 0%, 100% 100%, 0% 100%; }
+  100%{ background-position: 100% 0%, 100% 100%, 0% 100%, 0% 0%; }
+}
+@keyframes countUp{
+  from{ opacity:0; transform:translateY(12px); }
+  to{ opacity:1; transform:translateY(0); }
+}
+@keyframes neonFlicker{
+  0%,19%,21%,23%,25%,54%,56%,100%{ 
+    text-shadow: 0 0 20px var(--cy), 0 0 40px var(--cy-s); 
+  }
+  20%,24%,55%{ 
+    text-shadow: none; 
+  }
+}
+
+/* ══ PROGRESS BAR ══ */
+#prog{
+  position:fixed; top:0; left:0; right:0;
+  height:2px; z-index:9100; pointer-events:none;
+}
+#prog-fill{
+  height:100%;
+  background:linear-gradient(90deg,var(--cy),var(--am),var(--cy));
+  background-size:200% 100%;
+  box-shadow:0 0 14px var(--cy-s), 0 0 28px rgba(0,229,255,.1);
+  transform-origin:left; transform:scaleX(0);
+  animation:shimmer 2s linear infinite;
+  will-change:transform;
+}
+
+/* ══ GRID BG ══ */
+#grid-bg{
+  position:fixed; inset:0; pointer-events:none; z-index:0;
+  background-image:
+    linear-gradient(rgba(0,229,255,.018) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,229,255,.018) 1px,transparent 1px);
+  background-size:48px 48px;
+  mask-image:radial-gradient(ellipse 85% 65% at 50% 20%,#000 0%,transparent 100%);
+  animation:gridPulse 10s ease-in-out infinite;
+}
+
+/* ══ NOISE OVERLAY ══ */
+#noise{
+  position:fixed; inset:0; pointer-events:none; z-index:1;
+  opacity:.025;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px 200px;
+}
+
+/* ══ SPOTLIGHT ══ */
+#spotlight{
+  display:none; position:fixed; pointer-events:none; z-index:9990;
+  width:500px; height:500px; border-radius:50%;
+  transform:translate(-50%,-50%);
+  background:radial-gradient(circle,rgba(0,229,255,.028) 0%,transparent 65%);
+  will-change:left,top;
+}
+@media(pointer:fine){ #spotlight{ display:block; } }
+
+/* ══ SCAN LINE ══ */
+.scanline{
+  position:absolute; top:0; left:0; right:0; height:2px;
+  background:linear-gradient(90deg,transparent 0%,var(--cy-m) 40%,var(--cy-m) 60%,transparent 100%);
+  animation:scan 14s linear infinite; pointer-events:none; z-index:2; opacity:.5;
+}
+
+/* ══ NAV ══ */
+#nav{
+  position:fixed; top:0; left:0; right:0; z-index:800;
+  padding-top:var(--sat);
+  transition:transform .3s cubic-bezier(.4,0,.2,1), background .3s;
+}
+#nav.scrolled{
+  background:rgba(3,4,5,.94);
+  backdrop-filter:blur(28px);
+  -webkit-backdrop-filter:blur(28px);
+  border-bottom:1px solid var(--ln1);
+  box-shadow:0 4px 40px rgba(0,0,0,.5);
+}
+.nav-inner{
+  max-width:1380px; margin:0 auto;
+  padding:0 var(--gx);
+  display:flex; align-items:center; justify-content:space-between;
+  height:var(--nav-h);
+}
+
+/* Logo */
+.nav-logo{
+  display:flex; align-items:center; gap:12px;
+  text-decoration:none; position:relative;
+}
+.logo-mark{
+  width:32px; height:32px; position:relative;
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0;
+}
+.logo-mark::before{
+  content:''; position:absolute; inset:0;
+  border:1px solid var(--cy-s);
+  clip-path:polygon(0 0,calc(100% - 6px) 0,100% 6px,100% 100%,6px 100%,0 calc(100% - 6px));
+}
+.logo-mark-pulse{
+  width:8px; height:8px; border-radius:50%;
+  background:var(--cy); box-shadow:0 0 10px var(--cy);
+  animation:blink 2.2s ease-in-out infinite;
+  position:relative;
+}
+.logo-mark-pulse::after{
+  content:''; position:absolute; inset:-4px; border-radius:50%;
+  border:1px solid var(--cy); opacity:0;
+  animation:ring 2.2s ease-out infinite;
+}
+.logo-text-wrap{ display:flex; flex-direction:column; gap:1px; }
+.logo-name{
+  font-family:var(--font-display); font-size:1.1rem; letter-spacing:.12em;
+  color:var(--tx0); line-height:1;
+}
+.logo-name em{ color:var(--cy); font-style:normal; }
+.logo-sub{
+  font-family:var(--font-mono); font-size:8px; letter-spacing:.2em;
+  color:var(--tx3);
+}
+
+/* Nav links */
+.nav-links{ display:none; align-items:center; gap:0; }
+@media(min-width:860px){ .nav-links{ display:flex; } }
+.nav-link{
+  font-family:var(--font-mono); font-size:9px; letter-spacing:.18em;
+  color:var(--tx3); text-decoration:none;
+  min-height:var(--nav-h); display:inline-flex; align-items:center;
+  padding:0 16px; position:relative; transition:color .2s;
+}
+.nav-link::after{
+  content:''; position:absolute; bottom:0; left:16px; right:16px;
+  height:1px; background:var(--cy);
+  transform:scaleX(0); transform-origin:left; transition:transform .3s ease;
+}
+.nav-link:hover{ color:var(--cy); }
+.nav-link:hover::after{ transform:scaleX(1); }
+
+.nav-cta{
+  font-family:var(--font-mono); font-size:9px; letter-spacing:.14em; font-weight:500;
+  color:#000; background:var(--cy);
+  padding:0 22px; height:36px;
+  display:inline-flex; align-items:center; gap:8px;
+  cursor:pointer; border:none; text-decoration:none; margin-left:12px;
+  clip-path:polygon(0 0,calc(100% - 7px) 0,100% 7px,100% 100%,7px 100%,0 calc(100% - 7px));
+  transition:box-shadow .25s, transform .15s;
+  position:relative; overflow:hidden;
+}
+.nav-cta::after{
+  content:''; position:absolute; inset:0;
+  background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.3) 50%,transparent 65%);
+  transform:translateX(-150%); transition:transform .5s ease;
+}
+@media(pointer:fine){
+  .nav-cta:hover{ box-shadow:0 0 30px var(--cy-s), 0 0 60px rgba(0,229,255,.08); transform:translateY(-1px); }
+  .nav-cta:hover::after{ transform:translateX(150%); }
+}
+
+/* Hamburger */
+#mob-btn{
+  display:flex; flex-direction:column; gap:5px; align-items:center; justify-content:center;
+  background:none; border:none; cursor:pointer;
+  width:var(--tap); height:var(--tap);
+}
+@media(min-width:860px){ #mob-btn{ display:none; } }
+#mob-btn span{
+  display:block; width:22px; height:1.5px;
+  background:var(--tx1); border-radius:1px;
+  transition:transform .24s cubic-bezier(.4,0,.2,1),opacity .2s;
+}
+#mob-btn.open span:nth-child(1){ transform:translateY(6.5px) rotate(45deg); }
+#mob-btn.open span:nth-child(2){ opacity:0; transform:scaleX(0); }
+#mob-btn.open span:nth-child(3){ transform:translateY(-6.5px) rotate(-45deg); }
+
+/* Mobile menu */
+#mob-menu{
+  display:none; flex-direction:column;
+  background:rgba(3,4,5,.98); border-top:1px solid var(--ln1);
+  backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
+  padding-bottom:max(16px,var(--sab));
+}
+#mob-menu.open{ display:flex; }
+#mob-menu a{
+  font-family:var(--font-mono); font-size:11px; letter-spacing:.18em;
+  color:var(--tx2); text-decoration:none;
+  padding:0 var(--gx); border-bottom:1px solid var(--ln0);
+  min-height:56px; display:flex; align-items:center; justify-content:space-between;
+  transition:color .15s, background .15s;
+}
+#mob-menu a:hover{ color:var(--tx0); background:var(--s2); }
+.mob-cta{ color:var(--cy)!important; }
+.mob-cta::after{ content:'→'; font-family:var(--font-mono); }
+
+/* ══ FLOAT CTA ══ */
+#float-cta{
+  position:fixed;
+  bottom:max(20px,calc(var(--sab)+16px));
+  left:var(--gx); right:var(--gx); z-index:700;
+  opacity:0; transform:translateY(90px);
+  transition:opacity .45s ease, transform .45s cubic-bezier(.34,1.5,.64,1);
+  pointer-events:none;
+}
+#float-cta.visible{ opacity:1; transform:translateY(0); pointer-events:auto; }
+@media(min-width:860px){ #float-cta{ display:none; } }
+.float-inner{
+  background:var(--cy);
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 22px; height:60px;
+  clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));
+  box-shadow:0 8px 40px rgba(0,229,255,.25), 0 2px 0 rgba(255,255,255,.1) inset;
+  animation:floatY 3.5s ease-in-out infinite;
+}
+.float-inner .fl-main{
+  font-family:var(--font-display); font-size:1.1rem; letter-spacing:.1em; color:#000;
+}
+.float-inner .fl-sub{
+  font-family:var(--font-mono); font-size:9px; letter-spacing:.1em; color:rgba(0,0,0,.55);
+}
+
+/* ══ HERO ══ */
+#hero{
+  position:relative; z-index:10;
+  min-height:100svh; min-height:100dvh;
+  display:flex; flex-direction:column; justify-content:flex-end;
+  padding:calc(var(--nav-h)+var(--sat)+40px) var(--gx) calc(70px+var(--sab));
+  overflow:hidden;
+}
+
+/* Fondo decorativo de letras — AHORA RESPONSIVO */
+.hero-bg-art{
+  position:absolute; inset:0; display:flex; align-items:center; 
+  justify-content:center; pointer-events:none; z-index:1;
+  overflow:hidden;
+}
+.hero-bg-art span{
+  font-family:var(--font-display);
+  font-size:clamp(8rem,30vw,26rem);
+  line-height:1; color:transparent;
+  -webkit-text-stroke:1px rgba(0,229,255,.035);
+  letter-spacing:.06em; white-space:nowrap; user-select:none;
+  transform:translateY(10%);
+}
+
+/* Orb ambiental */
+.hero-orb{
+  position:absolute; border-radius:50%; filter:blur(100px);
+  pointer-events:none; background:var(--cy-m);
+  width:clamp(300px,60vw,700px); height:clamp(300px,60vw,700px);
+  top:-10%; left:-15%; z-index:0; opacity:.3;
+}
+.hero-orb-2{
+  position:absolute; border-radius:50%; filter:blur(120px);
+  pointer-events:none; background:rgba(245,166,35,.06);
+  width:clamp(200px,40vw,500px); height:clamp(200px,40vw,500px);
+  bottom:0; right:-10%; z-index:0;
+}
+
+/* Corners */
+.corner{ position:absolute; width:20px; height:20px; pointer-events:none; z-index:3; }
+.corner-tl{ top:calc(var(--nav-h)+var(--sat)+18px); left:var(--gx); border-top:1.5px solid var(--cy-s); border-left:1.5px solid var(--cy-s); }
+.corner-tr{ top:calc(var(--nav-h)+var(--sat)+18px); right:var(--gx); border-top:1.5px solid var(--cy-s); border-right:1.5px solid var(--cy-s); }
+.corner-bl{ bottom:calc(70px+var(--sab)+14px); left:var(--gx); border-bottom:1.5px solid var(--cy-s); border-left:1.5px solid var(--cy-s); }
+.corner-br{ bottom:calc(70px+var(--sab)+14px); right:var(--gx); border-bottom:1.5px solid var(--cy-s); border-right:1.5px solid var(--cy-s); }
+
+.h-inner{
+  position:relative; z-index:10;
+  max-width:1380px; margin:0 auto; width:100%;
+}
+
+/* Status row */
+.boot-row{
+  display:flex; align-items:center; gap:8px; margin-bottom:28px; flex-wrap:wrap;
+  opacity:0; animation:fadeUp .6s .05s ease forwards;
+}
+.boot-chip{
+  display:inline-flex; align-items:center; gap:8px;
+  border:1px solid var(--cy-m); background:var(--cy-d);
+  padding:0 14px; height:32px;
+  font-family:var(--font-mono); font-size:9px; letter-spacing:.18em; color:var(--cy);
+  clip-path:polygon(0 0,calc(100% - 5px) 0,100% 5px,100% 100%,5px 100%,0 calc(100% - 5px));
+}
+.boot-chip.neutral{ border-color:var(--ln1); background:transparent; color:var(--tx3); }
+
+/* Etiqueta promesa */
+.h-tag{
+  display:inline-flex; align-items:center; gap:10px;
+  background:var(--am-d); border:1px solid var(--am-m);
+  padding:10px 18px; margin-bottom:20px;
+  font-family:var(--font-mono); font-size:10px; letter-spacing:.1em; color:var(--am);
+  clip-path:polygon(0 0,calc(100% - 6px) 0,100% 6px,100% 100%,6px 100%,0 calc(100% - 6px));
+  opacity:0; animation:fadeUp .6s .12s ease forwards;
+}
+
+/* ════════════════════════════════════════
+   TÍTULO HERO — COMPLETAMENTE RESPONSIVO
+   Usa fluid clamp + overflow:hidden + 
+   letter-spacing dinámico para que NUNCA
+   se salga de la pantalla
+════════════════════════════════════════ */
+.h-title-wrap{
+  overflow:visible; /* visible para que se muestre bien */
+  margin-bottom:6px;
+  opacity:0; animation:fadeUp .9s .2s cubic-bezier(.16,1,.3,1) forwards;
+}
+.h-title-line{
+  font-family:var(--font-display);
+  font-size:clamp(3.5rem, 18vw, 14rem); /* 🔑 Clave: nunca más grande que 18vw */
+  line-height:.9;
+  letter-spacing:.04em;
+  color:var(--tx0);
+  display:block;
+  white-space:nowrap;
+  /* Asegurar que no se salga: */
+  max-width:100%;
+}
+.h-title-line.accent{
+  color:var(--cy);
+  position:relative;
+  display:inline-block;
+}
+.h-title-line.accent::after{
+  content:'';
+  position:absolute; bottom:-.06em; left:0;
+  width:45%; height:3px;
+  background:linear-gradient(90deg,var(--cy),transparent);
+  box-shadow:0 0 20px var(--cy-s);
+  animation:glowEdge 2.6s ease-in-out infinite;
+}
+
+/* Subtítulo */
+.h-sub{
+  font-size:clamp(.88rem,2.5vw,1.05rem); line-height:1.85;
+  color:var(--tx1); max-width:530px; margin-bottom:24px;
+  font-weight:400;
+  opacity:0; animation:fadeUp .7s .38s ease forwards;
+}
+.h-sub strong{ color:var(--tx0); font-weight:700; }
+
+/* Value props */
+.h-vps{
+  display:flex; flex-wrap:wrap; gap:8px; margin-bottom:28px;
+  opacity:0; animation:fadeUp .65s .46s ease forwards;
+}
+.h-vp{
+  display:inline-flex; align-items:center; gap:8px;
+  font-family:var(--font-mono); font-size:9px; letter-spacing:.1em; color:var(--tx2);
+  padding:7px 14px; border:1px solid var(--ln1);
+  transition:border-color .2s, color .2s;
+}
+.h-vp::before{
+  content:''; width:5px; height:5px; border-radius:50%;
+  background:var(--grn); box-shadow:0 0 8px var(--grn); flex-shrink:0;
+}
+@media(pointer:fine){ .h-vp:hover{ border-color:var(--grn-s); color:var(--grn); } }
+
+/* CTAs */
+.h-ctas{
+  display:flex; flex-direction:column; gap:10px; margin-bottom:44px;
+  opacity:0; animation:fadeUp .65s .54s ease forwards;
+}
+@media(min-width:420px){ .h-ctas{ flex-direction:row; flex-wrap:wrap; } }
+
+/* MÉTRICAS HERO */
+.h-metrics{
+  display:grid; grid-template-columns:repeat(4,1fr);
+  border:1px solid var(--ln1); background:rgba(7,9,12,.7);
+  backdrop-filter:blur(12px); overflow:hidden;
+  opacity:0; animation:fadeUp .65s .68s ease forwards;
+}
+@media(max-width:400px){ .h-metrics{ grid-template-columns:repeat(2,1fr); } }
+.h-met{
+  padding:18px 10px; text-align:center;
+  border-right:1px solid var(--ln0); position:relative;
+}
+.h-met:last-child{ border-right:none; }
+@media(max-width:400px){
+  .h-met:nth-child(2){ border-right:none; }
+  .h-met:nth-child(3),
+  .h-met:nth-child(4){ border-top:1px solid var(--ln0); }
+}
+.h-met::before{
+  content:''; position:absolute; top:0; left:0; right:0; height:1px;
+  background:linear-gradient(90deg,transparent,var(--cy-m),transparent);
+}
+.met-v{
+  font-family:var(--font-display); font-weight:400;
+  font-size:clamp(1.6rem,5vw,2.6rem); color:var(--cy); line-height:1;
+}
+.met-u{ font-size:.5em; color:var(--tx2); }
+.met-l{
+  font-family:var(--font-mono); font-size:8px; letter-spacing:.12em;
+  color:var(--tx3); margin-top:6px; line-height:1.6;
+}
+.met-b{
+  font-size:8px; letter-spacing:.05em; color:var(--am); margin-top:3px; line-height:1.4;
+  display:none;
+}
+@media(min-width:480px){ .met-b{ display:block; } }
+
+/* Scroll hint */
+.h-scroll{
+  position:absolute; bottom:max(22px,var(--sab));
+  left:50%; transform:translateX(-50%);
+  display:flex; flex-direction:column; align-items:center; gap:6px;
+  z-index:5; opacity:0; animation:fadeIn .6s 1.3s ease forwards;
+}
+@media(max-height:640px){ .h-scroll{ display:none; } }
+.h-scroll-label{
+  font-family:var(--font-mono); font-size:8px; letter-spacing:.26em; color:var(--tx3);
+}
+.h-scroll-line{
+  width:1px; height:36px;
+  background:linear-gradient(to bottom,var(--cy),transparent);
+  animation:glowEdge 2.2s ease-in-out infinite;
+}
+
+/* ══ TICKER ══ */
+#ticker{
+  background:var(--s1); border-top:1px solid var(--ln1); border-bottom:1px solid var(--ln1);
+  overflow:hidden; position:relative; z-index:10; height:40px;
+  display:flex; align-items:center;
+}
+.ticker-track{
+  display:flex; gap:0; white-space:nowrap;
+  animation:marquee 38s linear infinite;
+  will-change:transform;
+}
+.ticker-item{
+  display:inline-flex; align-items:center; gap:10px;
+  padding:0 28px; border-right:1px solid var(--ln0);
+  font-family:var(--font-mono); font-size:9px; letter-spacing:.16em; color:var(--tx3);
+}
+.ticker-dot{ width:3px; height:3px; border-radius:50%; background:var(--cy); flex-shrink:0; }
+.ticker-val{ color:var(--cy); font-weight:500; }
+.ticker-val.am{ color:var(--am); }
+
+/* ══ SECCIÓN BASE ══ */
+.sec{ position:relative; z-index:10; padding:var(--py) var(--gx); }
+.sec-w{ max-width:1380px; margin:0 auto; }
 
 /* ══ ATOMS ══ */
+.eyebrow{
+  font-family:var(--font-mono); font-size:9px; letter-spacing:.22em;
+  color:var(--tx3); text-transform:uppercase;
+  display:flex; align-items:center; gap:12px;
+}
+.eyebrow::before{
+  content:''; width:20px; height:1px;
+  background:linear-gradient(90deg,var(--cy),transparent); flex-shrink:0;
+}
+.section-h{
+  font-family:var(--font-display);
+  font-size:clamp(2.2rem,6.5vw,5rem);
+  line-height:.94; letter-spacing:.03em; color:var(--tx0); margin-top:14px;
+}
+.section-h .cy{ color:var(--cy); }
+.section-h .am{ color:var(--am); }
+.section-p{
+  font-size:clamp(.88rem,2vw,1rem); line-height:1.9;
+  color:var(--tx1); max-width:560px; margin-top:16px;
+}
+
+/* ══ PULSE DOT ══ */
 .pulse{
-  width:6px; height:6px; border-radius:50%;
-  background:var(--cy); box-shadow:0 0 8px var(--cy);
+  width:7px; height:7px; border-radius:50%;
+  background:var(--cy); box-shadow:0 0 10px var(--cy);
   flex-shrink:0; position:relative;
   animation:blink 2.2s ease-in-out infinite;
 }
@@ -104,844 +624,604 @@ body{
   border-radius:50%; border:1px solid var(--cy);
   opacity:0; animation:ring 2.2s ease-out infinite;
 }
-.pulse.am{ background:var(--am); box-shadow:0 0 8px var(--am); }
+.pulse.am{ background:var(--am); box-shadow:0 0 10px var(--am); }
 .pulse.am::after{ border-color:var(--am); }
-.pulse.grn{ background:var(--grn); box-shadow:0 0 8px var(--grn); }
+.pulse.grn{ background:var(--grn); box-shadow:0 0 10px var(--grn); }
 .pulse.grn::after{ border-color:var(--grn); }
-
-.eyebrow{
-  font-family:var(--font-mono); font-size:10px; letter-spacing:.22em;
-  color:var(--tx2); text-transform:uppercase;
-  display:flex; align-items:center; gap:10px;
-}
-.eyebrow::before{
-  content:''; width:18px; height:1px;
-  background:linear-gradient(90deg,var(--cy),transparent); flex-shrink:0;
-}
-
-.section-h{
-  font-family:var(--font-display); font-weight:800;
-  font-size:clamp(2rem,7vw,3.5rem);
-  line-height:1; letter-spacing:-.02em; color:var(--tx0);
-}
-.section-h .ac{ color:var(--cy); }
-.section-h .am{ color:var(--am); }
-
-.section-p{
-  font-size:14px; line-height:1.9;
-  color:var(--tx1); font-weight:400;
-  max-width:560px; margin-top:14px;
-}
-
-/* ══ ANIMATIONS ══ */
-@keyframes blink{
-  0%,100%{ opacity:.4; transform:scale(1); }
-  50%{ opacity:1; transform:scale(1.4); }
-}
-@keyframes ring{
-  0%{ transform:scale(1); opacity:.6; }
-  100%{ transform:scale(3); opacity:0; }
-}
-@keyframes up{
-  from{ opacity:0; transform:translateY(24px); }
-  to{ opacity:1; transform:translateY(0); }
-}
-@keyframes fade{
-  from{ opacity:0; }
-  to{ opacity:1; }
-}
-@keyframes scan{
-  from{ transform:translateY(-100%); }
-  to{ transform:translateY(200vh); }
-}
-@keyframes blink-cur{
-  0%,100%{ opacity:1; }
-  50%{ opacity:0; }
-}
-@keyframes edge-glow{
-  0%,100%{ opacity:.25; }
-  50%{ opacity:.9; }
-}
-@keyframes marquee{
-  from{ transform:translateX(0); }
-  to{ transform:translateX(-50%); }
-}
-@keyframes float-cta{
-  0%,100%{ transform:translateY(0); box-shadow:0 8px 40px rgba(0,240,255,.18); }
-  50%{ transform:translateY(-3px); box-shadow:0 14px 50px rgba(0,240,255,.28); }
-}
-@keyframes grid-pulse{
-  0%,100%{ opacity:.6; }
-  50%{ opacity:1; }
-}
-@keyframes fill-bar{
-  from{ transform:scaleX(0); }
-  to{ transform:scaleX(1); }
-}
-@keyframes pop-in{
-  0%{ opacity:0; transform:scale(0.85) translateY(10px); }
-  100%{ opacity:1; transform:scale(1) translateY(0); }
-}
-@keyframes glow-pulse{
-  0%,100%{ box-shadow:0 0 12px var(--am-s); }
-  50%{ box-shadow:0 0 28px var(--am-s), 0 0 60px rgba(255,184,0,.15); }
-}
-
-/* ══ PROGRESS BAR ══ */
-#prog{ position:fixed; top:0; left:0; right:0; height:2px; z-index:9100; pointer-events:none; }
-#prog-fill{
-  height:100%;
-  background:linear-gradient(90deg,var(--cy),var(--am));
-  box-shadow:0 0 10px var(--cy-s);
-  transform-origin:left; transform:scaleX(0); will-change:transform;
-}
-
-/* ══ GRID BG ══ */
-#grid-bg{
-  position:fixed; inset:0; pointer-events:none; z-index:0;
-  background-image:
-    linear-gradient(rgba(0,240,255,.022) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(0,240,255,.022) 1px,transparent 1px);
-  background-size:44px 44px;
-  mask-image:radial-gradient(ellipse 90% 70% at 50% 30%,#000,transparent);
-  animation:grid-pulse 8s ease-in-out infinite;
-}
-
-/* ══ SPOTLIGHT ══ */
-#spotlight{
-  display:none; position:fixed; pointer-events:none; z-index:9990;
-  width:420px; height:420px; border-radius:50%;
-  transform:translate(-50%,-50%);
-  background:radial-gradient(circle,rgba(0,240,255,.035) 0%,transparent 70%);
-  will-change:left,top; transition:opacity .4s ease;
-}
-@media(pointer:fine){ #spotlight{ display:block; } }
-@media(pointer:fine){
-  a,button{ transition:box-shadow .2s ease, border-color .2s ease; outline-offset:3px; }
-  a:focus-visible,button:focus-visible{ outline:2px solid var(--cy); outline-offset:3px; }
-}
-
-/* ══ NAV ══ */
-#nav{
-  position:fixed; top:0; left:0; right:0;
-  z-index:800; padding-top:var(--sat);
-  transition:transform .28s ease, background .28s;
-}
-#nav.scrolled{
-  background:rgba(5,6,7,.96);
-  backdrop-filter:blur(24px);
-  -webkit-backdrop-filter:blur(24px);
-  border-bottom:1px solid var(--ln0);
-}
-.nav-inner{
-  max-width:1280px; margin:0 auto;
-  padding:0 var(--gx);
-  display:flex; align-items:center; justify-content:space-between;
-  height:var(--nav-h);
-}
-.nav-logo{ display:flex; align-items:center; gap:10px; text-decoration:none; }
-.logo-text{ font-family:var(--font-display); font-weight:800; font-size:.92rem; letter-spacing:.14em; color:var(--tx0); }
-.logo-text em{ color:var(--cy); font-style:normal; }
-.logo-sep{ width:1px; height:13px; background:var(--ln2); }
-.logo-ver{ font-family:var(--font-mono); font-size:9px; letter-spacing:.18em; color:var(--tx3); }
-
-.nav-links{ display:none; align-items:center; gap:28px; }
-@media(min-width:768px){ .nav-links{ display:flex; } }
-
-.nav-link{
-  font-size:10px; letter-spacing:.2em; color:var(--tx2); text-decoration:none;
-  min-height:var(--tap); display:inline-flex; align-items:center;
-  position:relative; transition:color .2s;
-}
-.nav-link::after{
-  content:''; position:absolute; bottom:8px; left:0;
-  width:0; height:1px; background:var(--cy); transition:width .3s;
-}
-.nav-link:hover{ color:var(--tx0); }
-.nav-link:hover::after{ width:100%; }
-
-.nav-cta-btn{
-  font-family:var(--font-mono); font-size:10px; letter-spacing:.14em; font-weight:700;
-  color:#000; background:var(--cy); border:none;
-  padding:10px 22px; text-decoration:none;
-  display:inline-flex; align-items:center; gap:6px;
-  min-height:40px; cursor:pointer;
-  clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px));
-  transition:box-shadow .25s;
-}
-.nav-cta-btn:hover{ box-shadow:0 0 30px var(--cy-s); }
-
-#mob-btn{
-  display:flex; flex-direction:column; gap:5px;
-  background:none; border:none; cursor:pointer;
-  width:var(--tap); height:var(--tap);
-  align-items:center; justify-content:center;
-}
-@media(min-width:768px){ #mob-btn{ display:none; } }
-#mob-btn span{
-  display:block; width:20px; height:1.5px;
-  background:var(--tx1); border-radius:1px;
-  transition:transform .22s,opacity .18s;
-}
-#mob-btn.open span:nth-child(1){ transform:translateY(6.5px) rotate(45deg); }
-#mob-btn.open span:nth-child(2){ opacity:0; }
-#mob-btn.open span:nth-child(3){ transform:translateY(-6.5px) rotate(-45deg); }
-
-#mob-menu{
-  display:none; flex-direction:column;
-  background:rgba(5,6,7,.98);
-  border-top:1px solid var(--ln1);
-  padding-bottom:var(--sab);
-}
-#mob-menu.open{ display:flex; }
-#mob-menu a{
-  font-size:11px; letter-spacing:.2em; color:var(--tx1); text-decoration:none;
-  padding:0 var(--gx); border-bottom:1px solid var(--ln0);
-  min-height:56px; display:flex; align-items:center;
-  transition:color .15s,background .15s;
-}
-#mob-menu a:active{ color:var(--tx0); background:var(--s2); }
-.mob-cta-link{ color:var(--cy)!important; font-weight:700; justify-content:space-between!important; border-bottom:none!important; }
-.mob-cta-link::after{ content:'→'; }
-
-/* ══ FLOAT CTA MOBILE ══ */
-#float-cta{
-  position:fixed;
-  bottom:max(20px, calc(var(--sab) + 16px));
-  left:var(--gx); right:var(--gx); z-index:700;
-  opacity:0; transform:translateY(80px);
-  transition:opacity .4s ease, transform .4s cubic-bezier(.34,1.56,.64,1);
-  pointer-events:none;
-}
-#float-cta.visible{ opacity:1; transform:translateY(0); pointer-events:auto; }
-@media(min-width:768px){ #float-cta{ display:none; } }
-.float-inner{
-  background:var(--cy); display:flex; align-items:center; justify-content:space-between;
-  padding:0 20px; height:58px;
-  clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));
-  animation:float-cta 3.5s ease-in-out infinite;
-  box-shadow:0 8px 40px rgba(0,240,255,.2);
-}
-.float-inner span{ font-family:var(--font-display); font-weight:800; font-size:.9rem; letter-spacing:.08em; color:#000; }
-.float-inner i{ font-style:normal; font-family:var(--font-mono); font-size:10px; letter-spacing:.1em; color:rgba(0,0,0,.6); }
-
-/* ══ HERO ══ */
-#hero{
-  position:relative; z-index:10;
-  min-height:100svh;
-  display:flex; flex-direction:column; justify-content:flex-end;
-  padding:calc(var(--nav-h) + var(--sat) + 32px) var(--gx) calc(80px + var(--sab));
-  overflow:hidden;
-}
-.hero-bg-text{
-  position:absolute; top:0; left:0; right:0; bottom:0;
-  display:flex; align-items:center; justify-content:flex-start;
-  padding:0 var(--gx); pointer-events:none; z-index:1; overflow:hidden;
-}
-.hero-bg-text span{
-  font-family:var(--font-display); font-weight:800;
-  font-size:clamp(5rem, 32vw, 20rem); line-height:.78;
-  color:transparent;
-  -webkit-text-stroke:1px rgba(0,240,255,.04);
-  letter-spacing:-.04em; white-space:nowrap; user-select:none;
-  transform:translateX(-0.02em);
-}
-.hero-scan{
-  position:absolute; top:0; left:0; right:0; height:3px;
-  background:linear-gradient(90deg,transparent,var(--cy-m),transparent);
-  animation:scan 10s linear infinite; pointer-events:none; z-index:2; opacity:.6;
-}
-.corner{ position:absolute; width:24px; height:24px; pointer-events:none; z-index:3; }
-.corner-tl{ top:calc(var(--nav-h) + var(--sat) + 20px); left:var(--gx); border-top:1px solid var(--cy-s); border-left:1px solid var(--cy-s); }
-.corner-tr{ top:calc(var(--nav-h) + var(--sat) + 20px); right:var(--gx); border-top:1px solid var(--cy-s); border-right:1px solid var(--cy-s); }
-.corner-bl{ bottom:calc(80px + var(--sab) + 16px); left:var(--gx); border-bottom:1px solid var(--cy-s); border-left:1px solid var(--cy-s); }
-.corner-br{ bottom:calc(80px + var(--sab) + 16px); right:var(--gx); border-bottom:1px solid var(--cy-s); border-right:1px solid var(--cy-s); }
-
-.h-inner{ position:relative; z-index:10; max-width:1280px; margin:0 auto; width:100%; }
-
-.boot-row{
-  display:flex; align-items:center; gap:8px; margin-bottom:24px;
-  opacity:0; animation:up .6s .05s ease forwards; flex-wrap:wrap;
-}
-.boot-chip{
-  display:inline-flex; align-items:center; gap:8px;
-  border:1px solid rgba(0,240,255,.18); background:rgba(0,240,255,.04);
-  padding:0 14px; font-size:9px; letter-spacing:.2em; color:var(--cy);
-  min-height:36px; white-space:nowrap;
-}
-.boot-chip.neutral{ border-color:var(--ln1); background:transparent; color:var(--tx2); }
-
-/* HERO: Promesa principal en lenguaje de no-ingeniero */
-.h-promise-tag{
-  display:inline-flex; align-items:center; gap:10px;
-  background:rgba(255,184,0,.06); border:1px solid rgba(255,184,0,.25);
-  padding:10px 18px; margin-bottom:18px;
-  font-size:11px; letter-spacing:.1em; color:var(--am);
-  clip-path:polygon(0 0,calc(100% - 6px) 0,100% 6px,100% 100%,6px 100%,0 calc(100% - 6px));
-  opacity:0; animation:up .6s .1s ease forwards;
-}
-.h-promise-tag strong{ color:var(--tx0); font-size:1rem; font-family:var(--font-display); font-weight:800; }
-
-.h-title{
-  font-family:var(--font-display); font-weight:800;
-  font-size:clamp(3.8rem, 19vw, 13rem);
-  line-height:.88; letter-spacing:-.035em; color:var(--tx0);
-  margin-bottom:8px; word-break:keep-all; overflow-wrap:normal;
-  opacity:0; animation:up .85s .18s cubic-bezier(.16,1,.3,1) forwards;
-}
-.h-title-ac{ color:var(--cy); display:block; position:relative; }
-.h-title-ac::after{
-  content:''; position:absolute; bottom:-.05em; left:0;
-  width:clamp(50px,22%,160px); height:3px;
-  background:linear-gradient(90deg,var(--cy),transparent);
-  box-shadow:0 0 18px var(--cy-s);
-  animation:edge-glow 2.4s ease-in-out infinite;
-}
-
-.h-sub{
-  font-size:14px; line-height:1.9; color:var(--tx1); max-width:520px; margin-bottom:22px;
-  opacity:0; animation:up .7s .4s ease forwards;
-}
-.h-sub strong{ color:var(--tx0); font-weight:700; }
-
-/* Propuestas de valor en español de negocios */
-.h-value-props{
-  display:flex; flex-wrap:wrap; gap:8px; margin-bottom:24px;
-  opacity:0; animation:up .65s .48s ease forwards;
-}
-.h-vp{
-  font-size:10px; letter-spacing:.1em; color:var(--tx2);
-  padding:7px 14px; border:1px solid var(--ln1);
-  display:flex; align-items:center; gap:8px;
-}
-.h-vp::before{ content:''; width:5px; height:5px; border-radius:50%; background:var(--grn); box-shadow:0 0 6px var(--grn); flex-shrink:0; }
-
-.h-ctas{
-  display:flex; flex-direction:column; gap:10px; margin-bottom:40px;
-  opacity:0; animation:up .65s .55s ease forwards;
-}
-@media(min-width:420px){ .h-ctas{ flex-direction:row; flex-wrap:wrap; } }
-
-/* MÉTRICAS HERO — En lenguaje de negocio */
-.h-metrics{
-  display:grid; grid-template-columns:repeat(4,1fr);
-  border:1px solid var(--ln1); background:rgba(8,10,13,.6);
-  backdrop-filter:blur(8px);
-  opacity:0; animation:up .65s .7s ease forwards; overflow:hidden;
-}
-@media(max-width:360px){ .h-metrics{ grid-template-columns:repeat(2,1fr); } }
-.h-met{
-  padding:16px 8px; text-align:center;
-  border-right:1px solid var(--ln0); position:relative;
-}
-.h-met:last-child{ border-right:none; }
-@media(max-width:360px){
-  .h-met:nth-child(2){ border-right:none; }
-  .h-met:nth-child(3),h-met:nth-child(4){ border-top:1px solid var(--ln0); }
-}
-.met-v{ font-family:var(--font-display); font-weight:800; font-size:clamp(1.4rem,4.5vw,2.2rem); color:var(--cy); line-height:1; }
-.met-u{ font-size:.65em; color:var(--tx2); }
-.met-l{ font-size:9px; letter-spacing:.1em; color:var(--tx3); margin-top:5px; line-height:1.5; }
-.met-b{ font-size:8px; letter-spacing:.06em; color:var(--am); margin-top:3px; line-height:1.4; }
-
-.h-scroll{
-  position:absolute; bottom:max(20px,var(--sab));
-  left:50%; transform:translateX(-50%);
-  display:flex; flex-direction:column; align-items:center; gap:5px;
-  z-index:5; opacity:0; animation:fade .6s 1.2s ease forwards;
-}
-@media(max-height:620px){ .h-scroll{ display:none; } }
-.h-scroll-t{ font-size:9px; letter-spacing:.24em; color:var(--tx3); }
-.h-scroll-b{ width:1px; height:32px; background:linear-gradient(to bottom,var(--cy),transparent); animation:edge-glow 2s ease-in-out infinite; }
-
-/* ══ TICKER ══ */
-#ticker{
-  background:var(--s1); border-top:1px solid var(--ln1); border-bottom:1px solid var(--ln1);
-  overflow:hidden; position:relative; z-index:10; height:42px; display:flex; align-items:center;
-}
-.ticker-track{ display:flex; gap:0; white-space:nowrap; animation:marquee 32s linear infinite; }
-.ticker-item{
-  display:inline-flex; align-items:center; gap:10px;
-  padding:0 28px; font-size:9px; letter-spacing:.18em; color:var(--tx3);
-  border-right:1px solid var(--ln1);
-}
-.ticker-item .dot{ width:4px; height:4px; border-radius:50%; background:var(--cy); flex-shrink:0; }
-.ticker-item .val{ color:var(--cy); font-weight:700; }
-.ticker-item .val.am{ color:var(--am); }
-
-/* ══ SECTION BASE ══ */
-.sec{ position:relative; z-index:10; padding:var(--py) var(--gx); }
-.sec-w{ max-width:1280px; margin:0 auto; }
-
-/* ══ REVEAL ══ */
-.rev{
-  opacity:0; transform:translateY(18px);
-  transition:opacity .5s ease, transform .5s cubic-bezier(.22,1,.36,1);
-  will-change:opacity,transform;
-}
-.rev.in{ opacity:1; transform:translateY(0); }
 
 /* ══ BUTTONS ══ */
 .btn{
   display:inline-flex; align-items:center; justify-content:center; gap:10px;
-  font-family:var(--font-mono); font-size:11px; letter-spacing:.12em; font-weight:700;
+  font-family:var(--font-mono); font-size:10px; letter-spacing:.14em; font-weight:500;
   min-height:54px; padding:0 28px; border:none; text-decoration:none; cursor:pointer;
   position:relative; overflow:hidden;
   -webkit-user-select:none; user-select:none;
   transition:box-shadow .25s, transform .15s;
-  clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));
 }
 .btn:active{ transform:scale(0.97); }
-.btn-p{ background:var(--cy); color:#000; font-weight:700; }
-.btn-p::after{
+.btn::before{
   content:''; position:absolute; inset:0;
-  background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.25) 50%,transparent 70%);
-  transform:translateX(-110%); transition:transform .5s ease;
+  background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.2) 50%,transparent 65%);
+  transform:translateX(-150%);
+}
+@media(pointer:fine){ .btn:hover::before{ transform:translateX(150%); transition:transform .55s ease; } }
+
+.btn-p{
+  background:var(--cy); color:#000; font-weight:700;
+  clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));
 }
 @media(pointer:fine){
-  .btn-p:hover::after{ transform:translateX(110%); }
-  .btn-p:hover{ box-shadow:0 0 44px var(--cy-s),0 0 80px rgba(0,240,255,.1); transform:translateY(-2px); }
+  .btn-p:hover{ box-shadow:0 0 50px var(--cy-s), 0 0 100px rgba(0,229,255,.08); transform:translateY(-2px); }
 }
-.btn-g{ background:transparent; color:var(--tx1); border:1px solid var(--ln2); }
-@media(pointer:fine){ .btn-g:hover{ border-color:var(--cy-s); color:var(--cy); background:var(--cy-d); } }
-.btn-am{ background:var(--am); color:#000; font-weight:700; }
-@media(pointer:fine){ .btn-am:hover{ box-shadow:0 0 44px var(--am-s); transform:translateY(-2px); } }
+.btn-g{
+  background:transparent; color:var(--tx1); border:1px solid var(--ln2);
+  clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));
+}
+@media(pointer:fine){
+  .btn-g:hover{ border-color:var(--cy-m); color:var(--cy); background:var(--cy-d); }
+}
+.btn-am{
+  background:var(--am); color:#000; font-weight:700;
+  clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));
+}
+@media(pointer:fine){
+  .btn-am:hover{ box-shadow:0 0 50px var(--am-s); transform:translateY(-2px); }
+}
 
-/* ══ PAIN STRIP — Sección de dolor en lenguaje de negocio ══ */
-#pain-strip{ background:var(--s2); border-top:1px solid var(--ln1); border-bottom:1px solid var(--ln1); padding:0 var(--gx); position:relative; z-index:10; }
-.pain-strip-inner{
-  max-width:1280px; margin:0 auto;
-  display:grid; grid-template-columns:repeat(3,1fr); gap:0; min-height:100px;
+/* ══ REVEAL ══ */
+.rev{
+  opacity:0; transform:translateY(20px);
+  transition:opacity .55s ease, transform .55s cubic-bezier(.22,1,.36,1);
+  will-change:opacity,transform;
 }
-@media(max-width:599px){ .pain-strip-inner{ grid-template-columns:1fr; min-height:auto; } }
+.rev.in{ opacity:1; transform:translateY(0); }
+
+/* ══ PAIN STRIP ══ */
+#pain{
+  background:var(--s2);
+  border-top:1px solid var(--ln1); border-bottom:1px solid var(--ln1);
+  position:relative; z-index:10;
+}
+.pain-inner{
+  max-width:1380px; margin:0 auto;
+  display:grid; grid-template-columns:repeat(3,1fr);
+  padding:0 var(--gx);
+}
+@media(max-width:640px){ .pain-inner{ grid-template-columns:1fr; } }
 .pain-item{
-  display:flex; align-items:center; gap:14px;
-  padding:22px 20px; border-right:1px solid var(--ln0); position:relative; overflow:hidden;
+  display:flex; align-items:flex-start; gap:16px;
+  padding:26px 22px; border-right:1px solid var(--ln0);
+  position:relative; overflow:hidden;
+  transition:background .2s;
 }
 .pain-item:last-child{ border-right:none; }
-@media(max-width:599px){
+@media(max-width:640px){
   .pain-item{ border-right:none; border-bottom:1px solid var(--ln0); }
   .pain-item:last-child{ border-bottom:none; }
 }
 .pain-item::before{
-  content:''; position:absolute; top:0; left:0; right:0; height:1px;
-  background:linear-gradient(90deg,var(--am),transparent); opacity:.3;
+  content:''; position:absolute; top:0; left:0; right:0; height:2px;
+  background:linear-gradient(90deg,var(--am),transparent); opacity:.4;
 }
-.pain-icon{ font-size:1.5rem; flex-shrink:0; }
-.pain-body{}
-.pain-label{ font-size:8px; letter-spacing:.2em; color:var(--tx3); margin-bottom:4px; }
-.pain-headline{ font-family:var(--font-display); font-weight:800; font-size:1rem; color:var(--tx0); line-height:1.2; }
-.pain-headline .ac{ color:var(--cy); }
-.pain-headline .am{ color:var(--am); }
-.pain-headline .red{ color:var(--red); }
-
-/* ══ ANALOGÍA DEL LOCAL FÍSICO — Gestión Delegada ══ */
-#delegated{ background:var(--s1); }
-
-.local-analogy{
-  display:grid; gap:2px; margin-top:48px;
+@media(pointer:fine){ .pain-item:hover{ background:var(--s3); } }
+.pain-emoji{ font-size:1.6rem; flex-shrink:0; margin-top:2px; }
+.pain-label{
+  font-family:var(--font-mono); font-size:8px; letter-spacing:.2em;
+  color:var(--tx3); margin-bottom:5px;
 }
-@media(min-width:768px){ .local-analogy{ grid-template-columns:1fr 1fr; } }
-
-.local-col{
-  padding:28px 24px; border:1px solid var(--ln1);
+.pain-title{
+  font-family:var(--font-display); font-size:1.15rem; letter-spacing:.03em;
+  line-height:1.25; color:var(--tx0);
 }
-.local-col.bad{ background:rgba(255,45,85,.03); border-color:rgba(255,45,85,.12); }
-.local-col.good{ background:var(--cy-d); border-color:rgba(0,240,255,.14); }
+.pain-title .red{ color:var(--red); }
+.pain-title .am{ color:var(--am); }
+.pain-title .cy{ color:var(--cy); }
 
-.local-col-head{
-  display:flex; align-items:center; gap:12px;
-  margin-bottom:20px; padding-bottom:16px;
-  border-bottom:1px solid var(--ln0);
-}
-.local-col-icon{ font-size:1.6rem; }
-.local-col-title{ font-family:var(--font-display); font-weight:800; font-size:.95rem; letter-spacing:.04em; }
-.local-col-title.red{ color:var(--red); }
-.local-col-title.cy{ color:var(--cy); }
-.local-col-subtitle{ font-size:10px; letter-spacing:.1em; color:var(--tx3); margin-top:3px; }
+/* ══ DELEGATED — Analogía Local ══ */
+#delegated{ background:var(--void); }
 
-.local-items{ display:flex; flex-direction:column; gap:12px; }
-.local-item{
-  display:flex; align-items:flex-start; gap:12px;
-  padding:12px 14px;
+.analogy-grid{
+  display:grid; gap:3px; margin-top:52px;
 }
-.local-item.bad{ background:rgba(255,45,85,.03); border:1px solid rgba(255,45,85,.07); }
-.local-item.good{ background:rgba(0,240,255,.03); border:1px solid rgba(0,240,255,.07); }
-.local-item-icon{ font-size:1rem; flex-shrink:0; margin-top:1px; }
-.local-item-text{}
-.local-item-title{ font-size:12px; color:var(--tx0); font-weight:700; margin-bottom:3px; }
-.local-item.bad .local-item-title{ color:var(--red); }
-.local-item.good .local-item-title{ color:var(--cy); }
-.local-item-desc{ font-size:11px; color:var(--tx2); line-height:1.6; }
+@media(min-width:768px){ .analogy-grid{ grid-template-columns:1fr 1fr; } }
 
-/* Banner "Tú vendes, nosotros arreglamos" */
-.tuvende-banner{
-  display:flex; align-items:flex-start; gap:16px;
-  padding:24px; background:rgba(0,240,255,.03);
-  border:1px solid rgba(0,240,255,.16); position:relative; overflow:hidden;
-  margin-top:2px;
+.analogy-col{
+  border:1px solid var(--ln1); padding:0; overflow:hidden;
 }
-.tuvende-banner::before{
+.analogy-col.bad{ border-color:rgba(255,51,102,.1); }
+.analogy-col.good{ border-color:rgba(0,229,255,.12); }
+
+.analogy-head{
+  display:flex; align-items:center; gap:14px;
+  padding:20px 24px; border-bottom:1px solid var(--ln1);
+}
+.analogy-col.bad .analogy-head{ background:rgba(255,51,102,.03); border-color:rgba(255,51,102,.08); }
+.analogy-col.good .analogy-head{ background:var(--cy-g); border-color:var(--cy-m); }
+.analogy-head-icon{ font-size:1.6rem; }
+.analogy-head-title{
+  font-family:var(--font-display); font-size:1rem; letter-spacing:.05em;
+}
+.analogy-head-title.red{ color:var(--red); }
+.analogy-head-title.cy{ color:var(--cy); }
+.analogy-head-sub{
+  font-family:var(--font-mono); font-size:9px; letter-spacing:.1em;
+  color:var(--tx3); margin-top:3px;
+}
+
+.analogy-items{ display:flex; flex-direction:column; gap:0; }
+.analogy-item{
+  display:flex; align-items:flex-start; gap:14px;
+  padding:18px 24px; border-bottom:1px solid var(--ln0);
+  transition:background .15s;
+}
+.analogy-item:last-child{ border-bottom:none; }
+@media(pointer:fine){ .analogy-item:hover{ background:var(--s2); } }
+.ai-icon{ font-size:1rem; flex-shrink:0; margin-top:2px; }
+.ai-title{
+  font-size:12px; font-weight:700; margin-bottom:4px;
+}
+.analogy-col.bad .ai-title{ color:var(--red); }
+.analogy-col.good .ai-title{ color:var(--cy); }
+.ai-desc{ font-size:12px; color:var(--tx2); line-height:1.65; }
+
+/* Banner TÚ VENDES */
+.sell-banner{
+  margin-top:3px;
+  display:flex; align-items:flex-start; gap:18px;
+  padding:28px 28px; background:var(--s2);
+  border:1px solid var(--cy-m); position:relative; overflow:hidden;
+}
+.sell-banner::before{
   content:''; position:absolute; top:0; left:0; right:0; height:1px;
   background:linear-gradient(90deg,transparent,var(--cy),transparent);
-  animation:edge-glow 3s ease-in-out infinite;
+  animation:glowEdge 3.5s ease-in-out infinite;
 }
-.tuvende-icon{ font-size:2rem; flex-shrink:0; }
-.tuvende-body{}
-.tuvende-title{ font-family:var(--font-display); font-weight:800; font-size:1.1rem; color:var(--cy); margin-bottom:8px; letter-spacing:.04em; }
-.tuvende-desc{ font-size:13px; color:var(--tx1); line-height:1.75; }
-.tuvende-desc strong{ color:var(--tx0); }
+.sell-banner-icon{ font-size:2.2rem; flex-shrink:0; }
+.sell-title{
+  font-family:var(--font-display); font-size:clamp(1.1rem,3vw,1.6rem);
+  letter-spacing:.04em; color:var(--cy); margin-bottom:10px;
+}
+.sell-desc{ font-size:13px; color:var(--tx1); line-height:1.8; }
+.sell-desc strong{ color:var(--tx0); }
+
+/* ══ APP ORACLES ══ */
+#oracles{ background:var(--s1); }
+
+.oracles-layout{
+  display:grid; gap:52px; margin-top:52px; align-items:start;
+}
+@media(min-width:960px){ .oracles-layout{ grid-template-columns:1fr 1.1fr; } }
+
+.oracles-features{ display:flex; flex-direction:column; gap:3px; }
+.oracle-feat{
+  display:flex; align-items:flex-start; gap:16px;
+  padding:20px 20px; border:1px solid var(--ln1); background:var(--s2);
+  position:relative; overflow:hidden; transition:border-color .25s, background .25s;
+}
+.oracle-feat::before{
+  content:''; position:absolute; left:0; top:0; bottom:0; width:2px;
+  background:var(--am); transform:scaleY(0); transform-origin:bottom;
+  transition:transform .3s ease;
+}
+@media(pointer:fine){
+  .oracle-feat:hover{ border-color:var(--am-m); background:var(--s3); }
+  .oracle-feat:hover::before{ transform:scaleY(1); }
+}
+.of-icon{ font-size:1.4rem; flex-shrink:0; margin-top:2px; }
+.of-title{ font-size:13px; font-weight:700; color:var(--tx0); margin-bottom:5px; }
+.of-desc{ font-size:12px; color:var(--tx2); line-height:1.65; }
+.of-win{ font-family:var(--font-mono); font-size:10px; color:var(--am); margin-top:7px; letter-spacing:.06em; }
+
+/* Mockup mejorado */
+.app-mockup{
+  background:var(--s2); border:1px solid var(--ln2);
+  overflow:hidden; position:sticky; top:80px;
+  box-shadow:0 40px 80px rgba(0,0,0,.4), 0 0 0 1px var(--ln1);
+}
+.mock-titlebar{
+  display:flex; align-items:center; gap:7px; padding:0 16px;
+  border-bottom:1px solid var(--ln1); background:var(--s3); min-height:40px;
+}
+.mdot{ width:9px; height:9px; border-radius:50%; }
+.mdot-r{ background:#ff5f57; } .mdot-y{ background:#febc2e; } .mdot-g{ background:#28c840; }
+.mock-ttl{
+  font-family:var(--font-mono); font-size:9px; letter-spacing:.14em;
+  color:var(--tx3); margin-left:6px;
+}
+.mock-body{ padding:20px; display:flex; flex-direction:column; gap:12px; }
+
+.mock-stats{ display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+.mock-stat{
+  background:var(--s3); border:1px solid var(--ln1);
+  padding:14px 12px; text-align:center; position:relative; overflow:hidden;
+}
+.mock-stat::before{
+  content:''; position:absolute; top:0; left:0; right:0; height:1px;
+  background:linear-gradient(90deg,transparent,var(--am-m),transparent);
+}
+.mock-stat-val{
+  font-family:var(--font-display); font-size:1.5rem; color:var(--am); line-height:1;
+}
+.mock-stat-lbl{
+  font-family:var(--font-mono); font-size:7px; letter-spacing:.12em;
+  color:var(--tx3); margin-top:4px;
+}
+
+.mock-inv{
+  background:var(--s3); border:1px solid var(--ln1); overflow:hidden;
+}
+.mock-inv-hdr{
+  font-family:var(--font-mono); font-size:8px; letter-spacing:.16em;
+  color:var(--tx3); padding:10px 14px; border-bottom:1px solid var(--ln0);
+  background:rgba(0,0,0,.2);
+}
+.mock-row{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:10px 14px; border-bottom:1px solid var(--ln0);
+  transition:background .15s;
+}
+.mock-row:last-child{ border-bottom:none; }
+@media(pointer:fine){ .mock-row:hover{ background:rgba(255,255,255,.02); } }
+.mock-row-name{ font-size:11px; color:var(--tx1); }
+.mock-row-qty{ font-family:var(--font-mono); font-size:10px; color:var(--am); font-weight:500; }
+.mock-row-status{ font-family:var(--font-mono); font-size:8px; letter-spacing:.1em; }
+.mock-row-status.ok{ color:var(--grn); }
+.mock-row-status.low{ color:var(--red); }
+
+.mock-alert-bar{
+  display:flex; align-items:center; gap:10px;
+  padding:12px 14px; background:var(--grn-d); border:1px solid var(--grn-s);
+}
+.mock-alert-dot{
+  width:6px; height:6px; border-radius:50%;
+  background:var(--grn); box-shadow:0 0 8px var(--grn); flex-shrink:0;
+  animation:blink 1.9s ease-in-out infinite;
+}
+.mock-alert-txt{
+  font-family:var(--font-mono); font-size:9px; color:var(--grn); letter-spacing:.07em;
+}
 
 /* ══ CASOS DE ÉXITO ══ */
 #casos{ background:var(--void); }
 
 .casos-grid{
-  display:grid; gap:2px; margin-top:48px;
+  display:grid; gap:3px; margin-top:52px;
 }
 @media(min-width:768px){ .casos-grid{ grid-template-columns:1fr 1fr; } }
 
 .caso-card{
   background:var(--s1); border:1px solid var(--ln1);
-  padding:28px 24px; position:relative; overflow:hidden;
+  padding:30px 26px; position:relative; overflow:hidden;
+  transition:border-color .25s, transform .25s;
 }
+@media(pointer:fine){ .caso-card:hover{ border-color:var(--grn-s); transform:translateY(-3px); } }
 .caso-card::before{
   content:''; position:absolute; top:0; left:0; right:0; height:2px;
   background:linear-gradient(90deg,transparent,var(--grn),transparent);
-  animation:edge-glow 2.8s ease-in-out infinite;
+  animation:glowEdge 3s ease-in-out infinite;
 }
 .caso-badge{
-  display:inline-flex; align-items:center; gap:6px;
-  border:1px solid rgba(0,255,122,.22); background:rgba(0,255,122,.05);
-  padding:4px 10px; font-size:8px; letter-spacing:.14em; color:var(--grn);
-  margin-bottom:14px;
+  display:inline-flex; align-items:center; gap:7px;
+  border:1px solid var(--grn-s); background:var(--grn-d);
+  padding:4px 12px; margin-bottom:16px;
+  font-family:var(--font-mono); font-size:8px; letter-spacing:.14em; color:var(--grn);
 }
-.caso-industry{ font-size:8px; letter-spacing:.18em; color:var(--tx3); margin-bottom:6px; }
-.caso-name{ font-family:var(--font-display); font-weight:800; font-size:1.2rem; color:var(--tx0); margin-bottom:10px; }
-.caso-desc{ font-size:13px; color:var(--tx1); line-height:1.75; margin-bottom:18px; border-left:2px solid var(--ln2); padding-left:14px; }
-.caso-resultado{
-  background:rgba(0,255,122,.05); border:1px solid rgba(0,255,122,.14);
-  padding:14px 16px;
+.caso-industry{
+  font-family:var(--font-mono); font-size:8px; letter-spacing:.18em;
+  color:var(--tx3); margin-bottom:6px;
 }
-.caso-resultado-label{ font-size:8px; letter-spacing:.18em; color:var(--tx3); margin-bottom:6px; }
-.caso-resultado-value{ font-family:var(--font-display); font-weight:800; font-size:1.2rem; color:var(--grn); margin-bottom:4px; }
-.caso-resultado-desc{ font-size:11px; color:var(--tx2); line-height:1.5; }
-
-/* ══ SECCIÓN ORACLES APP ══ */
-#oracles{ background:var(--s1); }
-
-.oracles-layout{
-  display:grid; gap:48px; margin-top:48px;
+.caso-name{
+  font-family:var(--font-display); font-size:clamp(1.2rem,3vw,1.6rem);
+  letter-spacing:.05em; color:var(--tx0); margin-bottom:12px;
 }
-@media(min-width:900px){ .oracles-layout{ grid-template-columns:1fr 1fr; align-items:center; } }
-
-.oracles-features{ display:flex; flex-direction:column; gap:2px; }
-.oracles-feature{
-  display:flex; align-items:flex-start; gap:14px;
-  padding:18px 16px; border:1px solid var(--ln1); background:var(--s2);
-  position:relative; overflow:hidden; transition:border-color .2s,background .2s;
+.caso-desc{
+  font-size:13px; color:var(--tx1); line-height:1.8; margin-bottom:20px;
+  padding-left:16px; border-left:2px solid var(--ln2);
 }
-@media(pointer:fine){ .oracles-feature:hover{ border-color:rgba(255,184,0,.22); background:var(--s3); } }
-.oracles-feature::before{
-  content:''; position:absolute; left:0; top:0; bottom:0; width:2px; background:var(--am);
-  opacity:0; transition:opacity .2s;
+.caso-result{
+  background:var(--grn-d); border:1px solid var(--grn-s);
+  padding:16px 18px;
 }
-@media(pointer:fine){ .oracles-feature:hover::before{ opacity:1; } }
-.of-icon{ font-size:1.3rem; flex-shrink:0; margin-top:2px; }
-.of-body{}
-.of-title{ font-size:13px; color:var(--tx0); font-weight:700; margin-bottom:4px; }
-.of-desc{ font-size:12px; color:var(--tx2); line-height:1.65; }
-.of-win{ font-size:10px; color:var(--am); margin-top:6px; letter-spacing:.06em; }
-
-.oracles-mockup{
-  background:var(--s2); border:1px solid var(--ln1);
-  position:relative; overflow:hidden; min-height:340px;
-  display:flex; flex-direction:column;
+.caso-result-lbl{
+  font-family:var(--font-mono); font-size:8px; letter-spacing:.18em;
+  color:var(--tx3); margin-bottom:6px;
 }
-.mockup-hdr{
-  display:flex; align-items:center; gap:7px; padding:0 16px;
-  border-bottom:1px solid var(--ln0); background:var(--s3); min-height:42px;
+.caso-result-val{
+  font-family:var(--font-display); font-size:clamp(1.1rem,3vw,1.4rem);
+  color:var(--grn); letter-spacing:.04em; margin-bottom:4px;
 }
-.mdot{ width:8px; height:8px; border-radius:50%; }
-.mdot-r{ background:#ff5f57; } .mdot-y{ background:#febc2e; } .mdot-g{ background:#28c840; }
-.mockup-title{ font-size:9px; letter-spacing:.14em; color:var(--tx3); margin-left:6px; }
-.mockup-body{ padding:18px; flex:1; display:flex; flex-direction:column; gap:10px; }
+.caso-result-desc{ font-size:11px; color:var(--tx2); line-height:1.55; }
 
-.mock-stat-row{ display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
-.mock-stat{
-  background:var(--s3); border:1px solid var(--ln0);
-  padding:12px 10px; text-align:center;
+/* ══ PRECIOS + REFERRAL ══ */
+#referral{ background:var(--s1); }
+
+.price-layout{
+  display:grid; gap:3px; margin-top:52px;
 }
-.mock-stat-val{ font-family:var(--font-display); font-weight:800; font-size:1.2rem; color:var(--am); }
-.mock-stat-lbl{ font-size:8px; letter-spacing:.1em; color:var(--tx3); margin-top:3px; }
+@media(min-width:900px){ .price-layout{ grid-template-columns:1fr 1.2fr; align-items:start; } }
 
-.mock-inv-row{ background:var(--s3); border:1px solid var(--ln0); padding:10px 12px; }
-.mock-inv-head{ font-size:8px; letter-spacing:.18em; color:var(--tx3); margin-bottom:8px; }
-.mock-item{ display:flex; align-items:center; justify-content:space-between; padding:5px 0; border-bottom:1px solid var(--ln0); }
-.mock-item:last-child{ border-bottom:none; }
-.mock-item-name{ font-size:11px; color:var(--tx1); }
-.mock-item-stock{ font-size:10px; color:var(--am); font-weight:700; }
-.mock-item-alert{ font-size:8px; letter-spacing:.1em; }
-.mock-item-alert.ok{ color:var(--grn); }
-.mock-item-alert.low{ color:var(--red); }
-
-.mock-alert{
-  display:flex; align-items:center; gap:10px;
-  background:rgba(0,255,122,.05); border:1px solid rgba(0,255,122,.18);
-  padding:10px 12px;
-}
-.mock-alert-dot{ width:6px; height:6px; border-radius:50%; background:var(--grn); box-shadow:0 0 6px var(--grn); flex-shrink:0; animation:blink 1.8s ease-in-out infinite; }
-.mock-alert-txt{ font-size:10px; color:var(--grn); letter-spacing:.06em; }
-
-/* ══ REFERRAL METER — Componente Visual Central ══ */
-#referral{ background:var(--void); }
-
-.referral-intro{
-  display:grid; gap:32px; margin-top:48px;
-}
-@media(min-width:900px){ .referral-intro{ grid-template-columns:1fr 1fr; align-items:start; } }
-
-/* PRECIOS DESGLOSADOS */
-.price-breakdown{
-  background:var(--s1); border:1px solid var(--ln2);
+/* Desglose de precios */
+.price-card{
+  background:var(--s2); border:1px solid var(--ln2);
   position:relative; overflow:hidden;
 }
-.price-breakdown::before{
+.price-card::before{
   content:''; position:absolute; top:0; left:0; right:0; height:1px;
   background:linear-gradient(90deg,transparent,var(--cy),var(--am),transparent);
-  animation:edge-glow 3s ease-in-out infinite;
+  animation:glowEdge 4s ease-in-out infinite;
 }
-.pb-header{
-  padding:16px 22px; border-bottom:1px solid var(--ln1);
-  background:var(--s2);
+.price-hdr{
+  padding:20px 24px; border-bottom:1px solid var(--ln1); background:var(--s3);
 }
-.pb-header-title{ font-size:9px; letter-spacing:.22em; color:var(--tx3); margin-bottom:4px; }
-.pb-header-total{
-  font-family:var(--font-display); font-weight:800;
-  font-size:clamp(2.2rem,8vw,3.5rem);
-  color:var(--tx0); line-height:1; letter-spacing:-.02em;
+.price-lbl{
+  font-family:var(--font-mono); font-size:8px; letter-spacing:.22em;
+  color:var(--tx3); margin-bottom:6px;
 }
-.pb-header-total span{ font-size:.35em; color:var(--tx3); font-weight:400; }
-.pb-header-cycle{ font-size:10px; letter-spacing:.14em; color:var(--am); margin-top:6px; }
+.price-total{
+  font-family:var(--font-display); font-size:clamp(2.4rem,8vw,4rem);
+  line-height:1; letter-spacing:.02em; color:var(--tx0);
+}
+.price-total sub{
+  font-size:.28em; color:var(--tx3); font-family:var(--font-mono); vertical-align:super;
+}
+.price-cycle{
+  font-family:var(--font-mono); font-size:9px; letter-spacing:.14em;
+  color:var(--am); margin-top:8px;
+}
 
-.pb-items{ padding:0; }
-.pb-item{
-  display:flex; align-items:center; justify-content:space-between;
-  padding:18px 22px; border-bottom:1px solid var(--ln0);
-  position:relative;
+.price-items{ display:flex; flex-direction:column; }
+.price-item{
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+  padding:20px 24px; border-bottom:1px solid var(--ln0);
+  transition:background .15s;
 }
-.pb-item:last-child{ border-bottom:none; }
-.pb-item-left{}
-.pb-item-badge{
+.price-item:last-child{ border-bottom:none; }
+@media(pointer:fine){ .price-item:hover{ background:var(--s3); } }
+.pi-badge{
   display:inline-flex; align-items:center; gap:6px;
-  font-size:8px; letter-spacing:.16em; padding:3px 10px;
-  border:1px solid; margin-bottom:6px;
+  border:1px solid; padding:3px 10px; margin-bottom:6px;
+  font-family:var(--font-mono); font-size:8px; letter-spacing:.14em;
 }
-.pb-item-badge.web{ border-color:rgba(0,240,255,.22); color:var(--cy); background:var(--cy-d); }
-.pb-item-badge.app{ border-color:rgba(255,184,0,.22); color:var(--am); background:var(--am-d); }
-.pb-item-name{ font-family:var(--font-display); font-weight:700; font-size:.9rem; color:var(--tx0); margin-bottom:3px; }
-.pb-item-desc{ font-size:11px; color:var(--tx3); }
-.pb-item-price{ text-align:right; flex-shrink:0; margin-left:16px; }
-.pb-item-val{
-  font-family:var(--font-display); font-weight:800;
-  font-size:1.4rem; letter-spacing:-.02em; line-height:1;
+.pi-badge.web{ border-color:var(--cy-m); color:var(--cy); background:var(--cy-d); }
+.pi-badge.app{ border-color:var(--am-m); color:var(--am); background:var(--am-d); }
+.pi-name{ font-size:13px; font-weight:700; color:var(--tx0); margin-bottom:3px; }
+.pi-desc{ font-size:11px; color:var(--tx3); }
+.pi-price{ text-align:right; flex-shrink:0; }
+.pi-val{
+  font-family:var(--font-display); font-size:1.8rem;
+  letter-spacing:.02em; line-height:1;
 }
-.pb-item-val.cy{ color:var(--cy); }
-.pb-item-val.am{ color:var(--am); }
-.pb-item-cur{ font-size:9px; letter-spacing:.14em; color:var(--tx3); }
+.pi-val.cy{ color:var(--cy); }
+.pi-val.am{ color:var(--am); }
+.pi-cur{
+  font-family:var(--font-mono); font-size:8px; letter-spacing:.14em; color:var(--tx3);
+}
 
-/* REFERRAL METER — El corazón de la sección */
-.referral-meter{
-  background:var(--s1); border:1px solid var(--ln1);
+/* ── REFERRAL METER ── */
+.ref-meter{
+  background:var(--s2); border:1px solid var(--ln2);
   position:relative; overflow:hidden;
 }
-.rm-header{
-  padding:16px 22px; border-bottom:1px solid var(--ln1);
-  background:var(--s2); display:flex; align-items:center; justify-content:space-between;
-  flex-wrap:wrap; gap:8px;
+.ref-meter::before{
+  content:''; position:absolute; top:0; left:0; right:0; height:1px;
+  background:linear-gradient(90deg,transparent,var(--am),transparent);
+  animation:glowEdge 3.5s ease-in-out infinite;
 }
-.rm-title{ font-family:var(--font-display); font-weight:800; font-size:.95rem; color:var(--am); letter-spacing:.04em; }
-.rm-subtitle{ font-size:9px; letter-spacing:.16em; color:var(--tx3); margin-top:2px; }
-.rm-badge{
-  display:inline-flex; align-items:center; gap:6px;
-  border:1px solid rgba(255,184,0,.22); background:rgba(255,184,0,.06);
-  padding:5px 12px; font-size:8px; letter-spacing:.14em; color:var(--am);
+.ref-hdr{
+  padding:18px 24px; border-bottom:1px solid var(--ln1); background:var(--s3);
+  display:flex; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; gap:8px;
+}
+.ref-title{
+  font-family:var(--font-display); font-size:1.1rem; letter-spacing:.05em; color:var(--am);
+}
+.ref-sub{
+  font-family:var(--font-mono); font-size:9px; letter-spacing:.14em; color:var(--tx3); margin-top:3px;
+}
+.ref-chip{
+  display:inline-flex; align-items:center; gap:7px;
+  border:1px solid var(--am-m); background:var(--am-d);
+  padding:5px 12px; font-family:var(--font-mono); font-size:8px; letter-spacing:.12em; color:var(--am);
+  align-self:flex-start;
 }
 
-/* Niveles del Referral Meter */
-.rm-levels{ padding:22px; display:flex; flex-direction:column; gap:12px; }
+.ref-levels{ padding:20px; display:flex; flex-direction:column; gap:10px; }
 
-.rm-level{
-  position:relative; border:1px solid var(--ln1);
-  background:var(--s2); overflow:hidden;
+.ref-level{
+  border:1px solid var(--ln1); background:var(--s3); position:relative; overflow:hidden;
   transition:border-color .3s, background .3s;
 }
-.rm-level.active{ border-color:rgba(255,184,0,.4); background:var(--s3); animation:glow-pulse 3s ease-in-out infinite; }
-.rm-level.achieved{ border-color:rgba(0,255,122,.3); background:rgba(0,255,122,.03); }
+.ref-level.jackpot{ border-color:var(--grn-s); }
 
-/* Barra de progreso interna */
-.rm-progress-bar{
+/* Barra de progreso */
+.rl-bar{
   position:absolute; top:0; left:0; bottom:0;
-  width:var(--progress, 0%);
-  background:linear-gradient(90deg,rgba(255,184,0,.08),rgba(255,184,0,.03));
-  pointer-events:none;
+  pointer-events:none; transition:width .6s ease;
 }
-.rm-level.achieved .rm-progress-bar{
-  background:linear-gradient(90deg,rgba(0,255,122,.08),rgba(0,255,122,.02));
-  width:100%;
+.ref-level .rl-bar{ background:linear-gradient(90deg,rgba(245,166,35,.06),transparent); width:var(--w,0%); }
+.ref-level.jackpot .rl-bar{ background:linear-gradient(90deg,rgba(0,230,118,.08),transparent); width:100%; }
+
+.rl-inner{
+  position:relative; z-index:1; display:flex; align-items:stretch;
+}
+@media(max-width:460px){ .rl-inner{ flex-direction:column; } }
+
+.rl-count{
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  width:72px; min-height:88px; flex-shrink:0;
+  border-right:1px solid var(--ln0); gap:5px;
+}
+@media(max-width:460px){
+  .rl-count{ width:100%; min-height:auto; border-right:none; border-bottom:1px solid var(--ln0); flex-direction:row; padding:12px 16px; gap:8px; }
+}
+.rl-num{
+  font-family:var(--font-display); font-size:2rem; line-height:1;
+  color:var(--tx3);
+}
+.ref-level.jackpot .rl-num{ color:var(--grn); }
+.rl-lbl{
+  font-family:var(--font-mono); font-size:7px; letter-spacing:.12em; color:var(--tx3);
 }
 
-.rm-level-inner{
-  position:relative; z-index:1;
-  display:flex; align-items:center; gap:0; flex-wrap:wrap;
+.rl-body{
+  flex:1; padding:16px 18px;
+  display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px;
 }
-@media(max-width:480px){ .rm-level-inner{ flex-direction:column; } }
+.rl-ref-lbl{
+  font-family:var(--font-mono); font-size:8px; letter-spacing:.12em; color:var(--tx3); margin-bottom:4px;
+}
+.rl-discount{
+  font-family:var(--font-display); font-size:1.2rem; letter-spacing:.03em; color:var(--tx2);
+}
+.ref-level.jackpot .rl-discount{ color:var(--grn); font-size:1.4rem; }
+.rl-save{
+  font-family:var(--font-mono); font-size:10px; color:var(--tx3); margin-top:4px;
+}
+.ref-level.jackpot .rl-save{ color:var(--grn); }
 
-.rm-count{
-  display:flex; align-items:center; justify-content:center;
-  width:70px; min-height:80px; flex-shrink:0;
-  border-right:1px solid var(--ln0); flex-direction:column; gap:4px;
+.rl-tag{
+  border:1px solid var(--ln2); padding:6px 12px;
+  font-family:var(--font-mono); font-size:9px; letter-spacing:.1em; color:var(--tx3);
+  flex-shrink:0;
 }
-@media(max-width:480px){ .rm-count{ width:100%; border-right:none; border-bottom:1px solid var(--ln0); min-height:50px; flex-direction:row; gap:10px; padding:12px; } }
+.ref-level.jackpot .rl-tag{
+  border-color:var(--grn-s); color:#000; background:var(--grn); font-weight:700;
+  box-shadow:0 0 20px var(--grn-s);
+}
 
-.rm-count-num{
-  font-family:var(--font-display); font-weight:800;
-  font-size:1.8rem; line-height:1;
+/* Info bonus */
+.ref-bonus{
+  margin:0 20px 16px;
+  padding:14px 16px; background:var(--cy-d); border:1px solid var(--cy-m);
+  display:flex; gap:12px; align-items:flex-start;
 }
-.rm-count-lbl{ font-size:8px; letter-spacing:.12em; color:var(--tx3); }
-.rm-level .rm-count-num{ color:var(--tx3); }
-.rm-level.active .rm-count-num{ color:var(--am); }
-.rm-level.achieved .rm-count-num{ color:var(--grn); }
+.ref-bonus-icon{ font-size:1rem; flex-shrink:0; }
+.ref-bonus-title{
+  font-family:var(--font-mono); font-size:10px; letter-spacing:.08em; color:var(--cy);
+  font-weight:500; margin-bottom:4px;
+}
+.ref-bonus-desc{ font-size:10px; color:var(--tx2); line-height:1.65; }
 
-.rm-body{ flex:1; padding:14px 16px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; }
-
-.rm-body-left{}
-.rm-ref-title{ font-size:10px; letter-spacing:.1em; color:var(--tx3); margin-bottom:4px; }
-.rm-discount{ font-family:var(--font-display); font-weight:800; font-size:1.1rem; letter-spacing:.03em; }
-.rm-level .rm-discount{ color:var(--tx2); }
-.rm-level.active .rm-discount{ color:var(--am); }
-.rm-level.achieved .rm-discount{ color:var(--grn); }
-.rm-desc{ font-size:11px; color:var(--tx3); line-height:1.5; margin-top:4px; }
-.rm-level.active .rm-desc, .rm-level.achieved .rm-desc{ color:var(--tx2); }
-
-.rm-badge-right{
-  display:inline-flex; align-items:center; gap:6px;
-  padding:6px 12px; font-size:9px; letter-spacing:.1em;
-  border:1px solid; flex-shrink:0;
+.ref-warn{
+  margin:0 20px 20px;
+  padding:12px 14px; background:var(--red-d); border:1px solid rgba(255,51,102,.12);
+  display:flex; gap:10px; align-items:flex-start;
 }
-.rm-level .rm-badge-right{ border-color:var(--ln1); color:var(--tx3); }
-.rm-level.active .rm-badge-right{ border-color:rgba(255,184,0,.3); color:var(--am); background:rgba(255,184,0,.05); }
-.rm-level.achieved .rm-badge-right{ border-color:rgba(0,255,122,.3); color:var(--grn); background:rgba(0,255,122,.05); }
-
-/* Nivel JACKPOT — Web Gratis */
-.rm-level.jackpot{
-  border-color:rgba(0,255,122,.3) !important;
+.ref-warn-txt{
+  font-family:var(--font-mono); font-size:10px; color:var(--tx3); line-height:1.65;
 }
-.rm-level.jackpot .rm-count-num{ color:var(--grn); }
-.rm-level.jackpot .rm-discount{ color:var(--grn); font-size:1.4rem; }
-.rm-level.jackpot .rm-badge-right{
-  border-color:rgba(0,255,122,.4); color:#000;
-  background:var(--grn); font-weight:700;
-  animation:glow-pulse 2s ease-in-out infinite;
-}
-.rm-level.jackpot.active{
-  border-color:var(--grn) !important;
-  animation:none;
-}
-.jackpot-crown{ font-size:1.2rem; margin-right:4px; }
-
-/* Crédito acumulado para 4+ referidos */
-.rm-bonus{
-  margin:0 22px 22px;
-  padding:14px 16px; border:1px solid rgba(0,240,255,.14);
-  background:var(--cy-d); display:flex; align-items:flex-start; gap:12px;
-}
-.rm-bonus-icon{ font-size:1.1rem; flex-shrink:0; }
-.rm-bonus-txt{}
-.rm-bonus-title{ font-size:11px; color:var(--cy); font-weight:700; margin-bottom:4px; letter-spacing:.06em; }
-.rm-bonus-desc{ font-size:10px; color:var(--tx2); line-height:1.6; }
-
-/* Restricción / Fair Use Preview */
-.rm-fairuse{
-  margin:0 22px 22px;
-  padding:12px 14px; border:1px solid rgba(255,45,85,.14);
-  background:rgba(255,45,85,.03); display:flex; align-items:flex-start; gap:10px;
-}
-.rm-fairuse-icon{ font-size:.95rem; flex-shrink:0; margin-top:1px; }
-.rm-fairuse-txt{ font-size:10px; color:var(--tx3); line-height:1.65; }
-.rm-fairuse-txt strong{ color:var(--tx2); }
+.ref-warn-txt strong{ color:var(--tx2); }
 
 /* ══ PROTOCOLO ══ */
-#proto{ background:var(--s1); }
+#proto{ background:var(--void); }
 
 .proto-layout{
-  display:flex; flex-direction:column; gap:0; margin-top:40px;
+  display:grid; gap:56px; margin-top:52px; align-items:start;
 }
-@media(min-width:768px){
-  .proto-layout{ display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start; }
-}
+@media(min-width:860px){ .proto-layout{ grid-template-columns:1fr 1fr; } }
+
 .proto-steps{ display:flex; flex-direction:column; }
 .proto-step{
-  display:flex; gap:18px; padding:24px 0;
-  border-bottom:1px solid var(--ln0); transition:border-color .2s;
+  display:flex; gap:20px; padding:24px 0; border-bottom:1px solid var(--ln0);
+  transition:border-color .2s;
 }
 .proto-step:last-child{ border-bottom:none; }
-@media(pointer:fine){ .proto-step:hover{ border-color:var(--ln2); } }
-.ps-num{ flex-shrink:0; font-size:9px; letter-spacing:.15em; color:var(--tx3); padding-top:3px; width:24px; }
+@media(pointer:fine){ .proto-step:hover{ border-color:var(--cy-m); } }
+.ps-num{
+  font-family:var(--font-mono); font-size:9px; letter-spacing:.15em; color:var(--tx3);
+  padding-top:3px; width:28px; flex-shrink:0;
+}
+.ps-icon{
+  width:40px; height:40px; border:1px solid var(--ln1); flex-shrink:0;
+  display:flex; align-items:center; justify-content:center;
+  transition:border-color .2s; flex-direction:column;
+}
+.ps-icon svg{ width:16px; height:16px; stroke:var(--tx3); transition:stroke .2s; }
+@media(pointer:fine){
+  .proto-step:hover .ps-icon{ border-color:var(--cy-m); }
+  .proto-step:hover .ps-icon svg{ stroke:var(--cy); }
+}
 .ps-body{ flex:1; }
-.ps-title{ font-family:var(--font-display); font-weight:700; font-size:clamp(1.05rem,3.5vw,1.2rem); letter-spacing:.04em; color:var(--tx0); margin-bottom:6px; transition:color .2s; }
+.ps-title{
+  font-family:var(--font-display); font-size:clamp(1.05rem,3vw,1.3rem);
+  letter-spacing:.04em; color:var(--tx0); margin-bottom:5px;
+  transition:color .2s;
+}
 @media(pointer:fine){ .proto-step:hover .ps-title{ color:var(--cy); } }
-.ps-win{ font-size:10px; letter-spacing:.08em; color:var(--am); margin-bottom:8px; }
-.ps-desc{ font-size:13px; color:var(--tx1); line-height:1.8; }
-.ps-icon{ flex-shrink:0; width:38px; height:38px; border:1px solid var(--ln1); display:flex; align-items:center; justify-content:center; transition:border-color .2s; }
-@media(pointer:fine){ .proto-step:hover .ps-icon{ border-color:var(--cy-s); } }
-.ps-icon svg{ width:15px; height:15px; stroke:var(--tx3); transition:stroke .2s; }
-@media(pointer:fine){ .proto-step:hover .ps-icon svg{ stroke:var(--cy); } }
+.ps-win{
+  font-family:var(--font-mono); font-size:10px; letter-spacing:.08em;
+  color:var(--am); margin-bottom:8px;
+}
+.ps-desc{ font-size:13px; color:var(--tx1); line-height:1.82; }
 
-.term-wrap{ position:relative; }
-@media(min-width:768px){ .term-wrap{ position:sticky; top:80px; } }
-.terminal{ background:var(--void); border:1px solid var(--ln1); overflow:hidden; }
+/* Terminal */
+.term-wrap{
+  position:sticky; top:80px;
+}
+.terminal{
+  background:var(--void); border:1px solid var(--ln2); overflow:hidden;
+  box-shadow:0 0 40px rgba(0,0,0,.5);
+}
 .term-hdr{
-  display:flex; align-items:center; gap:7px; padding:0 14px;
-  border-bottom:1px solid var(--ln0); background:var(--s2); min-height:var(--tap);
+  display:flex; align-items:center; gap:7px;
+  padding:0 16px; border-bottom:1px solid var(--ln1);
+  background:var(--s2); min-height:42px;
 }
 .tdot{ width:9px; height:9px; border-radius:50%; }
 .tdot-r{ background:#ff5f57; } .tdot-y{ background:#febc2e; } .tdot-g{ background:#28c840; }
-.term-title{ font-size:9px; letter-spacing:.14em; color:var(--tx3); margin-left:4px; }
-.term-body{ padding:18px 16px; line-height:2.1; font-size:12px; overflow-x:auto; min-height:320px; }
+.term-name{
+  font-family:var(--font-mono); font-size:9px; letter-spacing:.14em; color:var(--tx3);
+  margin-left:6px;
+}
+.term-body{
+  padding:18px 16px; min-height:320px; overflow-x:auto;
+  font-family:var(--font-mono); font-size:12px; line-height:2.1;
+}
 .t-d{ color:var(--tx3); }
 .t-a{ color:var(--cy); }
 .t-am{ color:var(--am); }
 .t-g{ color:var(--grn); }
 .t-w{ color:var(--tx0); }
 .t-r{ color:var(--red); }
-.t-cur{ display:inline-block; width:6px; height:1em; background:var(--cy); vertical-align:text-bottom; animation:blink-cur .9s step-end infinite; }
-
-/* ══ POLÍTICA DE USO JUSTO ══ */
-#fair-use{ background:var(--s2); border-top:1px solid var(--ln1); border-bottom:1px solid var(--ln1); }
-
-.fair-use-grid{
-  display:grid; gap:2px; margin-top:32px;
+.t-cur{
+  display:inline-block; width:7px; height:1.1em;
+  background:var(--cy); vertical-align:text-bottom;
+  animation:curBlink .9s step-end infinite;
 }
-@media(min-width:768px){ .fair-use-grid{ grid-template-columns:repeat(3,1fr); } }
+
+/* ══ FAIR USE ══ */
+#fair-use{
+  background:var(--s2); border-top:1px solid var(--ln1); border-bottom:1px solid var(--ln1);
+}
+.fu-alert{
+  display:inline-flex; align-items:center; gap:10px;
+  border:1px solid rgba(255,51,102,.2); background:var(--red-d);
+  padding:7px 16px; margin-bottom:16px;
+  font-family:var(--font-mono); font-size:9px; letter-spacing:.16em; color:var(--red);
+}
+.fu-grid{
+  display:grid; gap:3px; margin-top:36px;
+}
+@media(min-width:640px){ .fu-grid{ grid-template-columns:1fr 1fr; } }
+@media(min-width:1024px){ .fu-grid{ grid-template-columns:repeat(3,1fr); } }
 
 .fu-card{
   background:var(--s1); border:1px solid var(--ln1);
-  padding:20px 18px; position:relative; overflow:hidden;
+  padding:22px 20px; position:relative; overflow:hidden;
+  transition:border-color .2s;
 }
+@media(pointer:fine){ .fu-card:hover{ border-color:var(--ln2); } }
 .fu-card::before{
   content:''; position:absolute; top:0; left:0; right:0; height:1px;
-  background:linear-gradient(90deg,transparent,var(--tx3),transparent); opacity:.4;
+  background:linear-gradient(90deg,transparent,var(--tx3),transparent); opacity:.3;
 }
-.fu-icon{ font-size:1.3rem; margin-bottom:10px; }
-.fu-title{ font-family:var(--font-display); font-weight:700; font-size:.85rem; color:var(--tx1); margin-bottom:8px; letter-spacing:.04em; }
+.fu-icon{ font-size:1.4rem; margin-bottom:12px; }
+.fu-title{
+  font-family:var(--font-display); font-size:.95rem; letter-spacing:.04em;
+  color:var(--tx1); margin-bottom:8px;
+}
 .fu-desc{ font-size:12px; color:var(--tx3); line-height:1.7; }
-.fu-rule{ font-size:11px; color:var(--am); margin-top:8px; letter-spacing:.06em; }
-
-.fu-header-badge{
-  display:inline-flex; align-items:center; gap:8px;
-  border:1px solid rgba(255,45,85,.22); background:rgba(255,45,85,.04);
-  padding:6px 14px; font-size:9px; letter-spacing:.16em; color:var(--red);
-  margin-bottom:16px;
+.fu-rule{
+  font-family:var(--font-mono); font-size:10px; color:var(--am); margin-top:8px; letter-spacing:.06em;
 }
 
 /* ══ CTA FINAL ══ */
@@ -949,87 +1229,123 @@ body{
   background:var(--void); padding:var(--py) var(--gx);
   position:relative; overflow:hidden;
 }
-.cta-orb{
-  position:absolute; border-radius:50%; filter:blur(130px); pointer-events:none;
-  background:rgba(0,240,255,.05); width:600px; height:600px;
-  top:50%; left:50%; transform:translate(-50%,-50%); z-index:0;
+.cta-orb1{
+  position:absolute; width:clamp(300px,50vw,700px); height:clamp(300px,50vw,700px);
+  border-radius:50%; filter:blur(120px); pointer-events:none;
+  background:rgba(0,229,255,.04); top:50%; left:50%;
+  transform:translate(-50%,-50%); z-index:0;
 }
-.cta-w{ max-width:900px; margin:0 auto; text-align:center; position:relative; z-index:2; }
-.cta-lbl{ font-size:9px; letter-spacing:.26em; color:var(--tx3); display:block; margin-bottom:16px; }
+.cta-orb2{
+  position:absolute; width:clamp(200px,35vw,500px); height:clamp(200px,35vw,500px);
+  border-radius:50%; filter:blur(100px); pointer-events:none;
+  background:rgba(245,166,35,.04); bottom:-10%; right:-5%; z-index:0;
+}
+.cta-w{ max-width:980px; margin:0 auto; text-align:center; position:relative; z-index:2; }
+.cta-sup{
+  font-family:var(--font-mono); font-size:9px; letter-spacing:.26em;
+  color:var(--tx3); display:block; margin-bottom:18px;
+}
 .cta-h{
-  font-family:var(--font-display); font-weight:800;
-  font-size:clamp(2.4rem,9vw,6rem);
-  line-height:.88; color:var(--tx0); margin-bottom:18px;
+  font-family:var(--font-display); font-size:clamp(2.4rem,8vw,6.5rem);
+  line-height:.88; letter-spacing:.03em; color:var(--tx0); margin-bottom:20px;
 }
-.cta-h span{ color:var(--cy); }
-.cta-p{ font-size:14px; color:var(--tx1); line-height:1.85; max-width:440px; margin:0 auto 40px; }
-
+.cta-h .cy{ color:var(--cy); }
+.cta-p{
+  font-size:clamp(.88rem,2vw,1rem); color:var(--tx1); line-height:1.85;
+  max-width:460px; margin:0 auto 48px;
+}
 .cta-card{
   background:var(--s1); border:1px solid var(--ln2);
-  padding:26px 20px; text-align:left; position:relative; overflow:hidden;
+  position:relative; overflow:hidden; text-align:left;
+  padding:28px 24px;
 }
 .cta-card::before{
   content:''; position:absolute; top:0; left:0; right:0; height:1px;
   background:linear-gradient(90deg,transparent,var(--cy),transparent);
-  box-shadow:0 0 24px var(--cy-s);
+  box-shadow:0 0 30px var(--cy-s);
 }
-@media(min-width:600px){
-  .cta-card{ display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center; padding:36px 40px; }
+@media(min-width:640px){
+  .cta-card{ display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; padding:40px 44px; }
 }
-.cta-lft-lbl{ font-size:9px; letter-spacing:.22em; color:var(--tx3); margin-bottom:10px; }
-.cta-brand{ font-family:var(--font-display); font-weight:800; font-size:1.5rem; color:var(--cy); letter-spacing:.07em; margin-bottom:16px; }
-.cta-feats{ display:flex; flex-direction:column; gap:9px; margin-bottom:20px; }
-.cta-feat{ display:flex; align-items:flex-start; gap:10px; font-size:12px; letter-spacing:.04em; color:var(--tx1); }
-.cta-feat::before{ content:'▸'; color:var(--cy); flex-shrink:0; margin-top:1px; }
-.cta-email{ font-size:12px; letter-spacing:.1em; color:var(--cy); text-decoration:none; border-bottom:1px solid rgba(0,240,255,.22); padding-bottom:3px; transition:border-color .2s; display:inline-block; }
+.cta-lft-lbl{
+  font-family:var(--font-mono); font-size:9px; letter-spacing:.22em;
+  color:var(--tx3); margin-bottom:10px;
+}
+.cta-brand{
+  font-family:var(--font-display); font-size:2rem; letter-spacing:.08em;
+  color:var(--cy); margin-bottom:18px;
+}
+.cta-feats{ display:flex; flex-direction:column; gap:10px; margin-bottom:20px; }
+.cta-feat{
+  display:flex; align-items:flex-start; gap:10px;
+  font-size:12px; color:var(--tx1); line-height:1.5;
+}
+.cta-feat-icon{ color:var(--cy); flex-shrink:0; font-size:10px; margin-top:2px; }
+.cta-email{
+  font-family:var(--font-mono); font-size:11px; letter-spacing:.1em; color:var(--cy);
+  border-bottom:1px solid var(--cy-m); padding-bottom:2px;
+  display:inline-block; transition:border-color .2s;
+}
 .cta-email:hover{ border-color:var(--cy); }
 .cta-rht{ display:flex; flex-direction:column; gap:10px; margin-top:28px; }
-@media(min-width:600px){ .cta-rht{ margin-top:0; } }
+@media(min-width:640px){ .cta-rht{ margin-top:0; } }
 
 /* ══ FOOTER ══ */
 footer{
   border-top:1px solid var(--ln0);
-  padding:22px var(--gx) calc(22px + var(--sab));
+  padding:26px var(--gx) calc(26px + var(--sab));
   position:relative; z-index:10;
 }
 .footer-w{
-  max-width:1280px; margin:0 auto;
-  display:flex; flex-wrap:wrap; align-items:center;
-  justify-content:space-between; gap:10px;
+  max-width:1380px; margin:0 auto;
+  display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px;
 }
-.footer-copy{ font-size:9px; letter-spacing:.12em; color:var(--tx3); }
+.footer-brand{ display:flex; align-items:center; gap:10px; }
+.footer-copy{
+  font-family:var(--font-mono); font-size:9px; letter-spacing:.12em; color:var(--tx3);
+}
+
+/* ══ FOCUS / ACCESSIBILITY ══ */
+@media(pointer:fine){
+  a:focus-visible, button:focus-visible{ outline:2px solid var(--cy); outline-offset:3px; }
+}
 </style>
 </head>
 <body>
 
+<!-- Overlays -->
 <div id="spotlight" aria-hidden="true"></div>
 <div id="prog"><div id="prog-fill"></div></div>
 <div id="grid-bg" aria-hidden="true"></div>
+<div id="noise" aria-hidden="true"></div>
 
-<!-- FLOAT CTA MOBILE -->
-<a href="mailto:hola@zoalum.com" id="float-cta" aria-label="Comenzar hoy">
+<!-- Float CTA Mobile -->
+<a href="mailto:hola@zoalum.com" id="float-cta" aria-label="Comenzar hoy con MarketPage">
   <div class="float-inner">
-    <span>COMENZAR &nbsp;→</span>
-    <i>$2,000/MES · SIN CONTRATO</i>
+    <span class="fl-main">COMENZAR HOY →</span>
+    <span class="fl-sub">$2,000/MES · SIN CONTRATO</span>
   </div>
 </a>
 
-<!-- NAV -->
+<!-- ══ NAV ══ -->
 <nav id="nav" aria-label="Navegación principal">
   <div class="nav-inner">
-    <a href="#" class="nav-logo" aria-label="MARKETPAGE por ZOALUM">
-      <div class="pulse" aria-hidden="true"></div>
-      <span class="logo-text">MARKET<em>PAGE</em></span>
-      <div class="logo-sep" aria-hidden="true"></div>
-      <span class="logo-ver">ZOALUM / V8</span>
+    <a href="#" class="nav-logo" aria-label="MARKETPAGE por ZOALUM - ir al inicio">
+      <div class="logo-mark" aria-hidden="true">
+        <div class="logo-mark-pulse"></div>
+      </div>
+      <div class="logo-text-wrap">
+        <span class="logo-name">MARKET<em>PAGE</em></span>
+        <span class="logo-sub">ZOALUM / V9</span>
+      </div>
     </a>
-    <nav class="nav-links" aria-label="Secciones">
+    <div class="nav-links" role="navigation" aria-label="Secciones principales">
       <a href="#delegated" class="nav-link">GESTIÓN</a>
       <a href="#oracles" class="nav-link">APP ORACLES</a>
       <a href="#referral" class="nav-link">PRECIOS</a>
       <a href="#casos" class="nav-link">CASOS REALES</a>
-      <a href="mailto:hola@zoalum.com" class="nav-cta-btn">EMPEZAR HOY →</a>
-    </nav>
+      <a href="mailto:hola@zoalum.com" class="nav-cta" aria-label="Empezar hoy con MarketPage">EMPEZAR HOY →</a>
+    </div>
     <button id="mob-btn" onclick="mobToggle()" aria-label="Abrir menú" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -1039,47 +1355,52 @@ footer{
     <a href="#oracles" onclick="closeMenu()">APP ORACLES</a>
     <a href="#referral" onclick="closeMenu()">PRECIOS Y REFERIDOS</a>
     <a href="#casos" onclick="closeMenu()">CASOS REALES</a>
-    <a href="#fair-use" onclick="closeMenu()">POLÍTICA DE USO JUSTO</a>
-    <a href="mailto:hola@zoalum.com" onclick="closeMenu()" class="mob-cta-link">EMPEZAR HOY</a>
+    <a href="#fair-use" onclick="closeMenu()">USO JUSTO</a>
+    <a href="mailto:hola@zoalum.com" onclick="closeMenu()" class="mob-cta">EMPEZAR HOY</a>
   </div>
 </nav>
 
-<!-- ══════════════════════════════════════
-     HERO — Lenguaje de no-ingeniero
-══════════════════════════════════════ -->
-<section id="hero" aria-label="Propuesta de valor">
-  <div class="hero-bg-text" aria-hidden="true"><span>MP</span></div>
-  <div class="hero-scan" aria-hidden="true"></div>
+<!-- ══════════════════ HERO ══════════════════ -->
+<section id="hero" aria-label="Propuesta de valor principal">
+  <!-- Fondos decorativos -->
+  <div class="hero-orb" aria-hidden="true"></div>
+  <div class="hero-orb-2" aria-hidden="true"></div>
+  <div class="hero-bg-art" aria-hidden="true"><span>MP</span></div>
+  <div class="scanline" aria-hidden="true"></div>
+  
+  <!-- Corners decorativos -->
   <div class="corner corner-tl" aria-hidden="true"></div>
   <div class="corner corner-tr" aria-hidden="true"></div>
   <div class="corner corner-bl" aria-hidden="true"></div>
   <div class="corner corner-br" aria-hidden="true"></div>
 
   <div class="h-inner">
-    <div class="boot-row" role="status">
+    <!-- Status -->
+    <div class="boot-row" role="status" aria-live="polite">
       <div class="boot-chip">
         <div class="pulse" style="width:5px;height:5px" aria-hidden="true"></div>
-        SISTEMA ACTIVO — V8.0
+        SISTEMA ACTIVO — V9.0
       </div>
       <div class="boot-chip neutral" id="hero-time" aria-label="Hora actual">--:--:--</div>
     </div>
 
-    <!-- Promesa en lenguaje de dueño de negocio -->
-    <div class="h-promise-tag">
+    <!-- Tag promesa -->
+    <div class="h-tag" role="note">
       <div class="pulse am" style="width:5px;height:5px" aria-hidden="true"></div>
-      Tu negocio en internet, <strong>sin que tengas que aprender nada técnico</strong>
+      Tu negocio en internet, sin que tengas que aprender nada técnico
     </div>
 
-    <h1 class="h-title">
-      MARKET<br/>
-      <span class="h-title-ac">PAGE</span>
-    </h1>
+    <!-- 🔑 TÍTULO COMPLETAMENTE ARREGLADO — nunca se sale -->
+    <div class="h-title-wrap">
+      <span class="h-title-line">MARKET</span>
+      <span class="h-title-line accent">PAGE</span>
+    </div>
 
     <p class="h-sub">
-      Tu página web abre <strong>antes de que el cliente parpadee.</strong> Tu inventario se controla desde el celular. Y si algo falla a las 3am — nosotros lo arreglamos. <strong>Tú solo vendes.</strong>
+      Tu página abre <strong>antes de que el cliente parpadee.</strong> Tu inventario desde el celular. Y si algo falla a las 3am — nosotros lo arreglamos. <strong>Tú solo vendes.</strong>
     </p>
 
-    <div class="h-value-props">
+    <div class="h-vps">
       <div class="h-vp">Tu página nunca se cae</div>
       <div class="h-vp">App de inventario incluida</div>
       <div class="h-vp">Sin contratos largos</div>
@@ -1088,241 +1409,227 @@ footer{
 
     <div class="h-ctas">
       <a href="mailto:hola@zoalum.com" class="btn btn-p">EMPEZAR HOY &nbsp;→</a>
-      <a href="#referral" class="btn btn-g">VER PRECIOS →</a>
+      <a href="#referral" class="btn btn-g">VER PRECIOS</a>
     </div>
 
-    <!-- MÉTRICAS EN LENGUAJE DE NEGOCIO -->
+    <!-- Métricas -->
     <div class="h-metrics" role="list">
       <div class="h-met" role="listitem">
         <div class="met-v">0</div>
         <div class="met-l">CAÍDAS<br/>AL MES</div>
-        <div class="met-b">Sin clientes perdidos por fallas técnicas</div>
+        <div class="met-b">Sin clientes perdidos</div>
       </div>
       <div class="h-met" role="listitem">
         <div class="met-v">24<span class="met-u">h</span></div>
         <div class="met-l">RESPUESTA<br/>MÁXIMA</div>
-        <div class="met-b">Si algo falla, lo arreglamos ese día</div>
+        <div class="met-b">Lo arreglamos ese día</div>
       </div>
       <div class="h-met" role="listitem">
         <div class="met-v">7<span class="met-u">d</span></div>
         <div class="met-l">TU NEGOCIO<br/>EN LÍNEA</div>
-        <div class="met-b">Activo en una semana, no en meses</div>
+        <div class="met-b">Activo en una semana</div>
       </div>
       <div class="h-met" role="listitem">
         <div class="met-v"><span class="met-u">$</span>0</div>
         <div class="met-l">COSTOS<br/>OCULTOS</div>
-        <div class="met-b">El precio que acuerdes es el que pagas</div>
+        <div class="met-b">El precio acordado es el real</div>
       </div>
     </div>
   </div>
 
   <div class="h-scroll" aria-hidden="true">
-    <span class="h-scroll-t">SCROLL</span>
-    <div class="h-scroll-b"></div>
+    <div class="h-scroll-label">SCROLL</div>
+    <div class="h-scroll-line"></div>
   </div>
 </section>
 
-<!-- TICKER -->
-<div id="ticker" aria-hidden="true">
+<!-- ══ TICKER ══ -->
+<div id="ticker" aria-hidden="true" role="marquee">
   <div class="ticker-track" id="ticker-track"></div>
 </div>
 
-<!-- ══════════════════════════════════════
-     PAIN STRIP — Problemas reales de dueños de negocio
-══════════════════════════════════════ -->
-<section id="pain-strip" aria-label="Problemas que resolvemos">
-  <div class="pain-strip-inner">
+<!-- ══════════════════ PAIN ══════════════════ -->
+<section id="pain" aria-label="Problemas que resolvemos">
+  <div class="pain-inner">
     <div class="pain-item rev">
-      <div class="pain-icon" aria-hidden="true">😤</div>
-      <div class="pain-body">
+      <div class="pain-emoji" aria-hidden="true">😤</div>
+      <div>
         <div class="pain-label">EL PROBLEMA QUE CONOCES</div>
-        <div class="pain-headline">Tu página carga lento<br/><span class="red">y el cliente se va</span></div>
+        <div class="pain-title">Tu página carga lento<br/><span class="red">y el cliente se va</span></div>
       </div>
     </div>
     <div class="pain-item rev" style="transition-delay:.08s">
-      <div class="pain-icon" aria-hidden="true">📦</div>
-      <div class="pain-body">
+      <div class="pain-emoji" aria-hidden="true">📦</div>
+      <div>
         <div class="pain-label">EL CAOS DEL INVENTARIO</div>
-        <div class="pain-headline">Vendes algo que<br/><span class="am">ya no tienes en stock</span></div>
+        <div class="pain-title">Vendes lo que<br/><span class="am">ya no tienes en stock</span></div>
       </div>
     </div>
     <div class="pain-item rev" style="transition-delay:.16s">
-      <div class="pain-icon" aria-hidden="true">🔧</div>
-      <div class="pain-body">
+      <div class="pain-emoji" aria-hidden="true">🔧</div>
+      <div>
         <div class="pain-label">EL SOPORTE QUE NUNCA LLEGA</div>
-        <div class="pain-headline">Algo falla y nadie<br/><span class="ac">responde el teléfono</span></div>
+        <div class="pain-title">Algo falla y nadie<br/><span class="cy">contesta el teléfono</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══════════════════════════════════════
-     GESTIÓN DELEGADA — Analogía del Local Físico
-══════════════════════════════════════ -->
+<!-- ══════════════════ DELEGATED ══════════════════ -->
 <section class="sec" id="delegated">
   <div class="sec-w">
     <div class="eyebrow rev">MÓDULO 01 — GESTIÓN DELEGADA</div>
-    <div style="height:16px"></div>
-    <h2 class="section-h rev">RENTA LA MAQUINARIA.<br/><span class="ac">TÚ TE DEDICAS A VENDER.</span></h2>
+    <h2 class="section-h rev">RENTA LA MAQUINARIA.<br/><span class="cy">TÚ SOLO VENDE.</span></h2>
     <p class="section-p rev">
-      Imagina que rentas un local en el mejor centro comercial de la ciudad. El dueño del edificio se encarga de la luz, el mantenimiento, la seguridad y el aire acondicionado. Tú solo pones tus productos y atiendes a tus clientes. Eso es exactamente lo que hacemos contigo.
+      Imagina rentar un local en el mejor centro comercial. El dueño del edificio se encarga de la luz, el mantenimiento y la seguridad. Tú solo pones tus productos y atiendes clientes. Eso hacemos contigo.
     </p>
 
-    <div class="local-analogy rev" style="transition-delay:.1s">
-      <!-- COL: Sin MARKETPAGE -->
-      <div class="local-col bad">
-        <div class="local-col-head">
-          <div class="local-col-icon">🏚️</div>
+    <div class="analogy-grid rev" style="transition-delay:.1s">
+      <div class="analogy-col bad">
+        <div class="analogy-head">
+          <div class="analogy-head-icon" aria-hidden="true">🏚️</div>
           <div>
-            <div class="local-col-title red">SIN MARKETPAGE</div>
-            <div class="local-col-subtitle">Como rentar una bodega sin servicios</div>
+            <div class="analogy-head-title red">SIN MARKETPAGE</div>
+            <div class="analogy-head-sub">Como rentar una bodega sin servicios</div>
           </div>
         </div>
-        <div class="local-items">
-          <div class="local-item bad">
-            <div class="local-item-icon">❌</div>
-            <div class="local-item-text">
-              <div class="local-item-title">Tú contratas y pagas el hosting</div>
-              <div class="local-item-desc">Como si tuvieras que pagar la luz del local por separado cada mes — y lidiar con el proveedor cuando falla.</div>
+        <div class="analogy-items">
+          <div class="analogy-item">
+            <div class="ai-icon" aria-hidden="true">❌</div>
+            <div>
+              <div class="ai-title">Tú contratas y pagas el hosting</div>
+              <div class="ai-desc">Como pagar la luz del local por separado cada mes — y lidiar con el proveedor cuando falla.</div>
             </div>
           </div>
-          <div class="local-item bad">
-            <div class="local-item-icon">❌</div>
-            <div class="local-item-text">
-              <div class="local-item-title">Tú llamas al técnico cuando algo falla</div>
-              <div class="local-item-desc">Como si cada vez que se rompe una tubería, tuvieras que buscar y pagar un plomero de emergencia.</div>
+          <div class="analogy-item">
+            <div class="ai-icon" aria-hidden="true">❌</div>
+            <div>
+              <div class="ai-title">Tú llamas al técnico cuando falla</div>
+              <div class="ai-desc">Como si cada vez que se rompe una tubería, tuvieras que buscar y pagar un plomero de emergencia.</div>
             </div>
           </div>
-          <div class="local-item bad">
-            <div class="local-item-icon">❌</div>
-            <div class="local-item-text">
-              <div class="local-item-title">Tu inventario en libretas o Excel</div>
-              <div class="local-item-desc">Vendes algo que ya no tienes, o no sabes qué pedir. Errores que cuestan clientes y dinero real.</div>
+          <div class="analogy-item">
+            <div class="ai-icon" aria-hidden="true">❌</div>
+            <div>
+              <div class="ai-title">Inventario en libretas o Excel</div>
+              <div class="ai-desc">Vendes algo que ya no tienes. Errores que cuestan clientes y dinero real.</div>
             </div>
           </div>
-          <div class="local-item bad">
-            <div class="local-item-icon">❌</div>
-            <div class="local-item-text">
-              <div class="local-item-title">Nadie disponible a las 11pm</div>
-              <div class="local-item-desc">Cuando algo se cae un viernes por la noche, pierdes ventas del fin de semana completo.</div>
+          <div class="analogy-item">
+            <div class="ai-icon" aria-hidden="true">❌</div>
+            <div>
+              <div class="ai-title">Nadie disponible a las 11pm</div>
+              <div class="ai-desc">Cuando algo se cae un viernes, pierdes ventas del fin de semana completo.</div>
             </div>
           </div>
         </div>
       </div>
-
-      <!-- COL: Con MARKETPAGE -->
-      <div class="local-col good">
-        <div class="local-col-head">
-          <div class="local-col-icon">🏢</div>
+      <div class="analogy-col good">
+        <div class="analogy-head">
+          <div class="analogy-head-icon" aria-hidden="true">🏢</div>
           <div>
-            <div class="local-col-title cy">CON MARKETPAGE</div>
-            <div class="local-col-subtitle">Como rentar en el mejor centro comercial</div>
+            <div class="analogy-head-title cy">CON MARKETPAGE</div>
+            <div class="analogy-head-sub">Como el mejor local en el mejor centro comercial</div>
           </div>
         </div>
-        <div class="local-items">
-          <div class="local-item good">
-            <div class="local-item-icon">✅</div>
-            <div class="local-item-text">
-              <div class="local-item-title">Nosotros nos encargamos del hosting</div>
-              <div class="local-item-desc">Servidores, velocidad, seguridad. Tú no hablas con ningún proveedor técnico — eso es nuestro problema.</div>
+        <div class="analogy-items">
+          <div class="analogy-item">
+            <div class="ai-icon" aria-hidden="true">✅</div>
+            <div>
+              <div class="ai-title">Nosotros nos encargamos del hosting</div>
+              <div class="ai-desc">Servidores, velocidad, seguridad. Tú no hablas con ningún proveedor técnico — eso es nuestro problema.</div>
             </div>
           </div>
-          <div class="local-item good">
-            <div class="local-item-icon">✅</div>
-            <div class="local-item-text">
-              <div class="local-item-title">Si algo falla, lo arreglamos nosotros</div>
-              <div class="local-item-desc">Como el dueño del edificio que manda al plomero sin cobrarte extra. Tu renta incluye la tranquilidad.</div>
+          <div class="analogy-item">
+            <div class="ai-icon" aria-hidden="true">✅</div>
+            <div>
+              <div class="ai-title">Si algo falla, lo arreglamos nosotros</div>
+              <div class="ai-desc">Como el dueño del edificio que manda al plomero sin cobrarte extra. Tu renta incluye la tranquilidad.</div>
             </div>
           </div>
-          <div class="local-item good">
-            <div class="local-item-icon">✅</div>
-            <div class="local-item-text">
-              <div class="local-item-title">App ORACLES para tu inventario</div>
-              <div class="local-item-desc">Desde tu celular: qué tienes, qué se está agotando, qué vender más. En tiempo real, sin hojas de Excel.</div>
+          <div class="analogy-item">
+            <div class="ai-icon" aria-hidden="true">✅</div>
+            <div>
+              <div class="ai-title">App ORACLES para tu inventario</div>
+              <div class="ai-desc">Desde tu celular: qué tienes, qué se agota, qué vender más. En tiempo real, sin Excel.</div>
             </div>
           </div>
-          <div class="local-item good">
-            <div class="local-item-icon">✅</div>
-            <div class="local-item-text">
-              <div class="local-item-title">Respuesta garantizada en menos de 24h</div>
-              <div class="local-item-desc">Canal directo con el equipo técnico. No un ticket de soporte genérico — una persona real que conoce tu negocio.</div>
+          <div class="analogy-item">
+            <div class="ai-icon" aria-hidden="true">✅</div>
+            <div>
+              <div class="ai-title">Respuesta garantizada en menos de 24h</div>
+              <div class="ai-desc">Canal directo con el equipo técnico. No un ticket genérico — una persona real que conoce tu negocio.</div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- BANNER TÚ VENDES -->
-    <div class="tuvende-banner rev" style="transition-delay:.2s">
-      <div class="tuvende-icon" aria-hidden="true">🤝</div>
-      <div class="tuvende-body">
-        <div class="tuvende-title">TÚ VENDES. NOSOTROS MANTENEMOS EL MOTOR.</div>
-        <div class="tuvende-desc">
-          La diferencia entre un negocio que crece y uno que pelea con su tecnología es esta: los dueños exitosos no aprenden a ser técnicos — <strong>contratan a alguien en quien confiar.</strong> Nosotros somos ese alguien. Tu marca y tus datos siempre son tuyos. <strong>Lo que rentamos es la maquinaria, no tu negocio.</strong>
-        </div>
+    <div class="sell-banner rev" style="transition-delay:.2s">
+      <div class="sell-banner-icon" aria-hidden="true">🤝</div>
+      <div>
+        <div class="sell-title">TÚ VENDES. NOSOTROS MANTENEMOS EL MOTOR.</div>
+        <p class="sell-desc">
+          Los dueños de negocios exitosos no aprenden a ser técnicos — <strong>contratan a alguien en quien confiar.</strong> Nosotros somos ese alguien. Tu marca y tus datos siempre son tuyos. <strong>Lo que rentamos es la maquinaria, no tu negocio.</strong>
+        </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══════════════════════════════════════
-     APP ORACLES — Gestión de Inventario
-══════════════════════════════════════ -->
-<section class="sec" id="oracles" style="background:var(--s1)">
+<!-- ══════════════════ APP ORACLES ══════════════════ -->
+<section class="sec" id="oracles">
   <div class="sec-w">
     <div class="eyebrow rev">MÓDULO 02 — APP ORACLES</div>
-    <div style="height:16px"></div>
     <h2 class="section-h rev">TU INVENTARIO,<br/><span class="am">EN TU BOLSILLO</span></h2>
-    <p class="section-p rev">
-      ORACLES es la app de gestión que viene incluida en tu suscripción. Diseñada para dueños de joyerías, mezcalerías y comercios locales — no para contadores ni ingenieros.
-    </p>
+    <p class="section-p rev">La app de gestión incluida en tu suscripción. Diseñada para joyerías, mezcalerías y comercios locales — no para ingenieros.</p>
 
     <div class="oracles-layout rev" style="transition-delay:.1s">
       <div class="oracles-features">
-        <div class="oracles-feature">
+        <div class="oracle-feat">
           <div class="of-icon" aria-hidden="true">📱</div>
-          <div class="of-body">
+          <div>
             <div class="of-title">Controla todo desde el celular</div>
-            <div class="of-desc">Sin computadora, sin cables, sin "esperar a estar en la tienda". Tu inventario viaja contigo.</div>
+            <div class="of-desc">Sin computadora, sin cables. Tu inventario viaja contigo a donde vayas.</div>
             <div class="of-win">→ Toma decisiones aunque estés en casa</div>
           </div>
         </div>
-        <div class="oracles-feature">
+        <div class="oracle-feat">
           <div class="of-icon" aria-hidden="true">🚨</div>
-          <div class="of-body">
-            <div class="of-title">Alertas antes de que te quedes sin stock</div>
-            <div class="of-desc">La app te avisa cuando un producto está a punto de agotarse — antes de que un cliente lo pida y no lo tengas.</div>
+          <div>
+            <div class="of-title">Alertas antes de quedarte sin stock</div>
+            <div class="of-desc">La app te avisa cuando un producto está a punto de agotarse — antes de que un cliente lo pida.</div>
             <div class="of-win">→ Nunca más "lo tengo que checar y le aviso"</div>
           </div>
         </div>
-        <div class="oracles-feature">
+        <div class="oracle-feat">
           <div class="of-icon" aria-hidden="true">📊</div>
-          <div class="of-body">
-            <div class="of-title">Qué se vende más y qué no se mueve</div>
-            <div class="of-desc">Números claros de tu negocio. Sin fórmulas de Excel. Sin columnas confusas. Solo lo que necesitas saber.</div>
+          <div>
+            <div class="of-title">Qué se vende y qué no se mueve</div>
+            <div class="of-desc">Números claros de tu negocio. Sin fórmulas de Excel. Solo lo que necesitas saber.</div>
             <div class="of-win">→ Compra lo que sí se vende</div>
           </div>
         </div>
-        <div class="oracles-feature">
+        <div class="oracle-feat">
           <div class="of-icon" aria-hidden="true">🔌</div>
-          <div class="of-body">
-            <div class="of-title">Si dejas de pagar, la app se pausa</div>
-            <div class="of-desc">Tus datos siempre son tuyos. Lo que se pausa es el motor que los sincroniza. Política transparente, sin sorpresas.</div>
-            <div class="of-win">→ Cero letra chica. Todo claro desde el día 1</div>
+          <div>
+            <div class="of-title">Política transparente desde el día 1</div>
+            <div class="of-desc">Si dejas de pagar, la app se pausa. Tus datos siguen siendo tuyos. Sin sorpresas ni letra chica.</div>
+            <div class="of-win">→ Cero letra chica. Todo claro</div>
           </div>
         </div>
       </div>
 
-      <!-- MOCKUP DE LA APP -->
-      <div class="oracles-mockup">
-        <div class="mockup-hdr">
+      <!-- Mockup app -->
+      <div class="app-mockup">
+        <div class="mock-titlebar">
           <div class="mdot mdot-r"></div>
           <div class="mdot mdot-y"></div>
           <div class="mdot mdot-g"></div>
-          <span class="mockup-title">ORACLES — GESTIÓN / v2.1.0</span>
+          <span class="mock-ttl">ORACLES — GESTIÓN · v2.1.0</span>
         </div>
-        <div class="mockup-body">
-          <div class="mock-stat-row">
+        <div class="mock-body">
+          <div class="mock-stats">
             <div class="mock-stat">
               <div class="mock-stat-val">142</div>
               <div class="mock-stat-lbl">PRODUCTOS</div>
@@ -1336,32 +1643,32 @@ footer{
               <div class="mock-stat-lbl">ALERTAS</div>
             </div>
           </div>
-          <div class="mock-inv-row">
-            <div class="mock-inv-head">/ INVENTARIO — ÚLTIMOS MOVIMIENTOS</div>
-            <div class="mock-item">
-              <span class="mock-item-name">Anillo plata 925 — T.7</span>
-              <span class="mock-item-stock">14 pzas</span>
-              <span class="mock-item-alert ok">OK</span>
+          <div class="mock-inv">
+            <div class="mock-inv-hdr">/ ÚLTIMOS MOVIMIENTOS</div>
+            <div class="mock-row">
+              <span class="mock-row-name">Anillo plata 925 — T.7</span>
+              <span class="mock-row-qty">14 pzas</span>
+              <span class="mock-row-status ok">OK</span>
             </div>
-            <div class="mock-item">
-              <span class="mock-item-name">Mezcal artesanal — 750ml</span>
-              <span class="mock-item-stock">6 pzas</span>
-              <span class="mock-item-alert low">BAJO</span>
+            <div class="mock-row">
+              <span class="mock-row-name">Mezcal artesanal — 750ml</span>
+              <span class="mock-row-qty">6 pzas</span>
+              <span class="mock-row-status low">BAJO</span>
             </div>
-            <div class="mock-item">
-              <span class="mock-item-name">Collar obsidiana negra</span>
-              <span class="mock-item-stock">22 pzas</span>
-              <span class="mock-item-alert ok">OK</span>
+            <div class="mock-row">
+              <span class="mock-row-name">Collar obsidiana negra</span>
+              <span class="mock-row-qty">22 pzas</span>
+              <span class="mock-row-status ok">OK</span>
             </div>
-            <div class="mock-item">
-              <span class="mock-item-name">Aretes plata — diseño mixteco</span>
-              <span class="mock-item-stock">2 pzas</span>
-              <span class="mock-item-alert low">REPONER</span>
+            <div class="mock-row">
+              <span class="mock-row-name">Aretes plata — diseño mixteco</span>
+              <span class="mock-row-qty">2 pzas</span>
+              <span class="mock-row-status low">REPONER</span>
             </div>
           </div>
-          <div class="mock-alert">
+          <div class="mock-alert-bar">
             <div class="mock-alert-dot" aria-hidden="true"></div>
-            <span class="mock-alert-txt">✓ Sincronizado con tu página web — stock actualizado en tiempo real</span>
+            <span class="mock-alert-txt">✓ Sincronizado con tu página web — stock en tiempo real</span>
           </div>
         </div>
       </div>
@@ -1369,15 +1676,12 @@ footer{
   </div>
 </section>
 
-<!-- ══════════════════════════════════════
-     CASOS REALES DE ÉXITO
-══════════════════════════════════════ -->
-<section class="sec" id="casos">
+<!-- ══════════════════ CASOS ══════════════════ -->
+<section class="sec" id="casos" style="background:var(--s1)">
   <div class="sec-w">
-    <div class="eyebrow rev">MÓDULO 03 — NEGOCIOS REALES, RESULTADOS REALES</div>
-    <div style="height:16px"></div>
-    <h2 class="section-h rev">CLIENTES QUE YA<br/><span class="ac">ESTÁN CRECIENDO</span></h2>
-    <p class="section-p rev">No teorías ni promesas. Estos son negocios como el tuyo, en Hidalgo y México, que ya tienen su infraestructura activa.</p>
+    <div class="eyebrow rev">MÓDULO 03 — RESULTADOS REALES</div>
+    <h2 class="section-h rev">CLIENTES QUE YA<br/><span class="cy">ESTÁN CRECIENDO</span></h2>
+    <p class="section-p rev">No promesas. Negocios como el tuyo, en Hidalgo y México, con su infraestructura activa y resultados documentados.</p>
 
     <div class="casos-grid">
       <div class="caso-card rev">
@@ -1387,16 +1691,15 @@ footer{
         </div>
         <div class="caso-industry">INMOBILIARIA · BIENES RAÍCES</div>
         <div class="caso-name">BIENES RAÍCES RAYLON</div>
-        <div class="caso-desc">
-          Inmobiliaria premium en el mercado hidalguense. Antes de MarketPage, perdían prospectos porque su página tardaba más de 4 segundos en cargar en celular. Sus clientes llegaban a ver propiedades en la competencia antes de poder contactarlos.
-        </div>
-        <div class="caso-resultado">
-          <div class="caso-resultado-label">RESULTADO DOCUMENTADO</div>
-          <div class="caso-resultado-value">+40% en contactos calificados</div>
-          <div class="caso-resultado-desc">Desde el primer mes de operación. Más clientes que llegan ya listos para hablar de propiedades, no solo curiosos.</div>
+        <p class="caso-desc">
+          Inmobiliaria premium en el mercado hidalguense. Antes de MarketPage, perdían prospectos porque su página tardaba más de 4 segundos en cargar en celular. Sus clientes llegaban a la competencia primero.
+        </p>
+        <div class="caso-result">
+          <div class="caso-result-lbl">RESULTADO DOCUMENTADO</div>
+          <div class="caso-result-val">+40% en contactos calificados</div>
+          <div class="caso-result-desc">Desde el primer mes de operación. Más clientes que llegan ya listos para hablar de propiedades.</div>
         </div>
       </div>
-
       <div class="caso-card rev" style="transition-delay:.1s">
         <div class="caso-badge">
           <div class="pulse grn" style="width:4px;height:4px" aria-hidden="true"></div>
@@ -1404,204 +1707,183 @@ footer{
         </div>
         <div class="caso-industry">BEBIDAS ARTESANALES · MEZCAL PREMIUM</div>
         <div class="caso-name">OBSIDIAN GOLD</div>
-        <div class="caso-desc">
-          Mezcal artesanal de Hidalgo con calidad de exportación, pero sin la presencia digital para demostrarlo. Distribuidores internacionales dudaban de la marca porque su presencia en internet no comunicaba la calidad real del producto.
-        </div>
-        <div class="caso-resultado">
-          <div class="caso-resultado-label">RESULTADO DOCUMENTADO</div>
-          <div class="caso-resultado-value">Exportación activada</div>
-          <div class="caso-resultado-desc">Acceso a mercados internacionales y distribuidores especializados. De ventas locales a presencia nacional e internacional.</div>
+        <p class="caso-desc">
+          Mezcal artesanal de Hidalgo con calidad de exportación, pero sin la presencia digital para demostrarlo. Distribuidores internacionales dudaban de la marca porque su web no comunicaba la calidad real del producto.
+        </p>
+        <div class="caso-result">
+          <div class="caso-result-lbl">RESULTADO DOCUMENTADO</div>
+          <div class="caso-result-val">Exportación activada</div>
+          <div class="caso-result-desc">Acceso a mercados internacionales y distribuidores especializados. De ventas locales a presencia global.</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══════════════════════════════════════
-     PRECIOS + REFERRAL METER
-══════════════════════════════════════ -->
-<section class="sec" id="referral" style="background:var(--s1)">
+<!-- ══════════════════ PRECIOS + REFERRAL ══════════════════ -->
+<section class="sec" id="referral">
   <div class="sec-w">
-    <div class="eyebrow rev">MÓDULO 04 — PRECIOS Y PROGRAMA DE REFERIDOS</div>
-    <div style="height:16px"></div>
-    <h2 class="section-h rev">INVIERTE <span class="am">$2,000</span> AL MES.<br/><span class="ac">REGRESA GRATIS CON 3 AMIGOS.</span></h2>
-    <p class="section-p rev">
-      Precio claro, sin sorpresas. Y si recomiendas MarketPage a otros negocios locales, tus referidos se convierten en descuento directo en tu renta mensual.
-    </p>
+    <div class="eyebrow rev">MÓDULO 04 — PRECIOS Y REFERIDOS</div>
+    <h2 class="section-h rev">INVIERTE <span class="am">$2,000</span> AL MES.<br/><span class="cy">CON 3 AMIGOS, TU WEB ES GRATIS.</span></h2>
+    <p class="section-p rev">Precio claro, sin sorpresas. Recomienda MarketPage a otros negocios y tus referidos se convierten en descuento directo.</p>
 
-    <div class="referral-intro">
-
-      <!-- DESGLOSE DE PRECIOS -->
-      <div class="price-breakdown rev">
-        <div class="pb-header">
-          <div class="pb-header-title">TU INVERSIÓN MENSUAL TOTAL</div>
-          <div class="pb-header-total">$2,000 <span>MXN/mes</span></div>
-          <div class="pb-header-cycle">+ IVA · Factura disponible · Sin permanencia mínima</div>
+    <div class="price-layout">
+      <!-- DESGLOSE PRECIOS -->
+      <div class="price-card rev">
+        <div class="price-hdr">
+          <div class="price-lbl">TU INVERSIÓN MENSUAL TOTAL</div>
+          <div class="price-total">$2,000 <sub>MXN</sub></div>
+          <div class="price-cycle">+ IVA · Factura disponible · Sin permanencia mínima</div>
         </div>
-        <div class="pb-items">
-          <div class="pb-item">
-            <div class="pb-item-left">
-              <div class="pb-item-badge web">
+        <div class="price-items">
+          <div class="price-item">
+            <div>
+              <div class="pi-badge web">
                 <div class="pulse" style="width:4px;height:4px" aria-hidden="true"></div>
                 COMPONENTE 1 — WEB
               </div>
-              <div class="pb-item-name">Página Web + Mantenimiento</div>
-              <div class="pb-item-desc">Tu negocio en internet. Diseño, velocidad, soporte incluido. Si algo falla, lo arreglamos nosotros.</div>
+              <div class="pi-name">Página Web + Mantenimiento</div>
+              <div class="pi-desc">Tu negocio en internet. Diseño, velocidad y soporte incluidos.</div>
             </div>
-            <div class="pb-item-price">
-              <div class="pb-item-val cy">$750</div>
-              <div class="pb-item-cur">MXN/mes</div>
+            <div class="pi-price">
+              <div class="pi-val cy">$750</div>
+              <div class="pi-cur">MXN/mes</div>
             </div>
           </div>
-          <div class="pb-item">
-            <div class="pb-item-left">
-              <div class="pb-item-badge app">
+          <div class="price-item">
+            <div>
+              <div class="pi-badge app">
                 <div class="pulse am" style="width:4px;height:4px" aria-hidden="true"></div>
                 COMPONENTE 2 — APP
               </div>
-              <div class="pb-item-name">Licencia App ORACLES</div>
-              <div class="pb-item-desc">Gestión de inventario desde el celular. Alertas de stock, ventas, reportes. Siempre contigo.</div>
+              <div class="pi-name">Licencia App ORACLES</div>
+              <div class="pi-desc">Gestión de inventario desde el celular. Alertas de stock y reportes.</div>
             </div>
-            <div class="pb-item-price">
-              <div class="pb-item-val am">$1,250</div>
-              <div class="pb-item-cur">MXN/mes</div>
+            <div class="pi-price">
+              <div class="pi-val am">$1,250</div>
+              <div class="pi-cur">MXN/mes</div>
             </div>
           </div>
+        </div>
+        <div style="padding:18px 24px; border-top:1px solid var(--ln0); display:flex; flex-direction:column; gap:10px;">
+          <a href="mailto:hola@zoalum.com" class="btn btn-p" style="width:100%;justify-content:center">EMPEZAR HOY →</a>
+          <a href="mailto:hola@zoalum.com" class="btn btn-g" style="width:100%;justify-content:center">HABLAR CON UN ASESOR</a>
         </div>
       </div>
 
       <!-- REFERRAL METER -->
-      <div class="referral-meter rev" style="transition-delay:.1s">
-        <div class="rm-header">
+      <div class="ref-meter rev" style="transition-delay:.1s">
+        <div class="ref-hdr">
           <div>
-            <div class="rm-title">PROGRAMA DE NODOS COMPARTIDOS</div>
-            <div class="rm-subtitle">Recomienda · Ellos pagan · Tú ahorras</div>
+            <div class="ref-title">PROGRAMA DE REFERIDOS</div>
+            <div class="ref-sub">Recomienda · Ellos pagan · Tú ahorras</div>
           </div>
-          <div class="rm-badge">
+          <div class="ref-chip">
             <div class="pulse am" style="width:4px;height:4px" aria-hidden="true"></div>
-            REFERIDOS ACTIVOS = DESCUENTO REAL
+            REFERIDO ACTIVO = DESCUENTO REAL
           </div>
         </div>
 
-        <div class="rm-levels" role="list">
+        <div class="ref-levels" role="list">
           <!-- Nivel 1 -->
-          <div class="rm-level" role="listitem" aria-label="1 referido: -$250 al mes">
-            <div class="rm-progress-bar" style="--progress:33%"></div>
-            <div class="rm-level-inner">
-              <div class="rm-count">
-                <div class="rm-count-num">1</div>
-                <div class="rm-count-lbl">REFERIDO</div>
+          <div class="ref-level" role="listitem" style="--w:33%">
+            <div class="rl-bar"></div>
+            <div class="rl-inner">
+              <div class="rl-count">
+                <div class="rl-num">1</div>
+                <div class="rl-lbl">REFERIDO</div>
               </div>
-              <div class="rm-body">
-                <div class="rm-body-left">
-                  <div class="rm-ref-title">TU RENTA BAJA A</div>
-                  <div class="rm-discount">$1,750 / mes</div>
-                  <div class="rm-desc">Ahorra $250 al mes. $3,000 al año en tu bolsillo.</div>
+              <div class="rl-body">
+                <div>
+                  <div class="rl-ref-lbl">TU RENTA BAJA A</div>
+                  <div class="rl-discount">$1,750 / mes</div>
+                  <div class="rl-save">Ahorras $250 · $3,000/año</div>
                 </div>
-                <div class="rm-badge-right">
-                  -$250 MXN/MES
-                </div>
+                <div class="rl-tag">-$250/MES</div>
               </div>
             </div>
           </div>
-
           <!-- Nivel 2 -->
-          <div class="rm-level" role="listitem" aria-label="2 referidos: -$500 al mes">
-            <div class="rm-progress-bar" style="--progress:66%"></div>
-            <div class="rm-level-inner">
-              <div class="rm-count">
-                <div class="rm-count-num">2</div>
-                <div class="rm-count-lbl">REFERIDOS</div>
+          <div class="ref-level" role="listitem" style="--w:66%">
+            <div class="rl-bar"></div>
+            <div class="rl-inner">
+              <div class="rl-count">
+                <div class="rl-num">2</div>
+                <div class="rl-lbl">REFERIDOS</div>
               </div>
-              <div class="rm-body">
-                <div class="rm-body-left">
-                  <div class="rm-ref-title">TU RENTA BAJA A</div>
-                  <div class="rm-discount">$1,500 / mes</div>
-                  <div class="rm-desc">Ahorra $500 al mes. $6,000 al año en tu bolsillo.</div>
+              <div class="rl-body">
+                <div>
+                  <div class="rl-ref-lbl">TU RENTA BAJA A</div>
+                  <div class="rl-discount">$1,500 / mes</div>
+                  <div class="rl-save">Ahorras $500 · $6,000/año</div>
                 </div>
-                <div class="rm-badge-right">
-                  -$500 MXN/MES
-                </div>
+                <div class="rl-tag">-$500/MES</div>
               </div>
             </div>
           </div>
-
-          <!-- Nivel 3 — JACKPOT: Web Gratis -->
-          <div class="rm-level jackpot" role="listitem" aria-label="3 referidos: web gratis">
-            <div class="rm-progress-bar" style="width:100%;background:linear-gradient(90deg,rgba(0,255,122,.1),rgba(0,255,122,.04))"></div>
-            <div class="rm-level-inner">
-              <div class="rm-count">
-                <div class="rm-count-num">3</div>
-                <div class="rm-count-lbl">REFERIDOS</div>
+          <!-- JACKPOT -->
+          <div class="ref-level jackpot" role="listitem">
+            <div class="rl-bar"></div>
+            <div class="rl-inner">
+              <div class="rl-count">
+                <div class="rl-num">3</div>
+                <div class="rl-lbl">REFERIDOS</div>
               </div>
-              <div class="rm-body">
-                <div class="rm-body-left">
-                  <div class="rm-ref-title">SOLO PAGAS LA APP</div>
-                  <div class="rm-discount"><span class="jackpot-crown">🏆</span>WEB GRATIS</div>
-                  <div class="rm-desc">Solo pagas $1,250/mes por la App ORACLES. Tu página web, sin costo mensual.</div>
+              <div class="rl-body">
+                <div>
+                  <div class="rl-ref-lbl">SOLO PAGAS LA APP</div>
+                  <div class="rl-discount">🏆 WEB GRATIS</div>
+                  <div class="rl-save">Solo $1,250/mes por la App ORACLES</div>
                 </div>
-                <div class="rm-badge-right">
-                  ✓ WEB GRATIS
-                </div>
+                <div class="rl-tag">✓ WEB GRATIS</div>
               </div>
             </div>
           </div>
-
-          <!-- Nivel 4+ — Crédito -->
-          <div class="rm-level" role="listitem" aria-label="4 o más referidos: crédito acumulado">
-            <div class="rm-level-inner">
-              <div class="rm-count">
-                <div class="rm-count-num" style="font-size:1.4rem">4+</div>
-                <div class="rm-count-lbl">REFERIDOS</div>
+          <!-- 4+ -->
+          <div class="ref-level" role="listitem" style="--w:0%">
+            <div class="rl-bar"></div>
+            <div class="rl-inner">
+              <div class="rl-count">
+                <div class="rl-num" style="font-size:1.5rem">4+</div>
+                <div class="rl-lbl">REFERIDOS</div>
               </div>
-              <div class="rm-body">
-                <div class="rm-body-left">
-                  <div class="rm-ref-title">CRÉDITO ACUMULADO</div>
-                  <div class="rm-discount">Ahorras en la App</div>
-                  <div class="rm-desc">El descuento excedente se acumula como crédito para reducir el costo de la App ORACLES.</div>
+              <div class="rl-body">
+                <div>
+                  <div class="rl-ref-lbl">CRÉDITO ACUMULADO</div>
+                  <div class="rl-discount">Ahorras en la App</div>
+                  <div class="rl-save">Descuento extra en la licencia ORACLES</div>
                 </div>
-                <div class="rm-badge-right">
-                  CRÉDITO APP
-                </div>
+                <div class="rl-tag">CRÉDITO APP</div>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="rm-bonus">
-          <div class="rm-bonus-icon" aria-hidden="true">💡</div>
-          <div class="rm-bonus-txt">
-            <div class="rm-bonus-title">¿CÓMO FUNCIONA EL CRÉDITO PARA 4+ REFERIDOS?</div>
-            <div class="rm-bonus-desc">Cada referido activo adicional al tercero genera $250 de crédito mensual que se aplica directamente a tu licencia de App ORACLES ($1,250). Con 8 referidos activos, podrías tener el ecosistema completo sin costo mensual.</div>
+        <div class="ref-bonus">
+          <div class="ref-bonus-icon" aria-hidden="true">💡</div>
+          <div>
+            <div class="ref-bonus-title">¿CÓMO FUNCIONA EL CRÉDITO PARA 4+ REFERIDOS?</div>
+            <div class="ref-bonus-desc">Cada referido adicional genera $250 de crédito mensual aplicado a tu licencia App ORACLES. Con 8 referidos activos, el ecosistema completo puede ser sin costo mensual.</div>
           </div>
         </div>
 
-        <div class="rm-fairuse">
-          <div class="rm-fairuse-icon" aria-hidden="true">⚠️</div>
-          <div class="rm-fairuse-txt">
-            <strong>CONDICIÓN IMPORTANTE:</strong> El descuento solo aplica mientras tu referido esté pagando su contrato activo. Si un referido cancela, el descuento se ajusta al siguiente ciclo de facturación. Ver Política de Uso Justo más abajo.
+        <div class="ref-warn">
+          <div style="font-size:.95rem;flex-shrink:0;margin-top:1px" aria-hidden="true">⚠️</div>
+          <div class="ref-warn-txt">
+            <strong>CONDICIÓN:</strong> El descuento solo aplica mientras tu referido esté pagando. Si cancela, el descuento se ajusta al siguiente ciclo de facturación. Ver Política de Uso Justo.
           </div>
         </div>
       </div>
     </div>
-
-    <!-- CTA DE PRECIO -->
-    <div style="margin-top:32px; display:flex; flex-direction:column; gap:10px; max-width:480px;" class="rev" style="transition-delay:.2s">
-      <a href="mailto:hola@zoalum.com" class="btn btn-p" style="justify-content:center">EMPEZAR HOY — $2,000/MES &nbsp;→</a>
-      <a href="mailto:hola@zoalum.com" class="btn btn-g" style="justify-content:center">HABLAR CON UN ASESOR PRIMERO</a>
-    </div>
   </div>
 </section>
 
-<!-- ══════════════════════════════════════
-     PROTOCOLO — Proceso de entrega
-══════════════════════════════════════ -->
-<section class="sec" id="proto">
+<!-- ══════════════════ PROTOCOLO ══════════════════ -->
+<section class="sec" id="proto" style="background:var(--s1)">
   <div class="sec-w">
-    <div class="eyebrow rev">MÓDULO 05 — ASÍ ES EL PROCESO</div>
-    <div style="height:16px"></div>
-    <h2 class="section-h rev">DE HOY <span class="ac">A ACTIVO EN 7 DÍAS</span></h2>
-    <p class="section-p rev">Sin reuniones infinitas. Sin hojas de requerimientos que no entiendes. Cuatro pasos simples para tener tu negocio en internet y tu inventario bajo control.</p>
+    <div class="eyebrow rev">MÓDULO 05 — EL PROCESO</div>
+    <h2 class="section-h rev">DE HOY <span class="cy">A ACTIVO EN 7 DÍAS</span></h2>
+    <p class="section-p rev">Sin reuniones infinitas. Sin documentos que no entiendes. Cuatro pasos simples para tener tu negocio en internet.</p>
 
     <div class="proto-layout">
       <div class="proto-steps">
@@ -1609,8 +1891,8 @@ footer{
           <div class="ps-num">01</div>
           <div class="ps-body">
             <div class="ps-title">NOS CUENTAS DE TU NEGOCIO</div>
-            <div class="ps-win">→ Gratis. Sin compromiso. Tú decides después.</div>
-            <div class="ps-desc">Una llamada o mensaje. Nos dices qué vendes, quiénes son tus clientes y qué necesitas. Nosotros te explicamos en palabras simples qué vamos a hacer y cuánto te va a costar. Sin sorpresas.</div>
+            <div class="ps-win">→ Gratis. Sin compromiso.</div>
+            <p class="ps-desc">Una llamada o mensaje. Nos dices qué vendes y quiénes son tus clientes. Te explicamos en palabras simples qué vamos a hacer. Sin sorpresas.</p>
           </div>
           <div class="ps-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
@@ -1619,9 +1901,9 @@ footer{
         <div class="proto-step rev" style="transition-delay:.07s">
           <div class="ps-num">02</div>
           <div class="ps-body">
-            <div class="ps-title">DISEÑAMOS TU PRESENCIA DIGITAL</div>
+            <div class="ps-title">DISEÑAMOS TU PRESENCIA</div>
             <div class="ps-win">→ Tu negocio se ve tan profesional como los grandes.</div>
-            <div class="ps-desc">Colores, imágenes, textos, estructura. Todo diseñado para que el cliente que llega a tu página sienta confianza inmediata — y te contacte. Tú apruebas antes de publicar.</div>
+            <p class="ps-desc">Colores, imágenes, textos, estructura. Diseñado para que el cliente sienta confianza y te contacte. Tú apruebas antes de publicar.</p>
           </div>
           <div class="ps-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -1631,8 +1913,8 @@ footer{
           <div class="ps-num">03</div>
           <div class="ps-body">
             <div class="ps-title">TU PÁGINA SALE EN VIVO</div>
-            <div class="ps-win">→ En 7 días hábiles, tu negocio está en internet.</div>
-            <div class="ps-desc">Publicamos, conectamos tu dominio, configuramos que cargue rápido en celular, activamos tu App ORACLES con tu inventario inicial. Tú empiezas a recibir visitas ese mismo día.</div>
+            <div class="ps-win">→ En 7 días hábiles, abierto al público.</div>
+            <p class="ps-desc">Publicamos, conectamos tu dominio, optimizamos para celular, activamos App ORACLES. Recibes visitas ese mismo día.</p>
           </div>
           <div class="ps-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
@@ -1642,8 +1924,8 @@ footer{
           <div class="ps-num">04</div>
           <div class="ps-body">
             <div class="ps-title">TÚ VENDES, NOSOTROS MANTENEMOS</div>
-            <div class="ps-win">→ Desde aquí, nosotros nos encargamos de que todo funcione.</div>
-            <div class="ps-desc">Monitoreo continuo, actualizaciones, ajustes cuando tu negocio cambia. Cada mes recibes un reporte simple: cuántas visitas tuvo tu página, quién te contactó y cómo está tu inventario.</div>
+            <div class="ps-win">→ Desde aquí, el motor corre solo.</div>
+            <p class="ps-desc">Monitoreo continuo, actualizaciones, ajustes. Cada mes: un reporte simple de visitas, contactos e inventario.</p>
           </div>
           <div class="ps-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
@@ -1657,11 +1939,10 @@ footer{
             <div class="tdot tdot-r"></div>
             <div class="tdot tdot-y"></div>
             <div class="tdot tdot-g"></div>
-            <span class="term-title">MARKETPAGE / ACTIVACIÓN — v8.0.0</span>
+            <span class="term-name">MARKETPAGE / ACTIVACIÓN — v9.0.0</span>
           </div>
           <div class="term-body" id="term-body">
-            <span class="t-d">// Esperando activación...</span><br/>
-            <span class="t-cur"></span>
+            <span class="t-d">// Esperando activación...</span><br/><span class="t-cur"></span>
           </div>
         </div>
       </div>
@@ -1669,93 +1950,82 @@ footer{
   </div>
 </section>
 
-<!-- ══════════════════════════════════════
-     POLÍTICA DE USO JUSTO
-══════════════════════════════════════ -->
-<section class="sec" id="fair-use" style="background:var(--s2);padding-top:var(--py);padding-bottom:var(--py)">
+<!-- ══════════════════ FAIR USE ══════════════════ -->
+<section class="sec" id="fair-use" style="background:var(--s2)">
   <div class="sec-w">
-    <div class="fu-header-badge rev">
-      <span>⚖️</span> POLÍTICA DE USO JUSTO — PROGRAMA DE REFERIDOS
+    <div class="fu-alert rev">
+      <span aria-hidden="true">⚖️</span> POLÍTICA DE USO JUSTO — PROGRAMA DE REFERIDOS
     </div>
     <div class="eyebrow rev">MÓDULO 06 — REGLAS CLARAS</div>
-    <div style="height:16px"></div>
-    <h2 class="section-h rev">REFERIDOS REALES.<br/><span class="ac">DESCUENTOS REALES.</span></h2>
-    <p class="section-p rev">
-      El Programa de Nodos Compartidos existe para beneficiar a negocios locales genuinos. Estas reglas protegen a todos los participantes — incluyéndote a ti.
-    </p>
+    <h2 class="section-h rev">REFERIDOS REALES.<br/><span class="cy">DESCUENTOS REALES.</span></h2>
+    <p class="section-p rev">El programa existe para beneficiar a negocios locales genuinos. Estas reglas protegen a todos — incluyéndote.</p>
 
-    <div class="fair-use-grid rev" style="transition-delay:.1s">
+    <div class="fu-grid rev" style="transition-delay:.1s">
       <div class="fu-card">
         <div class="fu-icon" aria-hidden="true">✅</div>
         <div class="fu-title">¿QUIÉN CUENTA COMO REFERIDO VÁLIDO?</div>
-        <div class="fu-desc">Un negocio real y verificable — joyería, mezcalería, tienda, consultorio, servicio local — con nombre, dirección y número de contacto comprobables. El referido debe contratar y pagar su primer mes completo para que el descuento se active en tu cuenta.</div>
+        <p class="fu-desc">Un negocio real y verificable — joyería, mezcalería, tienda, consultorio — con nombre, dirección y número comprobables. El referido debe pagar su primer mes completo para activar tu descuento.</p>
         <div class="fu-rule">→ Un referido = un negocio diferente al tuyo</div>
       </div>
-
       <div class="fu-card">
         <div class="fu-icon" aria-hidden="true">🚫</div>
         <div class="fu-title">LO QUE NO ESTÁ PERMITIDO</div>
-        <div class="fu-desc">No se aceptan cuentas duplicadas, negocios ficticios, referidos de familiares directos que no tienen negocio real, ni estructuras de referidos circulares (A refiere a B, B refiere a A para que ambos obtengan descuento sin clientes reales nuevos).</div>
+        <p class="fu-desc">No se aceptan cuentas duplicadas, negocios ficticios, ni estructuras circulares (A refiere a B, B refiere a A sin clientes reales nuevos).</p>
         <div class="fu-rule">→ Detectamos y cancelamos estos casos automáticamente</div>
       </div>
-
       <div class="fu-card">
         <div class="fu-icon" aria-hidden="true">🔄</div>
         <div class="fu-title">¿QUÉ PASA SI UN REFERIDO CANCELA?</div>
-        <div class="fu-desc">Si un referido deja de pagar su contrato, el descuento asociado se elimina en el siguiente ciclo de facturación (no de forma retroactiva). Se te notifica por WhatsApp o email con al menos 7 días de anticipación para que puedas planificar.</div>
+        <p class="fu-desc">El descuento se elimina en el siguiente ciclo de facturación (no retroactivo). Se te notifica con al menos 7 días de anticipación.</p>
         <div class="fu-rule">→ Sin cobros retroactivos. Sin sorpresas.</div>
       </div>
-
       <div class="fu-card">
         <div class="fu-icon" aria-hidden="true">🔍</div>
         <div class="fu-title">VERIFICACIÓN DE REFERIDOS</div>
-        <div class="fu-desc">Nos reservamos el derecho de verificar la legitimidad de cada referido antes de aplicar el descuento. La verificación toma máximo 5 días hábiles. Si hay dudas, te contactamos directamente — nunca cancelamos sin explicación.</div>
+        <p class="fu-desc">Nos reservamos el derecho de verificar la legitimidad de cada referido antes de aplicar el descuento. La verificación toma máximo 5 días hábiles.</p>
         <div class="fu-rule">→ Proceso transparente, siempre con comunicación directa</div>
       </div>
-
       <div class="fu-card">
         <div class="fu-icon" aria-hidden="true">📋</div>
         <div class="fu-title">LÍMITES DEL PROGRAMA</div>
-        <div class="fu-desc">El crédito máximo mensual a través de referidos no puede superar el costo total de tu suscripción ($2,000 MXN). No se realizan pagos en efectivo ni transferencias por referidos — el beneficio es exclusivamente descuento en tu renta mensual.</div>
+        <p class="fu-desc">El crédito máximo no puede superar el costo total de tu suscripción ($2,000 MXN). No se realizan pagos en efectivo — el beneficio es exclusivamente descuento en tu renta.</p>
         <div class="fu-rule">→ Máximo: tu suscripción completa sin costo</div>
       </div>
-
       <div class="fu-card">
         <div class="fu-icon" aria-hidden="true">🤝</div>
         <div class="fu-title">EL ESPÍRITU DEL PROGRAMA</div>
-        <div class="fu-desc">Este programa existe para crear una red de negocios locales que se apoyan mutuamente. No es una estructura de MLM. No hay niveles infinitos. Es simplemente: si recomiendas MarketPage a otros negocios reales, tu renta baja. Así de simple.</div>
-        <div class="fu-rule">→ Comunidad de negocios, no esquema de pirámide</div>
+        <p class="fu-desc">Este programa existe para crear una red de negocios locales que se apoyan mutuamente. No es MLM. No hay niveles infinitos. Si recomiendas a negocios reales, tu renta baja. Así de simple.</p>
+        <div class="fu-rule">→ Comunidad, no esquema</div>
       </div>
     </div>
 
-    <div style="margin-top:28px; padding:18px 22px; background:var(--s1); border:1px solid var(--ln1);" class="rev">
-      <p style="font-size:11px; color:var(--tx3); line-height:1.8;">
-        <strong style="color:var(--tx2);">ZOALUM SE RESERVA EL DERECHO</strong> de modificar los términos de este programa con 30 días de aviso previo a los participantes activos. Las condiciones vigentes en el momento de tu registro se mantienen aplicables hasta el siguiente ciclo de renovación anual. Para preguntas sobre el programa, escribe a <a href="mailto:hola@zoalum.com" style="color:var(--cy);">hola@zoalum.com</a> con el asunto "REFERIDOS".
+    <div style="margin-top:24px;padding:18px 22px;background:var(--s1);border:1px solid var(--ln1);" class="rev">
+      <p style="font-size:11px;font-family:var(--font-mono);color:var(--tx3);line-height:1.85;letter-spacing:.04em">
+        <strong style="color:var(--tx2)">ZOALUM SE RESERVA EL DERECHO</strong> de modificar los términos de este programa con 30 días de aviso previo. Para preguntas escribe a <a href="mailto:hola@zoalum.com" style="color:var(--cy)">hola@zoalum.com</a> con el asunto "REFERIDOS".
       </p>
     </div>
   </div>
 </section>
 
-<!-- ══════════════════════════════════════
-     CTA FINAL
-══════════════════════════════════════ -->
+<!-- ══════════════════ CTA FINAL ══════════════════ -->
 <section id="cta-s">
-  <div class="cta-orb" aria-hidden="true"></div>
+  <div class="cta-orb1" aria-hidden="true"></div>
+  <div class="cta-orb2" aria-hidden="true"></div>
   <div class="cta-w">
-    <span class="cta-lbl rev">MÓDULO 07 — EMPIEZA HOY</span>
-    <h2 class="cta-h rev">CADA DÍA SIN PÁGINA<br/><span>SON CLIENTES</span><br/>QUE NO TE ENCUENTRAN</h2>
-    <p class="cta-p rev">Sin compromiso de permanencia. Sin contratos confusos. Sin tecnicismos. Solo tu negocio en internet, funcionando desde la primera semana.</p>
+    <span class="cta-sup rev">MÓDULO 07 — EMPIEZA HOY</span>
+    <h2 class="cta-h rev">CADA DÍA SIN PÁGINA<br/>SON <span class="cy">CLIENTES</span><br/>QUE NO TE ENCUENTRAN</h2>
+    <p class="cta-p rev">Sin permanencia. Sin contratos confusos. Sin tecnicismos. Tu negocio en internet, funcionando desde la primera semana.</p>
 
     <div class="cta-card rev">
       <div class="cta-lft">
         <div class="cta-lft-lbl">RESPUESTA EN MENOS DE 24 HORAS</div>
         <div class="cta-brand">ZOALUM</div>
         <div class="cta-feats">
-          <div class="cta-feat">Tu página activa en 7 días hábiles</div>
-          <div class="cta-feat">App ORACLES incluida desde el día 1</div>
-          <div class="cta-feat">Soporte directo — no un chat de robots</div>
-          <div class="cta-feat">3 referidos y tu web es gratis</div>
-          <div class="cta-feat">Cancela cuando quieras, sin penalización</div>
+          <div class="cta-feat"><span class="cta-feat-icon">▸</span> Tu página activa en 7 días hábiles</div>
+          <div class="cta-feat"><span class="cta-feat-icon">▸</span> App ORACLES incluida desde el día 1</div>
+          <div class="cta-feat"><span class="cta-feat-icon">▸</span> Soporte directo — no un chat de robots</div>
+          <div class="cta-feat"><span class="cta-feat-icon">▸</span> 3 referidos y tu web es gratis</div>
+          <div class="cta-feat"><span class="cta-feat-icon">▸</span> Cancela cuando quieras, sin penalización</div>
         </div>
         <a href="mailto:hola@zoalum.com" class="cta-email">hola@zoalum.com</a>
       </div>
@@ -1768,14 +2038,16 @@ footer{
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ══ FOOTER ══ -->
 <footer>
   <div class="footer-w">
-    <div style="display:flex;align-items:center;gap:10px">
-      <div class="pulse" aria-hidden="true"></div>
-      <span style="font-family:var(--font-display);font-weight:800;font-size:.88rem;letter-spacing:.12em;color:var(--tx0)">MARKET<em style="color:var(--cy);font-style:normal">PAGE</em></span>
-      <div style="width:1px;height:13px;background:var(--ln2)"></div>
-      <span style="font-family:var(--font-mono);font-size:9px;letter-spacing:.18em;color:var(--tx3)">ZOALUM / V8</span>
+    <div class="footer-brand">
+      <div class="pulse" style="width:6px;height:6px" aria-hidden="true"></div>
+      <span style="font-family:var(--font-display);font-size:.95rem;letter-spacing:.12em;color:var(--tx0)">
+        MARKET<em style="color:var(--cy);font-style:normal">PAGE</em>
+      </span>
+      <div style="width:1px;height:13px;background:var(--ln2)" aria-hidden="true"></div>
+      <span style="font-family:var(--font-mono);font-size:9px;letter-spacing:.18em;color:var(--tx3)">ZOALUM / V9</span>
     </div>
     <span class="footer-copy">© 2025 GRUPO ZOALUM · HIDALGO, MÉXICO</span>
     <span class="footer-copy">TU NEGOCIO SIEMPRE ACTIVO</span>
@@ -1786,199 +2058,121 @@ footer{
 (function(){
 'use strict';
 
-/* ══ TICKER — Lenguaje de negocio, no de ingeniero ══ */
-var TICKER_ITEMS=[
-  {label:'TU PÁGINA NUNCA SE CAE',val:'GARANTIZADO'},
-  {label:'TIEMPO DE RESPUESTA',val:'< 24 HORAS',am:true},
-  {label:'CAÍDAS AL MES',val:'0'},
-  {label:'INVENTARIO EN TU CELULAR',val:'ORACLES APP',am:true},
-  {label:'CONTRATOS LARGOS',val:'NO EXISTEN'},
-  {label:'COSTOS OCULTOS',val:'$0'},
-  {label:'WEB ACTIVA EN',val:'7 DÍAS',am:true},
-  {label:'3 REFERIDOS Y TU WEB ES',val:'GRATIS'},
-  {label:'CLIENTES PERDIDOS POR FALLAS',val:'ELIMINADOS'},
-  {label:'SOPORTE INCLUIDO',val:'SIN CARGO',am:true},
-  {label:'TU MARCA Y DATOS',val:'SIEMPRE TUYOS'},
+/* ── TICKER ── */
+var TICKS=[
+  {l:'TU PÁGINA NUNCA SE CAE',v:'GARANTIZADO'},
+  {l:'TIEMPO DE RESPUESTA',v:'< 24 HORAS',am:true},
+  {l:'CAÍDAS AL MES',v:'0'},
+  {l:'INVENTARIO EN TU CELULAR',v:'ORACLES APP',am:true},
+  {l:'CONTRATOS LARGOS',v:'NO EXISTEN'},
+  {l:'COSTOS OCULTOS',v:'$0'},
+  {l:'WEB ACTIVA EN',v:'7 DÍAS',am:true},
+  {l:'3 REFERIDOS Y TU WEB ES',v:'GRATIS'},
+  {l:'CLIENTES PERDIDOS POR FALLAS',v:'ELIMINADOS'},
+  {l:'SOPORTE INCLUIDO',v:'SIN CARGO EXTRA',am:true},
+  {l:'TU MARCA Y DATOS',v:'SIEMPRE TUYOS'},
 ];
 var track=document.getElementById('ticker-track');
 if(track){
-  var html='';
+  var h='';
   for(var r=0;r<2;r++){
-    TICKER_ITEMS.forEach(function(item){
-      html+='<div class="ticker-item"><span class="dot"></span>'+item.label+
-        '<span class="val'+(item.am?' am':'')+'">'+item.val+'</span></div>';
+    TICKS.forEach(function(t){
+      h+='<div class="ticker-item"><span class="ticker-dot"></span>'+t.l+
+        '<span class="ticker-val'+(t.am?' am':'')+'">'+t.v+'</span></div>';
     });
   }
-  track.innerHTML=html;
+  track.innerHTML=h;
 }
 
-/* ══ TERMINAL ══ */
-var termBody=document.getElementById('term-body');
-var termFired=false;
-var LINES=[
-  {cls:'d',text:'$ '},{cls:'a',text:'init'},{cls:'w',text:' negocio --modo=gestion-delegada'},{br:true},
-  {br:true},
-  {cls:'d',text:'▸ '},{cls:'g',text:'✓ '},{cls:'d',text:'Análisis de tu negocio completado'},{br:true},
-  {cls:'d',text:'▸ '},{cls:'g',text:'✓ '},{cls:'d',text:'Diseño de página aprobado por cliente'},{br:true},
-  {cls:'d',text:'▸ '},{cls:'am',text:'◉ '},{cls:'d',text:'Publicando en internet...'},{br:true},
-  {br:true},
-  {cls:'d',text:'// REPORTE DE TU NEGOCIO'},{br:true},
-  {cls:'d',text:'pagina_activa     : '},{cls:'g',text:'SÍ'},{br:true},
-  {cls:'d',text:'carga_en_celular  : '},{cls:'g',text:'MENOS DE 1 SEGUNDO'},{br:true},
-  {cls:'d',text:'clientes_perdidos : '},{cls:'g',text:'0'},{br:true},
-  {cls:'d',text:'app_oracles       : '},{cls:'am',text:'ACTIVA — INVENTARIO SINCRONIZADO'},{br:true},
-  {cls:'d',text:'soporte           : '},{cls:'g',text:'INCLUIDO SIN COSTO EXTRA'},{br:true},
-  {cls:'d',text:'costos_ocultos    : '},{cls:'g',text:'NO EXISTEN'},{br:true},
-  {br:true},
-  {cls:'d',text:'// PROGRAMA DE REFERIDOS'},{br:true},
-  {cls:'d',text:'referidos_activos : '},{cls:'a',text:'0 / 3 para web gratis'},{br:true},
-  {cls:'d',text:'ahorro_actual     : '},{cls:'a',text:'$0 MXN/mes'},{br:true},
-  {cls:'d',text:'meta_web_gratis   : '},{cls:'am',text:'3 REFERIDOS PAGANDO'},{br:true},
-  {br:true},
-  {cls:'d',text:'$ '},{cls:'a',text:'status'},{cls:'w',text:' --mensaje=final'},{br:true},
-  {cls:'d',text:'▸ '},{cls:'g',text:'✓ '},{cls:'d',text:'Tu negocio está en línea. Tú solo vende.'},{br:true},
-  {br:true},
-  {cls:'d',text:'$ '},{cursor:true}
-];
-
-function runTerminal(){
-  if(!termBody||termFired) return;
-  termFired=true; termBody.innerHTML='';
-  var i=0;
-  function next(){
-    if(i>=LINES.length) return;
-    var t=LINES[i++];
-    if(t.br){ termBody.appendChild(document.createElement('br')); }
-    else if(t.cursor){ var c=document.createElement('span'); c.className='t-cur'; termBody.appendChild(c); }
-    else{ var s=document.createElement('span'); s.className='t-'+t.cls; s.textContent=t.text; termBody.appendChild(s); }
-    setTimeout(next,30);
-  }
-  next();
-}
-var termEl=document.getElementById('terminal');
-if(termEl){
-  var termObs=new IntersectionObserver(function(e){
-    if(e[0].isIntersecting){runTerminal();termObs.disconnect();}
-  },{threshold:0.3});
-  termObs.observe(termEl);
-}
-
-/* ══ REFERRAL METER — Animación de progreso al entrar en viewport ══ */
-(function(){
-  var levels=document.querySelectorAll('.rm-level');
-  if(!levels.length) return;
-  var fired=false;
-  var meterObs=new IntersectionObserver(function(entries){
-    if(entries[0].isIntersecting && !fired){
-      fired=true;
-      /* Animar las barras de progreso */
-      levels.forEach(function(level,i){
-        setTimeout(function(){
-          level.classList.add('active');
-          setTimeout(function(){
-            level.classList.remove('active');
-          }, 600);
-        }, i * 200);
-      });
-    }
-  },{threshold:0.3});
-  var meterEl=document.querySelector('.referral-meter');
-  if(meterEl) meterObs.observe(meterEl);
-})();
-
-/* ══ MOBILE MENU ══ */
-var menuOpen=false;
-window.mobToggle=function(){
-  menuOpen=!menuOpen;
-  var m=document.getElementById('mob-menu');
-  var b=document.getElementById('mob-btn');
-  m.classList.toggle('open',menuOpen);
-  b.classList.toggle('open',menuOpen);
-  b.setAttribute('aria-expanded',String(menuOpen));
-};
-window.closeMenu=function(){
-  menuOpen=false;
-  document.getElementById('mob-menu').classList.remove('open');
-  var b=document.getElementById('mob-btn');
-  b.classList.remove('open');
-  b.setAttribute('aria-expanded','false');
-};
-
-/* ══ SPOTLIGHT ══ */
-(function(){
-  var spotlight=document.getElementById('spotlight');
-  if(!spotlight) return;
-  if(!window.matchMedia('(pointer:fine)').matches) return;
-  var mx=0,my=0,rafPending=false;
-  document.addEventListener('mousemove',function(e){
-    mx=e.clientX; my=e.clientY;
-    if(!rafPending){
-      rafPending=true;
-      requestAnimationFrame(function(){
-        spotlight.style.left=mx+'px';
-        spotlight.style.top=my+'px';
-        rafPending=false;
-      });
-    }
-  },{passive:true});
-})();
-
-/* ══ PROGRESS BAR ══ */
-var progFill=document.getElementById('prog-fill');
-var progTick=false;
-window.addEventListener('scroll',function(){
-  if(!progTick){
-    requestAnimationFrame(function(){
-      var s=window.scrollY,h=document.body.scrollHeight-window.innerHeight;
-      progFill.style.transform='scaleX('+(h?s/h:0)+')';
-      progTick=false;
-    });
-    progTick=true;
-  }
-},{passive:true});
-
-/* ══ CLOCK ══ */
-function pad(n){return n<10?'0'+n:n;}
+/* ── CLOCK ── */
+function pad(n){ return n<10?'0'+n:n; }
 function tick(){
   var d=new Date(),el=document.getElementById('hero-time');
   if(el) el.textContent=pad(d.getHours())+':'+pad(d.getMinutes())+':'+pad(d.getSeconds())+' CST';
 }
 tick(); setInterval(tick,1000);
 
-/* ══ NAV SCROLL ══ */
-var navEl=document.getElementById('nav');
-var lastY=0,navTick=false;
+/* ── SPOTLIGHT ── */
+(function(){
+  var sp=document.getElementById('spotlight');
+  if(!sp||!window.matchMedia('(pointer:fine)').matches) return;
+  var mx=0,my=0,raf=false;
+  document.addEventListener('mousemove',function(e){
+    mx=e.clientX; my=e.clientY;
+    if(!raf){ raf=true; requestAnimationFrame(function(){ sp.style.left=mx+'px'; sp.style.top=my+'px'; raf=false; }); }
+  },{passive:true});
+})();
+
+/* ── PROGRESS BAR ── */
+var pf=document.getElementById('prog-fill'),pt=false;
 window.addEventListener('scroll',function(){
-  if(!navTick){
-    requestAnimationFrame(function(){
-      var y=window.scrollY;
-      if(y>50) navEl.classList.add('scrolled'); else navEl.classList.remove('scrolled');
-      if(y>lastY+10&&y>80) navEl.style.transform='translateY(-100%)';
-      else if(y<lastY-6) navEl.style.transform='translateY(0)';
-      lastY=y; navTick=false;
-    });
-    navTick=true;
-  }
+  if(!pt){ requestAnimationFrame(function(){ var s=window.scrollY,h=document.body.scrollHeight-window.innerHeight; pf.style.transform='scaleX('+(h?s/h:0)+')'; pt=false; }); pt=true; }
 },{passive:true});
 
-/* ══ FLOAT CTA ══ */
-var floatCta=document.getElementById('float-cta');
-var floatVisible=false;
+/* ── NAV SCROLL ── */
+var nav=document.getElementById('nav'),lastY=0,nt=false;
 window.addEventListener('scroll',function(){
-  var should=window.scrollY>320;
-  if(should!==floatVisible){
-    floatVisible=should;
-    floatCta.classList.toggle('visible',should);
-  }
+  if(!nt){ requestAnimationFrame(function(){ var y=window.scrollY; if(y>50) nav.classList.add('scrolled'); else nav.classList.remove('scrolled'); if(y>lastY+12&&y>100) nav.style.transform='translateY(-100%)'; else if(y<lastY-8) nav.style.transform='translateY(0)'; lastY=y; nt=false; }); nt=true; }
 },{passive:true});
 
-/* ══ REVEAL ══ */
-var revObs=new IntersectionObserver(function(entries){
-  entries.forEach(function(e){
-    if(e.isIntersecting){e.target.classList.add('in');revObs.unobserve(e.target);}
-  });
-},{threshold:0.06,rootMargin:'0px 0px -20px 0px'});
-document.querySelectorAll('.rev').forEach(function(el){revObs.observe(el);});
+/* ── MOBILE MENU ── */
+var open=false;
+window.mobToggle=function(){ open=!open; var m=document.getElementById('mob-menu'),b=document.getElementById('mob-btn'); m.classList.toggle('open',open); b.classList.toggle('open',open); b.setAttribute('aria-expanded',String(open)); };
+window.closeMenu=function(){ open=false; document.getElementById('mob-menu').classList.remove('open'); var b=document.getElementById('mob-btn'); b.classList.remove('open'); b.setAttribute('aria-expanded','false'); };
+
+/* ── FLOAT CTA ── */
+var fc=document.getElementById('float-cta'),fv=false;
+window.addEventListener('scroll',function(){ var s=window.scrollY>340; if(s!==fv){ fv=s; fc.classList.toggle('visible',s); } },{passive:true});
+
+/* ── REVEAL ── */
+var ro=new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); ro.unobserve(e.target); } }); },{threshold:0.06,rootMargin:'0px 0px -18px 0px'});
+document.querySelectorAll('.rev').forEach(function(el){ ro.observe(el); });
+
+/* ── TERMINAL ── */
+var tb=document.getElementById('term-body'),tf=false;
+var LINES=[
+  {d:'$ '},{a:'init'},{w:' negocio --modo=gestion-delegada'},{br:1},
+  {br:1},
+  {d:'▸ '},{g:'✓ '},{d:'Análisis de tu negocio completado'},{br:1},
+  {d:'▸ '},{g:'✓ '},{d:'Diseño de página aprobado por cliente'},{br:1},
+  {d:'▸ '},{am:'◉ '},{d:'Publicando en internet...'},{br:1},
+  {br:1},
+  {d:'// ESTADO DE TU NEGOCIO'},{br:1},
+  {d:'pagina_activa     : '},{g:'SÍ'},{br:1},
+  {d:'carga_en_celular  : '},{g:'< 1 SEGUNDO'},{br:1},
+  {d:'clientes_perdidos : '},{g:'0'},{br:1},
+  {d:'app_oracles       : '},{am:'ACTIVA — INVENTARIO SINCRONIZADO'},{br:1},
+  {d:'soporte           : '},{g:'INCLUIDO SIN COSTO EXTRA'},{br:1},
+  {d:'costos_ocultos    : '},{g:'NO EXISTEN'},{br:1},
+  {br:1},
+  {d:'// PROGRAMA DE REFERIDOS'},{br:1},
+  {d:'referidos_activos : '},{a:'0 / 3 para web gratis'},{br:1},
+  {d:'ahorro_actual     : '},{a:'$0 MXN/mes'},{br:1},
+  {d:'meta_web_gratis   : '},{am:'3 REFERIDOS PAGANDO'},{br:1},
+  {br:1},
+  {d:'$ '},{a:'status'},{w:' --final'},{br:1},
+  {d:'▸ '},{g:'✓ '},{d:'Tu negocio está en línea. Tú solo vende.'},{br:1},
+  {br:1},
+  {d:'$ '},{cur:1}
+];
+function runTerm(){
+  if(!tb||tf) return; tf=true; tb.innerHTML='';
+  var i=0;
+  function nx(){
+    if(i>=LINES.length) return;
+    var t=LINES[i++];
+    if(t.br){ tb.appendChild(document.createElement('br')); }
+    else if(t.cur){ var c=document.createElement('span'); c.className='t-cur'; tb.appendChild(c); }
+    else{
+      var s=document.createElement('span'),key=Object.keys(t)[0];
+      s.className='t-'+key; s.textContent=t[key]; tb.appendChild(s);
+    }
+    setTimeout(nx,28);
+  }
+  nx();
+}
+var termEl=document.getElementById('terminal');
+if(termEl){ var to=new IntersectionObserver(function(e){ if(e[0].isIntersecting){ runTerm(); to.disconnect(); } },{threshold:0.25}); to.observe(termEl); }
 
 })();
 </script>
