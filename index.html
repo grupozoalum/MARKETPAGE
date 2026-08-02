@@ -3,8 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>MARKETPAGE | GRUPO ZOALUM — Tu Tienda en Línea Sin Comisiones</title>
-<meta name="description" content="Tu propia tienda en línea sin comisiones. Pago único. Control total en tiempo real. MARKETPAGE por Grupo Zoalum.">
+<title>Alternativa a Shopify en México | E-commerce de Pago Único | MarketPage</title>
+<meta name="description" content="¿Cansado de pagar a Shopify 39 USD al mes más comisiones por transacción? Conoce MarketPage: desarrollo de tiendas en línea de pago único y propiedad total.">
+<meta name="keywords" content="alternativa a shopify, shopify vs, crear tienda en linea sin shopify, plataforma ecommerce pago unico, no pagar mensualidad tienda online">
+
+<!-- Inyección de Schema Markup para dominar el Knowledge Graph de Google -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "MarketPage",
+  "operatingSystem": "Web, Android, iOS",
+  "applicationCategory": "BusinessApplication",
+  "description": "Plataforma de e-commerce y tiendas en línea con base de datos en tiempo real, sin comisiones por venta y de pago único.",
+  "offers": {
+    "@type": "Offer",
+    "price": "15487.00",
+    "priceCurrency": "MXN"
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "Grupo Zoalum",
+    "url": "https://www.grupozoalum.com"
+  }
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Bebas+Neue:wght@400&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -91,6 +114,17 @@ button{font-family:var(--f-body);-webkit-tap-highlight-color:transparent;cursor:
 @keyframes pulse    {0%,100%{opacity:.4}50%{opacity:1}}
 @keyframes dotBlink {0%,100%{opacity:.3}50%{opacity:1}}
 @keyframes glowPink {0%,100%{text-shadow:0 0 20px rgba(255,110,180,.5)}50%{text-shadow:0 0 40px rgba(255,110,180,.9),0 0 60px rgba(255,110,180,.4)}}
+@keyframes glitch1{0%,100%{clip-path:inset(0 0 96% 0);transform:translateX(-3px)}20%{clip-path:inset(30% 0 50% 0);transform:translateX(3px)}40%{clip-path:inset(60% 0 20% 0);transform:translateX(-2px)}60%{clip-path:inset(10% 0 80% 0);transform:translateX(2px)}80%{clip-path:inset(80% 0 5% 0);transform:translateX(-3px)}}
+@keyframes glitch2{0%,100%{clip-path:inset(50% 0 30% 0);transform:translateX(3px);opacity:.7}25%{clip-path:inset(20% 0 70% 0);transform:translateX(-3px)}50%{clip-path:inset(80% 0 10% 0);transform:translateX(2px)}75%{clip-path:inset(0% 0 90% 0);transform:translateX(-2px)}}
+@keyframes rippleAnim{0%{transform:scale(0);opacity:.5}100%{transform:scale(4);opacity:0}}
+@keyframes scanline{0%{transform:translateY(-100%)}100%{transform:translateY(100vh)}}
+@keyframes borderGlow{0%,100%{box-shadow:0 0 8px rgba(255,110,180,.3),inset 0 0 8px rgba(255,110,180,.05)}50%{box-shadow:0 0 24px rgba(255,110,180,.6),inset 0 0 16px rgba(255,110,180,.1)}}
+@keyframes cursorPulse{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:1}50%{transform:translate(-50%,-50%) scale(1.4);opacity:.6}}
+@keyframes progressGlow{0%,100%{box-shadow:0 0 6px var(--pink)}50%{box-shadow:0 0 14px var(--pink),0 0 28px rgba(255,110,180,.4)}}
+@keyframes tiltReturn{to{transform:perspective(800px) rotateX(0deg) rotateY(0deg)}}
+@keyframes slideInLeft{from{opacity:0;transform:translateX(-40px)}to{opacity:1;transform:none}}
+@keyframes slideInRight{from{opacity:0;transform:translateX(40px)}to{opacity:1;transform:none}}
+@keyframes scaleIn{from{opacity:0;transform:scale(.88)}to{opacity:1;transform:scale(1)}}
 
 /* ── TOP BAR ── */
 .top-bar{
@@ -206,7 +240,16 @@ section{padding:96px 5%;position:relative}
 .accent-sky{color:var(--sky)}
 .accent-muted{color:var(--w40)}
 
-.body-txt{font-size:clamp(15px,3vw,16.5px);color:var(--w60);max-width:480px;line-height:1.8;font-weight:400}
+.body-txt{
+  font-size:clamp(15px,3vw,16.5px);
+  color:var(--w60);
+  max-width:480px;
+  line-height:1.9;
+  font-weight:400;
+  text-align:justify;
+  text-justify:inter-word;
+  hyphens:auto;
+}
 
 /* ── MARQUEE ── */
 .marquee-wrap{
@@ -519,14 +562,15 @@ body.admin-mode .video-upload-overlay.uploading .vuo-input{display:none}
   justify-content:center;font-size:16px;transition:background .2s,transform .2s;
 }
 .feature-list li:hover .fi-icon{background:rgba(255,110,180,.18);transform:scale(1.06)}
-.fi-txt strong{display:block;font-size:14px;font-weight:700;color:var(--w);margin-bottom:3px}
-.fi-txt span{font-size:13px;color:var(--w40);line-height:1.65}
+.fi-txt strong{display:block;font-size:14px;font-weight:700;color:var(--w);margin-bottom:4px}
+.fi-txt span{font-size:13px;color:var(--w40);line-height:1.75;text-align:justify;text-justify:inter-word;hyphens:auto}
 
 .highlight-box{
   background:var(--pink-dim);border:var(--border-pink);
   border-left:2px solid var(--pink);
-  padding:16px 18px;margin-top:24px;font-size:14px;color:var(--w60);
-  line-height:1.8;border-radius:var(--r-sm);
+  padding:18px 20px;margin-top:24px;font-size:14px;color:var(--w60);
+  line-height:1.9;border-radius:var(--r-sm);
+  text-align:justify;text-justify:inter-word;hyphens:auto;
 }
 .highlight-box strong{color:var(--pink)}
 .tag-cloud{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
@@ -562,7 +606,7 @@ body.admin-mode .video-upload-overlay.uploading .vuo-input{display:none}
 }
 .card-icon{font-size:2rem;margin-bottom:18px}
 .card-name{font-family:var(--f-bebas);font-size:1.8rem;letter-spacing:3px;margin-bottom:8px;color:var(--w)}
-.card-desc{font-size:.88rem;color:var(--w60);line-height:1.6;margin-bottom:28px}
+.card-desc{font-size:.88rem;color:var(--w60);line-height:1.75;margin-bottom:28px;text-align:justify;text-justify:inter-word;hyphens:auto}
 .card-price{
   font-family:var(--f-display);font-size:3rem;
   background:linear-gradient(90deg,var(--red),var(--orange));
@@ -616,7 +660,7 @@ body.admin-mode .video-upload-overlay.uploading .vuo-input{display:none}
 .loser .comp-title{color:rgba(230,57,70,.8)}.winner .comp-title{color:var(--pink)}
 .comp-sub{font-size:12px;font-weight:500;color:var(--w40);margin-top:2px}
 .comp-items{list-style:none;display:flex;flex-direction:column;gap:10px}
-.comp-items li{display:flex;align-items:flex-start;gap:10px;font-size:14px;line-height:1.6;color:var(--w60)}
+.comp-items li{display:flex;align-items:flex-start;gap:10px;font-size:14px;line-height:1.75;color:var(--w60)}
 .comp-items li .bul{flex-shrink:0;font-weight:700;font-size:15px}
 .loser .comp-items li .bul{color:rgba(230,57,70,.6)}
 .winner .comp-items li .bul{color:var(--mint)}
@@ -827,7 +871,92 @@ footer{background:var(--bg4);border-top:var(--border);padding:52px 5% calc(52px 
   backdrop-filter:blur(16px);opacity:0;transition:opacity .35s,transform .35s;white-space:nowrap;
 }
 #dock-toast.visible{display:block;opacity:1;transform:translateX(-50%) translateY(0)}
-
+/* ── SECTOR MODAL ── */
+#sector-modal{
+  display:none;position:fixed;inset:0;z-index:8000;
+  background:rgba(5,3,15,.95);backdrop-filter:blur(20px);
+  align-items:center;justify-content:center;padding:20px;
+}
+#sector-modal.open{display:flex}
+.sector-modal-panel{
+  background:var(--bg3);border:var(--border);border-top:2px solid var(--pink);
+  width:100%;max-width:420px;border-radius:var(--r-lg);overflow:hidden;
+  animation:fadeUp .35s var(--ease);
+}
+.sector-modal-head{
+  padding:18px 22px 15px;border-bottom:var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+}
+.sector-modal-title{
+  font-family:var(--f-mono);font-size:12px;font-weight:500;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--pink);
+}
+.sector-modal-close{
+  background:none;border:var(--border);border-radius:var(--r-sm);
+  color:var(--w40);width:28px;height:28px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;transition:all .15s;
+}
+.sector-modal-close:hover{border-color:var(--pink);color:var(--pink)}
+.sector-modal-body{padding:24px;display:flex;flex-direction:column;gap:16px}
+.sector-modal-preview{
+  display:flex;align-items:center;gap:14px;
+  background:rgba(255,255,255,.03);border:var(--border);
+  border-radius:var(--r-md);padding:14px 16px;
+}
+.sector-modal-logo{
+  width:52px;height:52px;border-radius:var(--r-sm);
+  border:var(--border);background:var(--bg4);
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;flex-shrink:0;cursor:pointer;position:relative;
+  transition:border-color .2s;
+}
+.sector-modal-logo:hover{border-color:rgba(255,110,180,.4)}
+.sector-modal-logo img{width:100%;height:100%;object-fit:contain}
+.sector-modal-logo-overlay{
+  position:absolute;inset:0;background:rgba(5,3,15,.75);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--f-mono);font-size:9px;color:var(--pink);
+  letter-spacing:.08em;text-transform:uppercase;opacity:0;
+  transition:opacity .2s;
+}
+.sector-modal-logo:hover .sector-modal-logo-overlay{opacity:1}
+.sector-modal-preview-info{display:flex;flex-direction:column;gap:3px;flex:1;min-width:0}
+.sector-modal-preview-name{font-size:15px;font-weight:700;color:var(--w);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sector-modal-preview-sub{font-family:var(--f-mono);font-size:11px;color:var(--w40);text-transform:uppercase;letter-spacing:.06em}
+.sector-modal-field{display:flex;flex-direction:column;gap:6px}
+.sector-modal-field label{
+  font-family:var(--f-mono);font-size:11px;font-weight:500;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--w40);
+  display:flex;align-items:center;gap:6px;
+}
+.sector-modal-field label span{color:var(--pink)}
+.sector-modal-input{
+  background:rgba(255,255,255,.04);border:var(--border);border-radius:var(--r-sm);
+  color:var(--w);font-family:var(--f-body);font-size:15px;padding:11px 14px;
+  outline:none;transition:border-color .2s;width:100%;
+}
+.sector-modal-input:focus{border-color:rgba(255,110,180,.5);background:rgba(255,110,180,.04)}
+.sector-modal-input::placeholder{color:var(--w20)}
+.sector-modal-input.url-input{font-family:var(--f-mono);font-size:13px}
+.sector-modal-actions{display:flex;gap:10px;margin-top:4px}
+.sector-modal-save{
+  flex:1;background:linear-gradient(135deg,var(--pink),var(--vivid));
+  color:#fff;border:none;border-radius:var(--r-sm);
+  font-family:var(--f-body);font-size:14px;font-weight:700;
+  padding:13px;min-height:46px;transition:filter .2s,transform .2s;
+}
+.sector-modal-save:hover{filter:brightness(1.1);transform:translateY(-1px)}
+.sector-modal-cancel{
+  background:transparent;color:var(--w40);border:var(--border);
+  border-radius:var(--r-sm);font-family:var(--f-body);font-size:14px;
+  font-weight:600;padding:13px 20px;min-height:46px;transition:all .2s;
+}
+.sector-modal-cancel:hover{border-color:rgba(255,255,255,.2);color:var(--w)}
+.sector-modal-hint{
+  font-family:var(--f-mono);font-size:11px;color:var(--w40);
+  text-align:center;letter-spacing:.06em;
+}
 /* ── LOGIN MODAL ── */
 #login-modal{
   display:none;position:fixed;inset:0;z-index:8000;
@@ -882,9 +1011,166 @@ body.admin-mode [data-field]:focus{outline:2px solid var(--pink);background:rgba
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important}
 }
+
+/* ══ SCROLL PROGRESS ══ */
+#scroll-progress{
+  position:fixed;top:calc(var(--dock-h) + 30px);left:0;height:2px;width:0%;z-index:1001;
+  background:linear-gradient(90deg,var(--pink),var(--vivid),var(--mint));
+  box-shadow:0 0 8px var(--pink);
+  transition:width .05s linear;
+  animation:progressGlow 2s ease-in-out infinite;
+  pointer-events:none;
+}
+
+/* ══ CUSTOM CURSOR ══ */
+#cursor-ring{
+  position:fixed;width:36px;height:36px;border-radius:50%;
+  border:1.5px solid rgba(255,110,180,.7);
+  pointer-events:none;z-index:9999;
+  transform:translate(-50%,-50%);
+  transition:transform .12s var(--ease),width .2s var(--ease),height .2s var(--ease),border-color .2s,background .2s;
+  mix-blend-mode:normal;will-change:left,top;
+  left:-100px;top:-100px;
+}
+#cursor-dot{
+  position:fixed;width:5px;height:5px;border-radius:50%;
+  background:var(--pink);pointer-events:none;z-index:10000;
+  transform:translate(-50%,-50%);
+  box-shadow:0 0 8px var(--pink);
+  transition:transform .06s var(--ease);
+  left:-100px;top:-100px;
+}
+body.cursor-hover #cursor-ring{
+  width:52px;height:52px;
+  border-color:rgba(255,110,180,1);
+  background:rgba(255,110,180,.06);
+}
+body.cursor-click #cursor-ring{
+  width:24px;height:24px;
+  background:rgba(255,110,180,.15);
+}
+@media(hover:none){#cursor-ring,#cursor-dot{display:none}}
+
+/* ══ HERO CANVAS ══ */
+#hero-canvas{
+  position:absolute;inset:0;width:100%;height:100%;
+  pointer-events:none;z-index:0;opacity:.6;
+}
+#hero .inner{position:relative;z-index:1}
+
+/* ══ GLITCH TEXT ══ */
+.glitch-wrap{position:relative;display:inline-block}
+.glitch-wrap::before,.glitch-wrap::after{
+  content:attr(data-text);position:absolute;top:0;left:0;width:100%;
+  background:inherit;-webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  pointer-events:none;
+}
+.glitch-wrap::before{
+  color:var(--mint);text-shadow:none;
+  animation:glitch1 .15s steps(1) infinite paused;
+}
+.glitch-wrap::after{
+  color:var(--pink2);text-shadow:none;
+  animation:glitch2 .15s steps(1) infinite paused;
+}
+.glitch-wrap.glitching::before,.glitch-wrap.glitching::after{animation-play-state:running}
+
+/* ══ PHONE 3D TILT ══ */
+.phone-frame{
+  transform-style:preserve-3d;
+  transition:transform .1s var(--ease);
+  will-change:transform;
+}
+.phone-frame-glow{
+  position:absolute;inset:-1px;border-radius:var(--r-xl);
+  background:transparent;pointer-events:none;z-index:-1;
+  transition:box-shadow .3s;
+}
+.phone-frame:hover .phone-frame-glow{
+  box-shadow:0 0 40px rgba(255,110,180,.2);
+}
+
+/* ══ SCANLINE ON PHONES ══ */
+.phone-video-area::after{
+  content:'';position:absolute;inset:0;z-index:5;pointer-events:none;
+  background:repeating-linear-gradient(
+    0deg,transparent,transparent 2px,
+    rgba(0,0,0,.06) 2px,rgba(0,0,0,.06) 4px
+  );border-radius:0 0 24px 24px;
+}
+
+/* ══ MAGNETIC BUTTON WRAPPER ══ */
+.mag-wrap{display:inline-block;position:relative}
+
+/* ══ RIPPLE ══ */
+.ripple-el{
+  position:absolute;border-radius:50%;
+  background:rgba(255,255,255,.25);
+  width:20px;height:20px;
+  animation:rippleAnim .6s ease-out forwards;
+  pointer-events:none;transform:scale(0);
+}
+
+/* ══ REVEAL VARIANTS ══ */
+.reveal-left{opacity:0;transform:translateX(-32px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.reveal-left.in{opacity:1;transform:none}
+.reveal-right{opacity:0;transform:translateX(32px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.reveal-right.in{opacity:1;transform:none}
+.reveal-scale{opacity:0;transform:scale(.9);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal-scale.in{opacity:1;transform:scale(1)}
+
+/* ══ NEON GRID (HERO BG) ══ */
+#hero::before{
+  content:'';position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(255,110,180,.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,110,180,.04) 1px,transparent 1px);
+  background-size:60px 60px;
+  mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,#000 40%,transparent 100%);
+  pointer-events:none;z-index:0;
+}
+
+/* ══ COUNTER NUM ══ */
+.stat-num[data-count]{transition:color .3s}
+.metric-num[data-count]{transition:color .3s}
+
+/* ══ SECTION GLOW LINES ══ */
+.section-divider.glow{
+  height:1px;
+  background:linear-gradient(90deg,transparent 0%,rgba(255,110,180,.25) 40%,rgba(127,255,212,.2) 60%,transparent 100%);
+  animation:progressGlow 3s ease-in-out infinite;
+}
+
+/* ══ PRICING CARD ENHANCED ══ */
+.pricing-card.featured{
+  animation:borderGlow 3s ease-in-out infinite;
+}
+
+/* ══ SCROLL HINT ARROW ══ */
+.scroll-hint{
+  position:absolute;bottom:28px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  opacity:0;animation:fadeUp .8s var(--ease) forwards 1.4s;
+  cursor:pointer;
+}
+.scroll-hint-line{
+  width:1.5px;height:40px;
+  background:linear-gradient(to bottom,rgba(255,110,180,.6),transparent);
+  animation:pulse 2s ease-in-out infinite;
+}
+.scroll-hint-txt{
+  font-family:var(--f-mono);font-size:10px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--w40);
+}
 </style>
 </head>
 <body>
+
+<!-- ══ CURSOR ══ -->
+<div id="cursor-ring"></div>
+<div id="cursor-dot"></div>
+<!-- ══ SCROLL PROGRESS ══ -->
+<div id="scroll-progress"></div>
 
 <!-- ══ ADMIN DOCK ══ -->
 <div id="admin-dock" role="toolbar">
@@ -896,6 +1182,46 @@ body.admin-mode [data-field]:focus{outline:2px solid var(--pink);background:rgba
   <div class="dock-actions">
     <button class="dock-btn" onclick="reloadContent()">↺ Recargar</button>
     <button class="dock-btn danger" onclick="doLogout()">⏻ Salir</button>
+  </div>
+</div>
+<!-- ══ SECTOR MODAL ══ -->
+<div id="sector-modal" role="dialog" aria-modal="true">
+  <div class="sector-modal-panel">
+    <div class="sector-modal-head">
+      <span class="sector-modal-title">◈ Añadir Empresa</span>
+      <button class="sector-modal-close" onclick="closeSectorModal()">✕</button>
+    </div>
+    <div class="sector-modal-body">
+      <!-- Preview en tiempo real -->
+      <div class="sector-modal-preview">
+        <div class="sector-modal-logo" onclick="triggerSectorModalLogo()" title="Subir logo">
+          <img id="sm-logo-preview" src="" alt="Logo">
+          <div class="sector-modal-logo-overlay">↑ Logo</div>
+        </div>
+        <div class="sector-modal-preview-info">
+          <div class="sector-modal-preview-name" id="sm-preview-name">Nombre de empresa</div>
+          <div class="sector-modal-preview-sub" id="sm-preview-sub">Sector</div>
+        </div>
+      </div>
+      <!-- Campos -->
+      <div class="sector-modal-field">
+        <label>Nombre de la empresa <span>*</span></label>
+        <input type="text" class="sector-modal-input" id="sm-name" placeholder="Ej: Sherwin Williams" maxlength="40">
+      </div>
+      <div class="sector-modal-field">
+        <label>Sector / Giro <span>*</span></label>
+        <input type="text" class="sector-modal-input" id="sm-sub" placeholder="Ej: Manufactura, Ecommerce..." maxlength="30">
+      </div>
+      <div class="sector-modal-field">
+        <label>Sitio web <span style="color:var(--w40)">(opcional)</span></label>
+        <input type="url" class="sector-modal-input url-input" id="sm-link" placeholder="https://empresa.com">
+      </div>
+      <div class="sector-modal-actions">
+        <button class="sector-modal-cancel" onclick="closeSectorModal()">Cancelar</button>
+        <button class="sector-modal-save" onclick="saveSectorModal()">Añadir empresa →</button>
+      </div>
+      <div class="sector-modal-hint">El logo se puede subir después haciendo clic en él</div>
+    </div>
   </div>
 </div>
 <div id="login-modal" role="dialog" aria-modal="true">
@@ -922,7 +1248,7 @@ body.admin-mode [data-field]:focus{outline:2px solid var(--pink);background:rgba
 <!-- ══ NAV ══ -->
 <nav id="main-nav">
   <a href="#hero" class="nav-logo">
-    <div class="nav-logo-main">MARKETPAGE</div>
+    <div class="nav-logo-main glitch-wrap" data-text="MARKETPAGE" id="logo-glitch">MARKETPAGE</div>
     <div class="nav-logo-sub">Grupo Zoalum · Ingeniería Digital</div>
   </a>
   <div class="nav-right">
@@ -939,19 +1265,20 @@ body.admin-mode [data-field]:focus{outline:2px solid var(--pink);background:rgba
 
 <!-- ══ HERO ══ -->
 <section id="hero">
+  <canvas id="hero-canvas"></canvas>
   <div class="inner">
     <div class="hero-grid">
       <div class="hero-text">
-        <div class="eyebrow"><span class="eyebrow-txt">No esclavises tu negocio</span><div class="eyebrow-badge">2026</div></div>
+        <div class="eyebrow"><span class="eyebrow-txt">La mejor alternativa a Shopify</span><div class="eyebrow-badge">2026</div></div>
         <h1 class="hero-title">
-          <span class="line1">INVIERTE</span>
-          <span class="line2">EN ACTIVOS</span>
-          <span class="line3">DIGITALES</span>
+          <span class="line1 glitch-wrap" data-text="DEJA DE RENTAR" id="hero-glitch">DEJA DE RENTAR</span>
+          <span class="line2">TU E-COMMERCE</span>
+          <span class="line3">A TERCEROS</span>
         </h1>
-        <p class="hero-sub" data-field="hero.subtitle">Tu presencia digital no debería ser un gasto mensual eterno. Es un activo que construye, escala y trabaja para ti las 24 horas. Paga una vez. Es tuyo para siempre.</p>
+        <p class="hero-sub">Shopify es excelente para empezar, pero cuando tu negocio crece, sus mensualidades en dólares y comisiones por transacción se comen tus ganancias. Paga tu plataforma una sola vez y recupera el control.</p>
         <div class="hero-actions">
-          <a href="https://wa.me/5578906326?text=Hola%2C%20quiero%20mi%20tienda%20en%20línea." target="_blank" rel="noopener" class="btn-wa"><i class="fa-brands fa-whatsapp"></i> Quiero mi tienda</a>
-          <a href="#precios" class="btn-ghost">Ver precios →</a>
+          <div class="mag-wrap"><a href="https://wa.me/5578906326?text=Hola%2C%20quiero%20mi%20tienda%20en%20línea." target="_blank" rel="noopener" class="btn-wa ripple-btn"><i class="fa-brands fa-whatsapp"></i> Quiero mi tienda</a></div>
+          <div class="mag-wrap"><a href="#precios" class="btn-ghost ripple-btn">Ver precios →</a></div>
         </div>
       </div>
       
@@ -960,12 +1287,16 @@ body.admin-mode [data-field]:focus{outline:2px solid var(--pink);background:rgba
       </div>
     </div>
 
-    <div class="hero-stats">
-      <div class="stat"><div class="stat-num pink">01×</div><div class="stat-lbl">Pago único total</div></div>
+    <div class="hero-stats" id="hero-stats">
+      <div class="stat"><div class="stat-num pink" data-target="1" data-prefix="" data-suffix="×" data-label="01×">01×</div><div class="stat-lbl">Pago único total</div></div>
       <div class="stat"><div class="stat-num mint">∞</div><div class="stat-lbl">Propiedad de por vida</div></div>
-      <div class="stat"><div class="stat-num yellow">$0</div><div class="stat-lbl">Comisiones</div></div>
-      <div class="stat"><div class="stat-num pink">100%</div><div class="stat-lbl">Control tuyo</div></div>
+      <div class="stat"><div class="stat-num yellow" data-target="0" data-prefix="$" data-suffix="" data-label="$0">$0</div><div class="stat-lbl">Comisiones</div></div>
+      <div class="stat"><div class="stat-num pink" data-target="100" data-prefix="" data-suffix="%" data-label="100%">100%</div><div class="stat-lbl">Control tuyo</div></div>
     </div>
+  </div>
+  <div class="scroll-hint" onclick="document.getElementById('metrics').scrollIntoView({behavior:'smooth'})">
+    <span class="scroll-hint-txt">Scroll</span>
+    <div class="scroll-hint-line"></div>
   </div>
 </section>
 
@@ -1158,7 +1489,7 @@ body.admin-mode [data-field]:focus{outline:2px solid var(--pink);background:rgba
     <p class="body-txt reveal delay-2" style="margin:0 auto 0;text-align:center;max-width:520px">Todo lo que necesitas para vender en línea bajo tu propio dominio y marca.</p>
     <div class="pricing-grid">
       <!-- Opción A: El Señuelo -->
-      <div class="pricing-card reveal delay-1">
+      <div class="pricing-card reveal-scale delay-1">
         <div class="card-icon">🛒</div>
         <div class="card-name">Tienda Básica</div>
         <p class="card-desc">Tienda en línea estándar. Funcional, pero requiere gestión manual de tu catálogo de productos.</p>
@@ -1173,7 +1504,7 @@ body.admin-mode [data-field]:focus{outline:2px solid var(--pink);background:rgba
       </div>
 
       <!-- Opción B: Tu Objetivo (MÁS POPULAR) -->
-      <div class="pricing-card featured reveal delay-2">
+      <div class="pricing-card featured reveal-scale delay-2">
         <div class="card-icon">🌐</div>
         <div class="card-name">E-Commerce PRO</div>
         <p class="card-desc">Control total de tu negocio. El ecosistema completo para vender sin límites.</p>
@@ -1183,14 +1514,14 @@ body.admin-mode [data-field]:focus{outline:2px solid var(--pink);background:rgba
         <ul class="card-features">
           <li><strong style="color:var(--mint)">Incluye Dominio y Hosting (1er año)</strong></li>
           <li>Panel de admin desde APP móvil y Web</li>
-          <li>Base de datos (10,000 mods diarias)</li>
+          <li>Base de datos (5,000 mods diarias)</li>
           <li>Dashboard de métricas y ventas en vivo</li>
           <li>Infraestructura estable y escalable</li>
         </ul>
       </div>
 
       <!-- Opción C: El Ancla Absurda -->
-      <div class="pricing-card reveal delay-3">
+      <div class="pricing-card reveal-scale delay-3">
         <div class="card-icon">🏢</div>
         <div class="card-name">Corporativo</div>
         <p class="card-desc">Solución definitiva con transferencia de código y soporte premium continuo.</p>
@@ -1200,7 +1531,7 @@ body.admin-mode [data-field]:focus{outline:2px solid var(--pink);background:rgba
           <li>Todo lo del paquete Profesional</li>
           <li>Entrega de código fuente del proyecto</li>
           <li>Límites de almacenamiento expandidos</li>
-          <li>Mantenimiento y soporte 24/7</li>
+          <li>Mantenimiento y soporte</li>
           <li>Auditoría de seguridad mensual</li>
         </ul>
       </div>
@@ -1213,7 +1544,7 @@ body.admin-mode [data-field]:focus{outline:2px solid var(--pink);background:rgba
 <section id="sectores" style="background:var(--bg)">
   <div class="sectores-inner">
     <div class="label reveal" style="margin:0 auto 16px;justify-content:center">Sectores donde dejamos Huella</div>
-    <h2 class="section-title reveal delay-1" style="text-align:center;margin-bottom:12px" data-field="sectores.title">Confianza de empresas líderes en México y Estados Unidos</h2>
+    <h2 class="section-title reveal delay-1" style="text-align:center;margin-bottom:12px" data-field="sectores.title">Quienes Confian en Nosotros</h2>
     <div class="highlight-badge reveal delay-2"><span>🏆</span><span data-field="sectores.highlightText">Soluciones <strong style="color:var(--pink)">innovadoras y efectivas</strong> para empresas líderes en la industria</span></div>
     <div class="sectores-grid reveal delay-3" id="sectores-grid-container"></div>
     <div id="admin-add-sector" style="display:none;text-align:center;margin-top:30px;width:100%">
@@ -1231,27 +1562,27 @@ body.admin-mode [data-field]:focus{outline:2px solid var(--pink);background:rgba
     <p class="body-txt reveal delay-2" data-field="comparativa.description">Hay dos tipos de dueños de negocio: los que pagan mes a mes por algo que nunca será suyo, y los que invierten una vez.</p>
     <div class="comp-grid">
       <div class="comp-card loser reveal delay-2">
-        <div class="comp-header"><div class="comp-icon">✖</div><div><div class="comp-title">El Inquilino</div><div class="comp-sub">Plataformas de renta mensual</div></div></div>
+        <div class="comp-header"><div class="comp-icon">✖</div><div><div class="comp-title">Shopify / Rentas</div><div class="comp-sub">El modelo de suscripción eterna</div></div></div>
         <ul class="comp-items">
-          <li><span class="bul">—</span>Pagas cada mes sin excepción</li>
-          <li><span class="bul">—</span>Si dejas de pagar, pierdes todo</li>
-          <li><span class="bul">—</span>No posees nada. Eres inquilino</li>
-          <li><span class="bul">—</span>Comisiones por cada venta</li>
-          <li><span class="bul">—</span>Plataforma genérica para todos</li>
+          <li><span class="bul">—</span>Pagas $39 USD (o más) cada mes</li>
+          <li><span class="bul">—</span>Te cobran hasta el 2% por venta</li>
+          <li><span class="bul">—</span>Las apps y plugins cuestan extra</li>
+          <li><span class="bul">—</span>Si dejas de pagar, tu tienda desaparece</li>
+          <li><span class="bul">—</span>El código no es tuyo, eres inquilino</li>
         </ul>
-        <div class="comp-total">+$60,000 MXN<small>gasto en 5 años · sin poseer nada</small></div>
+        <div class="comp-total">+$60,000 MXN<small>gasto en 3 años · sin poseer nada</small></div>
       </div>
       <div class="comp-card winner reveal delay-3">
-        <div class="winner-badge">✦ ACTIVO INTELIGENTE</div>
-        <div class="comp-header"><div class="comp-icon">✦</div><div><div class="comp-title">El Propietario</div><div class="comp-sub">MARKETPAGE · Pago único</div></div></div>
+        <div class="winner-badge">✦ PAGO ÚNICO</div>
+        <div class="comp-header"><div class="comp-icon">✦</div><div><div class="comp-title">MarketPage</div><div class="comp-sub">Ingeniería Digital · Propiedad Total</div></div></div>
         <ul class="comp-items">
-          <li><span class="bul">+</span>Pagas una vez. Es tuyo para siempre</li>
-          <li><span class="bul">+</span>Tu activo digital sigue activo siempre</li>
-          <li><span class="bul">+</span>App privada, dashboard propio</li>
-          <li><span class="bul">+</span>Sin comisiones por ventas</li>
-          <li><span class="bul">+</span>Hecho a tu medida, no genérico</li>
+          <li><span class="bul">+</span>Pagas una sola vez. Es tuyo para siempre</li>
+          <li><span class="bul">+</span>0% de comisiones por tus ventas</li>
+          <li><span class="bul">+</span>Panel Privado de Gestión Incluido</li>
+          <li><span class="bul">+</span>Dominio y Hosting incluidos (1er año)</li>
+          <li><span class="bul">+</span>Eres dueño total de tu infraestructura</li>
         </ul>
-        <div class="comp-total">1 Inversión<small>capitaliza tu empresa desde el día uno</small></div>
+        <div class="comp-total">$15,487 MXN<small>Inversión única · Recupera tus márgenes</small></div>
       </div>
     </div>
   </div>
@@ -1324,12 +1655,11 @@ body.admin-mode [data-field]:focus{outline:2px solid var(--pink);background:rgba
   </h2>
   <p class="cta-sub reveal delay-2" data-field="cta.subtitle">Deja de pagar renta digital. Agenda una sesión de diagnóstico sin costo y sin compromisos.</p>
   <div class="cta-actions reveal delay-3">
-    <a href="https://wa.me/5255485886800?text=Hola%2C%20quiero%20solicitar%20un%20presupuesto%20para%20MARKETPAGE." target="_blank" rel="noopener" class="btn-primary" style="padding:16px 36px;font-size:15px">¡QUIERO MI TIENDA EN LÍNEA!</a>
-    <a href="#control" class="btn-ghost">Ver cómo funciona →</a>
+    <div class="mag-wrap"><a href="https://wa.me/5255485886800?text=Hola%2C%20quiero%20solicitar%20un%20presupuesto%20para%20MARKETPAGE." target="_blank" rel="noopener" class="btn-primary ripple-btn" style="padding:16px 36px;font-size:15px">¡QUIERO MI TIENDA EN LÍNEA!</a></div>
+    <div class="mag-wrap"><a href="#control" class="btn-ghost ripple-btn">Ver cómo funciona →</a></div>
   </div>
   <div class="cta-guarantee reveal delay-4">Sin compromisos · Diagnóstico gratuito · Respuesta en 24h</div>
   <div class="reveal delay-4" style="margin-top:16px; font-family:var(--f-mono); font-size:11px; font-weight:700; color:var(--red); text-transform:uppercase; letter-spacing:0.08em; text-align:center;">
-    <i class="fa-solid fa-bolt" style="margin-right:6px;"></i> Capacidad de servidores: Solo 2 despliegues disponibles este mes
   </div>
 </section>
 
@@ -1399,13 +1729,17 @@ function renderSectores(data){
   container.innerHTML='';
   cards.forEach((card,index)=>{
     if(!card)return;
+    const initials = (card.title || 'LG').substring(0, 2).toUpperCase();
+    const fallbackSVG = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"><rect width="60" height="60" fill="%230a0520"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="%23ff6eb4" font-family="sans-serif" font-size="16" font-weight="bold">${initials}</text></svg>`;
+    const imgSrc = (card.img && (card.img.includes('http') || card.img.includes('data:image'))) ? card.img : fallbackSVG;
+
     const cardEl=document.createElement('a');cardEl.className='sector-card';cardEl.href=card.link||'#';
     if(card.link&&card.link!=='#'){cardEl.target='_blank';cardEl.rel='noopener';}
     cardEl.addEventListener('click',e=>{if(isAdmin)e.preventDefault()});
     cardEl.innerHTML=`
       <button class="sector-delete" onclick="deleteSector(${index},event)" title="Eliminar">✕</button>
       <div class="sector-icon" style="position:relative;">
-        <img src="${card.img||'https://via.placeholder.com/60x60/0a0520/ff6eb4?text=LOGO'}" alt="Logo" id="sector-img-${index}">
+        <img src="${imgSrc}" alt="Logo" id="sector-img-${index}">
         <div class="sector-img-upload" onclick="triggerSectorUpload(${index},event)"><span>↑ Logo</span></div>
       </div>
       <div class="sector-title" data-field="sectores.cards.${index}.title">${card.title||'Empresa'}</div>
@@ -1501,28 +1835,188 @@ window.editLink=async(e,fieldPath)=>{
     catch(err){setSave('error','✕ Error');showToast('✕ Error al guardar',4000);unsaved=Math.max(0,unsaved-1)}
   }
 };
-window.triggerSectorUpload=(index,event)=>{
-  event.preventDefault();event.stopPropagation();if(!isAdmin)return;
-  const input=document.createElement('input');input.type='file';input.accept='image/png,image/jpeg,image/svg+xml,image/webp';
-  input.onchange=async e=>{
-    const file=e.target.files[0];if(!file)return;
-    setSave('saving','● Subiendo logo...');unsaved++;
-    try{
-      const ext=file.name.split('.').pop().toLowerCase();
-      const sr=ref(storage,`marketpage/logos/sector_${index}_${Date.now()}.${ext}`);
-      const ut=uploadBytesResumable(sr,file);
-      ut.on('state_changed',null,
-        ()=>{setSave('error','✕ Error');showToast('Error al subir');unsaved=Math.max(0,unsaved-1)},
-        async()=>{const url=await getDownloadURL(ut.snapshot.ref);await setDoc(CREF,buildNested(`sectores.cards.${index}.img`,url),{merge:true});document.getElementById(`sector-img-${index}`).src=url;setSave('saved','✓ Logo Guardado');showToast('✓ Logo actualizado');unsaved=Math.max(0,unsaved-1);setTimeout(()=>{if(!unsaved)setSave('','Listo')},3000)}
+window.triggerSectorUpload = (index, event) => {
+  event.preventDefault();
+  event.stopPropagation();
+  if (!isAdmin) return;
+
+  const input = document.createElement('input');
+  input.type = 'file';
+  input.accept = 'image/png,image/jpeg,image/svg+xml,image/webp';
+  input.style.display = 'none';
+  document.body.appendChild(input);
+
+  input.onchange = async e => {
+    const file = e.target.files[0];
+    if (!file) {
+      document.body.removeChild(input);
+      return;
+    }
+    if (file.size > 2 * 1024 * 1024) {
+      showToast('✕ Error: El logo supera los 2MB');
+      document.body.removeChild(input);
+      return;
+    }
+
+    setSave('saving', '● Subiendo logo...');
+    unsaved++;
+    try {
+      const ext = file.name.split('.').pop().toLowerCase();
+      const sr = ref(storage, `marketpage/logos/sector_${index}_${Date.now()}.${ext}`);
+      const ut = uploadBytesResumable(sr, file);
+      
+      ut.on('state_changed', 
+        (snapshot) => {
+          const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+          setSave('saving', `● ${progress}%`);
+        },
+        () => {
+          setSave('error', '✕ Error');
+          showToast('Error al subir');
+          unsaved = Math.max(0, unsaved - 1);
+          document.body.removeChild(input);
+        },
+        async () => {
+          const url = await getDownloadURL(ut.snapshot.ref);
+          await setDoc(CREF, buildNested(`sectores.cards.${index}.img`, url), { merge: true });
+          document.getElementById(`sector-img-${index}`).src = url;
+          setSave('saved', '✓ Logo Guardado');
+          showToast('✓ Logo actualizado');
+          unsaved = Math.max(0, unsaved - 1);
+          setTimeout(() => { if (!unsaved) setSave('', 'Listo') }, 3000);
+          document.body.removeChild(input);
+        }
       );
-    }catch(err){setSave('error','✕ Error');unsaved=Math.max(0,unsaved-1)}
+    } catch (err) {
+      setSave('error', '✕ Error');
+      unsaved = Math.max(0, unsaved - 1);
+      document.body.removeChild(input);
+    }
   };
   input.click();
 };
-window.addSectorCard=async()=>{
-  if(!isAdmin)return;setSave('saving','● Añadiendo...');
-  try{const snap=await getDoc(CREF);let data=snap.exists()?snap.data():DEFAULT;let cards=getNested(data,'sectores.cards')||[];if(!Array.isArray(cards)){let a=[];for(let k in cards)a[parseInt(k)]=cards[k];cards=a;}cards.push({title:"Nueva Empresa",sub:"Sector",link:"#",img:"https://via.placeholder.com/60x60/0a0520/ff6eb4?text=LOGO"});await updateDoc(CREF,{'sectores.cards':cards});setSave('saved','✓ Añadido');showToast('✓ Empresa añadida')}
-  catch(err){setSave('error','✕ Error');showToast('✕ Error al añadir',4000)}
+// ══ SECTOR MODAL LOGIC ══
+let sectorModalLogoFile = null;
+let sectorModalLogoDataUrl = null;
+
+window.addSectorCard = () => { if (isAdmin) openSectorModal(); };
+
+window.openSectorModal = () => {
+  sectorModalLogoFile = null;
+  sectorModalLogoDataUrl = null;
+  document.getElementById('sm-name').value = '';
+  document.getElementById('sm-sub').value = '';
+  document.getElementById('sm-link').value = '';
+  document.getElementById('sm-preview-name').textContent = 'Nombre de empresa';
+  document.getElementById('sm-preview-sub').textContent = 'Sector';
+  const prev = document.getElementById('sm-logo-preview');
+  prev.src = '';
+  prev.style.display = 'none';
+  document.getElementById('sector-modal').classList.add('open');
+  setTimeout(() => document.getElementById('sm-name').focus(), 120);
+};
+
+window.closeSectorModal = () => {
+  document.getElementById('sector-modal').classList.remove('open');
+};
+
+// Preview en tiempo real mientras escribes
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('sm-name').addEventListener('input', e => {
+    const v = e.target.value.trim() || 'Nombre de empresa';
+    document.getElementById('sm-preview-name').textContent = v;
+    if (!sectorModalLogoDataUrl) updateSectorModalInitials(v);
+  });
+  document.getElementById('sm-sub').addEventListener('input', e => {
+    document.getElementById('sm-preview-sub').textContent = e.target.value.trim() || 'Sector';
+  });
+  document.getElementById('sector-modal').addEventListener('click', e => {
+    if (e.target === document.getElementById('sector-modal')) closeSectorModal();
+  });
+});
+
+function updateSectorModalInitials(name) {
+  const initials = (name || 'EM').substring(0, 2).toUpperCase();
+  const svg = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"><rect width="60" height="60" fill="%230a0520"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="%23ff6eb4" font-family="sans-serif" font-size="18" font-weight="bold">${initials}</text></svg>`;
+  const prev = document.getElementById('sm-logo-preview');
+  prev.src = svg;
+  prev.style.display = 'block';
+  sectorModalLogoDataUrl = svg;
+}
+
+window.triggerSectorModalLogo = () => {
+  const input = document.createElement('input');
+  input.type = 'file';
+  input.accept = 'image/png,image/jpeg,image/svg+xml,image/webp';
+  input.onchange = e => {
+    const file = e.target.files[0];
+    if (!file) return;
+    if (file.size > 2 * 1024 * 1024) { showToast('✕ El logo supera 2MB'); return; }
+    sectorModalLogoFile = file;
+    const reader = new FileReader();
+    reader.onload = ev => {
+      sectorModalLogoDataUrl = ev.target.result;
+      const prev = document.getElementById('sm-logo-preview');
+      prev.src = ev.target.result;
+      prev.style.display = 'block';
+    };
+    reader.readAsDataURL(file);
+  };
+  input.click();
+};
+
+window.saveSectorModal = async () => {
+  if (!isAdmin) return;
+  const title = document.getElementById('sm-name').value.trim();
+  const sub = document.getElementById('sm-sub').value.trim();
+  const link = document.getElementById('sm-link').value.trim() || '#';
+  if (!title) { document.getElementById('sm-name').focus(); showToast('⚠ Escribe el nombre'); return; }
+  if (!sub) { document.getElementById('sm-sub').focus(); showToast('⚠ Escribe el sector'); return; }
+
+  const saveBtn = document.querySelector('.sector-modal-save');
+  saveBtn.textContent = '● Guardando...';
+  saveBtn.disabled = true;
+  setSave('saving', '● Guardando...');
+  unsaved++;
+
+  try {
+    const snap = await getDoc(CREF);
+    let data = snap.exists() ? snap.data() : DEFAULT;
+    let cards = getNested(data, 'sectores.cards') || [];
+    if (!Array.isArray(cards)) { let a = []; for (let k in cards) a[parseInt(k)] = cards[k]; cards = a; }
+
+    let imgUrl = sectorModalLogoDataUrl || '';
+
+    // Si hay archivo real, súbelo a Storage
+    if (sectorModalLogoFile) {
+      const ext = sectorModalLogoFile.name.split('.').pop().toLowerCase();
+      const sr = ref(storage, `marketpage/logos/sector_${Date.now()}.${ext}`);
+      const snap2 = await new Promise((res, rej) => {
+        const ut = uploadBytesResumable(sr, sectorModalLogoFile);
+        ut.on('state_changed',
+          s => { const p = Math.round(s.bytesTransferred / s.totalBytes * 100); saveBtn.textContent = `● ${p}%`; },
+          rej,
+          () => res(ut.snapshot)
+        );
+      });
+      imgUrl = await getDownloadURL(snap2.ref);
+    }
+
+    cards.push({ title, sub, link, img: imgUrl });
+    await updateDoc(CREF, { 'sectores.cards': cards });
+    setSave('saved', '✓ Guardado');
+    showToast('✓ Empresa añadida correctamente');
+    unsaved = Math.max(0, unsaved - 1);
+    closeSectorModal();
+    setTimeout(() => { if (!unsaved) setSave('', 'Listo'); }, 2500);
+  } catch (err) {
+    setSave('error', '✕ Error');
+    showToast('✕ Error al guardar', 4000);
+    unsaved = Math.max(0, unsaved - 1);
+  } finally {
+    saveBtn.textContent = 'Añadir empresa →';
+    saveBtn.disabled = false;
+  }
 };
 window.deleteSector=async(index,event)=>{
   event.preventDefault();event.stopPropagation();if(!isAdmin)return;if(!confirm('¿Eliminar esta empresa?'))return;
@@ -1565,6 +2059,230 @@ if(waF){setTimeout(()=>waF.classList.add('open'),3000);setTimeout(()=>waF.classL
 document.getElementById('login-modal').addEventListener('click',e=>{if(e.target===document.getElementById('login-modal'))window.closeLogin()});
 document.getElementById('l-pass').addEventListener('keydown',e=>{if(e.key==='Enter')window.doLogin()});
 document.addEventListener('keydown',e=>{if(e.ctrlKey&&e.shiftKey&&e.key==='A'){e.preventDefault();if(!isAdmin)window.openLogin()}});
+
+// ══ SCROLL PROGRESS BAR ══
+const scrollBar=document.getElementById('scroll-progress');
+window.addEventListener('scroll',()=>{
+  const h=document.documentElement.scrollHeight-window.innerHeight;
+  scrollBar.style.width=(window.scrollY/h*100)+'%';
+},{passive:true});
+
+// ══ CUSTOM CURSOR ══
+(()=>{
+  const ring=document.getElementById('cursor-ring'),dot=document.getElementById('cursor-dot');
+  if(!ring||!dot)return;
+  let rx=0,ry=0,dx=0,dy=0;
+  document.addEventListener('mousemove',e=>{
+    dx=e.clientX;dy=e.clientY;
+    dot.style.left=dx+'px';dot.style.top=dy+'px';
+  },{passive:true});
+  (function lerp(){
+    rx+=(dx-rx)*.14;ry+=(dy-ry)*.14;
+    ring.style.left=rx+'px';ring.style.top=ry+'px';
+    requestAnimationFrame(lerp);
+  })();
+  document.querySelectorAll('a,button,.tag,.sector-card,.pricing-card,.metric-card,.comp-card,.red-card,.feature-list li').forEach(el=>{
+    el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-hover'));
+    el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-hover'));
+  });
+  document.addEventListener('mousedown',()=>document.body.classList.add('cursor-click'));
+  document.addEventListener('mouseup',()=>document.body.classList.remove('cursor-click'));
+})();
+
+// ══ HERO CANVAS PARTICLES ══
+(()=>{
+  const canvas=document.getElementById('hero-canvas');
+  if(!canvas)return;
+  const ctx=canvas.getContext('2d');
+  let W,H,particles=[];
+  const colors=['rgba(255,110,180,',`rgba(127,255,212,`,'rgba(135,206,235,','rgba(255,209,102,'];
+  function resize(){W=canvas.width=canvas.offsetWidth;H=canvas.height=canvas.offsetHeight}
+  function Particle(){
+    this.x=Math.random()*W;this.y=Math.random()*H;
+    this.size=Math.random()*2+.5;
+    this.speedX=(Math.random()-.5)*.35;this.speedY=(Math.random()-.5)*.35;
+    this.color=colors[Math.floor(Math.random()*colors.length)];
+    this.alpha=Math.random()*.6+.1;
+    this.pulse=Math.random()*Math.PI*2;
+  }
+  Particle.prototype.update=function(){
+    this.x+=this.speedX;this.y+=this.speedY;this.pulse+=.025;
+    if(this.x<0)this.x=W;if(this.x>W)this.x=0;
+    if(this.y<0)this.y=H;if(this.y>H)this.y=0;
+  };
+  Particle.prototype.draw=function(){
+    const a=this.alpha*(0.6+Math.sin(this.pulse)*0.4);
+    ctx.beginPath();ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
+    ctx.fillStyle=this.color+a+')';ctx.fill();
+  };
+  function init(){
+    resize();particles=[];
+    const count=Math.min(Math.floor(W*H/5000),140);
+    for(let i=0;i<count;i++)particles.push(new Particle());
+  }
+  function drawLines(){
+    for(let i=0;i<particles.length;i++){
+      for(let j=i+1;j<particles.length;j++){
+        const dx=particles[i].x-particles[j].x,dy=particles[i].y-particles[j].y;
+        const dist=Math.sqrt(dx*dx+dy*dy);
+        if(dist<100){
+          ctx.beginPath();
+          ctx.strokeStyle=`rgba(255,110,180,${(1-dist/100)*.08})`;
+          ctx.lineWidth=.5;
+          ctx.moveTo(particles[i].x,particles[i].y);
+          ctx.lineTo(particles[j].x,particles[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+  }
+  let mouseX=-999,mouseY=-999;
+  document.addEventListener('mousemove',e=>{mouseX=e.clientX;mouseY=e.clientY},{passive:true});
+  function animate(){
+    ctx.clearRect(0,0,W,H);
+    particles.forEach(p=>{
+      const dx=p.x-mouseX,dy=p.y-mouseY,dist=Math.sqrt(dx*dx+dy*dy);
+      if(dist<120){p.x+=dx/dist*.8;p.y+=dy/dist*.8}
+      p.update();p.draw();
+    });
+    drawLines();requestAnimationFrame(animate);
+  }
+  init();animate();
+  window.addEventListener('resize',init,{passive:true});
+})();
+
+// ══ HERO MOUSE PARALLAX ══
+(()=>{
+  const hero=document.getElementById('hero');
+  if(!hero)return;
+  const heroText=hero.querySelector('.hero-text');
+  const heroImg=hero.querySelector('.hero-img');
+  hero.addEventListener('mousemove',e=>{
+    const rect=hero.getBoundingClientRect();
+    const cx=(e.clientX-rect.left)/rect.width-.5;
+    const cy=(e.clientY-rect.top)/rect.height-.5;
+    if(heroText)heroText.style.transform=`translate(${cx*10}px,${cy*6}px)`;
+    if(heroImg)heroImg.style.transform=`translate(${cx*-14}px,${cy*-10}px)`;
+  },{passive:true});
+  hero.addEventListener('mouseleave',()=>{
+    if(heroText)heroText.style.transform='';
+    if(heroImg)heroImg.style.transform='';
+  });
+})();
+
+// ══ PHONE FRAME 3D TILT ══
+document.querySelectorAll('.phone-frame').forEach(frame=>{
+  frame.addEventListener('mousemove',e=>{
+    const rect=frame.getBoundingClientRect();
+    const cx=(e.clientX-rect.left)/rect.width-.5;
+    const cy=(e.clientY-rect.top)/rect.height-.5;
+    frame.style.transform=`perspective(600px) rotateY(${cx*14}deg) rotateX(${-cy*10}deg) scale(1.02)`;
+    frame.style.boxShadow=`${cx*-20}px ${cy*-12}px 40px rgba(255,110,180,.18), 0 0 0 1px rgba(0,0,0,.6), 0 28px 64px rgba(0,0,0,.55)`;
+  },{passive:true});
+  frame.addEventListener('mouseleave',()=>{
+    frame.style.transform='';frame.style.boxShadow='';
+  });
+});
+
+// ══ GLITCH EFFECT ══
+(()=>{
+  const targets=[document.getElementById('logo-glitch'),document.getElementById('hero-glitch')].filter(Boolean);
+  function triggerGlitch(){
+    const el=targets[Math.floor(Math.random()*targets.length)];
+    if(!el)return;
+    el.classList.add('glitching');
+    setTimeout(()=>el.classList.remove('glitching'),150+Math.random()*100);
+  }
+  let nextGlitch=()=>setTimeout(()=>{triggerGlitch();nextGlitch()},2800+Math.random()*4000);
+  nextGlitch();
+})();
+
+// ══ HERO STAT COUNT-UP ══
+(()=>{
+  const stats=document.querySelectorAll('#hero-stats .stat-num[data-target]');
+  let done=false;
+  function runCountUp(){
+    if(done)return;done=true;
+    stats.forEach(el=>{
+      const target=parseFloat(el.dataset.target);
+      const prefix=el.dataset.prefix||'';
+      const suffix=el.dataset.suffix||'';
+      if(target===0){el.textContent=prefix+'0'+suffix;return}
+      const dur=900,start=performance.now();
+      function step(now){
+        const t=Math.min((now-start)/dur,1);
+        const ease=1-Math.pow(1-t,3);
+        const val=Math.round(ease*target);
+        el.textContent=prefix+val+suffix;
+        if(t<1)requestAnimationFrame(step);
+        else el.textContent=prefix+target+suffix;
+      }
+      requestAnimationFrame(step);
+    });
+  }
+  const statsEl=document.getElementById('hero-stats');
+  if(statsEl){
+    const obs=new IntersectionObserver(es=>{if(es[0].isIntersecting){runCountUp();obs.disconnect()}},{threshold:.5});
+    obs.observe(statsEl);
+  }
+})();
+
+// ══ METRIC NUM COUNT-UP ══
+(()=>{
+  document.querySelectorAll('.metric-num').forEach(el=>{
+    const raw=el.textContent.trim();
+    const num=parseFloat(raw.replace(/[^0-9.]/g,''));
+    if(isNaN(num)||num===0)return;
+    const prefix=raw.match(/^[^0-9]*/)?.[0]||'';
+    const suffix=raw.match(/[^0-9.]+$/)?.[0]||'';
+    el.dataset.countTarget=num;el.dataset.countPrefix=prefix;el.dataset.countSuffix=suffix;
+    const obs=new IntersectionObserver(es=>{
+      if(!es[0].isIntersecting)return;obs.disconnect();
+      const dur=1000,start=performance.now();
+      function step(now){
+        const t=Math.min((now-start)/dur,1);
+        const ease=1-Math.pow(1-t,3);
+        el.textContent=prefix+Math.round(ease*num)+suffix;
+        if(t<1)requestAnimationFrame(step);
+        else el.textContent=raw;
+      }
+      requestAnimationFrame(step);
+    },{threshold:.6});
+    obs.observe(el);
+  });
+})();
+
+// ══ RIPPLE EFFECT ══
+document.querySelectorAll('.ripple-btn,.btn-primary,.btn-wa,.btn-ghost').forEach(btn=>{
+  btn.style.position='relative';btn.style.overflow='hidden';
+  btn.addEventListener('click',e=>{
+    const rect=btn.getBoundingClientRect();
+    const r=document.createElement('span');
+    r.className='ripple-el';
+    r.style.left=(e.clientX-rect.left-10)+'px';
+    r.style.top=(e.clientY-rect.top-10)+'px';
+    btn.appendChild(r);setTimeout(()=>r.remove(),650);
+  });
+});
+
+// ══ MAGNETIC BUTTONS ══
+document.querySelectorAll('.mag-wrap').forEach(wrap=>{
+  const btn=wrap.firstElementChild;if(!btn)return;
+  wrap.addEventListener('mousemove',e=>{
+    const rect=wrap.getBoundingClientRect();
+    const cx=e.clientX-rect.left-rect.width/2;
+    const cy=e.clientY-rect.top-rect.height/2;
+    btn.style.transform=`translate(${cx*.2}px,${cy*.2}px)`;
+  });
+  wrap.addEventListener('mouseleave',()=>{btn.style.transform=''});
+});
+
+// ══ GLOW DIVIDERS ══
+document.querySelectorAll('.section-divider').forEach((d,i)=>{if(i%2===0)d.classList.add('glow')});
+
+// ══ ENHANCED REVEAL (side variants) ══
+const ioSide=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');ioSide.unobserve(e.target)}})},{threshold:.1,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.reveal-left,.reveal-right,.reveal-scale').forEach(el=>ioSide.observe(el));
 
 await initContent();
 initVideoOverlays();
