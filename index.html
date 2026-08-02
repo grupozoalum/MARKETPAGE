@@ -1294,10 +1294,6 @@ body.cursor-click #cursor-ring{
       <div class="stat"><div class="stat-num pink" data-target="100" data-prefix="" data-suffix="%" data-label="100%">100%</div><div class="stat-lbl">Control tuyo</div></div>
     </div>
   </div>
-  <div class="scroll-hint" onclick="document.getElementById('metrics').scrollIntoView({behavior:'smooth'})">
-    <span class="scroll-hint-txt">Scroll</span>
-    <div class="scroll-hint-line"></div>
-  </div>
 </section>
 
 <!-- ══ MARQUEE ══ -->
@@ -1921,18 +1917,16 @@ window.closeSectorModal = () => {
 };
 
 // Preview en tiempo real mientras escribes
-document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('sm-name').addEventListener('input', e => {
-    const v = e.target.value.trim() || 'Nombre de empresa';
-    document.getElementById('sm-preview-name').textContent = v;
-    if (!sectorModalLogoDataUrl) updateSectorModalInitials(v);
-  });
-  document.getElementById('sm-sub').addEventListener('input', e => {
-    document.getElementById('sm-preview-sub').textContent = e.target.value.trim() || 'Sector';
-  });
-  document.getElementById('sector-modal').addEventListener('click', e => {
-    if (e.target === document.getElementById('sector-modal')) closeSectorModal();
-  });
+document.getElementById('sm-name').addEventListener('input', e => {
+  const v = e.target.value.trim() || 'Nombre de empresa';
+  document.getElementById('sm-preview-name').textContent = v;
+  if (!sectorModalLogoDataUrl) updateSectorModalInitials(v);
+});
+document.getElementById('sm-sub').addEventListener('input', e => {
+  document.getElementById('sm-preview-sub').textContent = e.target.value.trim() || 'Sector';
+});
+document.getElementById('sector-modal').addEventListener('click', e => {
+  if (e.target === document.getElementById('sector-modal')) closeSectorModal();
 });
 
 function updateSectorModalInitials(name) {
