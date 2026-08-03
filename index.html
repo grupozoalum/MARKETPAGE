@@ -1996,8 +1996,10 @@ window.saveSectorModal = async () => {
       imgUrl = await getDownloadURL(snap2.ref);
     }
 
-    cards.push({ title, sub, link, img: imgUrl });
-    await updateDoc(CREF, { 'sectores.cards': cards });
+    // Limpia nulls acumulados antes de añadir
+    const cleanCards = cards.filter(c => c !== null && c !== undefined);
+    cleanCards.push({ title, sub, link, img: imgUrl });
+    await setDoc(CREF, { sectores: { cards: cleanCards } }, { merge: true });
     setSave('saved', '✓ Guardado');
     showToast('✓ Empresa añadida correctamente');
     unsaved = Math.max(0, unsaved - 1);
@@ -2013,10 +2015,26 @@ window.saveSectorModal = async () => {
   }
 };
 window.deleteSector=async(index,event)=>{
-  event.preventDefault();event.stopPropagation();if(!isAdmin)return;if(!confirm('¿Eliminar esta empresa?'))return;
+  event.preventDefault();event.stopPropagation();
+  if(!isAdmin)return;
+  if(!confirm('¿Eliminar esta empresa?'))return;
   setSave('saving','● Eliminando...');
-  try{const snap=await getDoc(CREF);let data=snap.exists()?snap.data():DEFAULT;let cards=getNested(data,'sectores.cards')||[];if(!Array.isArray(cards)){let a=[];for(let k in cards)a[parseInt(k)]=cards[k];cards=a;}cards[index]=null;await updateDoc(CREF,{'sectores.cards':cards});setSave('saved','✓ Eliminado');showToast('✓ Empresa eliminada')}
-  catch(err){setSave('error','✕ Error');showToast('✕ Error',4000)}
+  try{
+    const snap=await getDoc(CREF);
+    let data=snap.exists()?snap.data():DEFAULT;
+    let cards=getNested(data,'sectores.cards')||[];
+    if(!Array.isArray(cards)){let a=[];for(let k in cards)a[parseInt(k)]=cards[k];cards=a;}
+    // Filtra el null en lugar de dejarlo en el array
+    const newCards=cards.filter((_,i)=>i!==index);
+    await setDoc(CREF,{'sectores':{...getNested(data,'sectores'),cards:newCards}},{merge:true});
+    setSave('saved','✓ Eliminado');
+    showToast('✓ Empresa eliminada');
+    setTimeout(()=>setSave('','Listo'),2500);
+  }catch(err){
+    console.error('DELETE ERROR:',err.code, err.message);
+    setSave('error','✕ Error: '+err.code);
+    showToast('✕ '+err.message,5000);
+  }
 };
 
 // ── Calculadora ──
